@@ -22,6 +22,39 @@ const publicUrl = "";
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
 
+const getSassLoaders = useModules => [
+  require.resolve("style-loader"),
+  {
+    loader: require.resolve("css-loader"),
+    options: {
+      importLoaders: 2,
+      modules: useModules,
+      localIdentName: "[name]__[local]___[hash:base64:5]"
+    }
+  },
+  {
+    loader: require.resolve("postcss-loader"),
+    options: {
+      // Necessary for external CSS imports to work
+      // https://github.com/facebookincubator/create-react-app/issues/2677
+      ident: "postcss",
+      plugins: () => [
+        require("postcss-flexbugs-fixes"),
+        autoprefixer({
+          browsers: [
+            ">1%",
+            "last 4 versions",
+            "Firefox ESR",
+            "not ie < 9" // React doesn't support IE8 anyway
+          ],
+          flexbox: "no-2009"
+        })
+      ]
+    }
+  },
+  require.resolve("sass-loader")
+];
+
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -148,6 +181,13 @@ module.exports = {
               cacheDirectory: true
             }
           },
+          {
+            test: /\.module\.s(a|c)ss$/,
+            use: getSassLoaders(true)
+          },
+          {
+            test: /\.s(a|c)ss$/,
+            use: getSassLoaders(false)
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.

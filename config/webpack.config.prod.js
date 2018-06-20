@@ -46,6 +46,54 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split("/").length).join("../") }
   : {};
 
+const getSassLoaders = useModules =>
+  ExtractTextPlugin.extract(
+    Object.assign(
+      {
+        fallback: {
+          loader: require.resolve("style-loader"),
+          options: {
+            hmr: false
+          }
+        },
+        use: [
+          {
+            loader: require.resolve("css-loader"),
+            options: {
+              importLoaders: 2,
+              minimize: true,
+              sourceMap: shouldUseSourceMap,
+              modules: useModules,
+              localIdentName: "[name]__[local]___[hash:base64:5]"
+            }
+          },
+          {
+            loader: require.resolve("postcss-loader"),
+            options: {
+              // Necessary for external CSS imports to work
+              // https://github.com/facebookincubator/create-react-app/issues/2677
+              ident: "postcss",
+              plugins: () => [
+                require("postcss-flexbugs-fixes"),
+                autoprefixer({
+                  browsers: [
+                    ">1%",
+                    "last 4 versions",
+                    "Firefox ESR",
+                    "not ie < 9" // React doesn't support IE8 anyway
+                  ],
+                  flexbox: "no-2009"
+                })
+              ]
+            }
+          },
+          require.resolve("sass-loader")
+        ]
+      },
+      extractTextPluginOptions
+    )
+  );
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -54,7 +102,6 @@ module.exports = {
   bail: true,
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
-  devtool: shouldUseSourceMap ? 'source-map' : false,
   devtool: shouldUseSourceMap ? "source-map" : false,
   // In production, we only want to load the polyfills and the app code.
   entry: [require.resolve("./polyfills"), paths.appIndexJs],
@@ -149,6 +196,13 @@ module.exports = {
               compact: true
             }
           },
+          {
+            test: /\.module\.s(a|c)ss$/,
+            use: getSassLoaders(true)
+          },
+          {
+            test: /\.s(a|c)ss$/,
+            use: getSassLoaders(false)
           },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
