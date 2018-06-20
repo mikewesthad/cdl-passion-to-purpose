@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PageTransition from "./components/page-transition";
+import "./style/global/index.scss";
 
 // NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
 
