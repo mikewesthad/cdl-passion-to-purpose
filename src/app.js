@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import PageTransition from "./components/page-transition";
+import PageWrapper from "./components/page-wrapper";
+import Container from "./components/container";
+
 import "./style/global/index.scss";
 
 // NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
@@ -49,61 +52,76 @@ export default class App extends React.Component {
             // Check paths here are redirect to first page if missing data
 
             return (
-              <div className="container">
-                <div className="page-wrapper">
-                  <Route
-                    render={({ location }) => (
-                      <PageTransition pageKey={location.pathname}>
-                        <Switch location={location}>
-                          <Route
-                            {...ROUTES.HOME}
-                            render={props => (
-                              <div>
-                                <h1>Home</h1>
-                                <Link to={ROUTES.PASSIONS.path}>Next</Link>
-                              </div>
-                            )}
-                          />
+              <PageWrapper>
+                <Route
+                  render={({ location }) => (
+                    <PageTransition pageKey={location.pathname}>
+                      <Switch location={location}>
+                        <Route
+                          {...ROUTES.HOME}
+                          render={props => (
+                            <Container>
+                              <h1>Home</h1>
+                              <h1>HTML Ipsum Presents</h1>
 
-                          <Route
-                            {...ROUTES.PASSIONS}
-                            render={props => (
-                              <div>
-                                <h1>Passions</h1>
-                                <Link to={ROUTES.HOME.path}>Previous</Link>
-                                <Link to={ROUTES.PURPOSES.path}>Next</Link>
-                              </div>
-                            )}
-                          />
+                              <ol>
+                                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                                <li>Aliquam tincidunt mauris eu risus.</li>
+                              </ol>
 
-                          <Route
-                            {...ROUTES.PURPOSES}
-                            render={props => (
-                              <div>
-                                <h1>Purposes</h1>
-                                <Link to={ROUTES.PASSIONS.path}>Previous</Link>
-                                <Link to={ROUTES.QUESTION.path}>Next</Link>
-                              </div>
-                            )}
-                          />
+                              <blockquote>
+                                <p>
+                                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                  magna. Cras in mi at felis aliquet congue. Ut a est eget ligula
+                                  molestie gravida. Curabitur massa. Donec eleifend, libero at
+                                  sagittis mollis, tellus est malesuada tellus, at luctus turpis
+                                  elit sit amet quam. Vivamus pretium ornare est.
+                                </p>
+                              </blockquote>
 
-                          <Route
-                            {...ROUTES.QUESTION}
-                            render={props => (
-                              <div>
-                                <h1>Question</h1>
-                                <Link to={ROUTES.HOME.path}>Home</Link>
-                              </div>
-                            )}
-                          />
+                              <Link to={ROUTES.PASSIONS.path}>Next</Link>
+                            </Container>
+                          )}
+                        />
 
-                          <Redirect to="/" />
-                        </Switch>
-                      </PageTransition>
-                    )}
-                  />
-                </div>
-              </div>
+                        <Route
+                          {...ROUTES.PASSIONS}
+                          render={props => (
+                            <Container>
+                              <h1>Passions</h1>
+                              <Link to={ROUTES.HOME.path}>Previous</Link>
+                              <Link to={ROUTES.PURPOSES.path}>Next</Link>
+                            </Container>
+                          )}
+                        />
+
+                        <Route
+                          {...ROUTES.PURPOSES}
+                          render={props => (
+                            <div>
+                              <h1>Purposes</h1>
+                              <Link to={ROUTES.PASSIONS.path}>Previous</Link>
+                              <Link to={ROUTES.QUESTION.path}>Next</Link>
+                            </div>
+                          )}
+                        />
+
+                        <Route
+                          {...ROUTES.QUESTION}
+                          render={props => (
+                            <div>
+                              <h1>Question</h1>
+                              <Link to={ROUTES.HOME.path}>Home</Link>
+                            </div>
+                          )}
+                        />
+
+                        <Redirect to="/" />
+                      </Switch>
+                    </PageTransition>
+                  )}
+                />
+              </PageWrapper>
             );
           }}
         />
