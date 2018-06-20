@@ -1,0 +1,44 @@
+/* TODO: Slide left/right https://tympanus.net/Development/PageTransitions/ */
+
+$transitionDurationMs: 500;
+$enterTransitionDelayMs: 700;
+
+:export {
+  enterDurationMs: $transitionDurationMs + $enterTransitionDelayMs;
+  exitDurationMs: $transitionDurationMs;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.enter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0) scale(0.9);
+  opacity: 0;
+}
+
+.enterActive {
+  transition: opacity #{$transitionDurationMs}ms ease-out #{$enterTransitionDelayMs}ms,
+    transform #{$transitionDurationMs}ms ease-out #{$enterTransitionDelayMs}ms;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+
+.exit {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: none; /* Stop interactivity on fading page */
+}
+
+.exitActive {
+  transition: opacity #{$transitionDurationMs}ms ease-in,
+    transform #{$transitionDurationMs}ms ease-in;
+  opacity: 0;
+  transform: translateX(-50%) scale(1.1);
+}

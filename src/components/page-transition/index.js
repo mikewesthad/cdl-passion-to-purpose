@@ -1,5 +1,6 @@
 import React from "react";
-import style from "./index.css";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import style from "./index.module.scss";
 
 const classNameMap = {
   appear: style.appear,
@@ -12,10 +13,15 @@ const classNameMap = {
   exitDone: style.exitDone
 };
 
-export default function PageTransition({ pageKey }) {
+const timeout = {
+  enter: parseFloat(style.enterDurationMs),
+  exit: parseFloat(style.exitDurationMs)
+};
+
+export default function PageTransition({ pageKey, children }) {
   return (
     <TransitionGroup component={null}>
-      <CSSTransition key={pageKey} timeout={0} classNames={style}>
+      <CSSTransition key={pageKey} timeout={timeout} classNames={classNameMap}>
         {children}
       </CSSTransition>
     </TransitionGroup>

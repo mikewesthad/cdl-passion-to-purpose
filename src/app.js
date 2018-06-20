@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import PageTransition from "./components/page-transition";
 
 // NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
 
@@ -52,57 +53,53 @@ export default class App extends React.Component {
                 <div className="page-wrapper">
                   <Route
                     render={({ location }) => (
-                      <TransitionGroup component={null}>
-                        <CSSTransition key={location.pathname} timeout={0} classNames="fade-zoom-">
-                          <Switch location={location}>
-                            <Route
-                              {...ROUTES.HOME}
-                              render={props => (
-                                <div>
-                                    Next
-                                  </Link>
-                                </div>
-                              )}
-                            />
+                      <PageTransition pageKey={location.pathname}>
+                        <Switch location={location}>
+                          <Route
+                            {...ROUTES.HOME}
+                            render={props => (
+                              <div>
                                 <h1>Home</h1>
                                 <Link to={ROUTES.PASSIONS.path}>Next</Link>
+                              </div>
+                            )}
+                          />
 
-                            <Route
-                              {...ROUTES.PASSIONS}
-                              render={props => (
-                                <div>
-                                  <h1>Passions</h1>
-                                  <Link to={ROUTES.HOME.path}>Previous</Link>
-                                  <Link to={ROUTES.PURPOSES.path}>Next</Link>
-                                </div>
-                              )}
-                            />
+                          <Route
+                            {...ROUTES.PASSIONS}
+                            render={props => (
+                              <div>
+                                <h1>Passions</h1>
+                                <Link to={ROUTES.HOME.path}>Previous</Link>
+                                <Link to={ROUTES.PURPOSES.path}>Next</Link>
+                              </div>
+                            )}
+                          />
 
-                            <Route
-                              {...ROUTES.PURPOSES}
-                              render={props => (
-                                <div>
-                                  <h1>Purposes</h1>
-                                  <Link to={ROUTES.PASSIONS.path}>Previous</Link>
-                                  <Link to={ROUTES.QUESTION.path}>Next</Link>
-                                </div>
-                              )}
-                            />
+                          <Route
+                            {...ROUTES.PURPOSES}
+                            render={props => (
+                              <div>
+                                <h1>Purposes</h1>
+                                <Link to={ROUTES.PASSIONS.path}>Previous</Link>
+                                <Link to={ROUTES.QUESTION.path}>Next</Link>
+                              </div>
+                            )}
+                          />
 
-                            <Route
-                              {...ROUTES.QUESTION}
-                              render={props => (
-                                <div>
-                                  <h1>Question</h1>
-                                  <Link to={ROUTES.HOME.path}>Home</Link>
-                                </div>
-                              )}
-                            />
+                          <Route
+                            {...ROUTES.QUESTION}
+                            render={props => (
+                              <div>
+                                <h1>Question</h1>
+                                <Link to={ROUTES.HOME.path}>Home</Link>
+                              </div>
+                            )}
+                          />
 
-                            <Redirect to="/" />
-                          </Switch>
-                        </CSSTransition>
-                      </TransitionGroup>
+                          <Redirect to="/" />
+                        </Switch>
+                      </PageTransition>
                     )}
                   />
                 </div>
