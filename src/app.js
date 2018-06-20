@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PageTransition from "./components/page-transition";
 import "./style/global/index.scss";
 
