@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import "./style/style.scss";
-
-import style from "./app.module.scss";
-console.log(style);
-
 // NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
 
 const dev = process.env.NODE_ENV === "development";
@@ -64,13 +59,13 @@ export default class App extends React.Component {
                               {...ROUTES.HOME}
                               render={props => (
                                 <div>
-                                  <h1 className={style.test}>Home</h1>
-                                  <Link className="link" to={ROUTES.PASSIONS.path}>
                                     Next
                                   </Link>
                                 </div>
                               )}
                             />
+                                <h1>Home</h1>
+                                <Link to={ROUTES.PASSIONS.path}>Next</Link>
 
                             <Route
                               {...ROUTES.PASSIONS}
