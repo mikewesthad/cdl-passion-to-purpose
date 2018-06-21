@@ -23,6 +23,8 @@ const routes = [
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "generator", path: "/generator", Component: Generator }
 ];
+const routeMap = {};
+routes.forEach(route => (routeMap[route.key] = route));
 
 const getBasePath = location => {
   let parts = location.split("/");
