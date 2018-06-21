@@ -6,7 +6,7 @@ import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
 import Container from "./components/container";
 import { Home, Passion, Purpose, Generator } from "./pages";
-
+import gameData from "./store";
 import "./style/global/index.scss";
 
 // NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
@@ -71,7 +71,12 @@ export default class App extends React.Component {
                               path={path}
                               {...otherProps}
                               render={props => (
-                                <Component nextRoute={nextRoute} backRoute={backRoute} />
+                                <Component
+                                  gameData={gameData}
+                                  nextRoute={nextRoute}
+                                  backRoute={backRoute}
+                                  {...props}
+                                />
                               )}
                             />
                           );
