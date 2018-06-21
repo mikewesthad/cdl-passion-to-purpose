@@ -64,6 +64,7 @@ export default class App extends React.Component {
                           let backRoute, nextRoute;
                           if (i > 0) backRoute = routes[i - 1].path;
                           if (i < routes.length - 1) nextRoute = routes[i + 1].path;
+                          else nextRoute = routes[0].path;
                           const { key, path, Component, ...otherProps } = route;
                           return (
                             <Route
