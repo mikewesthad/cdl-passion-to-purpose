@@ -7,7 +7,6 @@ import PageWrapper from "./components/page-wrapper";
 import Container from "./components/container";
 import { Home, Passion, Purpose, Generator } from "./pages";
 import gameData from "./store";
-import "./style/global/index.scss";
 
 // NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
 
