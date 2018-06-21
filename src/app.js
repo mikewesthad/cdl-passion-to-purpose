@@ -54,7 +54,17 @@ export default class App extends React.Component {
       <BrowserRouter basename={basename}>
         <Route
           render={({ location }) => {
-            // Check paths here are redirect to first page if missing data
+            // If the user tries to jump ahead, redirect to home
+            const pathname = location.pathname;
+            const { passionStore, purposeStore } = gameData;
+            const isPassionValid = passionStore.areAllResponsesValid();
+            const isPurposeValid = purposeStore.areAllResponsesValid();
+            if (
+              (pathname === routeMap.purpose.path && !isPassionValid) ||
+              (pathname === routeMap.generator.path && (!isPassionValid || !isPurposeValid))
+            ) {
+              return <Redirect to={routeMap.home.path} />;
+            }
 
             return (
               <PageWrapper>
