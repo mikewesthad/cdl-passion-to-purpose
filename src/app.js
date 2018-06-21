@@ -13,7 +13,11 @@ import gameData from "./store";
 const dev = process.env.NODE_ENV === "development";
 console.log(process.env.NODE_ENV);
 
-const basename = dev ? "/" : "/cdl-passion-to-purpose";
+const publicUrl = process.env.PUBLIC_URL;
+const parts = publicUrl.replace(/https?:\/\//, "").split("/");
+const base = parts.slice(1).join("/");
+
+const basename = dev ? "/" : base;
 
 // Linear sequence of routes
 const routes = [
