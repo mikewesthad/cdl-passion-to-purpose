@@ -18,11 +18,19 @@ const timeout = {
   exit: parseFloat(style.exitDurationMs)
 };
 
+// Scroll in-between page transitions
+const scrollToTop = () => window.scrollTo(0, 0);
+
 export default function PageTransition({ pageKey, children }) {
   return (
     <TransitionGroup component={null}>
-      <CSSTransition key={pageKey} timeout={timeout} classNames={classNameMap}>
-        {children}
+      <CSSTransition
+        key={pageKey}
+        timeout={timeout}
+        classNames={classNameMap}
+        onExited={scrollToTop}
+      >
+        <div style={{ width: "100%" }}>{children}</div>
       </CSSTransition>
     </TransitionGroup>
   );
