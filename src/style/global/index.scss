@@ -1,3 +1,6 @@
+$primary-color: #2eb4ff;
+$font-color: #16171f;
+
 html,
 body {
   margin: 0;
@@ -13,6 +16,188 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
+html {
+  font-size: 14px;
+
+  @media (min-width: 800px) {
+    font-size: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
+
 body {
+  background-color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: $font-color;
   background: url(../../images/geometry.png);
+}
+
+a.link {
+  transition: 0.2s ease;
+  color: $primary-color;
+
+  &:visited {
+    color: $primary-color;
+  }
+
+  &:hover {
+    color: darken($primary-color, 15%);
+  }
+
+  &:active {
+    color: darken($primary-color, 30%);
+  }
+}
+
+.attribution {
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.step-count {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.title-emphasis {
+  font-weight: 800;
+}
+
+.description {
+  font-style: italic;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.button {
+  // Resets
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  margin: 0;
+  outline: none;
+
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 1.2rem 1.75rem;
+
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+}
+
+.button__stacked {
+  margin: 0.5rem auto;
+}
+
+.navigation {
+  margin: 2rem 0;
+}
+
+.form {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form__error-message {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #ff0000;
+  text-align: center;
+}
+
+.prompt {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.prompt__label {
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.prompt__label-number {
+  margin-right: 1rem;
+  margin-left: -2rem;
+}
+
+.prompt__input {
+  font-size: 1.2rem;
+  font-style: italic;
+  background-color: white;
+  height: 3rem;
+  border: 0.15rem solid #8e8e8e;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  padding: 1.5rem 1rem;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
+
+.back-button,
+.submit-button {
+  margin: 0.5rem 1.25rem;
+}
+
+.generated-question {
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 3rem 0;
+
+  @media (min-width: 400px) {
+    margin: 4rem 0;
+  }
+  @media (min-width: 600px) {
+    margin: 5rem 0;
+  }
+}
+
+.generated-passion,
+.generated-purpose {
+  text-decoration: underline;
+  font-weight: 600;
 }

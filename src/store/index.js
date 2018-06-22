@@ -11,18 +11,23 @@ class GameData {
       "I am really good at",
       "I talk to my friends about",
       "I spend my money on",
-      "I am a fan of",
-      "I read all about"
+      "I am a fan of"
     ]);
 
+    // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
-      "Challenge",
-      "Raise awareness about",
-      "Protest",
-      "Improve",
-      "Advocate for",
-      "Change"
+      "I want to challenge",
+      "I want to protest",
+      "I want to improve",
+      "I want to advocate for",
+      "I want to change"
     ]);
+  }
+
+  getPurposesWithVerb() {
+    return this.purposeStore.responses.map(
+      (purpose, i) => this.purposeStore.questions[i].replace("I want to ", "") + " " + purpose
+    );
   }
 
   reset() {
@@ -67,7 +72,7 @@ class ResponsesStore {
     return this.responses.slice();
   }
   fromJSON(json) {
-    this.setResponses(json);
+    if (json.length) this.setResponses(json.slice(0, this.numQuestions));
   }
 
   @action
@@ -84,13 +89,12 @@ class ResponsesStore {
   }
 }
 
-// const store = new GameStore();
 const store = new GameData();
 
-autorun(() => {
-  console.log(store.passionStore.responses.slice());
-  console.log(store.purposeStore.responses.slice());
-});
+// autorun(() => {
+//   console.log(store.passionStore.responses.slice());
+//   console.log(store.purposeStore.responses.slice());
+// });
 
 syncToStorage("passion-to-purpose-data", store);
 
