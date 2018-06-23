@@ -1,10 +1,16 @@
 import { extendObservable, observable, action, computed, autorun } from "mobx";
 import syncToStorage from "./sync-to-storage";
+import firebase from "../utils/firebase";
+import isEqual from "lodash.isequal";
 
+const database = firebase.database();
 const numQuestions = 6;
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
+
 class GameData {
+  @observable lastSaved = null;
+
   constructor() {
     this.passionStore = new ResponsesStore(this, [
       "I spend my time",
@@ -24,6 +30,22 @@ class GameData {
     ]);
   }
 
+  saveToFirebase() {
+    const dataToSave = {
+      passions: this.passionStore.toJSON(),
+      purposes: this.purposeStore.toJSON()
+    };
+    if (!isEqual(dataToSave, this.lastSaved)) {
+      try {
+        database
+          .ref()
+          .push()
+          .set(dataToSave);
+        this.lastSaved = dataToSave;
+      } catch (e) {}
+    }
+  }
+
   getPurposesWithVerb() {
     return this.purposeStore.responses.map(
       (purpose, i) => this.purposeStore.questions[i].replace("I want to ", "") + " " + purpose
@@ -39,12 +61,14 @@ class GameData {
   toJSON() {
     return {
       passions: this.passionStore.toJSON(),
-      purposes: this.purposeStore.toJSON()
+      purposes: this.purposeStore.toJSON(),
+      lastSaved: this.lastSaved
     };
   }
   fromJSON(json) {
     if (json.passions) this.passionStore.fromJSON(json.passions);
     if (json.purposes) this.purposeStore.fromJSON(json.purposes);
+    if (json.lastSaved) this.lastSaved = json.lastSaved;
   }
 }
 

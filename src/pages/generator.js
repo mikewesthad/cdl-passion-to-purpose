@@ -16,6 +16,11 @@ export default class Generator extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const gameData = this.props.gameData;
+    gameData.saveToFirebase();
+  }
+
   startOver = () => {
     const { history, nextRoute } = this.props;
     history.push(nextRoute);
