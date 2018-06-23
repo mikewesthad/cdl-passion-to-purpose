@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
-import { shuffle, generateCombinations } from "../utils/array-utils";
+import { generateCombinations } from "../utils/array-utils";
 import Container from "../components/container";
 
 @observer

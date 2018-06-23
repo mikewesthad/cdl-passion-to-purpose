@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { observer } from "mobx-react";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";

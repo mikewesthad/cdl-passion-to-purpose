@@ -1,10 +1,9 @@
-import { extendObservable, observable, action, computed, autorun } from "mobx";
+import { extendObservable, observable, action, autorun } from "mobx";
 import syncToStorage from "./sync-to-storage";
 import firebase from "../utils/firebase";
 import isEqual from "lodash.isequal";
 
 const database = firebase.database();
-const numQuestions = 6;
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
 
