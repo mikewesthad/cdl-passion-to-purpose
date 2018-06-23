@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect, withRouter } from "react-router
 import { observer } from "mobx-react";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
+import Analytics from "./components/analytics";
 import { Home, Passion, Purpose, Generator } from "./pages";
 import gameData from "./store";
 
@@ -12,7 +13,7 @@ const dev = process.env.NODE_ENV === "development";
 const publicUrl = process.env.PUBLIC_URL;
 const parts = publicUrl.replace(/https?:\/\//, "").split("/");
 const base = parts.slice(1).join("/");
-const basename = dev ? "/" : base;
+const basename = dev ? "" : base;
 
 // Linear sequence of routes
 const routes = [
@@ -24,21 +25,6 @@ const routes = [
 
 const routeMap = {};
 routes.forEach(route => (routeMap[route.key] = route));
-
-// Add GA
-{
-  /* <Route
-  render={props => (
-    <Analytics
-      basePath={getBasePath(location.pathname)}
-      trackingId="UA-114340105-4"
-      gameStartRoute="/"
-      gameEndRoute="/11"
-      {...props}
-    />
-  )}
-/> */
-}
 
 @observer
 export default class App extends React.Component {
@@ -61,6 +47,12 @@ export default class App extends React.Component {
 
             return (
               <PageWrapper>
+                <Analytics
+                  basename={basename}
+                  trackingId="UA-114340105-6"
+                  gameStartRoute={routeMap.home.path}
+                  gameEndRoute={routeMap.generator.path}
+                />
                 <Route
                   render={({ location }) => (
                     <PageTransition pageKey={location.pathname}>
