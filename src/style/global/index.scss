@@ -58,24 +58,34 @@ a.link {
   font-size: 0.9rem;
   font-style: italic;
   text-align: center;
-  margin-top: 2rem;
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
 }
 
 .text-center {
   text-align: center;
 }
 
+.display-block {
+  display: block;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
 .step-count {
   text-align: center;
   font-weight: 400;
   font-size: 1rem;
+  margin: 0 0 2rem 0;
 }
 
 .title {
   font-weight: 600;
   font-size: 2.4rem;
   text-align: center;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .title-emphasis {
