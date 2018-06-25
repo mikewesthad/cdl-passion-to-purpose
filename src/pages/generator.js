@@ -43,7 +43,7 @@ export default class Generator extends React.Component {
     const [passion, purpose] = this.state.permutations[0];
 
     const question = encodeURIComponent(
-      `How might we use ${passion} to ${purpose}? Check out @ConvergenceDLab's Passion to Purpose: `
+      `How might we use ${passion} to ${purpose}? Check out @ConvergenceDLab's Passion to Purpose:`
     );
     const url = encodeURIComponent(
       `https://www.convergencedesignlab.org/web-resources/passion-to-purpose/`
