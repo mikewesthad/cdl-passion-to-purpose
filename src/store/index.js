@@ -1,9 +1,9 @@
 import { extendObservable, observable, action, autorun } from "mobx";
 import syncToStorage from "./sync-to-storage";
-import firebase from "../utils/firebase";
+// import firebase from "../utils/firebase";
 import isEqual from "lodash.isequal";
 
-const database = firebase.database();
+// const database = firebase.database();
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
 
@@ -30,19 +30,19 @@ class GameData {
   }
 
   saveToFirebase() {
-    const dataToSave = {
-      passions: this.passionStore.toJSON(),
-      purposes: this.purposeStore.toJSON()
-    };
-    if (!isEqual(dataToSave, this.lastSaved)) {
-      try {
-        database
-          .ref()
-          .push()
-          .set(dataToSave);
-        this.lastSaved = dataToSave;
-      } catch (e) {}
-    }
+    // const dataToSave = {
+    //   passions: this.passionStore.toJSON(),
+    //   purposes: this.purposeStore.toJSON()
+    // };
+    // if (!isEqual(dataToSave, this.lastSaved)) {
+    //   try {
+    //     database
+    //       .ref()
+    //       .push()
+    //       .set(dataToSave);
+    //     this.lastSaved = dataToSave;
+    //   } catch (e) {}
+    // }
   }
 
   getPurposesWithVerb() {
