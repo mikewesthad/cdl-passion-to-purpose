@@ -7,8 +7,6 @@ import Analytics from "./components/analytics";
 import { Home, Passion, Purpose, Generator } from "./pages";
 import gameData from "./store";
 
-// NEED TO CONFIG APACHE TO REDIRECT EVERYTHING HERE
-
 const dev = process.env.NODE_ENV === "development";
 const publicUrl = process.env.PUBLIC_URL;
 const parts = publicUrl.replace(/https?:\/\//, "").split("/");
