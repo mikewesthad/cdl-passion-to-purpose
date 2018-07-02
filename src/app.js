@@ -54,6 +54,7 @@ export default class App extends React.Component {
               <PageWrapper>
                 <Analytics
                   basename={basename}
+                  dummyLog={isDev}
                   trackingId="UA-114340105-6"
                   gameStartRoute={routeMap.home.path}
                   gameEndRoute={routeMap.generator.path}
