@@ -4,7 +4,7 @@ const path = require("path");
 const minimist = require("minimist");
 const dotenv = require("dotenv");
 
-dotenv.config({ path: path.resolve(__dirname, "..", ".env.ftp") });
+dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
 
 const argv = minimist(process.argv.slice(2));
 const { src, dest } = argv;
