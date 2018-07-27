@@ -67,7 +67,6 @@
   "prettier": {
     "printWidth": 100
   },
-  "homepage": "https://www.convergencedesignlab.org/web-resources/passion-to-purpose",
   "scripts": {
     "start": "node ./scripts/start.js",
     "build": "node ./scripts/build.js",

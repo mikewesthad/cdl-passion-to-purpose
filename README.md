@@ -13,3 +13,7 @@ npm install
 ```
 npm run start
 ```
+
+## Deploying
+
+Copy the .sample.env file, rename to .env and fill out the appropriate information.
