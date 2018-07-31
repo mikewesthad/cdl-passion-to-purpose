@@ -7,7 +7,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: path.resolve(__dirname, "..", ".env") });
 
 const argv = minimist(process.argv.slice(2));
-const { src, dest } = argv;
+const { src, dest = process.env.FTP_DEST } = argv;
 if (!src) throw new Error("You must specify where the source files to upload are, using --src");
 if (!dest)
   throw new Error(
