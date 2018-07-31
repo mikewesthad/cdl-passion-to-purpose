@@ -9,6 +9,7 @@ const isValid = elem => elem !== "";
 
 class GameData {
   @observable lastSaved = null;
+  @observable hasUserPermission = true;
 
   constructor() {
     this.passionStore = new ResponsesStore(this, [
@@ -30,19 +31,21 @@ class GameData {
   }
 
   saveToFirebase() {
-    const dataToSave = {
-      passions: this.passionStore.toJSON(),
-      purposes: this.purposeStore.toJSON(),
-      timestamp: firebase.database.ServerValue.TIMESTAMP
-    };
-    if (!isEqual(dataToSave, this.lastSaved)) {
-      try {
-        database
-          .ref()
-          .push()
-          .set(dataToSave);
-        this.lastSaved = dataToSave;
-      } catch (e) {}
+    if (this.hasUserPermission) {
+      const dataToSave = {
+        passions: this.passionStore.toJSON(),
+        purposes: this.purposeStore.toJSON(),
+        timestamp: firebase.database.ServerValue.TIMESTAMP
+      };
+      if (!isEqual(dataToSave, this.lastSaved)) {
+        try {
+          database
+            .ref()
+            .push()
+            .set(dataToSave);
+          this.lastSaved = dataToSave;
+        } catch (e) {}
+      }
     }
   }
 
@@ -57,11 +60,17 @@ class GameData {
     this.purposeStore.reset();
   }
 
+  @action
+  setUserPermission(hasPermission) {
+    this.hasUserPermission = hasPermission;
+  }
+
   // Controlled Serialization
   toJSON() {
     return {
       passions: this.passionStore.toJSON(),
       purposes: this.purposeStore.toJSON(),
+      hasUserPermission: this.hasUserPermission,
       lastSaved: this.lastSaved
     };
   }
@@ -69,6 +78,7 @@ class GameData {
     if (json.passions) this.passionStore.fromJSON(json.passions);
     if (json.purposes) this.purposeStore.fromJSON(json.purposes);
     if (json.lastSaved) this.lastSaved = json.lastSaved;
+    if (json.hasUserPermission !== undefined) this.hasUserPermission = json.hasUserPermission;
   }
 }
 

@@ -27,7 +27,7 @@ export default class PromptTemplate extends React.Component {
 
   render() {
     const { showError } = this.state;
-    const { backRoute, store, stepNumber, title, description } = this.props;
+    const { backRoute, store, stepNumber, title, description, afterPromptComponent } = this.props;
     const prompts = store.getQuestions();
 
     const inputs = prompts.map((prompt, i) => {
@@ -61,6 +61,7 @@ export default class PromptTemplate extends React.Component {
           {showError && (
             <div className="form__error-message">*Fill out all the prompts to continue!</div>
           )}
+          {afterPromptComponent}
           <div className="navigation">
             <Link className="button back-button" to={backRoute}>
               ↶ Back
