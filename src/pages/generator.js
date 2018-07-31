@@ -42,13 +42,12 @@ export default class Generator extends React.Component {
   render() {
     const [passion, purpose] = this.state.permutations[0];
 
-    const question = encodeURIComponent(
-      `How might we use ${passion} to ${purpose}? Check out @ConvergenceDLab's Passion to Purpose:`
+    const tweetText = encodeURIComponent(
+      `“How might we use ${passion} to ${purpose}?” Check out @ConvergenceDLab's Passion to Purpose tool:`
     );
-    const url = encodeURIComponent(
-      `https://www.convergencedesignlab.org/web-resources/passion-to-purpose/`
-    );
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${question}&url=${url}`;
+    const url = encodeURIComponent(`https://www.convergencedesignlab.org/p2p`);
+    const hashtags = "InsightsThatDelight";
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}&url=${url}&hashtags=${hashtags}`;
     return (
       <Container>
         <div className="step-count">Step 3/3</div>
