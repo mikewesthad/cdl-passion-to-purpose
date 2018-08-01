@@ -51,7 +51,7 @@ export default class Generator extends React.Component {
     return (
       <Container>
         <div className="step-count">Step 3/3</div>
-        <h1 className="title">How might we... ?</h1>
+        <h1 className="title">How might we...?</h1>
         <div className="description">
           Let’s combine your passion and purpose – it’s okay if the ideas are crazy!
         </div>
