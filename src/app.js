@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
 import Analytics from "./components/analytics";
-import { Home, Passion, Purpose, Generator } from "./pages";
+import { routes, routeMap } from "./pages";
 import gameData from "./store";
 
 // create-react-app uses package.json's homepage field to configure the path for assets, so use the
@@ -16,20 +16,6 @@ if (!isDev) {
   const parts = publicUrl.replace(/https?:\/\//, "").split("/");
   basename = parts.slice(1).join("/");
 }
-
-// The app is based on a linear sequence of routes - from the current route you can go to previous
-// route (i - 1) or the next route (i + 1)
-const routes = [
-  { key: "home", path: "/", exact: true, Component: Home },
-  { key: "passion", path: "/passion", Component: Passion },
-  { key: "purpose", path: "/purpose", Component: Purpose },
-  { key: "generator", path: "/generator", Component: Generator }
-];
-// Create a mapping from route key -> route object above
-const routeMap = routes.reduce((map, route) => {
-  map[route.key] = route;
-  return map;
-}, {});
 
 @observer
 export default class App extends React.Component {
