@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import gameData from "../store";
 import Container from "../components/container";
 import ccImage from "../images/cc-by-nc-sa.svg";
 
@@ -21,6 +22,8 @@ const attributionUrl = `
 >Convergence Design Lab</a>
 `;
 
+const reset = () => gameData.reset();
+
 export default function Home(props) {
   return (
     <Container>
@@ -30,7 +33,7 @@ export default function Home(props) {
         <p>Answer a couple simple questions to generate design questions to inspire yourself.</p>
       </div>
       <div className="text-center">
-        <Link className="button" to={props.nextRoute}>
+        <Link className="button" onClick={reset} to={props.nextRoute}>
           Let's Go ➞
         </Link>
       </div>
