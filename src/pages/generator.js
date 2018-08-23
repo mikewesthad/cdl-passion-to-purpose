@@ -67,12 +67,12 @@ export default class Generator extends React.Component {
           </div>
           <div>
             <a className="button button__stacked" href={twitterUrl} target="_blank">
-              Tweet it
+              Tweet It
             </a>
           </div>
           <div>
             <button className="button button__stacked" onClick={this.startOver}>
-              Start over
+              Start Over
             </button>
           </div>
         </div>
