@@ -1,4 +1,4 @@
-import { extendObservable, observable, action, autorun } from "mobx";
+import { extendObservable, action } from "mobx";
 import syncToStorage from "./sync-to-storage";
 import firebase from "../utils/firebase";
 import isEqual from "lodash.isequal";
@@ -8,10 +8,12 @@ const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
 
 class GameData {
-  @observable lastSaved = null;
-  @observable hasUserPermission = true;
-
   constructor() {
+    extendObservable(this, {
+      lastSaved: null,
+      hasPermission: true
+    });
+
     this.passionStore = new ResponsesStore(this, [
       "I spend my time",
       "I am really good at",
@@ -60,10 +62,9 @@ class GameData {
     this.purposeStore.reset();
   }
 
-  @action
-  setUserPermission(hasPermission) {
+  setUserPermission = action(hasPermission => {
     this.hasUserPermission = hasPermission;
-  }
+  });
 
   // Controlled Serialization
   toJSON() {
@@ -109,18 +110,15 @@ class ResponsesStore {
     if (json.length) this.setResponses(json.slice(0, this.numQuestions));
   }
 
-  @action
-  setResponse = (i, response) => {
+  setResponse = action((i, response) => {
     this.responses[i] = response;
-  };
-  @action
-  setResponses = responses => {
+  });
+  setResponses = action(responses => {
     this.responses = responses;
-  };
-  @action
-  reset() {
+  });
+  reset = action(() => {
     this.responses = emptyStringArray(this.numQuestions);
-  }
+  });
 }
 
 const store = new GameData();

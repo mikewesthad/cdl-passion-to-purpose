@@ -4,8 +4,7 @@ import { generateCombinations } from "../utils/array-utils";
 import Container from "../components/container";
 import { routeMap } from "./index";
 
-@observer
-export default class Generator extends React.Component {
+class Generator extends React.Component {
   constructor(props) {
     super(props);
 
@@ -91,3 +90,5 @@ export default class Generator extends React.Component {
     );
   }
 }
+
+export default observer(Generator);

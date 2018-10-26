@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import Container from "../container";
 
-@observer
-export default class PromptTemplate extends React.Component {
+class PromptTemplate extends React.Component {
   state = {
     showError: false
   };
@@ -37,7 +36,10 @@ export default class PromptTemplate extends React.Component {
         <div className="prompt" key={id}>
           <label className="prompt__label" htmlFor={id}>
             <span className="prompt__label-number">{i + 1}.</span>
-            <span className="prompt__label-text">{prompt}...</span>
+            <span className="prompt__label-text">
+              {prompt}
+              ...
+            </span>
           </label>
           <input
             type="text"
@@ -53,7 +55,10 @@ export default class PromptTemplate extends React.Component {
 
     return (
       <Container>
-        <div className="step-count">Step {stepNumber}/3</div>
+        <div className="step-count">
+          Step {stepNumber}
+          /3
+        </div>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
         <form className="form" onSubmit={this.onSubmit}>
@@ -73,3 +78,5 @@ export default class PromptTemplate extends React.Component {
     );
   }
 }
+
+export default observer(PromptTemplate);

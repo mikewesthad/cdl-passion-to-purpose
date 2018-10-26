@@ -17,8 +17,7 @@ if (!isDev) {
   basename = parts.slice(1).join("/");
 }
 
-@observer
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <BrowserRouter basename={basename}>
@@ -90,3 +89,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default observer(App);
