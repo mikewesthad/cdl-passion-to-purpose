@@ -6,12 +6,14 @@ import isEqual from "lodash.isequal";
 const database = firebase.database();
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
+const frontEndVersionString = process.env.REACT_APP_VERSION.replace(/\./g, "-");
 
 class GameData {
   constructor() {
     extendObservable(this, {
       lastSaved: null,
       hasUserPermission: true,
+      gameRoom: "default"
     });
 
     this.passionStore = new ResponsesStore(this, [
@@ -32,7 +34,7 @@ class GameData {
     ]);
   }
 
-  saveToFirebase() {
+  async saveToFirebase() {
     if (this.hasUserPermission) {
       const dataToSave = {
         passions: this.passionStore.toJSON(),
@@ -41,12 +43,18 @@ class GameData {
       };
       if (!isEqual(dataToSave, this.lastSaved)) {
         try {
-          database
-            .ref()
+          const p1 = database
+            .ref(`${frontEndVersionString}/rooms/${this.gameRoom}/responses`)
             .push()
             .set(dataToSave);
+          const p2 = database
+            .ref(`roomListing/${this.gameRoom}/${frontEndVersionString}/updatedAt`)
+            .set(firebase.database.ServerValue.TIMESTAMP);
+          await Promise.all([p1, p2]);
           this.lastSaved = dataToSave;
-        } catch (e) {}
+        } catch (e) {
+          console.log(e);
+        }
       }
     }
   }
