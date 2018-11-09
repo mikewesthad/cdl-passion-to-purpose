@@ -11,7 +11,7 @@ class GameData {
   constructor() {
     extendObservable(this, {
       lastSaved: null,
-      hasPermission: true
+      hasUserPermission: true,
     });
 
     this.passionStore = new ResponsesStore(this, [
