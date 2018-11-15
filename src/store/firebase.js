@@ -23,7 +23,7 @@ class FirebaseDatabase {
       .ref(`rooms/${versionString}/${roomName}/responses`)
       .push()
       .set({ passions, purposes, timestamp: now });
-    const p2 = this.db.ref(`roomDirectory/${roomName}/${versionString}/updatedAt`).set(now);
+    const p2 = this.db.ref(`roomDirectory/${versionString}/${roomName}/updatedAt`).set(now);
     return Promise.all([p1, p2]);
   }
 }
