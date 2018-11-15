@@ -39,32 +39,28 @@ const App = withRouter(
             gameEndRoute={routeMap.generator.path}
           />
 
-          <Route
-            render={({ location }) => (
-              <PageTransition pageKey={location.pathname}>
-                <Switch location={location}>
-                  {routes.map((route, i) => {
-                    const nextRoute = i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
+          <PageTransition pageKey={location.pathname}>
+            <Switch location={location}>
+              {routes.map((route, i) => {
+                const nextRoute = i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
 
-                    // All pages have the same general API - they need the game store & next route
-                    const { key, path, Component, ...otherProps } = route;
-                    return (
-                      <Route
-                        key={key}
-                        path={path}
-                        {...otherProps}
-                        render={props => (
-                          <Component gameData={gameData} nextRoute={nextRoute} {...props} />
-                        )}
-                      />
-                    );
-                  })}
+                // All pages have the same general API - they need the game store & next route
+                const { key, path, Component, ...otherProps } = route;
+                return (
+                  <Route
+                    key={key}
+                    path={path}
+                    {...otherProps}
+                    render={props => (
+                      <Component gameData={gameData} nextRoute={nextRoute} {...props} />
+                    )}
+                  />
+                );
+              })}
 
-                  <Redirect to={routeMap.home.path} />
-                </Switch>
-              </PageTransition>
-            )}
-          />
+              <Redirect to={routeMap.home.path} />
+            </Switch>
+          </PageTransition>
         </PageWrapper>
       );
     }
