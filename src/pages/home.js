@@ -4,8 +4,6 @@ import gameData from "../store";
 import Container from "../components/container";
 import Attribution from "../components/attribution";
 
-const reset = () => gameData.reset();
-
 export default function Home(props) {
   return (
     <Container>
@@ -15,7 +13,7 @@ export default function Home(props) {
         <p>Answer a couple simple questions to generate design questions to inspire yourself.</p>
       </div>
       <div className="text-center">
-        <Link className="button" onClick={reset} to={props.nextRoute}>
+        <Link className="button" to={props.nextRoute}>
           Let's Go ➞
         </Link>
       </div>

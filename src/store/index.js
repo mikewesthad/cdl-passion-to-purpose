@@ -128,6 +128,7 @@ const store = new GameData();
 //   console.log(store.purposeStore.responses.slice());
 // });
 
-syncToStorage("passion-to-purpose-data", store);
+// No need to sync to storage right now - the game should start fresh on page reload
+// syncToStorage("passion-to-purpose-data", store);
 
 export default store;
