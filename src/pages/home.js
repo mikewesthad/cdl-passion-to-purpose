@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import gameData from "../store";
 import Container from "../components/container";
-import Logo from "../components/logo";
+import Attribution from "../components/attribution";
 
 const reset = () => gameData.reset();
 
@@ -19,11 +19,7 @@ export default function Home(props) {
           Let's Go ➞
         </Link>
       </div>
-      <div style={{ marginTop: "2rem", textAlign: "center" }}>
-        <a className="link" href="https://convergencedesignlab.org/">
-          <Logo />
-        </a>
-      </div>
+      <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
     </Container>
   );
 }
