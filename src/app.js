@@ -1,4 +1,4 @@
-import React, { PureComponent, Component } from "react";
+import React, { Component } from "react";
 import { MemoryRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
 import { observer } from "mobx-react";
 import Url from "url-parse";
@@ -66,7 +66,7 @@ const App = withRouter(
   }
 );
 
-class RoutedApp extends PureComponent {
+class RoutedApp extends Component {
   render() {
     return (
       <MemoryRouter>
