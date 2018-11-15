@@ -1,5 +1,11 @@
 .logo {
   width: 13rem;
+  cursor: pointer;
+  transition: 0.2s transform;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .logoLink {
