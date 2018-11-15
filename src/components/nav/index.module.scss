@@ -1,0 +1,19 @@
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.back,
+.restart {
+  position: fixed;
+  top: 0.5rem;
+}
+
+.back {
+  left: 0.5rem;
+}
+
+.restart {
+  right: 0.5rem;
+}
