@@ -2,6 +2,7 @@ import { extendObservable, action } from "mobx";
 import syncToStorage from "./sync-to-storage";
 import db from "./firebase";
 import isEqual from "lodash.isequal";
+import parseGameRoom from "../utils/parse-game-room";
 
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
@@ -12,7 +13,7 @@ class GameData {
     extendObservable(this, {
       lastSaved: null,
       hasUserPermission: true,
-      gameRoom: "default"
+      gameRoom: parseGameRoom()
     });
 
     this.passionStore = new ResponsesStore(this, [

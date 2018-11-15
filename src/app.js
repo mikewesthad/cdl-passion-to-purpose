@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { MemoryRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
 import { observer } from "mobx-react";
-import Url from "url-parse";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
 import Analytics from "./components/analytics";
@@ -10,12 +9,6 @@ import gameData from "./store";
 import Nav from "./components/nav";
 
 const isDev = process.env.NODE_ENV === "development";
-
-// TODO: verify this works in production and add to GA
-const baseUrl = new Url(isDev ? "http://localhost:3000" : process.env.PUBLIC_URL);
-const currentUrl = new Url(window.location);
-const gameRoom = currentUrl.pathname.slice().replace(baseUrl.pathname, "");
-console.log(`Game Room: ${gameRoom}`);
 
 const App = withRouter(
   class App extends Component {
