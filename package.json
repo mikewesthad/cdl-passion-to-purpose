@@ -19,6 +19,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
     "react-transition-group": "^2.5.0",
+    "release-it": "^7.6.3",
     "ssh2": "^0.6.1",
     "store": "^2.0.12",
     "typeface-montserrat": "0.0.54",
@@ -33,7 +34,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "push-ftp": "node ./scripts/push-ftp.js --src ./build/**",
-    "deploy": "npm run clean && npm run build && npm run push-ftp"
+    "deploy": "npm run clean && npm run build && npm run push-ftp",
+    "release-it": "release-it"
   },
   "prettier": {
     "printWidth": 100
