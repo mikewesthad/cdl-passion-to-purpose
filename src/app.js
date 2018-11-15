@@ -23,9 +23,14 @@ const App = withRouter(
     restart = () => this.props.history.push(routeMap.home.path);
 
     render() {
+      const { location } = this.props;
       return (
         <PageWrapper>
-          <Nav onBack={this.goBack} onRestart={this.restart} />
+          <Nav
+            disabled={location.pathname === routeMap.home.path}
+            onBack={this.goBack}
+            onRestart={this.restart}
+          />
 
           <Analytics
             dummyLog={isDev}
