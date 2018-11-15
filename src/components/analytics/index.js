@@ -3,6 +3,9 @@ import { withRouter } from "react-router-dom";
 import ReactGA from "react-ga";
 import PropTypes from "prop-types";
 import DummyGA from "./dummy-ga";
+import parseGameRoom from "../../utils/parse-game-room";
+
+const gameRoom = parseGameRoom();
 
 /**
  * A null-rendering component that observers the router's pathname in order to log page views and
@@ -35,25 +38,33 @@ class Analytics extends Component {
     analytics.initialize(this.props.trackingId);
   }
 
-  componentDidMount() {
+  logCurrentPage() {
     const { location, dummyLog } = this.props;
     const pathname = location.pathname;
     const analytics = dummyLog ? DummyGA : ReactGA;
-    analytics.pageview(pathname);
-    analytics.event({ category: "Game", action: "Game Started" });
+    analytics.pageview(`${gameRoom}${pathname}`);
+  }
+
+  logEvent(event) {
+    const analytics = this.props.dummyLog ? DummyGA : ReactGA;
+    analytics.event(event);
+  }
+
+  componentDidMount() {
+    this.logCurrentPage();
+    this.logEvent({ category: "Game", action: "Game Started" });
   }
 
   componentDidUpdate(prevProps) {
-    const { location, dummyLog, gameStartRoute, gameEndRoute } = this.props;
+    const { location, gameStartRoute, gameEndRoute } = this.props;
     const pathname = location.pathname;
-    const analytics = dummyLog ? DummyGA : ReactGA;
     const prevPathname = prevProps.location.pathname;
     if (prevPathname !== pathname) {
-      analytics.pageview(pathname);
+      this.logCurrentPage();
       if (pathname === gameStartRoute) {
-        analytics.event({ category: "Game", action: "Game Restarted" });
+        this.logEvent({ category: "Game", action: "Game Restarted" });
       } else if (pathname === gameEndRoute) {
-        analytics.event({ category: "Game", action: "Game Completed" });
+        this.logEvent({ category: "Game", action: "Game Completed" });
       }
     }
   }
