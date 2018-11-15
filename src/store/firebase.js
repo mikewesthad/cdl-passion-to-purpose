@@ -20,10 +20,10 @@ class FirebaseDatabase {
 
   saveResponses(versionString, roomName, passions, purposes) {
     const p1 = this.db
-      .ref(`rooms/${versionString}/${roomName}/responses`)
+      .ref(`rooms/${roomName}/${versionString}/responses`)
       .push()
       .set({ passions, purposes, timestamp: now });
-    const p2 = this.db.ref(`roomDirectory/${versionString}/${roomName}/updatedAt`).set(now);
+    const p2 = this.db.ref(`roomDirectory/${roomName}/${versionString}/updatedAt`).set(now);
     return Promise.all([p1, p2]);
   }
 }
