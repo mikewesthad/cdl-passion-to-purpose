@@ -1,9 +1,8 @@
 import { extendObservable, action } from "mobx";
 import syncToStorage from "./sync-to-storage";
-import firebase from "../utils/firebase";
+import db from "./firebase";
 import isEqual from "lodash.isequal";
 
-const database = firebase.database();
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
 const frontEndVersionString = process.env.REACT_APP_VERSION.replace(/\./g, "-");
@@ -34,27 +33,19 @@ class GameData {
     ]);
   }
 
-  async saveToFirebase() {
+  saveToFirebase() {
     if (this.hasUserPermission) {
       const dataToSave = {
         passions: this.passionStore.toJSON(),
-        purposes: this.purposeStore.toJSON(),
-        timestamp: firebase.database.ServerValue.TIMESTAMP
+        purposes: this.purposeStore.toJSON()
       };
       if (!isEqual(dataToSave, this.lastSaved)) {
-        try {
-          const p1 = database
-            .ref(`${frontEndVersionString}/rooms/${this.gameRoom}/responses`)
-            .push()
-            .set(dataToSave);
-          const p2 = database
-            .ref(`roomListing/${this.gameRoom}/${frontEndVersionString}/updatedAt`)
-            .set(firebase.database.ServerValue.TIMESTAMP);
-          await Promise.all([p1, p2]);
-          this.lastSaved = dataToSave;
-        } catch (e) {
-          console.log(e);
-        }
+        db.saveResponses(
+          frontEndVersionString,
+          this.gameRoom,
+          dataToSave.passions,
+          dataToSave.purposes
+        ).catch(console.log);
       }
     }
   }
