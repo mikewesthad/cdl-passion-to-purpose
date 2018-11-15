@@ -34,7 +34,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "push-ftp": "node ./scripts/push-ftp.js --src ./build/**",
-    "deploy": "npm run clean && npm run build && npm run push-ftp",
+    "deploy": "npm run build && npm run push-ftp",
     "release-it": "release-it -n --src.tag  --src.push --no-npm.publish"
   },
   "prettier": {
