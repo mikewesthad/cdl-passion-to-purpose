@@ -20,16 +20,6 @@ class Generator extends React.Component {
     gameData.saveToFirebase();
   }
 
-  startOver = () => {
-    const { history, nextRoute } = this.props;
-    history.push(nextRoute);
-  };
-
-  goToEdit = () => {
-    const { history } = this.props;
-    history.push(routeMap.passion.path);
-  };
-
   getNextPermutation = () => {
     this.setState(prev => {
       const gameData = this.props.gameData;
@@ -74,16 +64,6 @@ class Generator extends React.Component {
             <a className="button button__stacked" href={twitterUrl} target="_blank">
               Tweet It
             </a>
-          </div>
-          <div>
-            <button className="button button__stacked" onClick={this.goToEdit}>
-              Edit Responses
-            </button>
-          </div>
-          <div>
-            <button className="button button__stacked" onClick={this.startOver}>
-              Start Over
-            </button>
           </div>
         </div>
       </Container>

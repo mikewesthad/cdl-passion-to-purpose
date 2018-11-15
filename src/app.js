@@ -50,11 +50,8 @@ class App extends React.Component {
                     <PageTransition pageKey={location.pathname}>
                       <Switch location={location}>
                         {routes.map((route, i) => {
-                          // Find previous and next routes for the current route
-                          let backRoute, nextRoute;
-                          if (i > 0) backRoute = routes[i - 1].path;
-                          if (i < routes.length - 1) nextRoute = routes[i + 1].path;
-                          else nextRoute = routes[0].path;
+                          const nextRoute =
+                            i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
 
                           // All pages have the same general API - they need the game store, next
                           // route and previous route
@@ -65,12 +62,7 @@ class App extends React.Component {
                               path={path}
                               {...otherProps}
                               render={props => (
-                                <Component
-                                  gameData={gameData}
-                                  nextRoute={nextRoute}
-                                  backRoute={backRoute}
-                                  {...props}
-                                />
+                                <Component gameData={gameData} nextRoute={nextRoute} {...props} />
                               )}
                             />
                           );
