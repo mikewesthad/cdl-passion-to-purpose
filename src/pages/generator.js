@@ -2,7 +2,6 @@ import React from "react";
 import { observer } from "mobx-react";
 import { generateCombinations } from "../utils/array-utils";
 import Container from "../components/container";
-import { routeMap } from "./index";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -61,7 +60,12 @@ class Generator extends React.Component {
             </button>
           </div>
           <div>
-            <a className="button button__stacked" href={twitterUrl} target="_blank">
+            <a
+              className="button button__stacked"
+              href={twitterUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Tweet It
             </a>
           </div>
