@@ -25,7 +25,7 @@ export default class SocialShare extends Component {
 
     return (
       <div>
-        <div className={style.callToAction}>Like your idea? Share it!</div>
+        <div className={style.callToAction}>Like your generated design question? Share it!</div>
         <div className={style.shareButtons}>
           <TwitterShareButton
             className={style.shareButton}

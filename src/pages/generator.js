@@ -51,7 +51,7 @@ class Generator extends React.Component {
         <div className="text-center">
           <div>
             <button className="button button__stacked" onClick={this.getNextPermutation}>
-              Generate Another
+              Generate Another Question
             </button>
           </div>
           <SocialShare passion={passion} purpose={purpose} />
