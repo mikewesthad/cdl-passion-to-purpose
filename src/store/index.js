@@ -1,5 +1,4 @@
 import { extendObservable, action } from "mobx";
-import syncToStorage from "./sync-to-storage";
 import db from "./firebase";
 import isEqual from "lodash.isequal";
 import parseGameRoom from "../utils/parse-game-room";
@@ -123,13 +122,5 @@ class ResponsesStore {
 }
 
 const store = new GameData();
-
-// autorun(() => {
-//   console.log(store.passionStore.responses.slice());
-//   console.log(store.purposeStore.responses.slice());
-// });
-
-// No need to sync to storage right now - the game should start fresh on page reload
-// syncToStorage("passion-to-purpose-data", store);
 
 export default store;
