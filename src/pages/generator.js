@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import { generateCombinations } from "../utils/array-utils";
 import Container from "../components/container";
+import SocialShare from "../components/social-share";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -36,12 +37,6 @@ class Generator extends React.Component {
   render() {
     const [passion, purpose] = this.state.permutations[0];
 
-    const tweetText = encodeURIComponent(
-      `“How might we use ${passion} to ${purpose}?” Check out @ConvergenceDLab's Passion to Purpose tool:`
-    );
-    const url = encodeURIComponent(`https://www.convergencedesignlab.org/p2p`);
-    const hashtags = "InsightsThatDelight";
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${tweetText}&url=${url}&hashtags=${hashtags}`;
     return (
       <Container>
         <div className="step-count">Step 3/3</div>
@@ -59,16 +54,7 @@ class Generator extends React.Component {
               Generate Another
             </button>
           </div>
-          <div>
-            <a
-              className="button button__stacked"
-              href={twitterUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Tweet It
-            </a>
-          </div>
+          <SocialShare passion={passion} purpose={purpose} />
         </div>
       </Container>
     );

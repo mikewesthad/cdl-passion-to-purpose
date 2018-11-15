@@ -18,6 +18,7 @@
     "react-ga": "^2.5.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
+    "react-share": "^2.3.1",
     "react-transition-group": "^2.5.0",
     "release-it": "^7.6.3",
     "ssh2": "^0.6.1",
