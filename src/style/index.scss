@@ -1,5 +1,4 @@
-$primary-color: #2eb4ff;
-$font-color: #16171f;
+@import "./variables.scss";
 
 html,
 body {
@@ -34,7 +33,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: $font-color;
-  background: url(../../images/geometry.png);
+  background: url(../images/geometry.png);
 }
 
 a.link {
