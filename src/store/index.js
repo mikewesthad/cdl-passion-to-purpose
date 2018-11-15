@@ -47,6 +47,7 @@ class GameData {
           dataToSave.passions,
           dataToSave.purposes
         ).catch(console.log);
+        this.lastSaved = dataToSave;
       }
     }
   }
