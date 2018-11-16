@@ -1,8 +1,9 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { generateCombinations } from "../utils/array-utils";
-import Container from "../components/container";
-import SocialShare from "../components/social-share";
+import { generateCombinations } from "../../utils/array-utils";
+import Container from "../../components/container";
+import SocialShare from "../../components/social-share";
+import style from "./index.module.scss";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -44,16 +45,16 @@ class Generator extends React.Component {
         <div className="description">
           Let’s combine your passion and purpose – it’s okay if the ideas are crazy!
         </div>
-        <div className="generated-question">
-          How might we use <span className="generated-passion">{passion}</span> to{" "}
-          <span className="generated-purpose">{purpose}</span>?
-        </div>
-        <div className="text-center">
-          <div>
+        <div className={style.generatedQuestion}>
+          How might we use <span className={style.generatedPassion}>{passion}</span> to{" "}
+          <span className={style.generatedPurpose}>{purpose}</span>?
+          <div className={style.generateButtonContainer}>
             <button className="button button__stacked" onClick={this.getNextPermutation}>
-              Generate Another Question
+              Give Me Another
             </button>
           </div>
+        </div>
+        <div className="text-center">
           <SocialShare passion={passion} purpose={purpose} />
         </div>
       </Container>
