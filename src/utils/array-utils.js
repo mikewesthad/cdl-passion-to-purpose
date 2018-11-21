@@ -1,3 +1,10 @@
+
+export function range(start, stop) {
+  return Array(stop - start)
+    .fill(0)
+    .map((_, i) => i + start);
+}
+
 /**
  * Classic Fisher-Yates algorithm - shuffles in place.
  *
