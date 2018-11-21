@@ -21,6 +21,7 @@
     "react-share": "^2.3.1",
     "react-transition-group": "^2.5.0",
     "release-it": "^7.6.3",
+    "seedrandom": "^2.4.4",
     "ssh2": "^0.6.1",
     "store": "^2.0.12",
     "typeface-montserrat": "0.0.54",
