@@ -63,6 +63,17 @@ class GameData {
     }
   }
 
+  // saveNumCombinationsViewed(numCombinationsViewed) {
+  //   if (this.hasUserPermission && this.responseRef) {
+  //     db.updateNumPermutations(
+  //       this.responseRef,
+  //       frontEndVersionString,
+  //       this.gameRoom,
+  //       numCombinationsViewed
+  //     ).catch(console.log);
+  //   }
+  // }
+
   getPurposesWithVerb() {
     return this.purposeStore.responses.map(
       (purpose, i) => this.purposeStore.questions[i].replace("I want to ", "") + " " + purpose
