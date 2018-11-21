@@ -124,7 +124,13 @@ class ResponsesStore {
 const store = new GameData();
 
 // Testing
-// store.passionStore.setResponses(["biking"]);
-// store.purposeStore.setResponses(["police violence"]);
+// store.passionStore.setResponses(["cooking", "Lego", "video games", "photography", "comedy"]);
+// store.purposeStore.setResponses([
+//   "immigration policies",
+//   "police brutality",
+//   "schools",
+//   "affordable housing",
+//   "voting habits"
+// ]);
 
 export default store;
