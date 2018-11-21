@@ -48,11 +48,15 @@ class GameData {
         purposes: this.purposeStore.toJSON()
       };
       if (!isEqual(dataToSave, this.lastSaved)) {
+        const stringCombos = JSON.stringify(this.combinations);
+        this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
         db.saveResponses(
+          this.responseRef,
           frontEndVersionString,
           this.gameRoom,
           dataToSave.passions,
-          dataToSave.purposes
+          dataToSave.purposes,
+          stringCombos
         ).catch(console.log);
         this.lastSaved = dataToSave;
       }

@@ -18,11 +18,18 @@ class FirebaseDatabase {
     this.db = db;
   }
 
-  saveResponses(versionString, roomName, passions, purposes) {
-    const p1 = this.db
-      .ref(`rooms/${roomName}/${versionString}/responses`)
-      .push()
-      .set({ passions, purposes, timestamp: now });
+  getResponseRef(versionString, roomName) {
+    const responseRef = this.db.ref(`rooms/${roomName}/${versionString}/responses`).push();
+    return responseRef;
+  }
+
+  saveResponses(responseRef, versionString, roomName, passions, purposes, combinations) {
+    const p1 = responseRef.set({
+      passions,
+      purposes,
+      timestamp: now,
+      combinations
+    });
     const p2 = this.db.ref(`roomDirectory/${roomName}/${versionString}/updatedAt`).set(now);
     return Promise.all([p1, p2]);
   }
