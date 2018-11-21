@@ -2,6 +2,7 @@ import { extendObservable, action } from "mobx";
 import db from "./firebase";
 import isEqual from "lodash.isequal";
 import parseGameRoom from "../utils/parse-game-room";
+import { range, generateCombinations } from "../utils/array-utils";
 
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
@@ -12,7 +13,8 @@ class GameData {
     extendObservable(this, {
       lastSaved: null,
       hasUserPermission: true,
-      gameRoom: parseGameRoom()
+      gameRoom: parseGameRoom(),
+      combinations: []
     });
 
     this.passionStore = new ResponsesStore(this, [
@@ -32,6 +34,12 @@ class GameData {
       "I want to change"
     ]);
   }
+
+  generateCombinations = action(() => {
+    const passionIndices = range(0, this.passionStore.numQuestions);
+    const purposeIndices = range(0, this.purposeStore.numQuestions);
+    this.combinations = generateCombinations(passionIndices, purposeIndices);
+  });
 
   saveToFirebase() {
     if (this.hasUserPermission) {

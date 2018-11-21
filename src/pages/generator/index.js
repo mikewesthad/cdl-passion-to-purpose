@@ -1,6 +1,5 @@
 import React from "react";
 import { observer } from "mobx-react";
-import { generateCombinations } from "../../utils/array-utils";
 import Container from "../../components/container";
 import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
@@ -10,10 +9,8 @@ class Generator extends React.Component {
     super(props);
 
     const gameData = this.props.gameData;
-    const passionStore = gameData.passionStore;
-    this.state = {
-      permutations: generateCombinations(passionStore.responses, gameData.getPurposesWithVerb())
-    };
+    gameData.generateCombinations();
+    this.state = { combinationNumber: 0 };
   }
 
   componentDidMount() {
@@ -21,22 +18,20 @@ class Generator extends React.Component {
     gameData.saveToFirebase();
   }
 
-  getNextPermutation = () => {
+  getNextCombination = () => {
     this.setState(prev => {
-      const gameData = this.props.gameData;
-      const passionStore = gameData.passionStore;
-      if (prev.permutations.length === 1) {
-        return {
-          permutations: generateCombinations(passionStore.responses, gameData.getPurposesWithVerb())
-        };
-      } else {
-        return { permutations: this.state.permutations.slice(1) };
-      }
+      // TODO: save combo number to DB
+      return { combinationNumber: prev.combinationNumber + 1 };
     });
   };
 
   render() {
-    const [passion, purpose] = this.state.permutations[0];
+    const { gameData } = this.props;
+    const { combinationNumber } = this.state;
+    const combinations = gameData.combinations;
+    const [passionIndex, purposeIndex] = combinations[combinationNumber % combinations.length];
+    const passion = gameData.passionStore.responses[passionIndex];
+    const purpose = gameData.getPurposesWithVerb()[purposeIndex];
 
     return (
       <Container>
@@ -49,7 +44,7 @@ class Generator extends React.Component {
           How might we use <span className={style.generatedPassion}>{passion}</span> to{" "}
           <span className={style.generatedPurpose}>{purpose}</span>?
           <div className={style.generateButtonContainer}>
-            <button className="button button__stacked" onClick={this.getNextPermutation}>
+            <button className="button button__stacked" onClick={this.getNextCombination}>
               Give Me Another
             </button>
           </div>
