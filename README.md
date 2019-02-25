@@ -1,6 +1,6 @@
 # Passion to Purpose
 
-Convergence Design Lab - interactive tool for connecting passions to purpose
+Connect your passions to your purposes to uncover new project ideas. A tool by [Convergence Design Lab](https://convergencedesignlab.org). Check it out [here](https://convergencedesignlab.org/p2p).
 
 ## Installing
 
