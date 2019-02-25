@@ -2,8 +2,8 @@ import React from "react";
 import { observer } from "mobx-react";
 import gameData from "../store";
 import PromptTemplate from "../components/prompt-template";
-@observer
-export default class Passion extends React.Component {
+
+class Passion extends React.Component {
   render() {
     return (
       <PromptTemplate
@@ -24,3 +24,5 @@ export default class Passion extends React.Component {
     );
   }
 }
+
+export default observer(Passion);

@@ -1,0 +1,34 @@
+.callToAction {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.shareButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.shareButton {
+  margin: 0 0.15rem;
+  outline: none; // Temporary fix
+  transition: transform 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.075);
+  }
+
+  & > div {
+    display: inline;
+  }
+
+  & > div,
+  & > div > svg {
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+  }
+}

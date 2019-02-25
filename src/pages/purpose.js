@@ -2,8 +2,8 @@ import React from "react";
 import { observer } from "mobx-react";
 import gameData from "../store";
 import PromptTemplate from "../components/prompt-template";
-@observer
-export default class Purpose extends React.Component {
+
+class Purpose extends React.Component {
   togglePremissions = () => {
     const gameData = this.props.gameData;
     gameData.setUserPermission(!gameData.hasUserPermission);
@@ -48,3 +48,5 @@ export default class Purpose extends React.Component {
     );
   }
 }
+
+export default observer(Purpose);

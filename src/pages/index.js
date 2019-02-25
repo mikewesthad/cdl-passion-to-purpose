@@ -1,7 +1,7 @@
 import Home from "./home";
 import Passion from "./passion";
 import Purpose from "./purpose";
-import Generator from "./generator";
+import Generator from "./generator/";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)

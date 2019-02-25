@@ -1,5 +1,4 @@
-$primary-color: #2eb4ff;
-$font-color: #16171f;
+@import "./variables.scss";
 
 html,
 body {
@@ -34,7 +33,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: $font-color;
-  background: url(../../images/geometry.png);
+  background: url(../images/geometry.png);
 }
 
 a.link {
@@ -198,25 +197,6 @@ a.link {
   .submit-button {
     margin: 0.5rem 1.25rem;
   }
-}
-
-.generated-question {
-  font-size: 2.4rem;
-  text-align: center;
-  margin: 3rem 0;
-
-  @media (min-width: 400px) {
-    margin: 4rem 0;
-  }
-  @media (min-width: 600px) {
-    margin: 5rem 0;
-  }
-}
-
-.generated-passion,
-.generated-purpose {
-  text-decoration: underline;
-  font-weight: 600;
 }
 
 .checkbox {
