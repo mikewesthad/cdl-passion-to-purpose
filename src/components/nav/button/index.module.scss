@@ -1,0 +1,36 @@
+@import "../../../style/variables.scss";
+
+.button {
+  // Resets
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  margin: 0;
+  outline: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+
+  cursor: pointer;
+  background-color: $primary-color;
+  color: white;
+
+  transition: background-color 0.2s ease, opacity 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+
+  &:disabled {
+    opacity: 0;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

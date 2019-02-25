@@ -1,0 +1,24 @@
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.back,
+.restart {
+  position: fixed;
+  top: 0.5rem;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.back {
+  left: 0.5rem;
+}
+
+.restart {
+  right: 0.5rem;
+}

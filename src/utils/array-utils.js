@@ -1,3 +1,11 @@
+import Random from "./random";
+
+export function range(start, stop) {
+  return Array(stop - start)
+    .fill(0)
+    .map((_, i) => i + start);
+}
+
 /**
  * Classic Fisher-Yates algorithm - shuffles in place.
  *
@@ -5,9 +13,10 @@
  * @param {array} array Array to shuffle in place
  * @returns {array} The shuffled array
  */
-export function shuffle(array) {
+export function shuffle(array, seed) {
+  const random = new Random(seed);
   for (let i = array.length - 1; i > 0; i -= 1) {
-    let j = Math.floor(Math.random() * (i + 1));
+    let j = random.int(0, i);
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
@@ -28,13 +37,13 @@ export function shuffle(array) {
  * @returns {array} Array of combinations where each element is of the form: [array1 value, array2
  * value]
  */
-export function generateCombinations(array1, array2) {
+export function generateCombinations(array1, array2, seed) {
   const combinations = [];
   array1.forEach(v1 => {
     array2.forEach(v2 => {
       combinations.push([v1, v2]);
     });
   });
-  shuffle(combinations);
+  shuffle(combinations, seed);
   return combinations;
 }

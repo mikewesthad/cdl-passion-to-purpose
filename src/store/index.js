@@ -1,17 +1,20 @@
 import { extendObservable, action } from "mobx";
-import syncToStorage from "./sync-to-storage";
-import firebase from "../utils/firebase";
+import db from "./firebase";
 import isEqual from "lodash.isequal";
+import parseGameRoom from "../utils/parse-game-room";
+import { range, generateCombinations } from "../utils/array-utils";
 
-const database = firebase.database();
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
+const frontEndVersionString = process.env.REACT_APP_VERSION.replace(/\./g, "-");
 
 class GameData {
   constructor() {
     extendObservable(this, {
       lastSaved: null,
-      hasPermission: true
+      hasUserPermission: true,
+      gameRoom: parseGameRoom(),
+      combinations: []
     });
 
     this.passionStore = new ResponsesStore(this, [
@@ -32,24 +35,44 @@ class GameData {
     ]);
   }
 
+  generateCombinations = action(() => {
+    const passionIndices = range(0, this.passionStore.numQuestions);
+    const purposeIndices = range(0, this.purposeStore.numQuestions);
+    this.combinations = generateCombinations(passionIndices, purposeIndices);
+  });
+
   saveToFirebase() {
     if (this.hasUserPermission) {
       const dataToSave = {
         passions: this.passionStore.toJSON(),
-        purposes: this.purposeStore.toJSON(),
-        timestamp: firebase.database.ServerValue.TIMESTAMP
+        purposes: this.purposeStore.toJSON()
       };
       if (!isEqual(dataToSave, this.lastSaved)) {
-        try {
-          database
-            .ref()
-            .push()
-            .set(dataToSave);
-          this.lastSaved = dataToSave;
-        } catch (e) {}
+        const stringCombos = JSON.stringify(this.combinations);
+        this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
+        db.saveResponses(
+          this.responseRef,
+          frontEndVersionString,
+          this.gameRoom,
+          dataToSave.passions,
+          dataToSave.purposes,
+          stringCombos
+        ).catch(console.log);
+        this.lastSaved = dataToSave;
       }
     }
   }
+
+  // saveNumCombinationsViewed(numCombinationsViewed) {
+  //   if (this.hasUserPermission && this.responseRef) {
+  //     db.updateNumPermutations(
+  //       this.responseRef,
+  //       frontEndVersionString,
+  //       this.gameRoom,
+  //       numCombinationsViewed
+  //     ).catch(console.log);
+  //   }
+  // }
 
   getPurposesWithVerb() {
     return this.purposeStore.responses.map(
@@ -123,11 +146,14 @@ class ResponsesStore {
 
 const store = new GameData();
 
-// autorun(() => {
-//   console.log(store.passionStore.responses.slice());
-//   console.log(store.purposeStore.responses.slice());
-// });
-
-syncToStorage("passion-to-purpose-data", store);
+// Testing
+// store.passionStore.setResponses(["cooking", "Lego", "video games", "photography", "comedy"]);
+// store.purposeStore.setResponses([
+//   "immigration policies",
+//   "police brutality",
+//   "schools",
+//   "affordable housing",
+//   "voting habits"
+// ]);
 
 export default store;

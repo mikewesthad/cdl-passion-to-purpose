@@ -1,8 +1,9 @@
 {
   "name": "p2p",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
+    "classnames": "^2.2.6",
     "dotenv": "^6.1.0",
     "firebase": "^5.5.6",
     "lodash.isequal": "^4.5.0",
@@ -17,10 +18,14 @@
     "react-ga": "^2.5.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.5",
+    "react-share": "^2.3.1",
     "react-transition-group": "^2.5.0",
+    "release-it": "^7.6.3",
+    "seedrandom": "^2.4.4",
     "ssh2": "^0.6.1",
     "store": "^2.0.12",
     "typeface-montserrat": "0.0.54",
+    "url-parse": "^1.4.4",
     "vinyl-fs": "^3.0.3",
     "vinyl-ftp": "^0.6.1"
   },
@@ -31,7 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "push-ftp": "node ./scripts/push-ftp.js --src ./build/**",
-    "deploy": "npm run clean && npm run build && npm run push-ftp"
+    "deploy": "npm run build && npm run push-ftp",
+    "release-it": "release-it -n --src.tag  --src.push --no-npm.publish"
   },
   "prettier": {
     "printWidth": 100

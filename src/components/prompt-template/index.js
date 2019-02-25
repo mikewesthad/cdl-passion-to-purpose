@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 import Container from "../container";
 
@@ -26,7 +25,7 @@ class PromptTemplate extends React.Component {
 
   render() {
     const { showError } = this.state;
-    const { backRoute, store, stepNumber, title, description, afterPromptComponent } = this.props;
+    const { store, stepNumber, title, description, afterPromptComponent } = this.props;
     const prompts = store.getQuestions();
 
     const inputs = prompts.map((prompt, i) => {
@@ -68,9 +67,6 @@ class PromptTemplate extends React.Component {
           )}
           {afterPromptComponent}
           <div className="navigation">
-            <Link className="button back-button" to={backRoute}>
-              ↶ Back
-            </Link>
             <input className="button submit-button" type="submit" value="Next ➞" />
           </div>
         </form>
