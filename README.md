@@ -33,19 +33,32 @@ This project is build with [create-react-app](https://github.com/facebook/create
 
 ## Development
 
+### Workflow
+
+There are two main branches in this repository:
+
+- "Master" represents the latest version that has been released live.
+- "Develop" is the working branch where all features should be merged.
+
+You can create your own branch off of develop, work on a new feature and then merge it back into develop when its ready. When a new release is tested and ready to be pushed live:
+
+1. develop should be merged into master.
+2. A new version should be created (see below).
+3. The deploy command can be run (see below).
+
 ### Creating a New Version
 
-Responses are stored under the front-end version number that the player was using, so it is important to keep the version number in package.json in sync for substantial changes, like language tweaks or updates to the data structure:
+Any time a player's responses are recorded (with their permission), they are tagged with the version number (from package.json) of P2P that the player was using. It is important to keep the version number in sync for substantial changes, like language tweaks or updates to the data structure. This way, when analyzing the responses, we can tell what P2P looked like for the player at the time they played it.
 
 ```
-npm run release-it [patch, minor, major, or specific versiom]
+npm run release-it [patch, minor, major, or specific version]
 ```
 
-This will create a new release and tag on GitHub for future reference.
+This will create a new release and tag on GitHub for easy future reference.
 
 ### Deploying
 
-Copy the .sample.env file, rename to .env and fill out the appropriate information. Then run:
+Copy the .sample.env file, rename to .env and fill out the appropriate server information. Then run:
 
 ```
 npm run deploy
