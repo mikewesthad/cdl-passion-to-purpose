@@ -10,7 +10,7 @@ This project uses the node and npm ecosystem to build the tool. Before attemptin
 npm install
 ```
 
-This will install the dependencies and make a `.env` file which contains environment variables (only needed for deploying, see deploying section).
+This will install the dependencies and make a `.env` file which contains environment variables (mainly needed for deploying and firebase, see deploying section).
 
 ## Running
 
@@ -30,6 +30,7 @@ This project is build with [create-react-app](https://github.com/facebook/create
 - [SASS](https://sass-lang.com/) modules for styling
 - [MobX](https://mobx.js.org/) for state management
 - [GSAP](https://greensock.com/gsap) for optimized animations in certain places
+- [Firebase](https://firebase.google.com/) as a data store
 
 ## Development
 
@@ -63,3 +64,7 @@ Copy the .sample.env file, rename to .env and fill out the appropriate server in
 ```
 npm run deploy
 ```
+
+## Other Repositories
+
+There are two other repositories related to the project - an internal visualization front-end and the back-end that powers it. Get in touch with @mikewesthad for access.
