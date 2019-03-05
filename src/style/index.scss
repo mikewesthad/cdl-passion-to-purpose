@@ -139,54 +139,6 @@ a.link {
   margin: 2rem 0;
 }
 
-.form {
-  text-align: center;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form__error-message {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  color: #ff0000;
-  text-align: center;
-}
-
-.prompt {
-  margin: 1rem 0;
-  padding-left: 2rem;
-  width: 100%;
-}
-
-.prompt__label {
-  display: block;
-  text-align: left;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.prompt__label-number {
-  margin-right: 1rem;
-  margin-left: -2rem;
-}
-
-.prompt__input {
-  font-size: 1.2rem;
-  font-style: italic;
-  background-color: white;
-  height: 3rem;
-  border: 0.15rem solid #8e8e8e;
-  transition: border-color 0.2s ease;
-  width: 100%;
-  padding: 1.5rem 1rem;
-
-  &:focus {
-    outline: none;
-    border-color: $primary-color;
-  }
-}
-
 .back-button,
 .submit-button {
   margin: 0.5rem 0.25rem;

@@ -1,6 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import Container from "../container";
+import style from "./index.module.scss";
 
 class PromptTemplate extends React.Component {
   state = {
@@ -32,17 +33,17 @@ class PromptTemplate extends React.Component {
       const id = `prompt-${i}`;
       const value = store.responses[i] || "";
       return (
-        <div className="prompt" key={id}>
-          <label className="prompt__label" htmlFor={id}>
-            <span className="prompt__label-number">{i + 1}.</span>
-            <span className="prompt__label-text">
+        <div className={style.prompt} key={id}>
+          <label className={style.promptLabel} htmlFor={id}>
+            <span className={style.promptLabelNumber}>{i + 1}.</span>
+            <span className={style.promptLabelText}>
               {prompt}
               ...
             </span>
           </label>
           <input
             type="text"
-            className="prompt__input"
+            className={style.promptInput}
             value={value}
             id={id}
             onChange={e => this.setPassion(i, e.target.value)}
@@ -60,10 +61,10 @@ class PromptTemplate extends React.Component {
         </div>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
-        <form className="form" onSubmit={this.onSubmit}>
+        <form className={style.form} onSubmit={this.onSubmit}>
           {inputs}
           {showError && (
-            <div className="form__error-message">*Fill out all the prompts to continue!</div>
+            <div className={style.formError}>*Fill out all the prompts to continue!</div>
           )}
           {afterPromptComponent}
           <div className="navigation">

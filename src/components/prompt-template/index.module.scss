@@ -1,0 +1,49 @@
+@import "../../style/variables.scss";
+
+.form {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formError {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: #ff0000;
+  text-align: center;
+}
+
+.prompt {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  width: 100%;
+}
+
+.promptLabel {
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.promptLabelNumber {
+  margin-right: 1rem;
+  margin-left: -2rem;
+}
+
+.promptInput {
+  font-size: 1.2rem;
+  font-style: italic;
+  background-color: white;
+  height: 3rem;
+  border: 0.15rem solid #8e8e8e;
+  transition: border-color 0.2s ease;
+  width: 100%;
+  padding: 1.5rem 1rem;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+  }
+}
