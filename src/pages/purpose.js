@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import gameData from "../store";
 import PromptTemplate from "../components/prompt-template";
+import Checkbox from "../components/checkbox";
 
 class Purpose extends React.Component {
   togglePremissions = () => {
@@ -26,20 +27,13 @@ class Purpose extends React.Component {
           </React.Fragment>
         }
         afterPromptComponent={
-          <div
-            className={`checkbox ${hasUserPermission ? "checkbox--checked" : ""}`}
-            style={{ margin: "2rem 0", fontSize: "1rem" }}
-          >
-            <input
-              type="checkbox"
+          <div style={{ margin: "2rem 0" }}>
+            <Checkbox
               id="sharing-checkbox"
-              value="sharing-checkbox"
+              label="Share your passions & purposes anonymously to help us improve the tool."
               onChange={this.togglePremissions}
               checked={hasUserPermission}
             />
-            <label htmlFor="sharing-checkbox">
-              Share your passions & purposes anonymously to help us improve the tool.
-            </label>
           </div>
         }
         stepNumber="2"

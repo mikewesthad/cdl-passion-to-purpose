@@ -1,0 +1,59 @@
+@import "../../style/variables.scss";
+
+.input {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.label {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+// The "box" of the checkbox
+.label::before {
+  content: "";
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 2px solid #8e8e8e;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transition: border-color 0.1s ease;
+}
+.labelChecked::before {
+  border-color: $primary-color;
+}
+
+// The "check" of the checkbox
+.label::after {
+  content: "";
+  display: inline-block;
+  height: 0.4rem;
+  width: 0.85rem;
+  border-left: 3px solid $primary-color;
+  border-bottom: 3px solid $primary-color;
+  position: absolute;
+  left: 0.2rem;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  top: 50%;
+  transform: translate(0, -70%) rotate(-45deg);
+}
+.labelChecked::after {
+  opacity: 1;
+}
+
+// Preserve focus styling
+.input:focus {
+  & + .label::before {
+    border-color: $primary-color;
+  }
+}
