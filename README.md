@@ -38,8 +38,8 @@ This project is build with [create-react-app](https://github.com/facebook/create
 
 There are two main branches in this repository:
 
-- "Master" represents the latest version that has been released live.
-- "Develop" is the working branch where all features should be merged.
+- "master" represents the latest version that has been released live.
+- "develop" is the working branch where all features should be merged.
 
 You can create your own branch off of develop, work on a new feature and then merge it back into develop when its ready. When a new release is tested and ready to be pushed live:
 
