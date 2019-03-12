@@ -10,7 +10,7 @@ This project uses the node and npm ecosystem to build the tool. Before attemptin
 npm install
 ```
 
-This will install the dependencies and make a `.env` file which contains environment variables (mainly needed for deploying and firebase, see deploying section).
+This will install the dependencies and make a `.env` file which contains environment variables, which are needed for deploying and connecting to a Firebase database for saving responses. You can skip the `FTP_*` variables until deploying, but you need to fill out the `REACT_APP_FIREBASE_*` variables. You can find the appropriate settings by creating a free account with [Firebase](https://firebase.google.com/) and following the "Add Firebase to your app" steps [here](https://firebase.google.com/docs/web/setup).
 
 ## Running
 
