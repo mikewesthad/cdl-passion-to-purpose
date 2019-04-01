@@ -6,7 +6,7 @@ import PageWrapper from "./components/page-wrapper";
 import Analytics from "./components/analytics";
 import { routes, routeMap } from "./pages";
 import Nav from "./components/nav";
-import store from "./store";
+import gameData from "./store";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -18,7 +18,7 @@ const App = withRouter(
     render() {
       const { location } = this.props;
       return (
-        <Provider gameData={store}>
+        <Provider gameData={gameData}>
           <PageWrapper>
             <Nav
               disabled={location.pathname === routeMap.home.path}
