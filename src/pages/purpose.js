@@ -1,20 +1,21 @@
 import React from "react";
-import { observer } from "mobx-react";
-import gameData from "../store";
+import { observer, inject } from "mobx-react";
 import PromptTemplate from "../components/prompt-template";
 import Checkbox from "../components/checkbox";
 
 class Purpose extends React.Component {
   togglePremissions = () => {
-    const gameData = this.props.gameData;
+    const { gameData } = this.props;
     gameData.setUserPermission(!gameData.hasUserPermission);
   };
 
   render() {
-    const hasUserPermission = this.props.gameData.hasUserPermission;
+    const { gameData } = this.props;
+    const hasUserPermission = gameData.hasUserPermission;
 
     return (
       <PromptTemplate
+        {...this.props}
         store={gameData.purposeStore}
         title={
           <React.Fragment>
@@ -37,10 +38,9 @@ class Purpose extends React.Component {
           </div>
         }
         stepNumber="2"
-        {...this.props}
       />
     );
   }
 }
 
-export default observer(Purpose);
+export default inject("gameData")(observer(Purpose));

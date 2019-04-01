@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { MemoryRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
-import { observer } from "mobx-react";
+import { Provider } from "mobx-react";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
 import Analytics from "./components/analytics";
 import { routes, routeMap } from "./pages";
-import gameData from "./store";
 import Nav from "./components/nav";
+import store from "./store";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -18,43 +18,43 @@ const App = withRouter(
     render() {
       const { location } = this.props;
       return (
-        <PageWrapper>
-          <Nav
-            disabled={location.pathname === routeMap.home.path}
-            onBack={this.goBack}
-            onRestart={this.restart}
-          />
+        <Provider gameData={store}>
+          <PageWrapper>
+            <Nav
+              disabled={location.pathname === routeMap.home.path}
+              onBack={this.goBack}
+              onRestart={this.restart}
+            />
 
-          <Analytics
-            dummyLog={isDev}
-            trackingId="UA-114340105-6"
-            gameStartRoute={routeMap.home.path}
-            gameEndRoute={routeMap.generator.path}
-          />
+            <Analytics
+              dummyLog={isDev}
+              trackingId="UA-114340105-6"
+              gameStartRoute={routeMap.home.path}
+              gameEndRoute={routeMap.generator.path}
+            />
 
-          <PageTransition pageKey={location.pathname}>
-            <Switch location={location}>
-              {routes.map((route, i) => {
-                const nextRoute = i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
+            <PageTransition pageKey={location.pathname}>
+              <Switch location={location}>
+                {routes.map((route, i) => {
+                  const nextRoute = i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
 
-                // All pages have the same general API - they need the game store & next route
-                const { key, path, Component, ...otherProps } = route;
-                return (
-                  <Route
-                    key={key}
-                    path={path}
-                    {...otherProps}
-                    render={props => (
-                      <Component gameData={gameData} nextRoute={nextRoute} {...props} />
-                    )}
-                  />
-                );
-              })}
+                  // All pages have the same general API - they need the game store & next route
+                  const { key, path, Component, ...otherProps } = route;
+                  return (
+                    <Route
+                      key={key}
+                      path={path}
+                      {...otherProps}
+                      render={props => <Component nextRoute={nextRoute} {...props} />}
+                    />
+                  );
+                })}
 
-              <Redirect to={routeMap.home.path} />
-            </Switch>
-          </PageTransition>
-        </PageWrapper>
+                <Redirect to={routeMap.home.path} />
+              </Switch>
+            </PageTransition>
+          </PageWrapper>
+        </Provider>
       );
     }
   }
@@ -70,4 +70,4 @@ class RoutedApp extends Component {
   }
 }
 
-export default observer(RoutedApp);
+export default RoutedApp;

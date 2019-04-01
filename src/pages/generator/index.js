@@ -1,5 +1,5 @@
 import React from "react";
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
@@ -57,4 +57,4 @@ class Generator extends React.Component {
   }
 }
 
-export default observer(Generator);
+export default inject("gameData")(observer(Generator));

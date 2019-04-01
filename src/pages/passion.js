@@ -1,12 +1,14 @@
 import React from "react";
-import { observer } from "mobx-react";
-import gameData from "../store";
+import { observer, inject } from "mobx-react";
 import PromptTemplate from "../components/prompt-template";
 
 class Passion extends React.Component {
   render() {
+    const { gameData } = this.props;
+
     return (
       <PromptTemplate
+        {...this.props}
         store={gameData.passionStore}
         title={
           <React.Fragment>
@@ -19,10 +21,9 @@ class Passion extends React.Component {
           </React.Fragment>
         }
         stepNumber="1"
-        {...this.props}
       />
     );
   }
 }
 
-export default observer(Passion);
+export default inject("gameData")(observer(Passion));
