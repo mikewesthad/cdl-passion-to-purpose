@@ -33,14 +33,6 @@ class FirebaseDatabase {
     const p2 = this.db.ref(`roomDirectory/${roomName}/${versionString}/updatedAt`).set(now);
     return Promise.all([p1, p2]);
   }
-
-  // saveNumCombinationsViewed(responseRef, roomName, versionString, numCombinationsViewed) {
-  //   const p1 = this.db
-  //     .ref(`rooms/${roomName}/${versionString}/responses/${responseRef.key}/numCombinationsViewed`)
-  //     .set(numCombinationsViewed);
-  //   const p2 = this.db.ref(`roomDirectory/${roomName}/${versionString}/updatedAt`).set(now);
-  //   return Promise.all([p1, p2]);
-  // }
 }
 
 const db = new FirebaseDatabase(firebase.database());
