@@ -89,6 +89,35 @@ a.link {
   }
 }
 
+.description2 {
+  font-style: normal;
+  font-size: 1.5rem;
+  text-align: center;
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.medium1 {
+  font-weight: 700;
+  font-style: oblique;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.medium2 {
+  font-weight: 700;
+  font-style: oblique;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
 .button {
   // Resets
   text-decoration: none;
