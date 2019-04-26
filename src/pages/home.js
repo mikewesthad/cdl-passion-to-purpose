@@ -6,14 +6,14 @@ import Attribution from "../components/attribution";
 export default function Home(props) {
   return (
     <Container>
-      <h1 className="title">Passion to Purpose</h1>
+      <h1 className="title">Imagine</h1>
       <div className="description">
-        <p>How can you turn your passion into a purpose?</p>
-        <p>Answer a couple simple questions to generate design questions to inspire yourself.</p>
+        <p>How can you make something meaningful?</p>
+        <p>Go through the various steps of the design process.</p>
       </div>
       <div className="text-center">
         <Link className="button" to={props.nextRoute}>
-          Let's Go ➞
+          Let's Get Started ➞
         </Link>
       </div>
       <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />

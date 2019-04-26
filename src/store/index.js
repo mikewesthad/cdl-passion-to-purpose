@@ -18,20 +18,16 @@ class GameData {
     });
 
     this.passionStore = new ResponsesStore(this, [
-      "I spend my time",
-      "I am really good at",
-      "I talk to my friends about",
-      "I spend my money on",
-      "I am a fan of"
+      "I like to make",
+      "I have a background in",
+      "I spend my time"
     ]);
 
     // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
+      "I want to say something about",
       "I want to challenge",
-      "I want to protest",
-      "I want to improve",
-      "I want to advocate for",
-      "I want to change"
+      "I want to express"
     ]);
   }
 

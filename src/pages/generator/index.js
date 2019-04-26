@@ -48,6 +48,11 @@ class Generator extends React.Component {
               Give Me Another
             </button>
           </div>
+          <div className={style.generateButtonContainer}>
+            <button className="button button__stacked" onClick={this.getNextCombination}>
+              Give Me Another
+            </button>
+          </div>
         </div>
         <div className="text-center">
           <SocialShare passion={passion} purpose={purpose} />
