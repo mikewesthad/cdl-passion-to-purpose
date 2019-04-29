@@ -1,7 +1,7 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
 import PromptTemplate from "../components/prompt-template";
-import { reaction } from "mobx";
+//import { reaction } from "mobx";
 
 class Action extends React.Component {
   render() {

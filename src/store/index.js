@@ -33,13 +33,23 @@ class GameData {
     this.actionStore = new ResponsesStore(this, ["I want to"]);
 
     this.mediumStore = new ResponsesStore(this, ["", ""]);
+
+    this.audienceStore = new ResponsesStore(this, [""]);
   }
 
   generateCombinations = action(() => {
     const passionIndices = range(0, this.passionStore.numQuestions);
     const purposeIndices = range(0, this.purposeStore.numQuestions);
     const mediumIndices = range(0, this.mediumStore.numQuestions);
-    this.combinations = generateCombinations(passionIndices, purposeIndices, mediumIndices);
+    const actionIndices = range(0, this.actionStore.numQuestions);
+    const audienceIndices = range(0, this.audienceStore.numQuestions);
+    this.combinations = generateCombinations(
+      passionIndices,
+      purposeIndices,
+      mediumIndices,
+      actionIndices,
+      audienceIndices
+    );
   });
 
   saveToFirebase() {
@@ -47,7 +57,9 @@ class GameData {
       const dataToSave = {
         passions: this.passionStore.toJSON(),
         purposes: this.purposeStore.toJSON(),
-        actions: this.actionStore.toJSON()
+        actions: this.actionStore.toJSON(),
+        mediums: this.mediumStore.toJSON(),
+        audiences: this.audienceStore.toJSON()
       };
       if (!isEqual(dataToSave, this.lastSaved)) {
         const stringCombos = JSON.stringify(this.combinations);
@@ -59,6 +71,8 @@ class GameData {
           dataToSave.passions,
           dataToSave.purposes,
           dataToSave.actions,
+          dataToSave.mediums,
+          dataToSave.audiences,
           stringCombos
         ).catch(console.log);
         this.lastSaved = dataToSave;
@@ -76,6 +90,8 @@ class GameData {
     this.passionStore.reset();
     this.purposeStore.reset();
     this.actionStore.reset();
+    this.mediumStore.reset();
+    this.audienceStore.reset();
   }
 
   setUserPermission = action(hasPermission => {
@@ -88,6 +104,9 @@ class GameData {
       passions: this.passionStore.toJSON(),
       purposes: this.purposeStore.toJSON(),
       actions: this.actionStore.toJSON(),
+      mediums: this.mediumStore.toJSON(),
+      audiences: this.audienceStore.toJSON(),
+
       hasUserPermission: this.hasUserPermission,
       lastSaved: this.lastSaved
     };
@@ -96,6 +115,8 @@ class GameData {
     if (json.passions) this.passionStore.fromJSON(json.passions);
     if (json.purposes) this.purposeStore.fromJSON(json.purposes);
     if (json.actions) this.actionStore.fromJSON(json.actions);
+    if (json.mediums) this.mediumStore.fromJSON(json.mediums);
+    if (json.audiences) this.audienceStore.fromJSON(json.audiences);
 
     if (json.lastSaved) this.lastSaved = json.lastSaved;
     if (json.hasUserPermission !== undefined) this.hasUserPermission = json.hasUserPermission;
@@ -142,14 +163,11 @@ class ResponsesStore {
 
 const store = new GameData();
 
-// Testing
-// store.passionStore.setResponses(["cooking", "Lego", "video games", "photography", "comedy"]);
-// store.purposeStore.setResponses([
-//   "immigration policies",
-//   "police brutality",
-//   "schools",
-//   "affordable housing",
-//   "voting habits"
-// ]);
+//Testing;
+store.passionStore.setResponses(["cooking", "Lego", "video games"]);
+store.purposeStore.setResponses(["immigration policies", "police brutality", "schools"]);
+store.mediumStore.setResponses(["art"]);
+store.actionStore.setResponses(["raise awareness"]);
+store.audienceStore.setResponses(["high school students"]);
 
 export default store;

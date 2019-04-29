@@ -4,6 +4,8 @@ import Purpose from "./purpose";
 import Generator from "./generator/";
 import Action from "./action";
 import Medium from "./medium";
+import Audience from "./audience";
+import MakeGenerator from "./make-generator";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
@@ -13,7 +15,9 @@ const routes = [
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "generator", path: "/generator", Component: Generator },
   { key: "action", path: "/action", Component: Action },
-  { key: "medium", path: "/medium", Component: Medium }
+  { key: "medium", path: "/medium", Component: Medium },
+  { key: "audience", path: "/audience", Component: Audience },
+  { key: "makegenerator", path: "/make-generator", Component: MakeGenerator }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
@@ -21,4 +25,4 @@ const routeMap = routes.reduce((map, route) => {
   return map;
 }, {});
 
-export { Home, Action, Passion, Purpose, Generator, routes, routeMap };
+export { Home, Action, Medium, Audience, Passion, Purpose, Generator, routes, routeMap };

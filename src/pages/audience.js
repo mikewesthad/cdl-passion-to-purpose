@@ -1,7 +1,7 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
 import PromptTemplate from "../components/prompt-template";
-import { reaction } from "mobx";
+//import { reaction } from "mobx";
 
 class Action extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Action extends React.Component {
     return (
       <PromptTemplate
         {...this.props}
-        store={gameData.actionStore}
+        store={gameData.audienceStore}
         title={
           <React.Fragment>
             Who is the intended <span className="title-emphasis">audience</span> for this project?
@@ -18,11 +18,12 @@ class Action extends React.Component {
         }
         description={
           <React.Fragment>
-            <p>Your audience will help?</p>
-            <p>Type in your choice below?</p>
+            <p>Visualizing your audience/user will help develop your project.</p>
+            <p>EX: Elementary School Student, Millenials, Carpenters, etc.</p>
+            <p>Type in your choice of audience below.</p>
           </React.Fragment>
         }
-        stepNumber="5"
+        stepNumber="7"
       />
     );
   }

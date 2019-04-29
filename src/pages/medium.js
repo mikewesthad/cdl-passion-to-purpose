@@ -1,7 +1,7 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
 import MediumPromptTemplate from "../components/medium-prompt-template";
-import { reaction } from "mobx";
+//import { reaction } from "mobx";
 
 class Medium extends React.Component {
   render() {

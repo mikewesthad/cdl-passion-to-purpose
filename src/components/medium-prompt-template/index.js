@@ -38,46 +38,50 @@ class MediumPromptTemplate extends React.Component {
     const prompts = store.getQuestions();
 
     const inputs = prompts.map((prompt, i) => {
-      const id = `prompt-${i}`;
+      const id = `prompt1-${i}`;
       const value = store.responses[i] || "";
       return (
-        <div className={style.prompt} key={id}>
-          <label className={style.promptLabel} htmlFor={id}>
-            <span className={style.promptLabelNumber}>{i + 1}.</span>
-            <span className={style.promptLabelText}>{prompt}</span>
-          </label>
-          <input
-            type="text"
-            className={style.promptInput}
-            value={value}
-            id={id}
-            onChange={e => this.setPassion(i, e.target.value)}
-            placeholder="Type something here..."
-          />
-        </div>
+        <Medium-1>
+          <div className={style.prompt} key={id}>
+            <label className={style.promptLabel} htmlFor={id}>
+              <span className={style.promptLabelNumber}>{i + 1}.</span>
+              <span className={style.promptLabelText}>{prompt}</span>
+            </label>
+            <input
+              type="text"
+              className={style.promptInput}
+              value1={value}
+              id={id}
+              onChange={e => this.setPassion(i, e.target.value)}
+              placeholder="Type something here..."
+            />
+          </div>
+        </Medium-1>
       );
     });
 
     const { medium2 } = this.props;
 
     const inputs2 = prompts.map((prompt, i) => {
-      const id = `prompt-${i}`;
+      const id = `prompt2-${i}`;
       const value = store.responses[i] || "";
       return (
-        <div className={style.prompt} key={id}>
-          <label className={style.promptLabel} htmlFor={id}>
-            <span className={style.promptLabelNumber}>{i + 1}.</span>
-            <span className={style.promptLabelText}>{prompt}</span>
-          </label>
-          <input
-            type="text"
-            className={style.promptInput}
-            value={value}
-            id={id}
-            onChange={e => this.setPassion(i, e.target.value)}
-            placeholder="Type something here..."
-          />
-        </div>
+        <Medium-2>
+          <div className={style.prompt} key={id}>
+            <label className={style.promptLabel} htmlFor={id}>
+              <span className={style.promptLabelNumber}>{i + 1}.</span>
+              <span className={style.promptLabelText}>{prompt}</span>
+            </label>
+            <input
+              type="text"
+              className={style.promptInput}
+              value2={value}
+              id={id}
+              onChange={e => this.setPassion(i, e.target.value)}
+              placeholder="Type something here..."
+            />
+          </div>
+        </Medium-2>
       );
     });
 
