@@ -11,7 +11,7 @@ class MediumPromptTemplate extends React.Component {
   onSubmit = event => {
     const { store, history, nextRoute } = this.props;
     event.preventDefault();
-    if (store.areAllResponsesValid()) {
+    if (store.medium !== "") {
       history.push(nextRoute);
     } else {
       this.setState({ showError: true });
@@ -20,8 +20,12 @@ class MediumPromptTemplate extends React.Component {
 
   setPassion = (i, value) => {
     const store = this.props.store;
-    store.setResponse(i, value);
     this.setState({ showError: false });
+  };
+
+  onChange = event => {
+    this.props.store.setMedium(event.target.value);
+    console.log(event.target.value);
   };
 
   render() {
@@ -35,55 +39,6 @@ class MediumPromptTemplate extends React.Component {
       medium1,
       afterPromptComponent
     } = this.props;
-    const prompts = store.getQuestions();
-
-    const inputs = prompts.map((prompt, i) => {
-      const id = `prompt1-${i}`;
-      const value = store.responses[i] || "";
-      return (
-        <Medium-1>
-          <div className={style.prompt} key={id}>
-            <label className={style.promptLabel} htmlFor={id}>
-              <span className={style.promptLabelNumber}>{i + 1}.</span>
-              <span className={style.promptLabelText}>{prompt}</span>
-            </label>
-            <input
-              type="text"
-              className={style.promptInput}
-              value1={value}
-              id={id}
-              onChange={e => this.setPassion(i, e.target.value)}
-              placeholder="Type something here..."
-            />
-          </div>
-        </Medium-1>
-      );
-    });
-
-    const { medium2 } = this.props;
-
-    const inputs2 = prompts.map((prompt, i) => {
-      const id = `prompt2-${i}`;
-      const value = store.responses[i] || "";
-      return (
-        <Medium-2>
-          <div className={style.prompt} key={id}>
-            <label className={style.promptLabel} htmlFor={id}>
-              <span className={style.promptLabelNumber}>{i + 1}.</span>
-              <span className={style.promptLabelText}>{prompt}</span>
-            </label>
-            <input
-              type="text"
-              className={style.promptInput}
-              value2={value}
-              id={id}
-              onChange={e => this.setPassion(i, e.target.value)}
-              placeholder="Type something here..."
-            />
-          </div>
-        </Medium-2>
-      );
-    });
 
     return (
       <Container>
@@ -97,9 +52,7 @@ class MediumPromptTemplate extends React.Component {
         <div className="medium1">{medium1}</div>
 
         <form className={style.form} onSubmit={this.onSubmit}>
-          {inputs}
-          <div className="medium2">{medium2}</div>
-          {inputs2}
+          <input type="text" value={store.medium} onChange={this.onChange} />
           {showError && (
             <div className={style.formError}>*Fill out all the prompts to continue!</div>
           )}

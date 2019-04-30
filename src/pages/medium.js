@@ -10,7 +10,7 @@ class Medium extends React.Component {
     return (
       <MediumPromptTemplate
         {...this.props}
-        store={gameData.mediumStore}
+        store={gameData}
         title={
           <React.Fragment>
             What will you <span className="title-emphasis">make</span>?
@@ -24,10 +24,6 @@ class Medium extends React.Component {
         medium1={
           <React.Fragment>
             <p>Physical Projects (Poster, Event, Board Game, etc)</p>
-          </React.Fragment>
-        }
-        medium2={
-          <React.Fragment>
             <p>Digital Projects (Video, Podcast, Website)</p>
           </React.Fragment>
         }

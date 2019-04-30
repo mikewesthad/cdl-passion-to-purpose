@@ -49,9 +49,8 @@ class Generator extends React.Component {
         </div>
         <div className={style.generatedQuestion}>
           How might we use <span className={style.generatedPassion}>{passion}</span> to{" "}
-          <span className={style.generatedPurpose}>{purpose}</span>? We will make{" "}
-          <span className={style.generatedPassion}>{medium}</span> to{" "}
-          <span className={style.generatedPurpose}>{action}</span> for{" "}
+          <span className={style.generatedPurpose}>{purpose}</span>? We will make {gameData.medium}{" "}
+          to <span className={style.generatedPurpose}>{action}</span> for{" "}
           <span className={style.generatedPurpose}>{audience}</span>?
           <div className={style.generateButtonContainer}>
             <button className="button button__stacked" onClick={this.getNextCombination}>

@@ -11,10 +11,12 @@ const frontEndVersionString = process.env.REACT_APP_VERSION.replace(/\./g, "-");
 class GameData {
   constructor() {
     extendObservable(this, {
+      // add stuff here to rerender when changed (i.e medium)
       lastSaved: null,
       hasUserPermission: true,
       gameRoom: parseGameRoom(),
-      combinations: []
+      combinations: [],
+      medium: ""
     });
 
     this.passionStore = new ResponsesStore(this, [
@@ -32,7 +34,7 @@ class GameData {
 
     this.actionStore = new ResponsesStore(this, ["I want to"]);
 
-    this.mediumStore = new ResponsesStore(this, ["", ""]);
+    this.mediumStore = new ResponsesStore(this, [""]);
 
     this.audienceStore = new ResponsesStore(this, [""]);
   }
@@ -50,6 +52,10 @@ class GameData {
       actionIndices,
       audienceIndices
     );
+  });
+
+  setMedium = action(mediumString => {
+    this.medium = mediumString;
   });
 
   saveToFirebase() {
@@ -166,7 +172,7 @@ const store = new GameData();
 //Testing;
 store.passionStore.setResponses(["cooking", "Lego", "video games"]);
 store.purposeStore.setResponses(["immigration policies", "police brutality", "schools"]);
-store.mediumStore.setResponses(["art"]);
+store.setMedium("painting");
 store.actionStore.setResponses(["raise awareness"]);
 store.audienceStore.setResponses(["high school students"]);
 

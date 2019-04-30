@@ -24,6 +24,7 @@ class FirebaseDatabase {
   }
 
   saveResponses(responseRef, versionString, roomName, passions, purposes, combinations) {
+    // add medium, aduience, action from store
     const p1 = responseRef.set({
       passions,
       purposes,
