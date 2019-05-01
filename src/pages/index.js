@@ -16,7 +16,6 @@ const routes = [
   { key: "generator", path: "/generator", Component: Generator },
   { key: "action", path: "/action", Component: Action },
   { key: "medium", path: "/medium", Component: Medium },
-  { key: "audience", path: "/audience", Component: Audience },
   { key: "makegenerator", path: "/make-generator", Component: MakeGenerator }
 ];
 // Create a mapping from route key -> route object above

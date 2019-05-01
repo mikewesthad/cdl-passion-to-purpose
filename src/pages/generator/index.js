@@ -26,6 +26,11 @@ class Generator extends React.Component {
     });
   };
 
+  storeP2P = () => {
+    this.props.store.setPurpose(this.render.purpose);
+    console.log(this.render.purpose);
+  };
+
   render() {
     const { gameData, nextRoute } = this.props;
     const { combinationNumber } = this.state;
@@ -36,7 +41,7 @@ class Generator extends React.Component {
 
     return (
       <Container>
-        <div className="step-count">Step 3/3</div>
+        <div className="step-count">Step 3/6</div>
         <h1 className="title">How might we...?</h1>
         <div className="description">
           Let’s combine your passion and purpose – it’s okay if the ideas are crazy!
@@ -50,13 +55,14 @@ class Generator extends React.Component {
             </button>
           </div>
           <div className="text-center">
-            <Link className="button" to={nextRoute}>
+            <Link
+              className="button"
+              to={nextRoute}
+              onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
+            >
               Continue ➞
             </Link>
           </div>
-        </div>
-        <div className="text-center">
-          <SocialShare passion={passion} purpose={purpose} />
         </div>
       </Container>
     );

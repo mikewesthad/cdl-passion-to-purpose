@@ -2,7 +2,7 @@ import React from "react";
 //import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
-import SocialShare from "../../components/social-share";
+//import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
@@ -30,37 +30,24 @@ class Generator extends React.Component {
     const { gameData } = this.props;
     const { combinationNumber } = this.state;
     const combinations = gameData.combinations;
-    const [passionIndex, purposeIndex, mediumIndex, actionIndex, audienceIndex] = combinations[
-      combinationNumber % combinations.length
-    ];
+    const [passionIndex, purposeIndex] = combinations[combinationNumber % combinations.length];
     const passion = gameData.passionStore.responses[passionIndex];
     const purpose = gameData.getPurposesWithVerb()[purposeIndex];
-    const medium = gameData.mediumStore.responses[mediumIndex];
-    const action = gameData.actionStore.responses[actionIndex];
-    const audience = gameData.audienceStore.responses[audienceIndex];
 
-    //const { combinationNumber2 } = this.state;
     return (
       <Container>
-        <div className="step-count">Step 8/8</div>
-        <h1 className="title">How might we...? We will make... to... for...</h1>
+        <div className="step-count">Step 6/6</div>
+        <h1 className="title">Define</h1>
         <div className="description">
-          Let’s combine your action, medium and audience with your How Might We question!
+          Let’s combine your action and medium to define your project!
         </div>
         <div className={style.generatedQuestion}>
           How might we use <span className={style.generatedPassion}>{passion}</span> to{" "}
-          <span className={style.generatedPurpose}>{purpose}</span>? We will make {gameData.medium}{" "}
-          to <span className={style.generatedPurpose}>{action}</span> for{" "}
-          <span className={style.generatedPurpose}>{audience}</span>?
-          <div className={style.generateButtonContainer}>
-            <button className="button button__stacked" onClick={this.getNextCombination}>
-              Give Me Another
-            </button>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <SocialShare passion={passion} purpose={purpose} />
+          <span className={style.generatedPurpose}>{gameData.purpose}</span>? <br />
+          Let's make a <span className={style.generatedPassion}>{gameData.medium}</span> to{" "}
+          <span className={style.generatedPassion}>{gameData.action}</span>
+          .
+          <div className={style.generateButtonContainer} />
         </div>
       </Container>
     );

@@ -16,7 +16,10 @@ class GameData {
       hasUserPermission: true,
       gameRoom: parseGameRoom(),
       combinations: [],
-      medium: ""
+      medium: "",
+      action: "",
+      passion: "",
+      purpose: ""
     });
 
     this.passionStore = new ResponsesStore(this, [
@@ -29,7 +32,7 @@ class GameData {
     this.purposeStore = new ResponsesStore(this, [
       "I want to say something about",
       "I want to challenge",
-      "I want to express"
+      "I want to express that"
     ]);
 
     this.actionStore = new ResponsesStore(this, ["I want to"]);
@@ -56,6 +59,18 @@ class GameData {
 
   setMedium = action(mediumString => {
     this.medium = mediumString;
+  });
+
+  setAction = action(actionString => {
+    this.action = actionString;
+  });
+
+  setPurpose = action(purposeString => {
+    this.purpose = purposeString;
+  });
+
+  setPassion = action(passionString => {
+    this.passion = passionString;
   });
 
   saveToFirebase() {
@@ -170,10 +185,11 @@ class ResponsesStore {
 const store = new GameData();
 
 //Testing;
+/*
 store.passionStore.setResponses(["cooking", "Lego", "video games"]);
 store.purposeStore.setResponses(["immigration policies", "police brutality", "schools"]);
 store.setMedium("painting");
-store.actionStore.setResponses(["raise awareness"]);
-store.audienceStore.setResponses(["high school students"]);
-
+store.setAction("raise awareness");
+store.setPurpose("challenge racism");
+*/
 export default store;

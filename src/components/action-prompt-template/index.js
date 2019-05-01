@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import Container from "../container";
 import style from "./index.module.scss";
 
-class MediumPromptTemplate extends React.Component {
+class ActionPromptTemplate extends React.Component {
   state = {
     showError: false
   };
@@ -11,7 +11,7 @@ class MediumPromptTemplate extends React.Component {
   onSubmit = event => {
     const { store, history, nextRoute } = this.props;
     event.preventDefault();
-    if (store.medium !== "") {
+    if (store.action !== "") {
       history.push(nextRoute);
     } else {
       this.setState({ showError: true });
@@ -24,7 +24,7 @@ class MediumPromptTemplate extends React.Component {
   };
 
   onChange = event => {
-    this.props.store.setMedium(event.target.value);
+    this.props.store.setAction(event.target.value);
     console.log(event.target.value);
   };
 
@@ -55,7 +55,7 @@ class MediumPromptTemplate extends React.Component {
           <input
             type="text"
             className={style.promptInput}
-            value={store.medium}
+            value={store.action}
             onChange={this.onChange}
           />
           {showError && (
@@ -71,4 +71,4 @@ class MediumPromptTemplate extends React.Component {
   }
 }
 
-export default observer(MediumPromptTemplate);
+export default observer(ActionPromptTemplate);

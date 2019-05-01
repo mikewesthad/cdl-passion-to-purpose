@@ -1,6 +1,6 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
-import PromptTemplate from "../components/prompt-template";
+import ActionPromptTemplate from "../components/action-prompt-template";
 //import { reaction } from "mobx";
 
 class Action extends React.Component {
@@ -8,9 +8,9 @@ class Action extends React.Component {
     const { gameData } = this.props;
 
     return (
-      <PromptTemplate
+      <ActionPromptTemplate
         {...this.props}
-        store={gameData.actionStore}
+        store={gameData}
         title={
           <React.Fragment>
             What <span className="title-emphasis">action</span> will you take?
@@ -24,23 +24,23 @@ class Action extends React.Component {
         }
         description2={
           <React.Fragment>
-            <p>
-              Raise Awareness
-              <br />
-              Change Behavior
-              <br />
-              Connect People to Opportunities
-              <br />
-              Make a Task Easier/More Accessible
-              <br />
-              Change Policies/Laws
-              <br />
-              Change Perception
-              <br />
-              Teach a Skill/Concept
-              <br />
-              Raise Money/Resources
-            </p>
+            <div>
+              <ul class="columns" data-columns="2">
+                <li> Raise Awareness</li>
+                <li> Change Behavior</li>
+                <li> Connect People to Opportunities</li>
+                <li>Make a Task Easier</li>
+                <li>Change Policies</li>
+                <li> Change Perception</li>
+                <li>Teach a Skill</li>
+                <li>Raise Money </li>
+              </ul>
+            </div>
+          </React.Fragment>
+        }
+        medium1={
+          <React.Fragment>
+            <p>I want to...</p>
           </React.Fragment>
         }
         stepNumber="4"

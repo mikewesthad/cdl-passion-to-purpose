@@ -92,10 +92,12 @@ a.link {
 .description2 {
   font-style: normal;
   font-size: 1.5rem;
-  text-align: center;
+  align-self: center;
+  text-align: left;
+  margin-left: 35%;
 
   & > *:first-child {
-    margin-top: 0;
+    margin-left: 0;
   }
   & > *:last-child {
     margin-bottom: 0;
@@ -103,7 +105,7 @@ a.link {
 }
 
 .medium1 {
-  font-weight: 700;
+  font-weight: 500;
   font-style: oblique;
   font-size: 1.5rem;
   text-align: center;

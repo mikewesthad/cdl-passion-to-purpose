@@ -63,9 +63,9 @@ const App = withRouter(
 class RoutedApp extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <MemoryRouter>
         <App />
-      </BrowserRouter>
+      </MemoryRouter>
     );
   }
 }
