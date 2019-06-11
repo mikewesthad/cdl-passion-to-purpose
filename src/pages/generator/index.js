@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
-import Container from "../../components/container";
-import SocialShare from "../../components/social-share";
+import GeneratorTemplate from "../../components/generator-template";
+import GenerateAttribution from "../../components/generator-attribution"; //added 11.6.19
+//import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
@@ -40,31 +41,27 @@ class Generator extends React.Component {
     const purpose = gameData.getPurposesWithVerb()[purposeIndex];
 
     return (
-      <Container>
-        <div className="step-count">Step 3/6</div>
-        <h1 className="title">How might we...?</h1>
-        <div className="description">
-          Let’s combine your passion and purpose – it’s okay if the ideas are crazy!
-        </div>
+      <GeneratorTemplate>
         <div className={style.generatedQuestion}>
-          How might we use <span className={style.generatedPassion}>{passion}</span> to{" "}
+          <span style={{ marginLeft: "3rem" }}>How might we use</span> <br />
+          <GenerateAttribution style={{ textAlign: "left", display: "inline" }} />
+          <span className={style.generatedPassion}>{passion}</span> to <br />
+          <GenerateAttribution
+            style={{ textAlign: "left", display: "inline" }}
+            onClick={this.getNextCombination}
+          />
           <span className={style.generatedPurpose}>{purpose}</span>?
-          <div className={style.generateButtonContainer}>
-            <button className="button button__stacked" onClick={this.getNextCombination}>
-              Give Me Another
-            </button>
-          </div>
-          <div className="text-center">
-            <Link
-              className="button"
-              to={nextRoute}
-              onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
-            >
-              Continue ➞
-            </Link>
-          </div>
         </div>
-      </Container>
+        <div className="generateButtonContainer">
+          <Link
+            className="button"
+            to={nextRoute}
+            onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
+          >
+            Continue ➞
+          </Link>
+        </div>
+      </GeneratorTemplate>
     );
   }
 }

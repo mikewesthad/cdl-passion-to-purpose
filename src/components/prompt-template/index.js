@@ -44,7 +44,6 @@ class PromptTemplate extends React.Component {
         <div className={style.prompt} key={id}>
           <label className={style.promptLabel} htmlFor={id}>
             <span className={style.promptLabelNumber}>{i + 1}.</span>
-            <span className={style.promptLabelText}>{prompt}</span>
           </label>
           <input
             type="text"
@@ -52,7 +51,8 @@ class PromptTemplate extends React.Component {
             value={value}
             id={id}
             onChange={e => this.setPassion(i, e.target.value)}
-            placeholder="Type something here..."
+            placeholder={prompt}
+            autoComplete="off" //added 5.26.19
           />
         </div>
       );

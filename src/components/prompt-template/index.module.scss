@@ -21,7 +21,8 @@
 }
 
 .promptLabel {
-  display: block;
+  display: inline;
+  /*future change to display: inline 5.26.19*/
   text-align: left;
   font-size: 1.2rem;
   margin-bottom: 1rem;
@@ -35,15 +36,17 @@
 .promptInput {
   font-size: 1.2rem;
   font-style: italic;
-  background-color: white;
+  background-color: #f4f4f4;
   height: 3rem;
-  border: 0.15rem solid #8e8e8e;
+  border-radius: 3rem; /*Added 5.26.19: for round*/
+  border: 0.15rem solid white; /*Changed 5.26.19 color used to be #8e8e8e*/
   transition: border-color 0.2s ease;
   width: 100%;
   padding: 1.5rem 1rem;
 
   &:focus {
     outline: none;
+    border: 0.15rem solid #8e8e8e;
     border-color: $primary-color;
   }
 }

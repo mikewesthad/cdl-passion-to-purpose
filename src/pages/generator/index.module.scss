@@ -1,6 +1,6 @@
 .generatedQuestion {
   font-size: 2.2rem;
-  text-align: center;
+  text-align: left;
   margin: 3rem 0;
 
   @media (min-width: 400px) {
@@ -12,9 +12,20 @@
 .generatedPassion,
 .generatedPurpose {
   text-decoration: underline;
-  font-weight: 600;
+  font-weight: 900; /*Added 5.25.19*/
+  text-transform: uppercase; /*Added 5.25.19*/
+}
+
+.generatedPassion {
+  color: #fd940d;
+}
+
+.generatedPurpose {
+  color: #2eb4ff;
 }
 
 .generateButtonContainer {
-  margin-top: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  display: inline;
 }

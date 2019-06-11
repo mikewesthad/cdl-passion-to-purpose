@@ -1,0 +1,16 @@
+.logo {
+  width: 2rem;
+  cursor: pointer;
+  transition: 0.2s transform;
+  fill: #cccccc;
+  margin-right: 1rem;
+
+  &:hover {
+    fill: #16171f;
+  }
+}
+
+.logoLink {
+  display: block;
+  margin: 0 auto;
+}

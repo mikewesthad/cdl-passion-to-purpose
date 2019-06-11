@@ -23,16 +23,16 @@ class GameData {
     });
 
     this.passionStore = new ResponsesStore(this, [
-      "I like to make",
-      "I have a background in",
-      "I spend my time"
+      "I like to make...", //testing 5.29.19, original "I like to make"
+      "I like to collect...",
+      "I want to learn more about..."
     ]);
 
     // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
-      "I want to say something about",
-      "I want to challenge",
-      "I want to express that"
+      "I want to advocate for",
+      "I want to protest",
+      "I want to challenge"
     ]);
 
     this.actionStore = new ResponsesStore(this, ["I want to"]);
@@ -101,6 +101,7 @@ class GameData {
     }
   }
 
+  //takes the wording after "I want to" for the HMW generation
   getPurposesWithVerb() {
     return this.purposeStore.responses.map(
       (purpose, i) => this.purposeStore.questions[i].replace("I want to ", "") + " " + purpose
@@ -185,11 +186,11 @@ class ResponsesStore {
 const store = new GameData();
 
 //Testing;
-/*
-store.passionStore.setResponses(["cooking", "Lego", "video games"]);
-store.purposeStore.setResponses(["immigration policies", "police brutality", "schools"]);
+
+store.passionStore.setResponses(["food", "Lego", "video games"]);
+store.purposeStore.setResponses(["immigration policies", "police brutality", "poverty in America"]);
 store.setMedium("painting");
 store.setAction("raise awareness");
-store.setPurpose("challenge racism");
-*/
+store.setPurpose("racism");
+
 export default store;
