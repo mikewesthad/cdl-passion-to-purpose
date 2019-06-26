@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import Button from "./button/";
-import { ReactComponent as RestartSvg } from "../../images/restart.svg";
+import { ReactComponent as RestartSvg } from "../../images/home.svg"; //previously restart.svg
 import { ReactComponent as BackSvg } from "../../images/back.svg";
 import style from "./index.module.scss";
 
