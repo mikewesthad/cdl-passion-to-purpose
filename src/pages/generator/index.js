@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution"; //added 11.6.19
-//import SocialShare from "../../components/social-share";
+import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
@@ -69,6 +69,9 @@ class Generator extends React.Component {
           >
             Restart
           </Link>
+        </div>
+        <div className="text-center">
+          <SocialShare passion={passion} purpose={purpose} />
         </div>
       </GeneratorTemplate>
     );
