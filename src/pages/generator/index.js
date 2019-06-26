@@ -64,10 +64,10 @@ class Generator extends React.Component {
         <div className="generateButtonContainer">
           <Link
             className="button"
-            to={nextRoute} //used to be nextRoute, no quotations
+            to={"home"} //used to be nextRoute, no quotations
             onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
           >
-            Continue ➞
+            Restart
           </Link>
         </div>
       </GeneratorTemplate>
