@@ -22,10 +22,18 @@ class Generator extends React.Component {
 
   getNextCombination = () => {
     this.setState(prev => {
-      // TODO: save combo number to DB
       return { combinationNumber: prev.combinationNumber + 1 };
     });
   };
+
+  //TODO: cycle through the PassionIndexes
+  getNextPassion = () => {
+    this.setState(prev => {
+      return { combinationNumber: prev.combinationNumber + 1 };
+    });
+  };
+
+  //TODO: function to cycle through the PurposeIndexes
 
   storeP2P = () => {
     this.props.store.setPurpose(this.render.purpose);
@@ -43,18 +51,20 @@ class Generator extends React.Component {
     return (
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
-          <span style={{ marginLeft: "3rem" }}>How might we use</span> <br />
-          <GenerateAttribution style={{ textAlign: "left", display: "inline" }} />
-          <span className={style.generatedPassion}>{passion}</span> to <br />
-          <GenerateAttribution
-            style={{ textAlign: "left", display: "inline" }}
-            onClick={this.getNextCombination}
-          />
-          <span className={style.generatedPurpose}>{purpose}</span>?
+          <span className={style.hmwPreset}>How might we use</span>
+          <div className={style.passionContainer}>
+            <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextPassion} />
+            <span className={style.generatedPassion}>{passion}</span>
+          </div>
+          <div className={style.purposeContainer}>
+            <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextCombination} />
+            <span className={style.generatedPurpose}>{purpose}?</span>
+          </div>
         </div>
         <div className="generateButtonContainer">
           <Link
             className="button"
+            to={nextRoute} //used to be nextRoute, no quotations
             onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
           >
             Continue ➞
