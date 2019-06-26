@@ -55,7 +55,6 @@ class Generator extends React.Component {
         <div className="generateButtonContainer">
           <Link
             className="button"
-            to={nextRoute}
             onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
           >
             Continue ➞
