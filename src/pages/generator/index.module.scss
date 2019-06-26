@@ -9,11 +9,29 @@
   }
 }
 
+/*added 6.18.19*/
+.hmwPreset {
+  display: block;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 3.5rem;
+}
+
+.passionContainer {
+  width: inherit;
+}
+
+.purposeContainer {
+  width: inherit;
+  display: inline-flex;
+}
+
 .generatedPassion,
 .generatedPurpose {
   text-decoration: underline;
   font-weight: 900; /*Added 5.25.19*/
   text-transform: uppercase; /*Added 5.25.19*/
+  font-size: 4rem; /*Added 6.18.19*/
 }
 
 .generatedPassion {
