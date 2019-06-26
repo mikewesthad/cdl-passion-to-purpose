@@ -61,6 +61,7 @@ class Generator extends React.Component {
             <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
+        {/*}
         <div className="generateButtonContainer">
           <Link
             className="button"
@@ -69,7 +70,7 @@ class Generator extends React.Component {
           >
             Restart
           </Link>
-        </div>
+    </div>*/}
         <div className="text-center">
           <SocialShare passion={passion} purpose={purpose} />
         </div>
