@@ -20,7 +20,7 @@ class Passion extends React.Component {
             <p>What do you geek out about? What do you do in your free time?</p>
           </React.Fragment>
         }
-        stepNumber="1"
+        //stepNumber="1"
       />
     );
   }

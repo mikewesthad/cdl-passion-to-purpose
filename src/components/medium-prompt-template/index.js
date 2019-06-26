@@ -42,10 +42,6 @@ class MediumPromptTemplate extends React.Component {
 
     return (
       <Container>
-        <div className="step-count">
-          Step {stepNumber}
-          /6
-        </div>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
         <div className="description2">{description2}</div>

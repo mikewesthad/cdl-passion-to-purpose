@@ -36,7 +36,6 @@ class Generator extends React.Component {
 
     return (
       <Container>
-        <div className="step-count">Step 6/6</div>
         <h1 className="title">Define</h1>
         <div className="description">
           Let’s combine your action and medium to define your project!
