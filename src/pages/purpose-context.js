@@ -6,10 +6,10 @@ export default function PurposeContext(props) {
   return (
     <Container>
       <div className="context-container" to={props.nextRoute}>
-        <h2 className="title">Quick tip!</h2>
+        <h2 className="title">Purpose</h2>
         <div className="description">
-          <p>Don't do this</p>
-          <p>Do this</p>
+          <p>Now we're going to ask you think outwardly.</p>
+          <p>Think about the change you want to see in the world.</p>
         </div>
       </div>
       <div className="text-center">
