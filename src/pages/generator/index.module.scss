@@ -13,14 +13,12 @@
 .hmwPreset {
   display: block;
   width: fit-content;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 3.5rem;
+  margin-left: 3rem;
 }
 
-.passionContainer {
-  width: inherit;
-}
-
+.passionContainer,
 .purposeContainer {
   width: inherit;
   display: inline-flex;
