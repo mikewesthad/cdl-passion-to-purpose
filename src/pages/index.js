@@ -8,7 +8,7 @@ import Audience from "./audience";
 import MakeGenerator from "./make-generator";
 import PassionContext from "./passion-context";
 import PurposeContext from "./purpose-context";
-import HMWContext from "./hmw-context";
+import HMWContext from "./hmw-context.js";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
