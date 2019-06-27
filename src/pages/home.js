@@ -8,8 +8,8 @@ export default function Home(props) {
     <Container>
       <h1 className="title">Imagine</h1>
       <div className="description">
-        <p>How can you make something meaningful?</p>
-        <p>Go through the various steps of the design process.</p>
+        <p>How can you turn your passion into a purpose?</p>
+        <p>Answer a couple simple questions to generate design questions to inspire yourself.</p>
       </div>
       <div className="text-center">
         <Link className="button" to={props.nextRoute}>
