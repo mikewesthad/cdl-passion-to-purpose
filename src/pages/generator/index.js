@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom"; //unhash when next page is needed
 import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution"; //added 11.6.19
@@ -56,6 +56,7 @@ class Generator extends React.Component {
             <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextPassion} />
             <span className={style.generatedPassion}>{passion}</span>
           </div>
+          <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
             <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextCombination} />
             <span className={style.generatedPurpose}>{purpose}?</span>
