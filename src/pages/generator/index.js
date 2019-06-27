@@ -71,7 +71,7 @@ class Generator extends React.Component {
             Restart
           </Link>
     </div>*/}
-        <div className="text-center">
+        <div className="social-container">
           <SocialShare passion={passion} purpose={purpose} />
         </div>
       </GeneratorTemplate>
