@@ -7,6 +7,8 @@ import Medium from "./medium";
 import Audience from "./audience";
 import MakeGenerator from "./make-generator";
 import PassionContext from "./passion-context";
+import PurposeContext from "./purpose-context";
+import HMWContext from "./hmw-context";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
@@ -33,7 +35,9 @@ export {
   Audience,
   PassionContext,
   Passion,
+  PurposeContext,
   Purpose,
+  HMWContext,
   Generator,
   routes,
   routeMap
