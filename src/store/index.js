@@ -23,8 +23,9 @@ class GameData {
     });
 
     this.passionStore = new ResponsesStore(this, [
-      "I like to make...", //testing 5.29.19, original "I like to make"
+      "I am a fan of...",
       "I like to collect...",
+      "I am proficient at...",
       "I want to learn more about..."
     ]);
 
@@ -187,10 +188,10 @@ const store = new GameData();
 
 //Testing;
 
-store.passionStore.setResponses(["food", "Lego", "video games"]);
+/*store.passionStore.setResponses(["food", "Lego", "video games"]);
 store.purposeStore.setResponses(["immigration policies", "police brutality", "poverty in America"]);
 store.setMedium("painting");
 store.setAction("raise awareness");
-store.setPurpose("racism");
+store.setPurpose("racism");*/
 
 export default store;
