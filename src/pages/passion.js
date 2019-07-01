@@ -17,7 +17,8 @@ class Passion extends React.Component {
         }
         description={
           <React.Fragment>
-            <p>What do you geek out about? What do you do in your free time?</p>
+            <p>Be as specific as possible.</p>
+            <p>Only provide one answer to each question.</p>
           </React.Fragment>
         }
         //stepNumber="1"

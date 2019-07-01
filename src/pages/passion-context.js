@@ -8,8 +8,7 @@ export default function PassionContext(props) {
       <div className="context-container" to={props.nextRoute}>
         <h2 className="title">Passion</h2>
         <div className="description">
-          <p>First, we're going to ask you about your passions.</p>
-          <p>Answer honestly, and only provide one answer to each question.</p>
+          <p>What do you geek out about? What do you do in your free time?</p>
         </div>
       </div>
       <div className="text-center">
