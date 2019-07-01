@@ -31,9 +31,10 @@ class GameData {
 
     // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
-      "I want to advocate for",
-      "I want to protest",
-      "I want to challenge"
+      "I want to advocate for...",
+      "I want to protest...",
+      "I want to challenge...",
+      "I want to help others overcome..."
     ]);
 
     this.actionStore = new ResponsesStore(this, ["I want to"]);
