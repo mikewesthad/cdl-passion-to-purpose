@@ -16,6 +16,7 @@ const routes = [
   { key: "home", path: "/", exact: true, Component: Home },
   { key: "passion-context", path: "/passion-context", Component: PassionContext },
   { key: "passion", path: "/passion", Component: Passion },
+  { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "generator", path: "/generator", Component: Generator },
   { key: "action", path: "/action", Component: Action },
