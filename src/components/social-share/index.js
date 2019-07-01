@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import {
   FacebookShareButton,
   FacebookIcon,
-  GooglePlusShareButton,
-  GooglePlusIcon,
   TwitterShareButton,
   TwitterIcon,
   LinkedinShareButton,
@@ -46,9 +44,6 @@ export default class SocialShare extends Component {
           <RedditShareButton className={style.shareButton} url={p2pUrl} title={text}>
             <RedditIcon round={true} />
           </RedditShareButton>
-          <GooglePlusShareButton className={style.shareButton} url={p2pUrl} title={text}>
-            <GooglePlusIcon round={true} />
-          </GooglePlusShareButton>
           <LinkedinShareButton
             className={style.shareButton}
             url={p2pUrl}
