@@ -8,8 +8,7 @@ export default function PurposeContext(props) {
       <div className="context-container" to={props.nextRoute}>
         <h2 className="title">Purpose</h2>
         <div className="description">
-          <p>Now we're going to ask you think outwardly.</p>
-          <p>Think about the change you want to see in the world.</p>
+          <p>What issues do you care about? Where do you want to make an impact?</p>
         </div>
       </div>
       <div className="text-center">
