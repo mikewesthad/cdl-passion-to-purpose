@@ -31,10 +31,10 @@ class GameData {
 
     // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
-      "I want to advocate for...",
-      "I want to protest...",
-      "I want to challenge...",
-      "I want to help others overcome..."
+      "I want to advocate for",
+      "I want to protest",
+      "I want to challenge",
+      "I want to help others overcome"
     ]);
 
     this.actionStore = new ResponsesStore(this, ["I want to"]);
@@ -189,10 +189,12 @@ const store = new GameData();
 
 //Testing;
 
-/*store.passionStore.setResponses(["food", "Lego", "video games"]);
-store.purposeStore.setResponses(["immigration policies", "police brutality", "poverty in America"]);
-store.setMedium("painting");
-store.setAction("raise awareness");
-store.setPurpose("racism");*/
+store.passionStore.setResponses(["food", "Lego", "video games", "beyonce"]);
+store.purposeStore.setResponses([
+  "immigration policies",
+  "police brutality",
+  "poverty in America",
+  "testing"
+]);
 
 export default store;
