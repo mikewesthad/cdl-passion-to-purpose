@@ -8,7 +8,7 @@ import Audience from "./audience";
 import MakeGenerator from "./make-generator";
 import PassionContext from "./passion-context";
 import PurposeContext from "./purpose-context";
-import HMWContext from "./hmw-context.js";
+import HMWContext from "./hmw-context";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
@@ -18,6 +18,7 @@ const routes = [
   { key: "passion", path: "/passion", Component: Passion },
   { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
   { key: "purpose", path: "/purpose", Component: Purpose },
+  { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
   { key: "action", path: "/action", Component: Action },
   { key: "medium", path: "/medium", Component: Medium },
@@ -38,7 +39,6 @@ export {
   Passion,
   PurposeContext,
   Purpose,
-  HMWContext,
   Generator,
   routes,
   routeMap
