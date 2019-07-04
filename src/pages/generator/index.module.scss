@@ -33,8 +33,13 @@
   text-decoration: underline;
   font-weight: 900; /*Added 5.25.19*/
   text-transform: uppercase; /*Added 5.25.19*/
-  font-size: 4rem; /*Added 6.18.19*/
+  font-size: 2.5rem; /*Added 6.18.19*/
   margin-left: 1rem;
+  overflow-wrap: break-word;
+
+  @media (min-width: 400px) {
+    font-size: 4rem;
+  }
 }
 
 .generatedPassion {
