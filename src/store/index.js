@@ -31,10 +31,10 @@ class GameData {
 
     // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
-      "I want to advocate for",
-      "I want to protest",
-      "I want to challenge",
-      "I want to help others overcome"
+      "I want to advocate for...",
+      "I want to protest...",
+      "I want to challenge...",
+      "I want to help others overcome..."
     ]);
 
     this.actionStore = new ResponsesStore(this, ["I want to"]);
@@ -106,7 +106,8 @@ class GameData {
   //takes the wording after "I want to" for the HMW generation
   getPurposesWithVerb() {
     return this.purposeStore.responses.map(
-      (purpose, i) => this.purposeStore.questions[i].replace("I want to ", "") + " " + purpose
+      (purpose, i) =>
+        this.purposeStore.questions[i].replace("I want to ", "").replace("...", "") + " " + purpose
     );
   }
 
