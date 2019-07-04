@@ -147,6 +147,11 @@ a.link {
   &:active {
     background-color: darken($primary-color, 20%);
   }
+  &:focus {
+    transition: background-color 0.2s ease;
+    background-color: darken($primary-color, 20%);
+    outline: none; //take this out to bring back the default black dotted line
+  }
 }
 
 .button__stacked {
