@@ -53,10 +53,7 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use</span>
           <div className={style.passionContainer}>
-            <GenerateAttribution
-              style={{ display: "inline", height: "100%", margin: "auto" }}
-              onClick={this.getNextPassion}
-            />
+            <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextPassion} />
             <span className={style.generatedPassion}>{passion}</span>
           </div>
           <span className={style.hmwPreset}>to</span>
@@ -75,6 +72,9 @@ class Generator extends React.Component {
             Restart
           </Link>
     </div>*/}
+        <div className="navigation">
+          <input className="button submit-button" type="submit" value="Continue with this ➞" />
+        </div>
         <div className="social-container">
           <SocialShare passion={passion} purpose={purpose} />
         </div>
