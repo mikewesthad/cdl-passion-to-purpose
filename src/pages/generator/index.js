@@ -21,31 +21,27 @@ class Generator extends React.Component {
   }
 
   getNextPassion = () => {
-    if(this.state.passionNum < 3){
-    this.setState(prev => {
-      return { passionNum: prev.passionNum + 1 };
-    });
-
-    }
-    else{
-
+    if (this.state.passionNum < 3) {
+      this.setState(prev => {
+        return { passionNum: prev.passionNum + 1 };
+      });
+    } else {
       this.setState(prev => {
         return { passionNum: 0 };
-      });    }
+      });
+    }
   };
 
   getNextPurpose = () => {
-    if(this.state.purposeNum < 3){
+    if (this.state.purposeNum < 3) {
       this.setState(prev => {
         return { purposeNum: prev.purposeNum + 1 };
       });
-  
-      }
-      else{
-  
-        this.setState(prev => {
-          return { purposeNum: 0 };
-        });    }
+    } else {
+      this.setState(prev => {
+        return { purposeNum: 0 };
+      });
+    }
   };
 
   storeP2P = () => {
@@ -59,10 +55,6 @@ class Generator extends React.Component {
     const { purposeNum } = this.state;
     const passion = gameData.passionStore.responses[passionNum];
     const purpose = gameData.getPurposesWithVerb()[purposeNum];
-
-    console.log(gameData.passionStore.responses[1]);
-    console.log(passionNum);
-    console.log(this.render.passionNum);
 
     return (
       <GeneratorTemplate>
