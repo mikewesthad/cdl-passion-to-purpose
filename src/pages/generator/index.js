@@ -12,7 +12,7 @@ class Generator extends React.Component {
 
     const gameData = this.props.gameData;
     gameData.generateCombinations();
-    this.state = { combinationNumber: 0 };
+    this.state = { passionNum: 0, purposeNum: 0 };
   }
 
   componentDidMount() {
@@ -20,20 +20,17 @@ class Generator extends React.Component {
     gameData.saveToFirebase();
   }
 
-  getNextCombination = () => {
-    this.setState(prev => {
-      return { combinationNumber: prev.combinationNumber + 1 };
-    });
-  };
-
-  //TODO: cycle through the PassionIndexes
   getNextPassion = () => {
     this.setState(prev => {
-      return { combinationNumber: prev.combinationNumber + 1 };
+      return { passionNum: prev.passionNum + 1 };
     });
   };
 
-  //TODO: function to cycle through the PurposeIndexes
+  getNextPurpose = () => {
+    this.setState(prev => {
+      return { purposeNum: prev.purposeNum + 1 };
+    });
+  };
 
   storeP2P = () => {
     this.props.store.setPurpose(this.render.purpose);
@@ -42,11 +39,14 @@ class Generator extends React.Component {
 
   render() {
     const { gameData, nextRoute } = this.props;
-    const { combinationNumber } = this.state;
-    const combinations = gameData.combinations;
-    const [passionIndex, purposeIndex] = combinations[combinationNumber % combinations.length];
-    const passion = gameData.passionStore.responses[passionIndex];
-    const purpose = gameData.getPurposesWithVerb()[purposeIndex];
+    const { passionNum } = this.state;
+    const { purposeNum } = this.state;
+    const passion = gameData.passionStore.responses[passionNum];
+    const purpose = gameData.getPurposesWithVerb()[purposeNum];
+
+    console.log(gameData.passionStore.responses[1]);
+    console.log(passionNum);
+    console.log(this.render.passionNum);
 
     return (
       <GeneratorTemplate>
@@ -58,7 +58,7 @@ class Generator extends React.Component {
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
-            <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextCombination} />
+            <GenerateAttribution style={{ display: "inline" }} onClick={this.getNextPurpose} />
             <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
