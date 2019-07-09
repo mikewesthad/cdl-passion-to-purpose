@@ -19,12 +19,13 @@
 label {
   position: absolute;
   top: 1rem;
-  left: 6.5rem;
+  left: 1rem;
   transition: 0.2s;
 }
 
 .testdiv {
   position: relative;
+  display: inline-block;
 }
 
 .prompt {
@@ -67,7 +68,7 @@ label {
     &:focus + label {
       font-weight: bold;
       top: -1.5rem;
-      left: 6.5rem;
+      left: 1rem;
     }
   }
 }
@@ -75,7 +76,7 @@ label {
 input:valid + label {
   font-weight: bold;
   top: -1.5rem;
-  left: 6.5rem;
+  left: 1rem;
 }
 
 input:invalid {
