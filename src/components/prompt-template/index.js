@@ -43,9 +43,9 @@ class PromptTemplate extends React.Component {
       return (
         <div className={style.box}>
           <div className={style.prompt} key={id}>
-            {/*<label className={style.promptLabel} htmlFor={id}>
+            <span className={style.promptLabel} htmlFor={id}>
               <span className={style.promptLabelNumber}>{i + 1}.</span>
-      </label>*/}
+            </span>
             <div className={style.testdiv}>
               <input
                 type="text"
