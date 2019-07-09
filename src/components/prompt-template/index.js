@@ -41,19 +41,24 @@ class PromptTemplate extends React.Component {
       const id = `prompt-${i}`;
       const value = store.responses[i] || "";
       return (
-        <div className={style.prompt} key={id}>
-          <label className={style.promptLabel} htmlFor={id}>
-            <span className={style.promptLabelNumber}>{i + 1}.</span>
-          </label>
-          <input
-            type="text"
-            className={style.promptInput}
-            value={value}
-            id={id}
-            onChange={e => this.setPassion(i, e.target.value)}
-            placeholder={prompt}
-            autoComplete="off" //added 5.26.19
-          />
+        <div className={style.box}>
+          <div className={style.prompt} key={id}>
+            {/*<label className={style.promptLabel} htmlFor={id}>
+              <span className={style.promptLabelNumber}>{i + 1}.</span>
+      </label>*/}
+            <div className={style.testdiv}>
+              <input
+                type="text"
+                className={style.promptInput}
+                value={value}
+                id={id}
+                required
+                onChange={e => this.setPassion(i, e.target.value)}
+                autoComplete="off"
+              />
+              <label>{prompt}</label>
+            </div>
+          </div>
         </div>
       );
     });
