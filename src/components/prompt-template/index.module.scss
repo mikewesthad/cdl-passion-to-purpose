@@ -12,40 +12,49 @@
   text-align: center;
 }
 
+/*.box {
+  position: absolute;
+}*/
+
+label {
+  position: absolute;
+  top: 1rem;
+  left: 6.5rem;
+  transition: 0.2s;
+}
+
+.testdiv {
+  position: relative;
+}
+
 .prompt {
   margin: 1rem 0;
   padding-left: 2rem;
 }
 
-.floatingLabel {
-  display: block;
-  text-align: left;
-  margin-left: 0.5rem;
-  display: none;
-}
-
-.promptLabel {
+/*.promptLabel {
   display: inline;
   text-align: left;
   font-size: 1.2rem;
   margin-bottom: 1rem;
-}
+}*/
 
-.promptLabelNumber {
+/*.promptLabelNumber {
   margin-right: 1rem;
   margin-left: -3rem;
-}
+}*/
 
 .promptInput {
   font-size: 1.2rem;
   font-style: italic;
   background-color: #f4f4f4;
   height: 3rem;
-  border-radius: 3rem; /*Added 5.26.19: for round*/
-  border: 0.15rem solid white; /*Changed 5.26.19 color used to be #8e8e8e*/
+  border-radius: 3rem;
+  border: 0.15rem solid white;
   transition: border-color 0.2s ease;
   width: auto;
   padding: 1.5rem 1rem;
+  margin-bottom: 2rem;
 
   @media (min-width: 800px) {
     width: 600px;
@@ -55,5 +64,22 @@
     outline: none;
     border: 0.15rem solid #8e8e8e;
     border-color: $primary-color;
+
+    &:focus + label {
+      font-weight: bold;
+      top: -1.5rem;
+      left: 6.5rem;
+    }
   }
+}
+
+input:valid + label {
+  font-weight: bold;
+  top: -1.5rem;
+  left: 6.5rem;
+}
+
+input:invalid {
+  border: none;
+  box-shadow: none;
 }
