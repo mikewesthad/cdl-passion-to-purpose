@@ -70,14 +70,13 @@ class Generator extends React.Component {
             <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
-        {/*}
-        <div className="generateButtonContainer">
+        <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link
             className="button"
-            to={"home"} //used to be nextRoute, no quotations
+            to={nextRoute}
             onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
           >
-            Restart
+            Continue with this ➞
           </Link>
         </div>
       </GeneratorTemplate>
