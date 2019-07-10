@@ -20,9 +20,9 @@ const routes = [
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
+  { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
   { key: "action", path: "/action", Component: Action },
-  { key: "medium", path: "/medium", Component: Medium },
-  { key: "makegenerator", path: "/make-generator", Component: MakeGenerator }
+  { key: "medium", path: "/medium", Component: Medium }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
@@ -39,6 +39,7 @@ export {
   Passion,
   PurposeContext,
   Purpose,
+  HMWContext,
   Generator,
   routes,
   routeMap
