@@ -2,7 +2,7 @@ import React from "react";
 //import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
-//import SocialShare from "../../components/social-share";
+import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
@@ -31,22 +31,25 @@ class Generator extends React.Component {
     const { combinationNumber } = this.state;
     const combinations = gameData.combinations;
     const [passionIndex, purposeIndex] = combinations[combinationNumber % combinations.length];
-    const passion = gameData.passionStore.responses[passionIndex];
-    const purpose = gameData.getPurposesWithVerb()[purposeIndex];
+    //const passion = gameData.passionStore.responses[passionIndex];
+    //const purpose = gameData.getPurposesWithVerb()[purposeIndex];
 
     return (
       <Container>
-        <h1 className="title">Define</h1>
-        <div className="description">
-          Let’s combine your action and medium to define your project!
-        </div>
+        <h1 className="title">Next Steps</h1>
+
         <div className={style.generatedQuestion}>
-          How might we use <span className={style.generatedPassion}>{passion}</span> to{" "}
-          <span className={style.generatedPurpose}>{gameData.purpose}</span>? <br />
-          Let's make a <span className={style.generatedPassion}>{gameData.medium}</span> to{" "}
-          <span className={style.generatedPassion}>{gameData.action}</span>
-          .
-          <div className={style.generateButtonContainer} />
+          How might we use <span className={style.generatedPassion}>{gameData.passion}</span> to{" "}
+          <span className={style.generatedPurpose}>{gameData.purpose}</span>? 
+        </div>
+
+        <div className="description">
+          Try sketching out some ideas to answer your question!
+          Exchange questions with a friend and work on ideas together!
+        </div>
+
+        <div className="social-container">
+          <SocialShare passion={gameData.passion} purpose={gameData.purpose} />
         </div>
       </Container>
     );
@@ -54,3 +57,13 @@ class Generator extends React.Component {
 }
 
 export default inject("gameData")(observer(Generator));
+
+
+/*
+          <br />
+          Let's make a <span className={style.generatedPassion}>{gameData.medium}</span> to{" "}
+          <span className={style.generatedPassion}>{gameData.action}</span>
+          .
+          <div className={style.generateButtonContainer} />
+
+*/ 
