@@ -79,16 +79,7 @@ class Generator extends React.Component {
           >
             Restart
           </Link>
-    </div>*/}
-        <div className="navigation">
-          <Link className="button" type="submit" value="Continue with this ➞"             
-          to={nextRoute} 
-
-          onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}/>
-        
-          
         </div>
-
       </GeneratorTemplate>
     );
   }
