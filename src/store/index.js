@@ -69,6 +69,7 @@ class GameData {
 
   setPurpose = action(purposeString => {
     this.purpose = purposeString;
+    //console.log("purpose value: " + this.purpose);
   });
 
   setPassion = action(passionString => {

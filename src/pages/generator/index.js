@@ -1,9 +1,9 @@
 import React from "react";
-//import { Link } from "react-router-dom"; //unhash when next page is needed
+import { Link } from "react-router-dom"; //unhash when next page is needed
 import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution"; //added 11.6.19
-import SocialShare from "../../components/social-share";
+//import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
@@ -81,11 +81,14 @@ class Generator extends React.Component {
           </Link>
     </div>*/}
         <div className="navigation">
-          <input className="button submit-button" type="submit" value="Continue with this ➞" />
+          <Link className="button" type="submit" value="Continue with this ➞"             
+          to={nextRoute} 
+
+          onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}/>
+        
+          
         </div>
-        <div className="social-container">
-          <SocialShare passion={passion} purpose={purpose} />
-        </div>
+
       </GeneratorTemplate>
     );
   }
