@@ -43,9 +43,20 @@ class Generator extends React.Component {
           <span className={style.generatedPurpose}>{gameData.purpose}</span>? 
         </div>
 
+        {/*<div className={style.generatedQuestion}>
+          <span className={style.hmwPreset}>How might we use</span>
+          <div className={style.passionContainer}>
+            <span className={style.generatedPassion}>{gameData.passion}</span>
+          </div>
+          <span className={style.hmwPreset}>to</span>
+          <div className={style.purposeContainer}>
+            <span className={style.generatedPurpose}>{gameData.purpose}?</span>
+          </div>
+  </div>*/}
+
         <div className="description">
-          Try sketching out some ideas to answer your question!
-          Exchange questions with a friend and work on ideas together!
+          Try sketching out some ideas to answer your question! Exchange questions with a friend and
+          work on ideas together!
         </div>
 
         <div className="social-container">
@@ -58,7 +69,6 @@ class Generator extends React.Component {
 
 export default inject("gameData")(observer(Generator));
 
-
 /*
           <br />
           Let's make a <span className={style.generatedPassion}>{gameData.medium}</span> to{" "}
@@ -66,4 +76,4 @@ export default inject("gameData")(observer(Generator));
           .
           <div className={style.generateButtonContainer} />
 
-*/ 
+*/
