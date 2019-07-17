@@ -2,17 +2,53 @@
   font-size: 2.2rem;
   text-align: center;
   margin: 3rem 0;
+}
 
-  @media (min-width: 400px) {
-    font-size: 2.4rem;
-    margin: 4rem 0;
+.bolded {
+  font-weight: 600;
+}
+
+.hmwPreset {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  font-size: 2rem;
+
+  @media (min-width: 880px) {
+    font-size: 3.5rem;
   }
+}
+
+.passionContainer,
+.purposeContainer {
+  width: inherit;
+  display: inline-flex;
+}
+
+.passionContainer,
+.purposeContainer {
+  width: inherit;
+  display: inline-flex;
 }
 
 .generatedPassion,
 .generatedPurpose {
-  text-decoration: underline;
-  font-weight: 600;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  overflow-wrap: break-word;
+
+  @media (min-width: 400px) {
+    font-size: 4rem;
+  }
+}
+
+.generatedPassion {
+  color: #fd940d;
+}
+
+.generatedPurpose {
+  color: #2eb4ff;
 }
 
 .generateButtonContainer {
