@@ -56,7 +56,7 @@ class PromptTemplate extends React.Component {
                 onChange={e => this.setPassion(i, e.target.value)}
                 autoComplete="off"
               />
-              <label>{prompt}</label>
+              <label htmlFor={id}>{prompt}</label>
             </div>
           </div>
         </div>
