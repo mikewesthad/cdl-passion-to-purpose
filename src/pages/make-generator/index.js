@@ -39,8 +39,10 @@ class Generator extends React.Component {
         <h1 className="title">Next Steps</h1>
 
         <div className={style.generatedQuestion}>
-          How might we use <span className={style.generatedPassion}>{gameData.passion}</span> to{" "}
-          <span className={style.generatedPurpose}>{gameData.purpose}</span>? 
+          <span className={style.bolded}>How might we use </span>
+          <span className={style.generatedPassion}>{gameData.passion}</span>
+          <span className={style.bolded}> to </span>
+          <span className={style.generatedPurpose}>{gameData.purpose}?</span>
         </div>
 
         {/*<div className={style.generatedQuestion}>
