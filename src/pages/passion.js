@@ -21,7 +21,6 @@ class Passion extends React.Component {
             <p>Only provide one answer to each question.</p>
           </React.Fragment>
         }
-        //stepNumber="1"
       />
     );
   }
