@@ -60,10 +60,12 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use</span>
           <div className={style.passionContainer}>
+            <GenerateAttribution className={style.generatedButton} onClick={this.getNextPassion} />
             <span className={style.generatedPassion}>{passion}</span>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
+            <GenerateAttribution className={style.generatedButton} onClick={this.getNextPurpose} />
             <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
