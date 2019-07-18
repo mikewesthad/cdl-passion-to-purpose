@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom"; //unhash when next page is needed
+import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
-import GenerateAttribution from "../../components/generator-attribution"; //added 11.6.19
-//import SocialShare from "../../components/social-share";
+import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
