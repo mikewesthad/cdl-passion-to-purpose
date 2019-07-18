@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { ReactComponent as LogoSvg } from "../../images/generate.svg";
-import Button from "../nav/button";
 import { ReactComponent as ShuffleSvg } from "../../images/shuffle.svg";
 import style from "./index.module.scss";
 
