@@ -1,20 +1,32 @@
-.logo {
-  width: 2rem;
+.button {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  margin: 0;
+  outline: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+
   cursor: pointer;
-  transition: 0.2s transform;
-  fill: #cccccc;
-  user-select: none;
+  background-color: #2eb4ff;
+  color: white;
+
+  transition: background-color 0.2s ease, opacity 0.3s ease;
 
   &:hover {
-    fill: #16171f;
+    background-color: darken(#2eb4ff, 10%);
   }
-}
 
-title {
-  display: none;
-}
+  &:active {
+    background-color: darken(#2eb4ff, 20%);
+  }
 
-.logoLink {
-  display: block;
-  margin: 0 auto;
+  &:disabled {
+    opacity: 0;
+  }
+
+  justify-content: center;
+  align-items: center;
 }
