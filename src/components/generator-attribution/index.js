@@ -6,12 +6,6 @@ export default class GenerateAttribution extends Component {
   render() {
     return (
       <div {...this.props}>
-        <LogoSvg className={style.logo} />
-        <nav className={style.nav}>
-          <Button>
-            <ShuffleSvg />
-          </Button>
-        </nav>
       </div>
     );
   }
