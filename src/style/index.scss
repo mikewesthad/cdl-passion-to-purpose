@@ -33,7 +33,6 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: $font-color;
-  /*background: url(../images/geometry.png);*/ /*Hidden 5.25.19*/
 }
 
 a.link {
@@ -59,12 +58,6 @@ a.link {
 
 .social-container {
   text-align: center;
-  /*position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding-bottom: 1rem;*/
 }
 
 .title {
@@ -151,7 +144,7 @@ a.link {
   &:focus {
     transition: background-color 0.2s ease;
     background-color: darken($primary-color, 20%);
-    outline: none; //take this out to bring back the default black dotted line
+    outline: none;
   }
 }
 
