@@ -24,7 +24,7 @@ class GameData {
 
     this.passionStore = new ResponsesStore(this, [
       "I am a fan of...",
-      "As a kid, I liked to...",
+      "I spend my time...",
       "I am good at...",
       "I want to learn how to..."
     ]);
