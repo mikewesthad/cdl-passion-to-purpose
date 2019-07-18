@@ -2,14 +2,8 @@
   font-size: 2.2rem;
   text-align: left;
   margin: 3rem 0;
-
-  @media (min-width: 400px) {
-    /*font-size: 1rem; /*previously 2.4rem*/
-    /*margin: 4rem 0;*/
-  }
 }
 
-/*added 6.18.19*/
 .hmwPreset {
   display: block;
   width: fit-content;
@@ -31,9 +25,9 @@
 .generatedPassion,
 .generatedPurpose {
   text-decoration: underline;
-  font-weight: 900; /*Added 5.25.19*/
-  text-transform: uppercase; /*Added 5.25.19*/
-  font-size: 2.5rem; /*Added 6.18.19*/
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 2.5rem;
   margin-left: 1rem;
   overflow-wrap: break-word;
 
@@ -51,8 +45,6 @@
 }
 
 .button {
-  // Resets
-
   text-decoration: none;
   display: inline-block;
   vertical-align: middle;
@@ -78,6 +70,6 @@
   &:focus {
     transition: background-color 0.2s ease;
     background-color: darken(#2eb4ff, 20%);
-    outline: none; //take this out to bring back the default black dotted line
+    outline: none;
   }
 }
