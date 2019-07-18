@@ -22,6 +22,15 @@
   display: inline-flex;
 }
 
+.generatedButton {
+  margin-top: 0;
+  user-select: none;
+
+  @media (min-width: 400px) {
+    margin-top: 1rem;
+  }
+}
+
 .generatedPassion,
 .generatedPurpose {
   text-decoration: underline;
