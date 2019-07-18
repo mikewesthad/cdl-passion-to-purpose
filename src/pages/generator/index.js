@@ -20,7 +20,7 @@ class Generator extends React.Component {
   }
 
   getNextPassion = () => {
-    if (this.state.passionNum < 3) {
+    if (this.state.passionNum < this.props.gameData.passionStore.numQuestions - 1) {
       this.setState(prev => {
         return { passionNum: prev.passionNum + 1 };
       });
@@ -32,7 +32,7 @@ class Generator extends React.Component {
   };
 
   getNextPurpose = () => {
-    if (this.state.purposeNum < 3) {
+    if (this.state.purposeNum < this.props.gameData.purposeStore.numQuestions - 1) {
       this.setState(prev => {
         return { purposeNum: prev.purposeNum + 1 };
       });
