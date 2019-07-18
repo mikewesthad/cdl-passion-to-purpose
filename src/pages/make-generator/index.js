@@ -27,10 +27,6 @@ class Generator extends React.Component {
 
   render() {
     const { gameData } = this.props;
-    const { combinationNumber } = this.state;
-    const combinations = gameData.combinations;
-    const [passionIndex, purposeIndex] = combinations[combinationNumber % combinations.length];
-
     return (
       <Container>
         <h1 className="title">Next Steps</h1>
