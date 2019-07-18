@@ -26,15 +26,7 @@ class PromptTemplate extends React.Component {
 
   render() {
     const { showError } = this.state;
-    const {
-      store,
-      stepNumber,
-      title,
-      description,
-      description2,
-      medium1,
-      afterPromptComponent
-    } = this.props;
+    const { store, title, description, description2, medium1, afterPromptComponent } = this.props;
     const prompts = store.getQuestions();
 
     const inputs = prompts.map((prompt, i) => {
