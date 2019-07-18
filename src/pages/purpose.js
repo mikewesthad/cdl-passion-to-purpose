@@ -29,7 +29,7 @@ class Purpose extends React.Component {
           </React.Fragment>
         }
         afterPromptComponent={
-          <div style={{ margin: "2rem 0" }}>
+          <div style={{ margin: "2rem" }}>
             <Checkbox
               id="sharing-checkbox"
               label="Share your passions & purposes anonymously to help us improve the tool."
