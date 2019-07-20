@@ -169,6 +169,7 @@ class ResponsesStore {
     return isValid(this.responses[i]);
   }
   areAllResponsesValid() {
+    return this.responses.every(isValid && isMyself && isMe);
   }
   toJSON() {
     return this.responses.slice();
