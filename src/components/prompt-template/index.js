@@ -64,7 +64,7 @@ class PromptTemplate extends React.Component {
         <form className={style.form} onSubmit={this.onSubmit}>
           {inputs}
           {showError && (
-            <div className={style.formError}>*Fill out all the prompts to continue!</div>
+            <div className={style.formError}>*Do not answer with "me" or "myself"!</div>
           )}
           {afterPromptComponent}
           <div className="navigation">
