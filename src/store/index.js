@@ -26,7 +26,7 @@ class GameData {
       "I am a fan of...",
       "I spend my time...",
       "I am good at...",
-      "I want to learn how to..."
+      "I want to learn more about..."
     ]);
 
     // All must start with "I want to "
