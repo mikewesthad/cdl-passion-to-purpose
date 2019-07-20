@@ -8,8 +8,8 @@ export default function HMWContext(props) {
       <div className="context-container" to={props.nextRoute}>
         <h2 className="title">How might we...?</h2>
         <div className="description">
-          <p>Now, we're going to combine your answers</p>
-          <p>Click to see the different combinations and choose your favorite!</p>
+          <p>Let's combine your responses!</p>
+          <p>Click to see the different combinations and choose your favorite.</p>
         </div>
       </div>
       <div className="text-center">
