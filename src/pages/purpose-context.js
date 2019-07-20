@@ -8,7 +8,8 @@ export default function PurposeContext(props) {
       <div className="context-container" to={props.nextRoute}>
         <h2 className="title">What is your purpose?</h2>
         <div className="description">
-          <p>What issues do you care about? Where do you want to make an impact?</p>
+          <p>What issues do you care about?</p>
+          <p>Where do you want to make an impact?</p>
         </div>
       </div>
       <div className="text-center">
