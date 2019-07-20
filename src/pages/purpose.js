@@ -24,8 +24,7 @@ class Purpose extends React.Component {
         }
         description={
           <React.Fragment>
-            <p>Now we are going to ask you to think outwardly.</p>
-            <p>Do not answer prompts with "myself".</p>
+            <p>Think about how you want to make an impact in the world.</p>
           </React.Fragment>
         }
         afterPromptComponent={
