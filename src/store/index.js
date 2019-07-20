@@ -6,6 +6,8 @@ import { range, generateCombinations } from "../utils/array-utils";
 
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
+const isMyself = elem => elem !== "myself";
+const isMe = elem => elem !== "me";
 const frontEndVersionString = process.env.REACT_APP_VERSION.replace(/\./g, "-");
 
 class GameData {
