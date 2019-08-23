@@ -80,6 +80,8 @@ class GameData {
         this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
         const passionPrompts = JSON.stringify(this.passionPromptStore);
         const purposePrompts = JSON.stringify(this.passionPromptStore);
+        const chosenPassion = this.passion;
+        const chosenPurpose = this.purpose;
         db.saveResponses(
           this.responseRef,
           frontEndVersionString,
@@ -88,6 +90,8 @@ class GameData {
           purposePrompts,
           dataToSave.passionResponses,
           dataToSave.purposeResponses,
+          chosenPassion,
+          chosenPurpose,
           stringCombos
         ).catch(console.log);
         this.lastSaved = dataToSave;

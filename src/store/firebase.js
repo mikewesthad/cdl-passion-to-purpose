@@ -31,6 +31,8 @@ class FirebaseDatabase {
     PurposePrompts,
     passionResponses,
     purposeResponses,
+    chosenPassion,
+    chosenPurpose,
     combinations
   ) {
     // add medium, aduience, action from store
@@ -39,6 +41,8 @@ class FirebaseDatabase {
       purposeResponses,
       PassionPrompts,
       PurposePrompts,
+      chosenPassion,
+      chosenPurpose,
       timestamp: now,
       combinations
     });
