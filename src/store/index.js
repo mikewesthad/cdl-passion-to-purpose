@@ -83,10 +83,10 @@ class GameData {
       if (!isEqual(dataToSave, this.lastSaved)) {
         const stringCombos = JSON.stringify(this.combinations);
         this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
-        const passionPrompts = this.passionPromptStore;
-        const purposePrompts = this.purposePromptStore;
-        const chosenPassion = this.passion;
-        const chosenPurpose = this.purpose;
+        const passionPrompts = this.passionPrompts;
+        const purposePrompts = this.purposePrompts;
+        const chosenPassionIndex = this.chosenPassionIndex;
+        const chosenPurposeIndex = this.chosenPurposeIndex;
         db.saveResponses(
           this.responseRef,
           frontEndVersionString,
@@ -95,8 +95,8 @@ class GameData {
           purposePrompts,
           dataToSave.passionResponses,
           dataToSave.purposeResponses,
-          chosenPassion,
-          chosenPurpose,
+          chosenPassionIndex,
+          chosenPurposeIndex,
           stringCombos
         ).catch(console.log);
         this.lastSaved = dataToSave;
