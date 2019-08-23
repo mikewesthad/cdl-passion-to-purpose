@@ -32,7 +32,7 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={gameData.incrementPassionIndex}
             />
-            <span className={style.generatedPassion}>{gameData.chosenPassionIndex}</span>
+            <span className={style.generatedPassion}>{passion}</span>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
@@ -40,7 +40,7 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={gameData.incrementPurposeIndex}
             />
-            <span className={style.generatedPurpose}>{gameData.chosenPurposeIndex}?</span>
+            <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
