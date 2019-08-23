@@ -23,34 +23,4 @@ const conn = ftp.create({
   log: console.log
 });
 
-fs.src([src], { buffer: false, dot: true })
-  // .pipe(conn.newer(dest)) // Disable newer and just reupload everthing, see below
-  .pipe(conn.dest(dest));
-
-// TODO: figure out why uploads don't work on newer files
-
-// TESTING CUSTOM FILTER
-// .pipe(
-//   conn.filter(
-//     "/usr/home/convergence/public_html/convergencedesignlab.org/web-resources/passion-to-purpose/**",
-//     function(localFile, remoteFile, callback) {
-//       // localFile and remoteFile are vinyl files.
-//       // Check remoteFile.ftp for remote information.
-//       // Decide wether localFile should be emitted and call callback with boolean.
-//       // callback is a function( error, emit )
-//       console.dir(remoteFile && remoteFile.ftp.name + " " + remoteFile.ftp.modify);
-//       console.dir(localFile.stat.mtime);
-//       return true;
-//       // callback(null, emit);
-//     }
-//   )
-// )
-
-// DELETING
-// console.log("Deleting");
-// conn.rmdir(dest, err => {
-//   console.log(err);
-//   fs.src([src], { buffer: false, dot: true })
-//   .pipe(conn.newer(dest))
-//   .pipe(conn.dest(dest));
-// });
+fs.src([src], { buffer: false, dot: true }).pipe(conn.dest(dest));
