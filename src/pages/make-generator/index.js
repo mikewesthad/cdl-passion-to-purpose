@@ -33,9 +33,13 @@ class Generator extends React.Component {
 
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
-          <span className={style.generatedPassion}>{gameData.passion}</span>
+          <span className={style.generatedPassion}>
+            {gameData.passionStore.responses[gameData.chosenPassionIndex]}
+          </span>
           <span className={style.bolded}> to </span>
-          <span className={style.generatedPurpose}>{gameData.purpose}?</span>
+          <span className={style.generatedPurpose}>
+            {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
+          </span>
         </div>
 
         <div className="description">
