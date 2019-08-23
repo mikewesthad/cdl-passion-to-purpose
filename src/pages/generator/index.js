@@ -11,7 +11,6 @@ class Generator extends React.Component {
 
     const gameData = this.props.gameData;
     gameData.generateCombinations();
-    this.state = { passionNum: 0, purposeNum: 0 };
   }
 
   storeP2P = () => {
@@ -21,10 +20,8 @@ class Generator extends React.Component {
 
   render() {
     const { gameData, nextRoute } = this.props;
-    // const { passionNum } = this.state;
-    // const { purposeNum } = this.state;
-    // const passion = gameData.passionStore.responses[passionNum];
-    // const purpose = gameData.getPurposesWithVerb()[purposeNum];
+    const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
+    const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
 
     return (
       <GeneratorTemplate>
@@ -47,11 +44,7 @@ class Generator extends React.Component {
           </div>
         </div>
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
-          <Link
-            className="button"
-            to={nextRoute}
-            // onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
-          >
+          <Link className="button" to={nextRoute}>
             Continue with this ➞
           </Link>
         </div>
