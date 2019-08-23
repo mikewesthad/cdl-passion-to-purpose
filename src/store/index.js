@@ -79,7 +79,7 @@ class GameData {
         const stringCombos = JSON.stringify(this.combinations);
         this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
         const passionPrompts = JSON.stringify(this.passionPromptStore);
-        const purposePrompts = JSON.stringify(this.passionPromptStore);
+        const purposePrompts = JSON.stringify(this.purposePromptStore);
         const chosenPassion = this.passion;
         const chosenPurpose = this.purpose;
         db.saveResponses(
