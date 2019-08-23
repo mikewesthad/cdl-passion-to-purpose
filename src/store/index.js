@@ -18,10 +18,10 @@ class GameData {
       hasUserPermission: true,
       gameRoom: parseGameRoom(),
       combinations: [],
-      medium: "",
-      action: "",
       passion: "",
-      purpose: ""
+      purpose: "",
+      passionPrompts: [],
+      purposePrompts: []
     });
 
     this.passionStore = new ResponsesStore(this, [
@@ -34,39 +34,30 @@ class GameData {
     // All must start with "I want to "
     this.purposeStore = new ResponsesStore(this, [
       "I want to advocate for...",
-      "I want to raise awareness about...",
+      "I want to protest...",
       "I want to challenge...",
       "I want to help others overcome..."
     ]);
 
-    this.actionStore = new ResponsesStore(this, ["I want to"]);
+    this.passionPromptStore = [
+      "I am a fan of...",
+      "I spend my time...",
+      "I am good at...",
+      "I want to learn more about..."
+    ];
 
-    this.mediumStore = new ResponsesStore(this, [""]);
-
-    this.audienceStore = new ResponsesStore(this, [""]);
+    this.purposePromptStore = [
+      "I want to advocate for...",
+      "I want to protest...",
+      "I want to challenge...",
+      "I want to help others overcome..."
+    ];
   }
 
   generateCombinations = action(() => {
     const passionIndices = range(0, this.passionStore.numQuestions);
     const purposeIndices = range(0, this.purposeStore.numQuestions);
-    const mediumIndices = range(0, this.mediumStore.numQuestions);
-    const actionIndices = range(0, this.actionStore.numQuestions);
-    const audienceIndices = range(0, this.audienceStore.numQuestions);
-    this.combinations = generateCombinations(
-      passionIndices,
-      purposeIndices,
-      mediumIndices,
-      actionIndices,
-      audienceIndices
-    );
-  });
-
-  setMedium = action(mediumString => {
-    this.medium = mediumString;
-  });
-
-  setAction = action(actionString => {
-    this.action = actionString;
+    this.combinations = generateCombinations(passionIndices, purposeIndices);
   });
 
   setPurpose = action(purposeString => {
@@ -81,24 +72,22 @@ class GameData {
   saveToFirebase() {
     if (this.hasUserPermission) {
       const dataToSave = {
-        passions: this.passionStore.toJSON(),
-        purposes: this.purposeStore.toJSON(),
-        actions: this.actionStore.toJSON(),
-        mediums: this.mediumStore.toJSON(),
-        audiences: this.audienceStore.toJSON()
+        passionResponses: this.passionStore.toJSON(),
+        purposeResponses: this.purposeStore.toJSON()
       };
       if (!isEqual(dataToSave, this.lastSaved)) {
         const stringCombos = JSON.stringify(this.combinations);
         this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
+        const passionPrompts = JSON.stringify(this.passionPromptStore);
+        const purposePrompts = JSON.stringify(this.passionPromptStore);
         db.saveResponses(
           this.responseRef,
           frontEndVersionString,
           this.gameRoom,
-          dataToSave.passions,
-          dataToSave.purposes,
-          dataToSave.actions,
-          dataToSave.mediums,
-          dataToSave.audiences,
+          passionPrompts,
+          purposePrompts,
+          dataToSave.passionResponses,
+          dataToSave.purposeResponses,
           stringCombos
         ).catch(console.log);
         this.lastSaved = dataToSave;
@@ -117,9 +106,6 @@ class GameData {
   reset() {
     this.passionStore.reset();
     this.purposeStore.reset();
-    this.actionStore.reset();
-    this.mediumStore.reset();
-    this.audienceStore.reset();
   }
 
   setUserPermission = action(hasPermission => {
@@ -131,9 +117,6 @@ class GameData {
     return {
       passions: this.passionStore.toJSON(),
       purposes: this.purposeStore.toJSON(),
-      actions: this.actionStore.toJSON(),
-      mediums: this.mediumStore.toJSON(),
-      audiences: this.audienceStore.toJSON(),
 
       hasUserPermission: this.hasUserPermission,
       lastSaved: this.lastSaved
@@ -142,9 +125,6 @@ class GameData {
   fromJSON(json) {
     if (json.passions) this.passionStore.fromJSON(json.passions);
     if (json.purposes) this.purposeStore.fromJSON(json.purposes);
-    if (json.actions) this.actionStore.fromJSON(json.actions);
-    if (json.mediums) this.mediumStore.fromJSON(json.mediums);
-    if (json.audiences) this.audienceStore.fromJSON(json.audiences);
 
     if (json.lastSaved) this.lastSaved = json.lastSaved;
     if (json.hasUserPermission !== undefined) this.hasUserPermission = json.hasUserPermission;

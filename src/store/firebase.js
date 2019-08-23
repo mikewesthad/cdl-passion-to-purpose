@@ -23,11 +23,22 @@ class FirebaseDatabase {
     return responseRef;
   }
 
-  saveResponses(responseRef, versionString, roomName, passions, purposes, combinations) {
+  saveResponses(
+    responseRef,
+    versionString,
+    roomName,
+    PassionPrompts,
+    PurposePrompts,
+    passionResponses,
+    purposeResponses,
+    combinations
+  ) {
     // add medium, aduience, action from store
     const p1 = responseRef.set({
-      passions,
-      purposes,
+      passionResponses,
+      purposeResponses,
+      PassionPrompts,
+      PurposePrompts,
       timestamp: now,
       combinations
     });
