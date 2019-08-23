@@ -20,38 +20,28 @@ class GameData {
       combinations: [],
       passion: "",
       purpose: "",
-      passionPrompts: [],
-      purposePrompts: []
+      chosenPassionIndex: 0,
+      chosenPurposeIndex: 0
     });
 
-    this.passionStore = new ResponsesStore(this, [
+    this.passionPrompts = [
       "I am a fan of...",
       "I spend my time...",
       "I am good at...",
       "I want to learn more about..."
-    ]);
+    ];
+
+    this.purposePrompts = [
+      "I want to advocate for...",
+      "I want to protest...",
+      "I want to challenge...",
+      "I want to help others overcome..."
+    ];
+
+    this.passionStore = new ResponsesStore(this, this.passionPrompts);
 
     // All must start with "I want to "
-    this.purposeStore = new ResponsesStore(this, [
-      "I want to advocate for...",
-      "I want to protest...",
-      "I want to challenge...",
-      "I want to help others overcome..."
-    ]);
-
-    this.passionPromptStore = [
-      "I am a fan of...",
-      "I spend my time...",
-      "I am good at...",
-      "I want to learn more about..."
-    ];
-
-    this.purposePromptStore = [
-      "I want to advocate for...",
-      "I want to protest...",
-      "I want to challenge...",
-      "I want to help others overcome..."
-    ];
+    this.purposeStore = new ResponsesStore(this, this.purposePrompts);
   }
 
   generateCombinations = action(() => {
@@ -62,11 +52,26 @@ class GameData {
 
   setPurpose = action(purposeString => {
     this.purpose = purposeString;
-    //console.log("purpose value: " + this.purpose);
   });
 
   setPassion = action(passionString => {
     this.passion = passionString;
+  });
+
+  incrementPassionIndex = action(() => {
+    if (this.chosenPassionIndex < this.passionStore.numQuestions - 1) {
+      this.chosenPassionIndex++;
+    } else {
+      this.chosenPassionIndex = 0;
+    }
+  });
+
+  incrementPurposeIndex = action(() => {
+    if (this.chosenPurposeIndex < this.purposeStore.numQuestions - 1) {
+      this.chosenPurposeIndex++;
+    } else {
+      this.chosenPurposeIndex = 0;
+    }
   });
 
   saveToFirebase() {
@@ -78,8 +83,8 @@ class GameData {
       if (!isEqual(dataToSave, this.lastSaved)) {
         const stringCombos = JSON.stringify(this.combinations);
         this.responseRef = db.getResponseRef(frontEndVersionString, this.gameRoom);
-        const passionPrompts = JSON.stringify(this.passionPromptStore);
-        const purposePrompts = JSON.stringify(this.purposePromptStore);
+        const passionPrompts = this.passionPromptStore;
+        const purposePrompts = this.purposePromptStore;
         const chosenPassion = this.passion;
         const chosenPurpose = this.purpose;
         db.saveResponses(

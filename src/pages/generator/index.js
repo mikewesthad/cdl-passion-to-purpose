@@ -14,34 +14,6 @@ class Generator extends React.Component {
     this.state = { passionNum: 0, purposeNum: 0 };
   }
 
-  componentDidMount() {
-    const gameData = this.props.gameData;
-  }
-
-  getNextPassion = () => {
-    if (this.state.passionNum < this.props.gameData.passionStore.numQuestions - 1) {
-      this.setState(prev => {
-        return { passionNum: prev.passionNum + 1 };
-      });
-    } else {
-      this.setState(prev => {
-        return { passionNum: 0 };
-      });
-    }
-  };
-
-  getNextPurpose = () => {
-    if (this.state.purposeNum < this.props.gameData.purposeStore.numQuestions - 1) {
-      this.setState(prev => {
-        return { purposeNum: prev.purposeNum + 1 };
-      });
-    } else {
-      this.setState(prev => {
-        return { purposeNum: 0 };
-      });
-    }
-  };
-
   storeP2P = () => {
     this.props.store.setPurpose(this.render.purpose);
     console.log(this.render.purpose);
@@ -49,30 +21,36 @@ class Generator extends React.Component {
 
   render() {
     const { gameData, nextRoute } = this.props;
-    const { passionNum } = this.state;
-    const { purposeNum } = this.state;
-    const passion = gameData.passionStore.responses[passionNum];
-    const purpose = gameData.getPurposesWithVerb()[purposeNum];
+    // const { passionNum } = this.state;
+    // const { purposeNum } = this.state;
+    // const passion = gameData.passionStore.responses[passionNum];
+    // const purpose = gameData.getPurposesWithVerb()[purposeNum];
 
     return (
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use</span>
           <div className={style.passionContainer}>
-            <GenerateAttribution className={style.generatedButton} onClick={this.getNextPassion} />
-            <span className={style.generatedPassion}>{passion}</span>
+            <GenerateAttribution
+              className={style.generatedButton}
+              onClick={gameData.incrementPassionIndex}
+            />
+            <span className={style.generatedPassion}>{gameData.chosenPassionIndex}</span>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
-            <GenerateAttribution className={style.generatedButton} onClick={this.getNextPurpose} />
-            <span className={style.generatedPurpose}>{purpose}?</span>
+            <GenerateAttribution
+              className={style.generatedButton}
+              onClick={gameData.incrementPurposeIndex}
+            />
+            <span className={style.generatedPurpose}>{gameData.chosenPurposeIndex}?</span>
           </div>
         </div>
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link
             className="button"
             to={nextRoute}
-            onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
+            // onClick={(gameData.setPurpose(purpose), gameData.setPassion(passion))}
           >
             Continue with this ➞
           </Link>
