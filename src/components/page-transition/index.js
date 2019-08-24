@@ -30,7 +30,7 @@ export default function PageTransition({ pageKey, children }) {
         classNames={classNameMap}
         onExited={scrollToTop}
       >
-        <div style={{ width: "100%" }}>{children}</div>
+        <div style={{ width: "100%", justifyContent: "center", display: "flex" }}>{children}</div>
       </CSSTransition>
     </TransitionGroup>
   );
