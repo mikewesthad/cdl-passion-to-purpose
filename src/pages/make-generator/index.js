@@ -48,7 +48,10 @@ class Generator extends React.Component {
         </div>
 
         <div className="social-container">
-          <SocialShare passion={gameData.passion} purpose={gameData.purpose} />
+          <SocialShare
+            passion={gameData.passionStore.responses[gameData.chosenPassionIndex]}
+            purpose={gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}
+          />
         </div>
       </Container>
     );
