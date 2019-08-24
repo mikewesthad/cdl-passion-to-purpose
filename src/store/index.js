@@ -6,8 +6,8 @@ import { range, generateCombinations } from "../utils/array-utils";
 
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
-const isMyself = elem => elem !== "myself";
-const isMe = elem => elem !== "me";
+const isNotMyself = elem => elem.toLowerCase() !== "myself";
+const isNotMe = elem => elem.toLowerCase() !== "me";
 const frontEndVersionString = process.env.REACT_APP_VERSION.replace(/\./g, "-");
 
 class GameData {
@@ -158,7 +158,7 @@ class ResponsesStore {
     return isValid(this.responses[i]);
   }
   areAllResponsesValid() {
-    return this.responses.every(isValid && isMyself && isMe);
+    return this.responses.every(response => isNotMyself(response) && isNotMe(response));
   }
   toJSON() {
     return this.responses.slice();
