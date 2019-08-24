@@ -17,8 +17,7 @@ class Passion extends React.Component {
         }
         description={
           <React.Fragment>
-            <p>Be as specific as you can</p>
-            <p>and only provide one answer for each prompt.</p>
+            <p>Be as specific as you can and only provide one answer for each prompt.</p>
           </React.Fragment>
         }
       />
