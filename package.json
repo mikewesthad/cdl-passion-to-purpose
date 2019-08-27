@@ -21,7 +21,7 @@
     "react-scripts": "2.1.5",
     "react-share": "^2.4.0",
     "react-transition-group": "^2.5.3",
-    "release-it": "^10.2.0",
+    "release-it": "^10.4.5",
     "seedrandom": "^2.4.4",
     "ssh2": "^0.8.2",
     "store": "^2.0.12",
