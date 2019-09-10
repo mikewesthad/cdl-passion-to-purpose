@@ -10,7 +10,8 @@ class Generator extends React.Component {
     super(props);
 
     const gameData = this.props.gameData;
-    gameData.generateCombinations();
+    gameData.shufflePassions();
+    gameData.shufflePurposes();
   }
 
   storeP2P = () => {
@@ -26,7 +27,7 @@ class Generator extends React.Component {
     return (
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
-          <span className={style.hmwPreset}>How might we use</span>
+          <span className={style.hmwPreset}>How might we use </span>
           <div className={style.passionContainer}>
             <GenerateAttribution
               className={style.generatedButton}
