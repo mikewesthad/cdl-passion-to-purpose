@@ -25,6 +25,27 @@ export function shuffle(array, seed) {
   return array;
 }
 
+/*
+Below algorithm sourced from: https://stackoverflow.com/questions/18194745/shuffle-multiple-javascript-arrays-in-the-same-way
+
+*/
+
+export function doubleShuffle(array1, array2) {
+  var index = array1.length;
+  var rnd, tmp1, tmp2;
+
+  while (index) {
+    rnd = Math.floor(Math.random() * index);
+    index -= 1;
+    tmp1 = array1[index];
+    tmp2 = array2[index];
+    array1[index] = array1[rnd];
+    array2[index] = array2[rnd];
+    array1[rnd] = tmp1;
+    array2[rnd] = tmp2;
+  }
+}
+
 /**
  * Generate all possible combinations of values from array1 with values from array2, e.g.
  *    ["cat", "dog", "goat"] and ["red", "blue", "violet"]
