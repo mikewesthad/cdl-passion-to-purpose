@@ -2,6 +2,8 @@ import { extendObservable, action } from "mobx";
 import db from "./firebase";
 import isEqual from "lodash.isequal";
 import parseGameRoom from "../utils/parse-game-room";
+import { doubleShuffle } from "../utils/array-utils";
+import { shuffle } from "../utils/array-utils";
 
 const emptyStringArray = length => new Array(length).fill("");
 const isValid = elem => elem !== "";
@@ -64,6 +66,14 @@ class GameData {
     } else {
       this.chosenPurposeIndex = 0;
     }
+  });
+
+  shufflePassions = action(() => {
+    shuffle(this.passionStore.responses);
+  });
+
+  shufflePurposes = action(() => {
+    doubleShuffle(this.purposeStore.responses, this.purposePrompts);
   });
 
   saveToFirebase() {
