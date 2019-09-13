@@ -10,7 +10,6 @@ class Generator extends React.Component {
     super(props);
 
     const gameData = this.props.gameData;
-    gameData.generateCombinations();
     this.state = { combinationNumber: 0 };
   }
 
