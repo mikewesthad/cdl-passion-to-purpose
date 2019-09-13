@@ -4,6 +4,12 @@ import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
+import styled, { keyframes } from "styled-components";
+import { merge, fadeInDown, fadeOutDown } from "react-animations";
+const FadeInDown = styled.div`
+  animation: 2s ${keyframes`{bounce}`} infinite;
+`;
+const fadeInOut = merge(fadeInDown, fadeOutDown);
 
 class Generator extends React.Component {
   constructor(props) {
