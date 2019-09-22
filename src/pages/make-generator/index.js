@@ -25,7 +25,7 @@ class Generator extends React.Component {
   };
 
   render() {
-    const { gameData } = this.props;
+    const { gameData, nextRoute } = this.props;
     return (
       <Container>
         <h1 className="title">Next Steps</h1>
