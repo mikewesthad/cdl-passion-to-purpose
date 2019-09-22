@@ -13,7 +13,7 @@ class Medium extends React.Component {
         store={gameData}
         title={
           <React.Fragment>
-            What will you <span className="title-emphasis">make</span>?
+            Explore media
           </React.Fragment>
         }
         description={
