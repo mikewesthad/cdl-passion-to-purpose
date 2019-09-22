@@ -40,6 +40,34 @@ class GameData {
       "I want to help others overcome..."
     ];
 
+    this.mediumOptions = [
+      "3D Printing",
+      "Audio & Sound Art",
+      "Arduino",
+      "Art",
+      "Citizen Science",
+      "Computer Science",
+      "Comedy",
+      "Community Organizing",
+      "Cooking",
+      "Drafting",
+      "Dance",
+      "Design",
+      "Digital Storytelling",
+      "Hair & Makeup",
+      "Fine Art",
+      "Games",
+      "Gardening/Farming",
+      "Jewelry Design",
+      "Journalism",
+      "Social Media",
+      "Publishing",
+      "Robotics",
+      "Maker Culture",
+      "VR/AR",
+      "Murals/Public Art"
+    ];
+
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
 
     // All must start with "I want to "
@@ -77,37 +105,6 @@ class GameData {
   shufflePurposes = action(() => {
     doubleShuffle(this.purposeStore.responses, this.purposePrompts);
   });
-
-  //Mediums
-
-  MediumOptions = [
-    "3D Printing",
-    "Audio & Sound Art",
-    "Arduino",
-    "Art",
-    "Citizen Science",
-    "Computer Science",
-    "Comedy",
-    "Community Organizing",
-    "Cooking",
-    "Drafting",
-    "Dance",
-    "Design",
-    "Digital Storytelling",
-    "Hair & Makeup",
-    "Fine Art",
-    "Games",
-    "Gardening/Farming",
-    "Jewelry Design",
-    "Journalism",
-    "Social Media",
-    "Publishing",
-    "Robotics",
-    "Maker Culture",
-    "VR/AR",
-    "Murals/Public Art",
-    "Add your own +"
-  ];
 
   saveToFirebase() {
     if (this.hasUserPermission) {
