@@ -2,6 +2,7 @@ import Home from "./home";
 import Passion from "./passion";
 import Purpose from "./purpose";
 import Generator from "./generator/";
+import MediumContext from "./medium-context";
 import Medium from "./medium";
 import Audience from "./audience";
 import MakeGenerator from "./make-generator";
