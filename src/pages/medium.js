@@ -18,8 +18,8 @@ class Medium extends React.Component {
         }
         description={
           <React.Fragment>
-            <p>What medium best serves your action?</p>
-            <p>Examples:</p>
+            <p>Okay, roll up your sleeves and get ready for an adventure.</p>
+            <p>Select your favorite media category below. Don’t worry we can change this later!</p>
           </React.Fragment>
         }
       />
