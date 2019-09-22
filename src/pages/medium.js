@@ -7,7 +7,6 @@ import generator from "./generator";
 class Medium extends React.Component {
   render() {
     const { gameData } = this.props;
-    const hmwP = generator.chosenPassion;
 
     return (
       <MediumPromptTemplate
