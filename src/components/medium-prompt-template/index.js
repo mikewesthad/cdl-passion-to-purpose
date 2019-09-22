@@ -58,9 +58,12 @@ class MediumPromptTemplate extends React.Component {
           <input className={style.mediumButton} type="button" value={gameData.mediumOptions[23]} />
           <input className={style.mediumButton} type="button" value={gameData.mediumOptions[24]} />
         </div>
-        <div className="navigation">
-          <input className="button submit-button" type="submit" value="Next ➞" />
-        </div>
+
+        <form>
+          <div className="navigation">
+            <input className="button submit-button" type="submit" value="Next ➞" />
+          </div>
+        </form>
       </Container>
     );
   }
