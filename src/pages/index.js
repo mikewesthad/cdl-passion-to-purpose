@@ -15,6 +15,8 @@ import NextStepsContext from "./next-steps-context";
 // route (i - 1) or the next route (i + 1)
 const routes = [
   { key: "home", path: "/", exact: true, Component: Home },
+  { key: "medium-context", path: "/medium-context", Component: MediumContext },
+  { key: "medium", path: "/medium", Component: Medium },
   { key: "passion-context", path: "/passion-context", Component: PassionContext },
   { key: "passion", path: "/passion", Component: Passion },
   { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
@@ -22,9 +24,7 @@ const routes = [
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
   { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
-  { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext },
-  { key: "medium-context", path: "/medium-context", Component: MediumContext },
-  { key: "medium", path: "/medium", Component: Medium }
+  { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
