@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
-//import SocialShare from "../../components/social-share";
 import style from "./index.module.scss";
 
 class Generator extends React.Component {
@@ -46,11 +45,6 @@ class Generator extends React.Component {
           work on ideas together!
         </div>
 
-        <div className="social-container">
-          <SocialShare
-            passion={gameData.passionStore.responses[gameData.chosenPassionIndex]}
-            purpose={gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}
-          />
         </div>
       </Container>
     );
