@@ -9,14 +9,25 @@ class Generator extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isHidden: true };
-
     const gameData = this.props.gameData;
     gameData.shufflePassions();
     gameData.shufflePurposes();
   }
 
-  toggleHidden() {
-    this.setState({ isHidden: true });
+  toggleHiddenPassion() {
+    if (this.state.isHidden) {
+      this.setState({ isHidden: !this.state.isHidden });
+    } else {
+      this.props.gameData.incrementPassionIndex();
+    }
+  }
+
+  toggleHiddenPurpose() {
+    if (this.state.isHidden) {
+      this.setState({ isHidden: !this.state.isHidden });
+    } else {
+      this.props.gameData.incrementPurposeIndex();
+    }
   }
 
   storeP2P = () => {
@@ -28,8 +39,8 @@ class Generator extends React.Component {
     const { gameData, nextRoute } = this.props;
     const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
     const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
-    const Child = () => <span className={style.generatedPassion}>{passion}</span>;
-    const Parent = () => (
+    const PassionChild = () => <span className={style.generatedPassion}>{passion}</span>;
+    const PassionParent = () => (
       <div className={style.overflowContainer}>
         <div className={style.animation}>
           <span className={style.generatedPassion}>
@@ -43,6 +54,21 @@ class Generator extends React.Component {
         </div>
       </div>
     );
+    const PurposeChild = () => <span className={style.generatedPurpose}>{purpose}</span>;
+    const PurposeParent = () => (
+      <div className={style.overflowContainer}>
+        <div className={style.animation}>
+          <span className={style.generatedPurpose}>
+            <ul>
+              <li>{gameData.purposeStore.responses[0]}</li>
+              <li>{gameData.purposeStore.responses[1]}</li>
+              <li>{gameData.purposeStore.responses[2]}</li>
+              <li>{gameData.purposeStore.responses[3]}</li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    );
 
     return (
       <GeneratorTemplate>
@@ -51,11 +77,12 @@ class Generator extends React.Component {
           <div className={style.passionContainer}>
             <GenerateAttribution
               className={style.generatedButton}
-              //onClick={gameData.incrementPassionIndex}
-              onClick={this.toggleHidden.bind(this)}
+              onClick={this.toggleHiddenPassion.bind(this)}
             />
-            {!this.state.isHidden && <Child />}
-            {this.state.isHidden && <Parent />}
+
+            {!this.state.isHidden && <PassionChild />}
+            {this.state.isHidden && <PassionParent />}
+
             <div className={style.hidden}>
               <span className={style.generatedPassion}>{passion}</span>
             </div>
@@ -64,8 +91,10 @@ class Generator extends React.Component {
           <div className={style.purposeContainer}>
             <GenerateAttribution
               className={style.generatedButton}
-              onClick={gameData.incrementPurposeIndex}
+              onClick={this.toggleHiddenPurpose.bind(this)}
             />
+            {!this.state.isHidden && <PurposeChild />}
+            {this.state.isHidden && <PurposeParent />}
             <div className={style.hidden}>
               <span className={style.generatedPurpose}>{purpose}?</span>
             </div>
