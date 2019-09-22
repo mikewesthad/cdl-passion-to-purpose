@@ -38,7 +38,6 @@ class MediumPromptTemplate extends React.Component {
       <Container>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
-        <div className="description2">{description2}</div>
         <div className="medium1">{medium1}</div>
 
         <form className={style.form} onSubmit={this.onSubmit}>
