@@ -24,281 +24,43 @@ class MediumPromptTemplate extends React.Component {
   };
 
   render() {
-    const { showError } = this.state;
-    const {
-      store,
-      gameData,
-      listTitle,
-      list,
-      title,
-      description,
-      medium1,
-      afterPromptComponent
-    } = this.props;
+    const { store, gameData, title, description } = this.props;
 
     return (
       <Container>
-        <div className="listTitle">{listTitle}</div>
-        <div className="list">{list}</div>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
-        <div className="medium1">{medium1}</div>
 
-        <ul class="columns" data-columns="2">
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[0]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[1]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[2]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[3]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[4]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[5]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[6]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[7]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[8]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[9]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[10]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[11]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[12]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[13]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[14]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[15]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[16]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[17]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[18]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[19]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[20]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[21]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[22]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[23]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[24]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[25]}
-              />
-            </div>
-          </li>
-        </ul>
-
-        <div className="navigation">
-          <input className="exampleProjectButton" type="button" value={"Current chosen one"} />
+        <div className={style.mediumContainer}>
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[0]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[1]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[2]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[3]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[4]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[5]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[6]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[7]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[8]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[9]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[10]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[11]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[12]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[13]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[14]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[15]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[16]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[17]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[18]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[19]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[20]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[21]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[22]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[23]} />
+          <input className={style.mediumButton} type="button" value={gameData.mediumOptions[24]} />
         </div>
-        <form className={style.form} onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            className={style.promptInput}
-            value={store.medium}
-            onChange={this.onChange}
-          />
-          {showError && (
-            <div className={style.formError}>*Fill out all the prompts to continue!</div>
-          )}
-          {afterPromptComponent}
-          <div className="navigation">
-            <input className="button submit-button" type="submit" value="Next ➞" />
-          </div>
-        </form>
+        <div className="navigation">
+          <input className="button submit-button" type="submit" value="Next ➞" />
+        </div>
       </Container>
     );
   }
