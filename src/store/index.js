@@ -22,6 +22,9 @@ class GameData {
       purpose: "",
       chosenPassionIndex: 0,
       chosenPurposeIndex: 0
+      chosenPurposeIndex: 0,
+      medium: "", 
+      chosenMediumIndex: 0
     });
 
     this.passionPrompts = [
@@ -75,6 +78,37 @@ class GameData {
   shufflePurposes = action(() => {
     doubleShuffle(this.purposeStore.responses, this.purposePrompts);
   });
+
+  //Mediums
+
+  MediumOptions = [
+    "3D Printing",
+    "Audio & Sound Art", 
+    "Arduino", 
+    "Art",
+    "Citizen Science", 
+    "Computer Science",
+    "Comedy", 
+    "Community Organizing", 
+    "Cooking",
+    "Drafting", 
+    "Dance", 
+    "Design", 
+    "Digital Storytelling",
+    "Hair & Makeup", 
+    "Fine Art", 
+    "Games", 
+    "Gardening/Farming",
+    "Jewelry Design", 
+    "Journalism", 
+    "Social Media", 
+    "Publishing",
+    "Robotics", 
+    "Maker Culture", 
+    "VR/AR", 
+    "Murals/Public Art", 
+    "Add your own +"
+  ];
 
   saveToFirebase() {
     if (this.hasUserPermission) {
