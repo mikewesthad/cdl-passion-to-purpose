@@ -1,5 +1,16 @@
 @import "../../style/variables.scss";
 
+.overlay {
+  position: fixed;
+  background: $primary-color;
+  bottom: 14vh;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+}
+
 .mediumContainer {
   text-align: center;
 }
