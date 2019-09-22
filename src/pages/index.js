@@ -16,12 +16,9 @@ import NextStepsContext from "./next-steps-context";
 // route (i - 1) or the next route (i + 1)
 const routes = [
   { key: "home", path: "/", exact: true, Component: Home },
-<<<<<<< HEAD
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
   { key: "medium-cards", path: "/medium-cards", Component: MediumCards },
-=======
->>>>>>> 9556900aa51e58e43ebeaae840308dd09cffbad3
   { key: "passion-context", path: "/passion-context", Component: PassionContext },
   { key: "passion", path: "/passion", Component: Passion },
   { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
