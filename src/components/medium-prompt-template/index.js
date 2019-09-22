@@ -18,11 +18,6 @@ class MediumPromptTemplate extends React.Component {
     }
   };
 
-  setPassion = (i, value) => {
-    const store = this.props.store;
-    this.setState({ showError: false });
-  };
-
   onChange = event => {
     this.props.store.setMedium(event.target.value);
     console.log(event.target.value);
