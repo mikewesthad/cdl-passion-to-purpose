@@ -11,11 +11,16 @@ class Medium extends React.Component {
       <MediumPromptTemplate
         {...this.props}
         store={gameData}
-        title={
+        ///
+        listTitle={
           <React.Fragment>
-            Explore media
+            <p>Mediums</p>
           </React.Fragment>
         }
+        list={gameData.mediumOptions}
+        ///
+        //exampleProjectText={this.gameData.MediumOptions[0]}
+        title={<React.Fragment>Explore media</React.Fragment>}
         description={
           <React.Fragment>
             <p>Okay, roll up your sleeves and get ready for an adventure.</p>
