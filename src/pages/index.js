@@ -32,6 +32,7 @@ const routeMap = routes.reduce((map, route) => {
 
 export {
   Home,
+  MediumContext,
   Medium,
   Audience,
   PassionContext,
