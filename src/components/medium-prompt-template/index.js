@@ -104,25 +104,7 @@ class MediumPromptTemplate extends React.Component {
               <input
                 className="exampleProjectButton"
                 type="button"
-                value={gameData.mediumOptions[5]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
                 value={gameData.mediumOptions[6]}
-              />
-            </div>
-          </li>
-          <li>
-            <div className="navigation">
-              <input
-                className="exampleProjectButton"
-                type="button"
-                value={gameData.mediumOptions[7]}
               />
             </div>
           </li>
@@ -285,6 +267,15 @@ class MediumPromptTemplate extends React.Component {
                 className="exampleProjectButton"
                 type="button"
                 value={gameData.mediumOptions[24]}
+              />
+            </div>
+          </li>
+          <li>
+            <div className="navigation">
+              <input
+                className="exampleProjectButton"
+                type="button"
+                value={gameData.mediumOptions[25]}
               />
             </div>
           </li>
