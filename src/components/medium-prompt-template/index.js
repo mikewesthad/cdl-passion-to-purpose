@@ -27,7 +27,6 @@ class MediumPromptTemplate extends React.Component {
     const { showError } = this.state;
     const {
       store,
-      stepNumber,
       title,
       description,
       description2,
