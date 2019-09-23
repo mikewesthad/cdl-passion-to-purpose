@@ -41,8 +41,9 @@ class Generator extends React.Component {
         </div>
 
         <div className="description">
-          Try sketching out some ideas to answer your question! Exchange questions with a friend and
-          work on ideas together!
+          Congratulations You have transformed your passion and purpose into a design question. So
+          what’s the next step? To further define a project designers often dig deeper using a
+          process called ideation.
         </div>
 
         <form />
