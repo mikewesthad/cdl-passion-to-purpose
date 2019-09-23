@@ -30,7 +30,7 @@ class Generator extends React.Component {
         <h1 className="title">Next Steps</h1>
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Let's make a</span>
+          <span className={style.bolded}>How might we use </span>
           <span className={style.generatedPassion}>
             {gameData.passionStore.responses[gameData.chosenPassionIndex]}
           </span>
