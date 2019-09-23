@@ -11,6 +11,8 @@ import PassionContext from "./passion-context";
 import PurposeContext from "./purpose-context";
 import HMWContext from "./hmw-context";
 import NextStepsContext from "./next-steps-context";
+import LMContext from "./lets-make-context";
+import LetsMake from "./lets-make";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
@@ -26,9 +28,11 @@ const routes = [
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
   { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
+  { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
-  { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext }
+  { key: "lets-make-context", path: "/lets-make-context", Component: LMContext },
+  { key: "lets-make", path: "/lets-make", Component: LetsMake }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
@@ -50,6 +54,8 @@ export {
   Generator,
   MakeGenerator,
   NextStepsContext,
+  LMContext,
+  LetsMake,
   routes,
   routeMap
 };
