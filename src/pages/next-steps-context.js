@@ -9,7 +9,7 @@ export default function NextStepsContext(props) {
         <h2 className="title">Next Steps</h2>
         <div className="description">
           <p>Now we're going to work towards answering your How Might We Question</p>
-          <p>Some more text will go here</p>
+          <p>Let's explore possible mediums to jumpstart your ideation process!</p>
         </div>
       </div>
       <div className="text-center">
