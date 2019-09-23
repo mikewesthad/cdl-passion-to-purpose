@@ -18,9 +18,6 @@ import LetsMake from "./lets-make";
 // route (i - 1) or the next route (i + 1)
 const routes = [
   { key: "home", path: "/", exact: true, Component: Home },
-  { key: "medium-context", path: "/medium-context", Component: MediumContext },
-  { key: "medium", path: "/medium", Component: Medium },
-  { key: "medium-cards", path: "/medium-cards", Component: MediumCards },
   { key: "passion-context", path: "/passion-context", Component: PassionContext },
   { key: "passion", path: "/passion", Component: Passion },
   { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
@@ -31,6 +28,7 @@ const routes = [
   { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
+  { key: "medium-cards", path: "/medium-cards", Component: MediumCards },
   { key: "lets-make-context", path: "/lets-make-context", Component: LMContext },
   { key: "lets-make", path: "/lets-make", Component: LetsMake }
 ];
