@@ -30,7 +30,7 @@ class Generator extends React.Component {
         <h1 className="title">Next Steps</h1>
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>How might we use </span>
+          <span className={style.bolded}>Let's make a</span>
           <span className={style.generatedPassion}>
             {gameData.passionStore.responses[gameData.chosenPassionIndex]}
           </span>
@@ -44,6 +44,8 @@ class Generator extends React.Component {
           Try sketching out some ideas to answer your question! Exchange questions with a friend and
           work on ideas together!
         </div>
+
+        <form />
 
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link className="button" to={nextRoute}>
