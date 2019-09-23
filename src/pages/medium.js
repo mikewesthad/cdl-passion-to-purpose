@@ -1,5 +1,6 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
+import { Link } from "react-router-dom";
 import MediumPromptTemplate from "../components/medium-prompt-template";
 //import { reaction } from "mobx";
 
@@ -26,6 +27,11 @@ class Medium extends React.Component {
             <p>Okay, roll up your sleeves and get ready for an adventure.</p>
             <p>Select your favorite media category below. Don’t worry we can change this later!</p>
           </React.Fragment>
+        }
+        description2={
+          <Link className="button" to={this.props.nextRoute}>
+            Continue ➞
+          </Link>
         }
       />
     );
