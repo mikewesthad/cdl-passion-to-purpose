@@ -12,15 +12,6 @@ class Medium extends React.Component {
       <MediumPromptTemplate
         {...this.props}
         store={gameData}
-        ///
-        listTitle={
-          <React.Fragment>
-            <p>Mediums</p>
-          </React.Fragment>
-        }
-        list={gameData.mediumOptions}
-        ///
-        //exampleProjectText={this.gameData.MediumOptions[0]}
         title={<React.Fragment>Explore media</React.Fragment>}
         description={
           <React.Fragment>
@@ -28,10 +19,12 @@ class Medium extends React.Component {
             <p>Select your favorite media category below. Don’t worry we can change this later!</p>
           </React.Fragment>
         }
-        description2={
-          <Link className="button" to={this.props.nextRoute}>
-            Continue ➞
-          </Link>
+        nextButton={
+          <div className="text-center">
+            <Link className="button" to={this.props.nextRoute}>
+              Continue ➞
+            </Link>
+          </div>
         }
       />
     );
