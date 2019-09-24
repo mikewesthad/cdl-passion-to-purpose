@@ -8,7 +8,7 @@ export default function MediumContext(props) {
       <div className="context-container" to={props.nextRoute}>
         <h2 className="title">Explore Potential Mediums</h2>
         <div className="description">
-          <p>How might you refine your question to make it more specific and inspiring?</p>
+          <p>What medium might best serve you as a way to answer your How Might We question?</p>
         </div>
       </div>
       <div className="text-center">
