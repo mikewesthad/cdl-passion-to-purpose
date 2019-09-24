@@ -18,50 +18,87 @@ class ActionPromptTemplate extends React.Component {
     }
   };
 
-  setPassion = (i, value) => {
-    const store = this.props.store;
-    this.setState({ showError: false });
-  };
-
   onChange = event => {
     this.props.store.setAction(event.target.value);
     console.log(event.target.value);
   };
 
   render() {
-    const { showError } = this.state;
-    const {
-      store,
-      stepNumber,
-      title,
-      description,
-      description2,
-      medium1,
-      afterPromptComponent
-    } = this.props;
+    const { store, gameData, title, description, description2, nextButton } = this.props;
 
     return (
       <Container>
         <h1 className="title">{title}</h1>
         <div className="description">{description}</div>
-        <div className="description2">{description2}</div>
-        <div className="medium1">{medium1}</div>
 
-        <form className={style.form} onSubmit={this.onSubmit}>
+        <div className={style.actionContainer}>
           <input
-            type="text"
-            className={style.promptInput}
-            value={store.action}
-            onChange={this.onChange}
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[0]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[0]);
+            }}
           />
-          {showError && (
-            <div className={style.formError}>*Fill out all the prompts to continue!</div>
-          )}
-          {afterPromptComponent}
-          <div className="navigation">
-            <input className="button submit-button" type="submit" value="Next ➞" />
-          </div>
-        </form>
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[1]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[1]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[2]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[2]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[3]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[3]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[4]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[4]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[5]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[5]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[6]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[6]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[7]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
+        </div>
+        {/*<div className="description2">{description2}</div>*/}
+        <div className={style.nextButton}>{nextButton}</div>
       </Container>
     );
   }
