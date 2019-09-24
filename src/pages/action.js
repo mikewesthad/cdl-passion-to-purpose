@@ -1,5 +1,6 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
+import { Link } from "react-router-dom";
 import ActionPromptTemplate from "../components/action-prompt-template";
 //import { reaction } from "mobx";
 
@@ -11,39 +12,23 @@ class Action extends React.Component {
       <ActionPromptTemplate
         {...this.props}
         store={gameData}
-        title={
-          <React.Fragment>
-            What <span className="title-emphasis">action</span> will you take?
-          </React.Fragment>
-        }
+        title={<React.Fragment>Explore affordances</React.Fragment>}
         description={
           <React.Fragment>
-            <p>How should you answer your How Might We?</p>
-            <p>What do you want to do?</p>
+            <p>
+              Choose an affordance that you think might best fit the action you're trying to take.
+              Once you choose one, you'll see some examples of that affordance being used.
+            </p>
+            <p>Don’t worry we can change this later!</p>
           </React.Fragment>
         }
-        description2={
-          <React.Fragment>
-            <div>
-              <ul class="columns" data-columns="2">
-                <li> Raise Awareness</li>
-                <li> Change Behavior</li>
-                <li> Connect People to Opportunities</li>
-                <li>Make a Task Easier</li>
-                <li>Change Policies</li>
-                <li> Change Perception</li>
-                <li>Teach a Skill</li>
-                <li>Raise Money </li>
-              </ul>
-            </div>
-          </React.Fragment>
+        nextButton={
+          <div className="text-center">
+            <Link className="button" to={this.props.nextRoute}>
+              Continue ➞
+            </Link>
+          </div>
         }
-        medium1={
-          <React.Fragment>
-            <p>I want to...</p>
-          </React.Fragment>
-        }
-        stepNumber="4"
       />
     );
   }
