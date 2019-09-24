@@ -1,4 +1,4 @@
-.generatedQuestion {
+.generatedPrompt {
   font-size: 2.2rem;
   text-align: center;
   margin: 3rem 0;
@@ -8,7 +8,7 @@
   font-weight: 600;
 }
 
-.hmwPreset {
+.makePreset {
   display: block;
   width: 100%;
   font-weight: 600;
@@ -19,20 +19,14 @@
   }
 }
 
-.passionContainer,
-.purposeContainer {
+.mediumContainer,
+.affordanceContainer {
   width: inherit;
   display: inline-flex;
 }
 
-.passionContainer,
-.purposeContainer {
-  width: inherit;
-  display: inline-flex;
-}
-
-.generatedPassion,
-.generatedPurpose {
+.selectedMedium,
+.selectedAffordance {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -49,8 +43,4 @@
 
 .generatedPurpose {
   color: #2eb4ff;
-}
-
-.generateButtonContainer {
-  margin-top: 1rem;
 }
