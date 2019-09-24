@@ -82,6 +82,11 @@ class GameData {
     this.passion = passionString;
   });
 
+  setMedium = action(mediumString => {
+    this.medium = mediumString;
+    console.log(mediumString);
+  });
+
   incrementPassionIndex = action(() => {
     if (this.chosenPassionIndex < this.passionStore.numQuestions - 1) {
       this.chosenPassionIndex++;
