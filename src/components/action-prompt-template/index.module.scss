@@ -1,49 +1,124 @@
 @import "../../style/variables.scss";
 
-.form {
-  text-align: center;
+.nextButton {
+}
+
+.overlay {
+  position: fixed;
+  background: $primary-color;
+  bottom: 14vh;
+  left: 0;
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  height: 0%;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
 }
 
-.formError {
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  color: #ff0000;
+.actionContainer {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
-.prompt {
-  margin: 1rem 0;
-  padding-left: 2rem;
-  width: 100%;
-}
-
-.promptLabel {
-  display: block;
-  text-align: left;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.promptLabelNumber {
-  margin-right: 1rem;
-  margin-left: -3rem;
-}
-
-.promptInput {
-  font-size: 1.2rem;
-  font-style: italic;
+.actionButton {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.25rem;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
   background-color: white;
-  height: 3rem;
-  border: 0.15rem solid #8e8e8e;
-  transition: border-color 0.2s ease;
-  width: 100%;
-  padding: 1.5rem 1rem;
+  color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
 
-  &:focus {
-    outline: none;
-    border-color: $primary-color;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+    color: white;
   }
+  &:active {
+    background-color: darken($primary-color, 20%);
+    border-color: darken($primary-color, 20%);
+    color: white;
+  }
+  &:focus {
+    transition: background-color 0.2s ease;
+    background-color: darken($primary-color, 20%);
+    border-color: darken($primary-color, 20%);
+    outline: none;
+    color: white;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+@import "../../style/variables.scss";
+
+.nextButton {
+}
+
+.overlay {
+  position: fixed;
+  background: $primary-color;
+  bottom: 14vh;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+}
+
+.actionContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.actionButton {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.25rem;
+  outline: none;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1rem;
+  background-color: white;
+  color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 10%);
+    color: white;
+  }
+  &:active {
+    background-color: darken($primary-color, 20%);
+    border-color: darken($primary-color, 20%);
+    color: white;
+  }
+  &:focus {
+    transition: background-color 0.2s ease;
+    background-color: darken($primary-color, 20%);
+    border-color: darken($primary-color, 20%);
+    outline: none;
+    color: white;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
