@@ -69,6 +69,17 @@ class GameData {
       "Murals/Public Art"
     ];
 
+    this.actionOptions = [
+      "Raise Awareness",
+      "Change Behavior",
+      "Connect people to opportunities",
+      "Make a task easier",
+      "Change policies",
+      "Change perception",
+      "Teach a skill",
+      "Raise Money"
+    ];
+
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
 
     // All must start with "I want to "
