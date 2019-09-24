@@ -23,6 +23,7 @@ class GameData {
       chosenPassionIndex: 0,
       chosenPurposeIndex: 0,
       medium: "",
+      action: "",
       chosenMediumIndex: 0
     });
 
@@ -85,6 +86,11 @@ class GameData {
   setMedium = action(mediumString => {
     this.medium = mediumString;
     console.log(mediumString);
+  });
+
+  setAction = action(actionString => {
+    this.action = actionString;
+    console.log(actionString);
   });
 
   incrementPassionIndex = action(() => {
