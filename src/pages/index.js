@@ -4,8 +4,8 @@ import Purpose from "./purpose";
 import Generator from "./generator/";
 import MediumContext from "./medium-context";
 import Medium from "./medium";
-import ActionContext from "./action-context";
-import Action from "./action";
+import ImpactContext from "./impact-context";
+import Impact from "./impact";
 import MediumCards from "./medium-cards";
 import Audience from "./audience";
 import MakeGenerator from "./make-generator";
@@ -31,8 +31,8 @@ const routes = [
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
   { key: "medium-cards", path: "/medium-cards", Component: MediumCards },
-  { key: "action-context", path: "/action-context", Component: ActionContext },
-  { key: "action", path: "/action", Component: Action },
+  { key: "impact-context", path: "/impact-context", Component: ImpactContext },
+  { key: "impact", path: "/impact", Component: Impact },
   { key: "lets-make-context", path: "/lets-make-context", Component: LMContext },
   { key: "lets-make", path: "/lets-make", Component: LetsMake }
 ];
@@ -47,8 +47,8 @@ export {
   MediumContext,
   Medium,
   MediumCards,
-  ActionContext,
-  Action,
+  ImpactContext,
+  Impact,
   Audience,
   PassionContext,
   Passion,
