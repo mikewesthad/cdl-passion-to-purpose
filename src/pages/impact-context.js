@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
 
-export default function ActionContext(props) {
+export default function ImpactContext(props) {
   return (
     <Container>
       <div className="context-container" to={props.nextRoute}>
