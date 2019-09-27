@@ -70,13 +70,19 @@ class GameData {
 
     this.actionOptions = [
       "Raise Awareness",
-      "Change Behavior",
-      "Connect people to opportunities",
-      "Make a task easier",
-      "Change policies",
-      "Change perception",
-      "Teach a skill",
-      "Raise Money"
+      "Build Empathy",
+      "Cultivate Community",
+      "Celebrate",
+      "Foster dialogue",
+      "Protect people's rights",
+      "Start a movement",
+      "Send a message",
+      "Change minds",
+      "Change habits",
+      "Connect people",
+      "Create a paradigm shift",
+      "Raising up others' voices",
+      "Take an action"
     ];
 
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
