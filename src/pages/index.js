@@ -15,6 +15,7 @@ import HMWContext from "./hmw-context";
 import NextStepsContext from "./next-steps-context";
 import LMContext from "./lets-make-context";
 import LetsMake from "./lets-make";
+import JourneyMap from "./journey-map";
 
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
@@ -30,11 +31,12 @@ const routes = [
   { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
-  { key: "medium-cards", path: "/medium-cards", Component: MediumCards },
+  //{ key: "medium-cards", path: "/medium-cards", Component: MediumCards },
   { key: "impact-context", path: "/impact-context", Component: ImpactContext },
   { key: "impact", path: "/impact", Component: Impact },
   { key: "lets-make-context", path: "/lets-make-context", Component: LMContext },
-  { key: "lets-make", path: "/lets-make", Component: LetsMake }
+  { key: "lets-make", path: "/lets-make", Component: LetsMake },
+  { key: "journey-map", path: "/journey-map", Component: JourneyMap }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
