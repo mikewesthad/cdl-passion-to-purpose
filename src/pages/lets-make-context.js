@@ -9,7 +9,6 @@ export default function LMContext(props) {
         <h2 className="title">Let's Make...</h2>
         <div className="description">
           <p>Let's combine your medium and action!</p>
-          <p>Some more text here</p>
         </div>
       </div>
       <div className="text-center">
