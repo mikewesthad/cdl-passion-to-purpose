@@ -45,7 +45,7 @@
 }
 
 .animation {
-  animation: roll-up-out 4s infinite alternate;
+  animation: roll-up-out 2s infinite alternate;
 }
 
 ul {
@@ -57,25 +57,25 @@ ul {
 
 @keyframes roll-up-out {
   0% {
-    transform: translateY(0px);
+    transform: translateY(-70px);
   }
   16% {
-    transform: translateY(0px);
+    transform: translateY(-70px);
   }
   32% {
-    transform: translateY(-20px);
+    transform: translateY(-150px);
   }
   48% {
-    transform: translateY(-40px);
+    transform: translateY(-220px);
   }
   64% {
-    transform: translateY(-60px);
+    transform: translateY(-300px);
   }
   80% {
-    transform: translateY(-80px);
+    transform: translateY(-300px);
   }
   100% {
-    transform: translateY(-100px);
+    transform: translateY(-300px);
   }
 }
 
