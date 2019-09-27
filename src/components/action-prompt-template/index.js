@@ -96,6 +96,54 @@ class ActionPromptTemplate extends React.Component {
               this.props.gameData.setAction(gameData.actionOptions[7]);
             }}
           />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[8]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[9]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[10]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[11]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[12]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
+          <input
+            className={style.actionButton}
+            type="submit"
+            value={gameData.actionOptions[13]}
+            onClick={() => {
+              this.props.gameData.setAction(gameData.actionOptions[7]);
+            }}
+          />
         </div>
         {/*<div className="description2">{description2}</div>*/}
         <div className={style.nextButton}>{nextButton}</div>
