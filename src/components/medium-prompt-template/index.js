@@ -224,14 +224,6 @@ class MediumPromptTemplate extends React.Component {
               this.props.gameData.setMedium(gameData.mediumOptions[23]);
             }}
           />
-          <input
-            className={style.mediumButton}
-            type="submit"
-            value={gameData.mediumOptions[24]}
-            onClick={() => {
-              this.props.gameData.setMedium(gameData.mediumOptions[24]);
-            }}
-          />
         </div>
         {/*<div className="description2">{description2}</div>*/}
         <div className={style.nextButton}>{nextButton}</div>
