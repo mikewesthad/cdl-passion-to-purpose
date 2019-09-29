@@ -32,6 +32,23 @@ class MediumPromptTemplate extends React.Component {
         <div className="description">{description}</div>
 
         <div className={style.mediumContainer}>
+          {gameData.mediumOptions.map(medium => {
+            return (
+              <p>
+                {
+                  <input
+                    className={style.mediumButton}
+                    type="submit"
+                    value={medium}
+                    onClick={() => {
+                      this.props.gameData.setMedium(medium);
+                    }}
+                  />
+                }
+              </p>
+            );
+          })}
+          {/* 
           <input
             className={style.mediumButton}
             type="submit"
@@ -224,6 +241,7 @@ class MediumPromptTemplate extends React.Component {
               this.props.gameData.setMedium(gameData.mediumOptions[23]);
             }}
           />
+          */}
         </div>
         {/*<div className="description2">{description2}</div>*/}
         <div className={style.nextButton}>{nextButton}</div>
