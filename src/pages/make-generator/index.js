@@ -14,7 +14,7 @@ class Generator extends React.Component {
 
   componentDidMount() {
     const gameData = this.props.gameData;
-    gameData.saveToFirebase();
+    //gameData.saveToFirebase();
   }
 
   getNextCombination = () => {

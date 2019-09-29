@@ -5,6 +5,16 @@ import Container from "../components/container";
 import style from "./make-generator/index.module.scss";
 
 class LetsMake extends React.Component {
+  constructor(props) {
+    super(props);
+    const gameData = this.props.gameData;
+  }
+
+  componentDidMount() {
+    const gameData = this.props.gameData;
+    gameData.saveToFirebase();
+  }
+
   render() {
     const { gameData } = this.props;
 
