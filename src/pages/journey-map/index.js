@@ -45,8 +45,8 @@ class JourneyMap extends React.Component {
         <hr />
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Let's make a</span>
-          <span className={style.generatedPassion}>medium</span>
+          <span className={style.bolded}>Let's make a </span>
+          <span className={style.generatedPassion}>{gameData.medium}</span>
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>
             {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}!
