@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CardsContainer from "../../components/medium-cards-template";
 import style from "./index.module.scss";
+import GenerateAttribution from "../../components/generator-attribution";
 
 export default function MediumCards(props) {
   return (
@@ -23,8 +24,11 @@ export default function MediumCards(props) {
           <div className={style.projectDescription}>Project Description</div>
         </div>
       </div>
-      {/*<h1 className="title">Next Steps</h1>*/}
       <div className="text-center">
+        <GenerateAttribution
+          className={style.generatedButton}
+          //onClick={this.toggleHiddenPassion.bind(this)}
+        />
         <Link className="button" to={props.nextRoute}>
           Continue ➞
         </Link>
