@@ -60,10 +60,10 @@ class Generator extends React.Component {
         <div className={style.animation}>
           <span className={style.generatedPurpose}>
             <ul>
-              <li>{gameData.purposeStore.responses[0]}</li>
-              <li>{gameData.purposeStore.responses[1]}</li>
-              <li>{gameData.purposeStore.responses[2]}</li>
-              <li>{gameData.purposeStore.responses[3]}</li>
+              <li>{gameData.getPurposesWithVerb()[0]}</li>
+              <li>{gameData.getPurposesWithVerb()[1]}</li>
+              <li>{gameData.getPurposesWithVerb()[2]}</li>
+              <li>{gameData.getPurposesWithVerb()[3]}</li>
             </ul>
           </span>
         </div>
