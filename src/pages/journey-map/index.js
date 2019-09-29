@@ -4,6 +4,7 @@ import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
 import SocialShare from "../../components/social-share";
+import Attribution from "../../components/attribution";
 
 class JourneyMap extends React.Component {
   constructor(props) {
@@ -89,6 +90,7 @@ class JourneyMap extends React.Component {
         <div className="text-center">
           <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
         </div>
+        <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
       </Container>
     );
   }
