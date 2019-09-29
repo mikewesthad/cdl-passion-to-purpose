@@ -9,7 +9,13 @@ export default class Attribution extends Component {
         <div className={style.attributionText}>
           A free tool built by: Lorelei Miyamura, Henry Hoare, and
         </div>
-        <a className={style.logoLink} href="https://convergencedesignlab.org/">
+        <a
+          className={style.logoLink}
+          onClick={event => {
+            event.preventDefault();
+            window.open("https://convergencedesignlab.org/");
+          }}
+        >
           <LogoSvg className={style.logo} />
         </a>
       </div>
