@@ -12,11 +12,11 @@ class Impact extends React.Component {
       <ActionPromptTemplate
         {...this.props}
         store={gameData}
-        title={<React.Fragment>Explore affordances</React.Fragment>}
+        title={<React.Fragment>Explore Impact</React.Fragment>}
         description={
           <React.Fragment>
             <p>
-              Choose an affordance that you think might best fit the action you're trying to take.
+              Choose an affordance that you think might best fit the impact you're trying to take.
               Once you choose one, you'll see some examples of that affordance being used.
             </p>
             <p>Don’t worry we can change this later!</p>
