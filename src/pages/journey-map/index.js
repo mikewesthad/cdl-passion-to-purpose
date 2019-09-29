@@ -15,11 +15,6 @@ class JourneyMap extends React.Component {
     this.state = { combinationNumber: 0 };
   }
 
-  componentDidMount() {
-    const gameData = this.props.gameData;
-    gameData.saveToFirebase();
-  }
-
   getNextCombination = () => {
     this.setState(prev => {
       return { combinationNumber: prev.combinationNumber + 1 };
