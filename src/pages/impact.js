@@ -1,7 +1,7 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
 import { Link } from "react-router-dom";
-import ActionPromptTemplate from "../components/action-prompt-template";
+import ImpactPromptTemplate from "../components/impact-prompt-template";
 //import { reaction } from "mobx";
 
 class Impact extends React.Component {
@@ -9,7 +9,7 @@ class Impact extends React.Component {
     const { gameData } = this.props;
 
     return (
-      <ActionPromptTemplate
+      <ImpactPromptTemplate
         {...this.props}
         store={gameData}
         title={<React.Fragment>Explore Impact</React.Fragment>}
