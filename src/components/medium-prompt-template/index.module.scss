@@ -1,6 +1,7 @@
 @import "../../style/variables.scss";
 
-.nextButton {
+.listItems {
+  display: inline-block;
 }
 
 .overlay {
@@ -16,7 +17,7 @@
 
 .mediumContainer {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .mediumButton {
