@@ -11,7 +11,7 @@ class ImpactPromptTemplate extends React.Component {
   onSubmit = event => {
     const { store, history, nextRoute } = this.props;
     event.preventDefault();
-    if (store.action !== "") {
+    if (store.impact !== "") {
       history.push(nextRoute);
     } else {
       this.setState({ showError: true });
