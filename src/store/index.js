@@ -23,7 +23,7 @@ class GameData {
       chosenPassionIndex: 0,
       chosenPurposeIndex: 0,
       medium: "",
-      action: "",
+      impact: "",
       chosenMediumIndex: 0
     });
 
@@ -68,7 +68,7 @@ class GameData {
       "Zines/DIY Publishing"
     ];
 
-    this.actionOptions = [
+    this.impactOptions = [
       "Raise Awareness",
       "Build Empathy",
       "Cultivate Community",
@@ -101,12 +101,11 @@ class GameData {
 
   setMedium = action(mediumString => {
     this.medium = mediumString;
-    console.log(mediumString);
   });
 
-  setAction = action(actionString => {
-    this.action = actionString;
-    console.log(actionString);
+  setImpact = action(impactString => {
+    this.impact = impactString;
+    console.log(impactString);
   });
 
   incrementPassionIndex = action(() => {
@@ -238,7 +237,7 @@ class ResponsesStore {
 }
 
 const store = new GameData();
-/*
+
 //Testing;
 
 store.passionStore.setResponses(["food", "Lego", "video games", "beyonce"]);
@@ -248,5 +247,5 @@ store.purposeStore.setResponses([
   "poverty in America",
   "testing"
 ]);
-*/
+
 export default store;
