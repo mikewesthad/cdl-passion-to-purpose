@@ -96,13 +96,45 @@ class JourneyMap extends React.Component {
           </div>
           <div className="description">We wanted to discover the solution to this question.</div>
           <div className="description">
-            In order to do so, you had to explore your medium and impact.
+            In order to do so, you had to explore your medium and impact!
           </div>
         </div>
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Something</span>
-          <div className="description" />
+          <span className={style.bolded}>You started by browsing through your medium options</span>
+          <div className="description">
+            You selected the {gameData.medium} category &amp; then took a peek at our project
+            database.
+          </div>
+        </div>
+
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>Then you selected your impact</span>
+          <div className="description">You decided that your project should {gameData.impact}.</div>
+          <div className="description">
+            To understand how other projects in the world {gameData.impact}, we took a look at the
+            (projectname).
+          </div>
+        </div>
+        <hr />
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>
+            Finally, combining your selected medium and impact to give you an actionable Let's Make
+            prompt!
+          </span>
+        </div>
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>Let's make </span>
+          <span className={style.generatedPassion}>{gameData.medium}</span>
+          <span className={style.bolded}> to </span>
+          <span className={style.generatedPurpose}>{gameData.impact}!</span>
+        </div>
+        <hr />
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>So what do you think?</span>
+          <div className="description">
+            Inspirational Inspirational prompt to get the user stoked and working on their project.{" "}
+          </div>
         </div>
         <form />
 
