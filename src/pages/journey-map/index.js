@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
@@ -25,7 +25,7 @@ class JourneyMap extends React.Component {
   };
 
   render() {
-    const { gameData, nextRoute } = this.props;
+    const { gameData } = this.props;
     return (
       <Container>
         <h1 className="title">Journey Map</h1>
