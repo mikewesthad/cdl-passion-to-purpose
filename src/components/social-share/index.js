@@ -31,7 +31,7 @@ class SocialShare extends Component {
     const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
     const medium = gameData.medium;
     const impact = gameData.impact;
-    const text = `“How might we use ${passion} to ${purpose}?” Let's (verbage) (medium) to (impact)! What do you think of my project idea? Check out @ConvergenceDLab's Passion to Purpose tool:`;
+    const text = `“How might we use ${passion} to ${purpose}?” Let's (verbage) ${medium} to ${impact}! What do you think of my project idea? Check out @ConvergenceDLab's Passion to Purpose tool:`;
 
     return (
       <div>
