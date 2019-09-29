@@ -11,7 +11,7 @@ import {
 } from "react-share";
 import style from "./index.module.scss";
 
-const p2pUrl = "https://www.convergencedesignlab.org/p2p";
+const p2pUrl = "https://www.passiontopurpose.io";
 const twitterHashtags = ["PassionToPurpose"]; // Multiple, should not start with #
 const facebookHashtag = "#PassionToPurpose"; // Only one, must start with #
 const linkedinTitle = "Passion to Purpose Game";
