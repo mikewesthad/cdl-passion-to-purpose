@@ -32,13 +32,9 @@ class JourneyMap extends React.Component {
 
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
-          <span className={style.generatedPassion}>
-            {gameData.passionStore.responses[gameData.chosenPassionIndex]}
-          </span>
+          <span className={style.generatedPassion}>{passion}</span>
           <span className={style.bolded}> to </span>
-          <span className={style.generatedPurpose}>
-            {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
-          </span>
+          <span className={style.generatedPurpose}>{purpose}?</span>
         </div>
 
         <hr />
@@ -79,8 +75,35 @@ class JourneyMap extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>Next, we juxtaposed your passions and purposes</span>
           <div className="description">Combining them into a "How Might We" design question.</div>
+          <div className="description">Your selected HMW question shown below:</div>
+          <div className={style.generatedQuestion}>
+            <span className={style.bolded}>How might we use </span>
+            <span className={style.generatedPassion}>
+              {gameData.passionStore.responses[gameData.chosenPassionIndex]}
+            </span>
+            <span className={style.bolded}> to </span>
+            <span className={style.generatedPurpose}>
+              {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
+            </span>
+          </div>
         </div>
         <hr />
+
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>So, we went through and unpacked your selection.</span>
+          <div className="description">
+            How Might We use {passion} to {purpose}?
+          </div>
+          <div className="description">We wanted to discover the solution to this question.</div>
+          <div className="description">
+            In order to do so, you had to explore your medium and impact.
+          </div>
+        </div>
+
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>Something</span>
+          <div className="description" />
+        </div>
         <form />
 
         <div className="text-center">
