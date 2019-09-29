@@ -23,6 +23,8 @@ class JourneyMap extends React.Component {
 
   render() {
     const { gameData } = this.props;
+    const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
+    const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
     return (
       <Container>
         <h1 className="title">Journey Map</h1>
