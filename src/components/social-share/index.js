@@ -19,7 +19,7 @@ const linkedinTitle = "Passion to Purpose Game";
 export default class SocialShare extends Component {
   render() {
     const { passion, purpose } = this.props;
-    const text = `“How might we use ${passion} to ${purpose}?” Check out @ConvergenceDLab's Passion to Purpose tool:`;
+    const text = `“How might we use ${passion} to ${purpose}?” Let's (verbage) (medium) to (impact)! What do you think of my project idea? Check out @ConvergenceDLab's Passion to Purpose tool:`;
 
     return (
       <div>
