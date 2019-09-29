@@ -79,10 +79,9 @@ class JourneyMap extends React.Component {
 
         <hr />
 
-        <div className="description">
-          Congratulations You have transformed your passion and purpose into a design question. So
-          what’s the next step? To further define a project designers often dig deeper using a
-          process called ideation.
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>Next, we juxtaposed your passions and purposes</span>
+          <div className="description">Combining them into a "How Might We" design question.</div>
         </div>
 
         <form />
