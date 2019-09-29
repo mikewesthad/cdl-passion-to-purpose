@@ -5,6 +5,7 @@ import Container from "../../components/container";
 import style from "./index.module.scss";
 import SocialShare from "../../components/social-share";
 import Attribution from "../../components/attribution";
+import FacilitatorAttribution from "../../components/facilitator-attribution";
 
 class JourneyMap extends React.Component {
   constructor(props) {
@@ -49,9 +50,7 @@ class JourneyMap extends React.Component {
           <span className={style.bolded}>Let's make a </span>
           <span className={style.generatedPassion}>{gameData.medium}</span>
           <span className={style.bolded}> to </span>
-          <span className={style.generatedPurpose}>
-            {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}!
-          </span>
+          <span className={style.generatedPurpose}>{gameData.impact}!</span>
         </div>
 
         <hr />
@@ -84,13 +83,14 @@ class JourneyMap extends React.Component {
           <span className={style.bolded}>Next, we juxtaposed your passions and purposes</span>
           <div className="description">Combining them into a "How Might We" design question.</div>
         </div>
-
+        <hr />
         <form />
 
         <div className="text-center">
           <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
         </div>
         <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
+        <FacilitatorAttribution style={{ marginTop: "2rem", textAlign: "center" }} />
       </Container>
     );
   }
