@@ -6,6 +6,7 @@ import style from "./index.module.scss";
 import SocialShare from "../../components/social-share";
 import Attribution from "../../components/attribution";
 import FacilitatorAttribution from "../../components/facilitator-attribution";
+import Survey from "../../components/survey";
 
 class JourneyMap extends React.Component {
   constructor(props) {
@@ -135,6 +136,7 @@ class JourneyMap extends React.Component {
         </div>
         <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
         <FacilitatorAttribution style={{ marginTop: "2rem", textAlign: "center" }} />
+        <Survey style={{ marginTop: "2rem", textAlign: "center" }} />
       </Container>
     );
   }
