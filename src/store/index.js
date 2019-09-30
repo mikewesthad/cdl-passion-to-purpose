@@ -81,7 +81,7 @@ class GameData {
       "Change habits",
       "Connect people",
       "Create a paradigm shift",
-      "Raising up others' voices",
+      "Raise up others' voices",
       "Take an action"
     ];
 
