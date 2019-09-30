@@ -18,38 +18,34 @@
 }
 
 //cards
+//old height 250px
 .cardsContainer {
   max-width: 800px;
-  height: 250px;
+  height: fit-content;
   margin: 0 auto;
   text-align: center;
-
-  @media (min-width: 400px) {
-    height: 200px;
-  }
-
-  @media (min-width: 880px) {
-    height: 350px;
-  }
 }
 
 .childCard {
   background-color: black;
   color: white;
   width: 70%;
-  height: inherit;
+  height: 250px;
   border-radius: 0.5rem;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 1rem;
 
   @media (min-width: 400px) {
-    width: 30%;
+    height: 200px;
+    width: 25%;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
 
   @media (min-width: 880px) {
+    height: 350px;
+    width: 30%;
   }
 }
 
@@ -57,7 +53,7 @@
   background-color: gainsboro;
   color: black;
   width: 70%;
-  height: inherit;
+  height: 250px;
   border-radius: 0.5rem;
   display: inline-block;
   margin-left: 0.5rem;
@@ -66,12 +62,15 @@
   margin-bottom: 1rem;
 
   @media (min-width: 400px) {
-    width: 30%;
+    height: 200px;
+    width: 25%;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
 
   @media (min-width: 880px) {
+    width: 30%;
+    height: 350px;
   }
 }
 
@@ -79,7 +78,7 @@
   background-color: gainsboro;
   color: black;
   width: 70%;
-  height: inherit;
+  height: 250px;
   border-radius: 0.5rem;
   display: inline-block;
   margin-left: 0.5rem;
@@ -87,11 +86,14 @@
   vertical-align: top;
 
   @media (min-width: 400px) {
-    width: 30%;
+    height: 200px;
+    width: 25%;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
 
   @media (min-width: 880px) {
+    width: 30%;
+    height: 350px;
   }
 }
