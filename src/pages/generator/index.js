@@ -4,7 +4,7 @@ import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
-
+//
 class Generator extends React.Component {
   constructor(props) {
     super(props);
@@ -101,9 +101,11 @@ class Generator extends React.Component {
           </div>
         </div>
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
-          <Link className="button" to={nextRoute}>
-            Continue with this ➞
-          </Link>
+          {this.state.isHidden ? null : (
+            <Link className="button" to={nextRoute}>
+              Continue with this ➞
+            </Link>
+          )}
         </div>
       </GeneratorTemplate>
     );
