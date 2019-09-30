@@ -1,4 +1,4 @@
-.generatedPrompt {
+.generatedQuestion {
   font-size: 2.2rem;
   text-align: center;
   margin: 3rem 0;
@@ -8,132 +8,90 @@
   font-weight: 600;
 }
 
-.makePreset {
-  display: block;
-  width: 100%;
-  font-weight: 600;
-  font-size: 2rem;
-
-  @media (min-width: 880px) {
-    font-size: 3.5rem;
-  }
-}
-
-.impactContainer,
-.affordanceContainer {
-  width: inherit;
-  display: inline-flex;
-}
-
-.selectedImpact,
-.selectedAffordance {
-  font-weight: 900;
-  font-size: 2rem;
-
-  @media (min-width: 400px) {
-    font-size: 3.5rem;
-  }
-}
-
-.generatedPassion {
-  color: #fd940d;
-}
-
-.generatedPurpose {
-  color: #2eb4ff;
-}
-
-.cardsContainer {
-  width: 800px;
-  height: 350px;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.exampleCard {
-  overflow: hidden;
-  position: relative;
-  width: 30%;
-  height: inherit;
-  border-radius: 1rem;
-  margin-right: 1rem;
-  background-color: black;
-  color: white;
-  display: inline-block;
-}
-
-.affordanceCard {
-  overflow: hidden;
-  position: relative;
-  width: 30%;
-  height: inherit;
-  border-radius: 1rem;
-  margin-right: 1rem;
-  background-color: rgb(244, 244, 244);
-  display: inline-block;
-  color: black;
-  vertical-align: top;
-}
-
-.descriptionCard {
-  overflow: hidden;
-  position: relative;
-  width: 30%;
-  height: inherit;
-  border-radius: 1rem;
-  background-color: none;
-  display: inline-block;
-  color: black;
-  vertical-align: top;
-}
-
-.tags {
-  margin: 0 auto;
-  padding-top: 1rem;
-}
-
-.mediaTitle {
-  color: white;
-  text-align: center;
-  vertical-align: top;
-  line-height: 300px;
-  font-size: 1.5rem;
-}
-
-.link {
-  text-decoration: underline;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-bottom: 1rem;
-}
-
-.credits {
-  position: absolute;
-  bottom: 0;
-  transform: translate(50%);
-  padding-bottom: 1rem;
-}
-
-.affordanceTitle {
-  padding-top: 1rem;
-  margin: 0 auto;
-  text-align: center;
-  vertical-align: top;
-  line-height: 335px;
-  font-size: 1.5rem;
-}
-
-.projectDescription {
-  padding-top: 1rem;
-  text-align: center;
-  vertical-align: top;
-  line-height: 335px;
-}
-
-//Button
 .generatedButton {
   display: inline-block;
   margin-right: 1rem;
+}
+
+.generateButtonContainer {
+  margin-top: 1rem;
+}
+
+//cards
+.cardsContainer {
+  max-width: 800px;
+  height: 250px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: 400px) {
+    height: 200px;
+  }
+
+  @media (min-width: 880px) {
+    height: 350px;
+  }
+}
+
+.childCard {
+  background-color: black;
+  color: white;
+  width: 70%;
+  height: inherit;
+  border-radius: 0.5rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 1rem;
+
+  @media (min-width: 400px) {
+    width: 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 880px) {
+  }
+}
+
+.exampleCard {
+  background-color: gainsboro;
+  color: black;
+  width: 70%;
+  height: inherit;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  vertical-align: top;
+  margin-bottom: 1rem;
+
+  @media (min-width: 400px) {
+    width: 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 880px) {
+  }
+}
+
+.descriptionCard {
+  background-color: gainsboro;
+  color: black;
+  width: 70%;
+  height: inherit;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  vertical-align: top;
+
+  @media (min-width: 400px) {
+    width: 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 880px) {
+  }
 }
