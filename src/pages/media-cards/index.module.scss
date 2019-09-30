@@ -1,0 +1,97 @@
+.generatedQuestion {
+  font-size: 2.2rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.bolded {
+  font-weight: 600;
+}
+
+.generatedButton {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.generateButtonContainer {
+  margin-top: 1rem;
+}
+
+//cards
+.cardsContainer {
+  max-width: 800px;
+  height: 250px;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (min-width: 400px) {
+    height: 200px;
+  }
+
+  @media (min-width: 880px) {
+    height: 350px;
+  }
+}
+
+.childCard {
+  background-color: black;
+  color: white;
+  width: 70%;
+  height: inherit;
+  border-radius: 0.5rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 1rem;
+
+  @media (min-width: 400px) {
+    width: 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 880px) {
+  }
+}
+
+.exampleCard {
+  background-color: gainsboro;
+  color: black;
+  width: 70%;
+  height: inherit;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  vertical-align: top;
+  margin-bottom: 1rem;
+
+  @media (min-width: 400px) {
+    width: 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 880px) {
+  }
+}
+
+.descriptionCard {
+  background-color: gainsboro;
+  color: black;
+  width: 70%;
+  height: inherit;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  vertical-align: top;
+
+  @media (min-width: 400px) {
+    width: 30%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 880px) {
+  }
+}
