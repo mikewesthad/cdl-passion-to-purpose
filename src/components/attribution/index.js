@@ -7,7 +7,8 @@ export default class Attribution extends Component {
     return (
       <div {...this.props}>
         <div className={style.attributionText}>
-          A free tool built by: Lorelei Miyamura, Henry Hoare, and
+          Designed by: Convergence Design Lab, Columbia College Chicago, Margaret Conway, Mindy
+          Faber, Michael Hadley, Henry Hoare and Lorelei Miyamura &copy; 2019
         </div>
         <a
           href="https://convergencedesignlab.org/"
