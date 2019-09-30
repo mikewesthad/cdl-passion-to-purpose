@@ -36,16 +36,17 @@ class Generator extends React.Component {
         </div>
 
         <div className="description">
-          Congratulations You have transformed your passion and purpose into a design question. So
-          what’s the next step? To further define a project designers often dig deeper using a
-          process called ideation.
+          Congratulations you have transformed your passion and purpose into a "How Might We"
+          question. Designers use "How Might We" questions as a away to define a project idea by
+          brainstorming new opportunities for creativity and design. This process is called
+          ideation.
         </div>
 
         <form />
 
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link className="button" to={nextRoute}>
-            Ok! Next Step ➞
+            Let's try it out ➞
           </Link>
         </div>
       </Container>
