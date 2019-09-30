@@ -42,30 +42,30 @@ class GameData {
     ];
 
     this.mediumOptions = [
-      "Hardware, Circuits & Sensors",
-      "Audio & Sound",
-      "Coding/Apps",
-      "A Comic",
+      "Smart gadgets",
+      "Audio or Music Recording",
+      "App",
+      "Comic",
       "Community Gathering",
+      "Curated Collection",
       "Crafts",
       "Data Vizualization",
-      "Designed Objects",
+      "Design",
       "Fashion",
-      "Fandom",
-      "Guerilla Art",
-      "Games",
+      "Fancom Community",
+      "Guerrilla Art",
+      "Game",
       "Citizen Journalism",
-      "Music and Songwriting",
       "Public Performance",
-      "Photos",
+      "Photo Series",
       "Podcast",
       "Public/Street Art",
       "Remix/Mashup",
       "Selfies",
-      "Social Media",
-      "VR/AR",
-      "Video and Animation",
-      "Zines/DIY Publishing"
+      "Shareable Social Media Content",
+      "Virtual/Augmented Reality",
+      "Video/Animation",
+      "Zines"
     ];
 
     this.impactOptions = [
