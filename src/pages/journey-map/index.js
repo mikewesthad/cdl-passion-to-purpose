@@ -117,8 +117,8 @@ class JourneyMap extends React.Component {
         <hr />
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>
-            Finally, combining your selected medium and impact to give you an actionable Let's Make
-            prompt!
+            Finally, we combined your selected media and impact to give you an actionable "Let's
+            Make" prompt!
           </span>
         </div>
         <div className={style.generatedQuestion}>
@@ -128,12 +128,6 @@ class JourneyMap extends React.Component {
           <span className={style.generatedPurpose}>{gameData.impact}!</span>
         </div>
         <hr />
-        <div className={style.generatedQuestion}>
-          <span className={style.bolded}>So what do you think?</span>
-          <div className="description">
-            Inspirational Inspirational prompt to get the user stoked and working on their project.{" "}
-          </div>
-        </div>
         <form />
 
         <div className="text-center">
