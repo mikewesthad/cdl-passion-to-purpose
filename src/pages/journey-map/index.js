@@ -134,9 +134,9 @@ class JourneyMap extends React.Component {
         <div className="text-center">
           <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
         </div>
-        <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
         <FacilitatorAttribution style={{ marginTop: "2rem", textAlign: "center" }} />
         <Survey style={{ marginTop: "2rem", textAlign: "center" }} />
+        <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
       </Container>
     );
   }
