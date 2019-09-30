@@ -7,15 +7,10 @@ import style from "./index.module.scss";
 class Generator extends React.Component {
   constructor(props) {
     super(props);
-
-    const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
 
-  componentDidMount() {
-    const gameData = this.props.gameData;
-    //gameData.saveToFirebase();
-  }
+  //gameData.saveToFirebase();
 
   getNextCombination = () => {
     this.setState(prev => {

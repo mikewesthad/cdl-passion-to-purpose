@@ -19,11 +19,6 @@ const facebookHashtag = "#PassionToPurpose"; // Only one, must start with #
 const linkedinTitle = "Passion to Purpose Game";
 
 class SocialShare extends Component {
-  constructor(props) {
-    super(props);
-    const gameData = this.props.gameData;
-  }
-
   render() {
     const { gameData } = this.props;
 

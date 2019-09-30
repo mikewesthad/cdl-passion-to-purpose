@@ -8,7 +8,6 @@ import MediumCards from "./medium-cards";
 import ImpactContext from "./impact-context";
 import Impact from "./impact";
 import ImpactCards from "./impact-cards";
-import Audience from "./audience";
 import MakeGenerator from "./make-generator";
 import PassionContext from "./passion-context";
 import PurposeContext from "./purpose-context";
@@ -54,7 +53,6 @@ export {
   ImpactContext,
   Impact,
   ImpactCards,
-  Audience,
   PassionContext,
   Passion,
   PurposeContext,

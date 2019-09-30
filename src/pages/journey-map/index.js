@@ -10,8 +10,6 @@ import FacilitatorAttribution from "../../components/facilitator-attribution";
 class JourneyMap extends React.Component {
   constructor(props) {
     super(props);
-
-    const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
 

@@ -24,7 +24,7 @@ class ImpactPromptTemplate extends React.Component {
   };
 
   render() {
-    const { store, gameData, title, description, description2, nextButton } = this.props;
+    const { gameData, title, description, nextButton } = this.props;
 
     return (
       <Container>
