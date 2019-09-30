@@ -29,7 +29,7 @@ class GameData {
 
     this.passionPrompts = [
       "I am a fan of...",
-      "I spend my time...",
+      "I like to spend my time...",
       "I am good at...",
       "I want to learn more about..."
     ];
