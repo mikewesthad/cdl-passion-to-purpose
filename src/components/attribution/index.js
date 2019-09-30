@@ -10,6 +10,7 @@ export default class Attribution extends Component {
           A free tool built by: Lorelei Miyamura, Henry Hoare, and
         </div>
         <a
+          href="https://convergencedesignlab.org/"
           className={style.logoLink}
           onClick={event => {
             event.preventDefault();

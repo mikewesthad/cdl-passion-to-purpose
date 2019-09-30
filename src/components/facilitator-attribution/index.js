@@ -11,6 +11,7 @@ export default class FacilitatorAttribution extends Component {
           below:
         </div>
         <a
+          href="https://convergencedesignlab.org/web-resources/PassionToPurpose_FacilitatorGuide.pdf"
           className={style.logoLink}
           onClick={event => {
             event.preventDefault();
