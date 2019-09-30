@@ -12,7 +12,6 @@ import MakeGenerator from "./make-generator";
 import PassionContext from "./passion-context";
 import PurposeContext from "./purpose-context";
 import HMWContext from "./hmw-context";
-import NextStepsContext from "./next-steps-context";
 import LMContext from "./lets-make-context";
 import LetsMake from "./lets-make";
 import JourneyMap from "./journey-map";
@@ -28,7 +27,6 @@ const routes = [
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
   { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
-  { key: "next-steps-context", path: "/next-steps-context", Component: NextStepsContext },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
   { key: "medium-cards", path: "/medium-cards", Component: MediumCards },
@@ -60,7 +58,6 @@ export {
   HMWContext,
   Generator,
   MakeGenerator,
-  NextStepsContext,
   LMContext,
   LetsMake,
   routes,
