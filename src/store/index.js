@@ -45,7 +45,6 @@ class GameData {
       "A Game",
       "A Design",
       "Public or Street Art",
-      "Public art/street art",
       "A Design",
       "Virtual or Augmented Reality",
       "Citizen journalism",
@@ -57,12 +56,38 @@ class GameData {
       "Fashion",
       "A Map",
       "A Community Gathering",
-      "A Design",
       "A Podcast",
       "A Community Gathering",
       "Shareable social media content",
       "A Video or Animation"
     ];
+
+    const mediaExampleData = {
+      "A Game": [
+        {
+          exampleName: "a Gerrymandering Board Game",
+          image: require("../images/MediaExampleImages/board-game-icon.svg"),
+          link: "http://gerrymanderinggame.com/"
+        }
+      ],
+      "A Design": [
+        {
+          exampleName: "a Calendar",
+          image: require("../images/MediaExampleImages/calendar-icon.svg"),
+          link: "https://buyolympia.com/Item/liartownusa-social-justice-kittens-2020"
+        }
+      ],
+      "Public or Street Art": [
+        {
+          exampleName: "a Playground",
+          image: require("../images/MediaExampleImages/playground-icon.svg"),
+          link:
+            "https://www.designboom.com/architecture/ronald-rael-san-fratello-installs-seesaws-on-us-mexico-border-wall-07-31-2019/"
+        }
+      ]
+    };
+
+    //mediaExampleData["A Game"][0].exampleName;
 
     this.impactOptions = [
       "Raise Awareness",
@@ -80,8 +105,6 @@ class GameData {
       "Raise up others' voices",
       "Take an action"
     ];
-
-    const mediaExampleData = {};
 
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
 
