@@ -7,8 +7,7 @@ export default class FacilitatorAttribution extends Component {
     return (
       <div {...this.props}>
         <div className={style.attributionText}>
-          Want to use this tool in a facilitator's environment? Check out our facilitator guide
-          below:
+          Want to use this tool as a facilitator? Check out our facilitator guide below:
         </div>
         <a
           href="https://convergencedesignlab.org/web-resources/PassionToPurpose_FacilitatorGuide.pdf"
