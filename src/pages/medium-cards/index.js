@@ -13,7 +13,7 @@ class MediumCards extends React.Component {
       <CardsContainer>
         <div className={style.generatedPrompt}>
           <span className={style.generatedPrompt}>Let's make a </span>
-          <span className={style.generatedPrompt}>{medium}!</span>
+          <span className={style.mediaPrompt}>{medium}!</span>
         </div>
         <div className={style.cardsContainer}>
           <div className={style.exampleCard}>
@@ -22,7 +22,7 @@ class MediumCards extends React.Component {
             <div className={style.link}>Link</div>
           </div>
           <div className={style.affordanceCard}>
-            <div className={style.affordanceTitle}>Affordance</div>
+            <div className={style.affordanceTitle}>Example Project</div>
           </div>
           <div className={style.descriptionCard}>
             <div className={style.projectDescription}>Project Description</div>
