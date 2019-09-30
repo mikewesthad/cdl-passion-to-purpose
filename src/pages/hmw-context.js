@@ -6,9 +6,10 @@ export default function HMWContext(props) {
   return (
     <Container>
       <div className="context-container" to={props.nextRoute}>
-        <h2 className="title">How might we...?</h2>
+        <h2 className="title">
+          Let's combine your responses and turn them into a "How Might We" question.
+        </h2>
         <div className="description">
-          <p>Let's combine your responses!</p>
           <p>Click to see the different combinations and choose your favorite.</p>
         </div>
       </div>
