@@ -16,8 +16,8 @@ class Impact extends React.Component {
         description={
           <React.Fragment>
             <p>
-              Choose an affordance that you think might best fit the impact you're trying to take.
-              Once you choose one, you'll see some examples of that affordance being used.
+              Choose the description that best fits the impact you're trying to make. Once you
+              choose one, you'll see some examples.
             </p>
             <p>Don’t worry we can change this later!</p>
           </React.Fragment>
