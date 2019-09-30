@@ -42,30 +42,26 @@ class GameData {
     ];
 
     this.mediumOptions = [
-      "Smart gadgets",
-      "Audio or Music Recording",
-      "App",
-      "Comic",
-      "Community Gathering",
-      "Curated Collection",
-      "Crafts",
-      "Data Vizualization",
-      "Design",
+      "A Game",
+      "A Design",
+      "Public or Street Art",
+      "Public art/street art",
+      "A Design",
+      "Virtual or Augmented Reality",
+      "Citizen journalism",
+      "A Remix or Mashup",
+      "Shareable social media content",
+      "A Video or Animation",
+      "A Business",
+      "A Design",
       "Fashion",
-      "Fancom Community",
-      "Guerrilla Art",
-      "Game",
-      "Citizen Journalism",
-      "Public Performance",
-      "Photo Series",
-      "Podcast",
-      "Public/Street Art",
-      "Remix/Mashup",
-      "Selfies",
-      "Shareable Social Media Content",
-      "Virtual/Augmented Reality",
-      "Video/Animation",
-      "Zines"
+      "A Map",
+      "A Community Gathering",
+      "A Design",
+      "A Podcast",
+      "A Community Gathering",
+      "Shareable social media content",
+      "A Video or Animation"
     ];
 
     this.impactOptions = [
@@ -84,6 +80,8 @@ class GameData {
       "Raise up others' voices",
       "Take an action"
     ];
+
+    const mediaExampleData = {};
 
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
 
