@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { MemoryRouter, BrowserRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
+import {
+  MemoryRouter,
+  /*BrowserRouter,*/ Route,
+  Switch,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 import { Provider } from "mobx-react";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
