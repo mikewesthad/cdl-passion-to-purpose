@@ -62,24 +62,24 @@ class GameData {
       "A Video or Animation"
     ];
 
-    const mediaExampleData = {
+    this.mediaExampleData = {
       "A Game": [
         {
-          exampleName: "a Gerrymandering Board Game",
+          exampleName: "A Gerrymandering Board Game",
           image: require("../images/MediaExampleImages/board-game-icon.svg"),
           link: "http://gerrymanderinggame.com/"
         }
       ],
       "A Design": [
         {
-          exampleName: "a Calendar",
+          exampleName: "A Calendar",
           image: require("../images/MediaExampleImages/calendar-icon.svg"),
           link: "https://buyolympia.com/Item/liartownusa-social-justice-kittens-2020"
         }
       ],
       "Public or Street Art": [
         {
-          exampleName: "a Playground",
+          exampleName: "A Playground",
           image: require("../images/MediaExampleImages/playground-icon.svg"),
           link:
             "https://www.designboom.com/architecture/ronald-rael-san-fratello-installs-seesaws-on-us-mexico-border-wall-07-31-2019/"
