@@ -1,7 +1,14 @@
+$primary-color: #2eb4ff;
+$font-color: #16171f;
+
 .generatedQuestion {
   font-size: 2.2rem;
   text-align: center;
   margin: 3rem 0;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 .bolded {
@@ -17,8 +24,6 @@
   margin-top: 1rem;
 }
 
-//cards
-//old height 250px
 .cardsContainer {
   max-width: 800px;
   height: fit-content;
@@ -27,7 +32,7 @@
 }
 
 .childCard {
-  background-color: black;
+  background-color: $font-color;
   color: white;
   width: 70%;
   height: 250px;
@@ -49,9 +54,19 @@
   }
 }
 
+.cardText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (min-width: 880px) {
+    font-size: 1.5rem;
+  }
+}
+
 .exampleCard {
   background-color: gainsboro;
-  color: black;
+  color: $font-color;
   width: 70%;
   height: 250px;
   border-radius: 0.5rem;
@@ -75,8 +90,9 @@
 }
 
 .descriptionCard {
+  cursor: pointer;
   background-color: gainsboro;
-  color: black;
+  color: $font-color;
   width: 70%;
   height: 250px;
   border-radius: 0.5rem;
@@ -96,4 +112,35 @@
     width: 30%;
     height: 350px;
   }
+}
+
+.descriptionCard:hover {
+  background-color: $primary-color;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.descriptionText {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logoLink {
+  color: $font-color;
+}
+
+.logoLink:hover {
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.logoLink:visited {
+  color: $font-color;
+}
+
+img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
