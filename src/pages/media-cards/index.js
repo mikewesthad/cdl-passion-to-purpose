@@ -18,19 +18,17 @@ class MediaCards extends React.Component {
         </div>
 
         <div className={style.cardsContainer}>
-          <div className={style.childCard}>
-            {gameData.mediaExampleData["A Game"][0].exampleName}
-          </div>
+          <div className={style.childCard}>{gameData.mediaExampleData[medium][0].exampleName}</div>
           <div className={style.exampleCard}>
-            <img src={gameData.mediaExampleData["A Game"][0].image} />
+            <img src={gameData.mediaExampleData[medium][0].image} />
           </div>
           <div className={style.descriptionCard}>
             <a
-              href={gameData.mediaExampleData["A Game"][0].link}
+              href={gameData.mediaExampleData[medium][0].link}
               className={style.logoLink}
               onClick={event => {
                 event.preventDefault();
-                window.open(gameData.mediaExampleData["A Game"][0].link);
+                window.open(gameData.mediaExampleData[medium][0].link);
               }}
             >
               {" "}
