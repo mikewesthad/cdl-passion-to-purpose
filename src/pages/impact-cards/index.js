@@ -13,7 +13,7 @@ class ImpactCards extends React.Component {
     return (
       <Container>
         <h1 className="title">
-          Let's make a <div className={style.lowercase}>{medium}</div> to{" "}
+          Let's make <div className={style.lowercase}>{medium}</div> to{" "}
           <div className={style.lowercase}>{impact}</div>!
         </h1>
         <div className="description">
@@ -23,10 +23,10 @@ class ImpactCards extends React.Component {
 
         <div className={style.cardsContainer}>
           <div className={style.childCard}>
-            <div className={style.cardText}>{gameData.mediaExampleData[medium][0].exampleName}</div>
+            <div className={style.cardText}>{medium}</div>
           </div>
           <div className={style.exampleCard}>
-            <img src={gameData.mediaExampleData[medium][0].image} />
+            <div className={style.cardText}>to {impact}</div>
           </div>
           <a
             href={gameData.mediaExampleData[medium][0].link}
