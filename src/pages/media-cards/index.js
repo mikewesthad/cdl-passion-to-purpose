@@ -20,7 +20,9 @@ class MediaCards extends React.Component {
         </div>
 
         <div className={style.cardsContainer}>
-          <div className={style.childCard}>{gameData.mediaExampleData[medium][0].exampleName}</div>
+          <div className={style.childCard}>
+            <div className={style.cardText}>{gameData.mediaExampleData[medium][0].exampleName}</div>
+          </div>
           <div className={style.exampleCard}>
             <img src={gameData.mediaExampleData[medium][0].image} />
           </div>
