@@ -13,17 +13,33 @@ class ImpactCards extends React.Component {
     return (
       <Container>
         <h1 className="title">
-          Let's make a {medium} to {impact}!
+          Let's make a <div className={style.lowercase}>{medium}</div> to{" "}
+          <div className={style.lowercase}>{impact}</div>!
         </h1>
         <div className="description">
-          Cycle through the {impact} category to view various types of projects done similarly in
-          your community!
+          Cycle through the <div className={style.lowercase}>{impact}</div> category to view various
+          types of projects done similarly in your community!
         </div>
 
         <div className={style.cardsContainer}>
-          <div className={style.childCard}>something</div>
-          <div className={style.exampleCard}>Picture in my background-image</div>
-          <div className={style.descriptionCard}>something</div>
+          <div className={style.childCard}>
+            <div className={style.cardText}>{gameData.mediaExampleData[medium][0].exampleName}</div>
+          </div>
+          <div className={style.exampleCard}>
+            <img src={gameData.mediaExampleData[medium][0].image} />
+          </div>
+          <a
+            href={gameData.mediaExampleData[medium][0].link}
+            className={style.logoLink}
+            onClick={event => {
+              event.preventDefault();
+              window.open(gameData.mediaExampleData[medium][0].link);
+            }}
+          >
+            <div className={style.descriptionCard}>
+              <div className={style.descriptionText}>Link to project</div>
+            </div>
+          </a>
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
