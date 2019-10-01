@@ -45,21 +45,18 @@ class GameData {
       "A Game",
       "A Design",
       "Public or Street Art",
-      "A Design",
-      "Virtual or Augmented Reality",
-      "Citizen journalism",
+      "Stickers",
+      "A Virtual or Augmented Reality Experience",
+      "A Citizen journalism project",
       "A Remix or Mashup",
       "Shareable social media content",
       "A Video or Animation",
       "A Business",
-      "A Design",
+      "A Toy",
       "Fashion",
       "A Map",
       "A Community Gathering",
-      "A Podcast",
-      "A Community Gathering",
-      "Shareable social media content",
-      "A Video or Animation"
+      "A Podcast"
     ];
 
     this.mediaExampleData = {
@@ -83,6 +80,92 @@ class GameData {
           image: require("../images/MediaExampleImages/playground-icon.svg"),
           link:
             "https://www.designboom.com/architecture/ronald-rael-san-fratello-installs-seesaws-on-us-mexico-border-wall-07-31-2019/"
+        }
+      ],
+      "Sticker Art": [
+        {
+          exampleName: "Protest Sticker Art",
+          image: require("../images/MediaExampleImages/sticker-icon.svg"),
+          link: "https://www.redbubble.com/shop/protest+art+stickers"
+        }
+      ],
+      "A Virtual or Augmented Reality Experience": [
+        {
+          exampleName: "The Wall",
+          image: require("../images/MediaExampleImages/vr-icon.svg"),
+          link:
+            "https://www.usatoday.com/border-wall/usa-today-network-border-project-about-vr-podcasts-map/vr"
+        }
+      ],
+      "A Citizen Journalism Project": [
+        {
+          exampleName: "Wikipedia Edit-a-thon",
+          image: require("../images/MediaExampleImages/writing-icon.svg"),
+          link: "https://www.moma.org/calendar/events/5229?locale=en"
+        }
+      ],
+      "A Remix or Mashup": [
+        {
+          exampleName: "Hacking My Media with X-Ray Goggles",
+          image: require("../images/MediaExampleImages/code-xray-icon.svg"),
+          link: "https://thimbleprojects.org/stephguthrie/48361/"
+        }
+      ],
+      "Shareable social media content": [
+        {
+          exampleName: "Meme Generator",
+          image: require("../images/MediaExampleImages/dab-icon.svg"),
+          link: "https://imgflip.com/memegenerator"
+        }
+      ],
+      "A Video or Animation": [
+        {
+          exampleName: "An Animated GIF Collection",
+          image: require("../images/MediaExampleImages/gif-icon.svg"),
+          link: "https://raf-i-a.tumblr.com/tagged/GIF"
+        }
+      ],
+      "A Business": [
+        {
+          exampleName: "Conflict Kitchen",
+          image: require("../images/MediaExampleImages/food-icon.svg"),
+          link: "https://www.conflictkitchen.org/"
+        }
+      ],
+      "A Toy": [
+        {
+          exampleName: "Yoga Joes",
+          image: require("../images/MediaExampleImages/toy-icon.svg"),
+          link: "https://www.yogajoes.com/"
+        }
+      ],
+      "A Fashion Project": [
+        {
+          exampleName: "Face Camouflage",
+          image: require("../images/MediaExampleImages/mask-icon.svg"),
+          link: "https://cvdazzle.com/"
+        }
+      ],
+      "A Map": [
+        {
+          exampleName: "Reparations Map",
+          image: require("../images/MediaExampleImages/map-icon.svg"),
+          link:
+            "https://www.google.com/maps/d/u/0/viewer?ll=36.04297229383506%2C-77.67547230820321&z=11&mid=1YvB3PuH8jeR_yoFCLvrKOTQQ3p_5NmkK"
+        }
+      ],
+      "A Community Gathering": [
+        {
+          exampleName: "Campaign for Immigration Reform",
+          image: require("../images/MediaExampleImages/immigration-icon.svg"),
+          link: "https://www.buycott.com/campaign/1145/promote-immigration-reform"
+        }
+      ],
+      "A Podcast": [
+        {
+          exampleName: "Adult-ish Podcast",
+          image: require("../images/MediaExampleImages/podcast-icon.svg"),
+          link: "https://yr.media/adult-ish/"
         }
       ]
     };
