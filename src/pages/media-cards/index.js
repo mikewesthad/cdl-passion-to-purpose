@@ -22,19 +22,18 @@ class MediaCards extends React.Component {
           <div className={style.exampleCard}>
             <img src={gameData.mediaExampleData[medium][0].image} />
           </div>
-          <div className={style.descriptionCard}>
-            <a
-              href={gameData.mediaExampleData[medium][0].link}
-              className={style.logoLink}
-              onClick={event => {
-                event.preventDefault();
-                window.open(gameData.mediaExampleData[medium][0].link);
-              }}
-            >
-              {" "}
-              Link to Project
-            </a>
-          </div>
+          <a
+            href={gameData.mediaExampleData[medium][0].link}
+            className={style.logoLink}
+            onClick={event => {
+              event.preventDefault();
+              window.open(gameData.mediaExampleData[medium][0].link);
+            }}
+          >
+            <div className={style.descriptionCard}>
+              <div className={style.descriptionText}>Link to project</div>
+            </div>
+          </a>
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
