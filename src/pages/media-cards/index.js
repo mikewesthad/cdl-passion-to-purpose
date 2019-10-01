@@ -11,10 +11,12 @@ class MediaCards extends React.Component {
     const medium = gameData.medium;
     return (
       <Container>
-        <h1 className="title">Let's make a {medium}!</h1>
+        <h1 className="title">
+          Let's make <div className={style.lowercase}>{medium}!</div>
+        </h1>
         <div className="description">
-          Cycle through the {medium} category to view various types of projects done similarly in
-          your community!
+          Cycle through the <div className={style.lowercase}>{medium}</div> category to view various
+          types of projects done similarly in your community!
         </div>
 
         <div className={style.cardsContainer}>
