@@ -15,16 +15,11 @@ class Medium extends React.Component {
         title={<React.Fragment>Explore media</React.Fragment>}
         description={
           <React.Fragment>
-            <p>Okay, roll up your sleeves and get ready for an adventure.</p>
-            <p>What might you like to make? Don’t worry we can change this later!</p>
+            <p>
+              Okay, roll up your sleeves and get ready for an adventure. What might you like to
+              make? Don’t worry we can change this later!
+            </p>
           </React.Fragment>
-        }
-        nextButton={
-          <div className="text-center">
-            <Link className="button" to={this.props.nextRoute}>
-              Continue ➞
-            </Link>
-          </div>
         }
       />
     );
