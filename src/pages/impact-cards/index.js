@@ -3,7 +3,7 @@ import { observer, inject } from "mobx-react";
 import { Link } from "react-router-dom";
 import Container from "../../components/medium-cards-template";
 import style from "./index.module.scss";
-import GenerateAttribution from "../../components/generator-attribution";
+//import GenerateAttribution from "../../components/generator-attribution";
 
 class ImpactCards extends React.Component {
   render() {
@@ -28,25 +28,9 @@ class ImpactCards extends React.Component {
           <div className={style.exampleCard}>
             <div className={style.cardText}>to {impact}</div>
           </div>
-          <a
-            href={gameData.mediaExampleData[medium][0].link}
-            className={style.logoLink}
-            onClick={event => {
-              event.preventDefault();
-              window.open(gameData.mediaExampleData[medium][0].link);
-            }}
-          >
-            <div className={style.descriptionCard}>
-              <div className={style.descriptionText}>Link to project</div>
-            </div>
-          </a>
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
-          <GenerateAttribution
-            className={style.generatedButton}
-            //onClick={this.toggleHiddenPassion.bind(this)}
-          />
           <Link className="button" to={nextRoute}>
             Continue ➞
           </Link>
