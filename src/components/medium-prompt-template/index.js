@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import Container from "../container";
 import style from "./index.module.scss";
+import { Link } from "react-router-dom";
 
 class MediumPromptTemplate extends React.Component {
   state = {
@@ -36,20 +37,20 @@ class MediumPromptTemplate extends React.Component {
             return (
               <div className={style.listItems}>
                 {
-                  <input
+                  <Link
+                    to={this.props.nextRoute}
                     className={style.mediumButton}
-                    type="submit"
-                    value={medium}
                     onClick={() => {
                       this.props.gameData.setMedium(medium);
                     }}
-                  />
+                  >
+                    {medium}
+                  </Link>
                 }
               </div>
             );
           })}
         </div>
-        <div className={style.nextButton}>{nextButton}</div>
       </Container>
     );
   }
