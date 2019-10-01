@@ -61,6 +61,7 @@ export {
   MakeGenerator,
   LMContext,
   LetsMake,
+  JourneyMap,
   routes,
   routeMap
 };
