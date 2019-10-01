@@ -20,8 +20,6 @@ import JourneyMap from "./journey-map";
 // route (i - 1) or the next route (i + 1)
 const routes = [
   { key: "home", path: "/", exact: true, Component: Home },
-  { key: "medium", path: "/medium", Component: Medium },
-  { key: "media-cards", path: "/media-cards", Component: MediaCards },
   { key: "passion-context", path: "/passion-context", Component: PassionContext },
   { key: "passion", path: "/passion", Component: Passion },
   { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
@@ -30,7 +28,8 @@ const routes = [
   { key: "generator", path: "/generator", Component: Generator },
   { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
-
+  { key: "medium", path: "/medium", Component: Medium },
+  { key: "media-cards", path: "/media-cards", Component: MediaCards },
   { key: "impact-context", path: "/impact-context", Component: ImpactContext },
   { key: "impact", path: "/impact", Component: Impact },
   { key: "impact-cards", path: "/impact-cards", Component: ImpactCards },
