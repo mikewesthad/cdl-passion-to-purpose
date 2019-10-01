@@ -18,8 +18,12 @@ class MediaCards extends React.Component {
         </div>
 
         <div className={style.cardsContainer}>
-          <div className={style.childCard}>something</div>
-          <div className={style.exampleCard}>Picture in my background-image</div>
+          <div className={style.childCard}>
+            {gameData.mediaExampleData["A Game"][0].exampleName}
+          </div>
+          <div className={style.exampleCard}>
+            <img src={gameData.mediaExampleData["A Game"][0].image} />
+          </div>
           <div className={style.descriptionCard}>something</div>
         </div>
 
