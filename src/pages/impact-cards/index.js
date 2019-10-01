@@ -17,8 +17,8 @@ class ImpactCards extends React.Component {
           <div className={style.lowercase}>{impact}</div>!
         </h1>
         <div className="description">
-          Cycle through the <div className={style.lowercase}>{impact}</div> category to view various
-          types of projects done similarly in your community!
+          Do you think this medium pairs well with this impact? If not try selecting another impact
+          category.
         </div>
 
         <div className={style.cardsContainer}>
