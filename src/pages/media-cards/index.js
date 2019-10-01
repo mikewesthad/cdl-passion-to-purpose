@@ -15,8 +15,9 @@ class MediaCards extends React.Component {
           Let's make <div className={style.lowercase}>{medium}!</div>
         </h1>
         <div className="description">
-          Cycle through the <div className={style.lowercase}>{medium}</div> category to view various
-          types of projects done similarly in your community!
+          Here's an example of <div className={style.lowercase}>{medium}</div> project! Click the
+          link to learn more about it. If a project like this interests you, continue. If not, go
+          back a page and try looking at examples from other media categories!
         </div>
 
         <div className={style.cardsContainer}>
@@ -41,10 +42,6 @@ class MediaCards extends React.Component {
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
-          <GenerateAttribution
-            className={style.generatedButton}
-            //onClick={this.toggleHiddenPassion.bind(this)}
-          />
           <Link className="button" to={nextRoute}>
             Continue ➞
           </Link>
