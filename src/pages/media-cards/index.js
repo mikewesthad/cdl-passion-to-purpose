@@ -64,12 +64,12 @@ class MediaCards extends React.Component {
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
           <div className={style.button}>
             <Link className="button" to={prevRouteMedia}>
-              ⭠ Go Back
+              &#8592; Go Back
             </Link>
           </div>
 
           <Link className="button" to={nextRoute}>
-            Continue ⭢
+            Continue &#8594;
           </Link>
         </div>
       </Container>

@@ -68,7 +68,7 @@ class PromptTemplate extends React.Component {
           )}
           {afterPromptComponent}
           <div className="navigation">
-            <input className="button submit-button" type="submit" value="Next ⭢" />
+            <input className="button submit-button" type="submit" value="Next &#8594;" />
           </div>
         </form>
       </Container>

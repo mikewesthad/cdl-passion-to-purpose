@@ -14,7 +14,7 @@ export default function PurposeContext(props) {
       </div>
       <div className="text-center">
         <Link className="button" to={props.nextRoute}>
-          Continue ⭢
+          Continue &#8594;
         </Link>
       </div>
     </Container>

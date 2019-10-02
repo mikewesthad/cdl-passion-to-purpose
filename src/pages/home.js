@@ -13,7 +13,7 @@ export default function Home(props) {
       </div>
       <div className="text-center">
         <Link className="button" to={props.nextRoute}>
-          Let's Imagine ⭢
+          Let's Imagine &#8594;
         </Link>
       </div>
       <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />

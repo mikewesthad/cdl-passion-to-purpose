@@ -16,7 +16,7 @@ export default function MediumContext(props) {
       </div>
       <div className="text-center">
         <Link className="button" to={props.nextRoute}>
-          Let's explore! ⭢
+          Let's explore! &#8594;
         </Link>
       </div>
     </Container>

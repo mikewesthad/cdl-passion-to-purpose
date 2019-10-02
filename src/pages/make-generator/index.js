@@ -44,7 +44,7 @@ class Generator extends React.Component {
 
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link className="button" to={nextRoute}>
-            Let's try it out ⭢
+            Let's try it out &#8594;
           </Link>
         </div>
       </Container>
