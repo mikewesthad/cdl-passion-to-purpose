@@ -26,6 +26,9 @@ class ImpactCards extends React.Component {
           <div className={style.exampleCard}>
             <div className={style.cardText}>to {impact}</div>
           </div>
+          <div className={style.exampleCard}>
+            <div className={style.cardText}>{gameData.impactData[impact][0].definition}</div>
+          </div>
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
