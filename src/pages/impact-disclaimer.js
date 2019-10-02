@@ -9,7 +9,8 @@ export default function ImpactContext(props) {
         <h2 className="title">What impact do you want to make?</h2>
         <div className="description">
           <p>
-            Which impact might best represent your goals in answering your How Might We question?
+            Which affordance might best represent your goals in answering your How Might We
+            question?
           </p>
         </div>
       </div>

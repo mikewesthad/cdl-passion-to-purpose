@@ -12,13 +12,11 @@ class ImpactCards extends React.Component {
     const impact = gameData.impact;
     return (
       <Container>
-        <h1 className="title">
-          Let's make <div className={style.lowercase}>{medium}</div> to{" "}
-          <div className={style.lowercase}>{impact}</div>!
-        </h1>
+        <h1 className="title">Explore Impact</h1>
         <div className="description">
-          Do you think this medium pairs well with this impact? If not try selecting another impact
-          category.
+          Let's make <div className={style.lowercase}>{medium}</div> to{" "}
+          <div className={style.lowercase}>{impact}</div>! Do you think this medium pairs well with
+          this impact?
         </div>
 
         <div className={style.cardsContainer}>

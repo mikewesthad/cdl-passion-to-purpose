@@ -15,11 +15,7 @@ class Impact extends React.Component {
         title={<React.Fragment>Explore Impact</React.Fragment>}
         description={
           <React.Fragment>
-            <p>
-              Choose the description that best fits the impact you're trying to make. Once you
-              choose one, you'll see some examples.
-            </p>
-            <p>Don’t worry we can change this later!</p>
+            <p>Designers and artists usually think about the impact they want to have.</p>
           </React.Fragment>
         }
         nextButton={
