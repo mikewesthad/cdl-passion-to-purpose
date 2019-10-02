@@ -244,6 +244,13 @@ class GameData {
           image: require("../images/MediaExampleImages/food-icon.svg"),
           link: "https://www.conflictkitchen.org/",
           resourceLink: "https://appetiteforchangemn.org/"
+        },
+        {
+          exampleName: "Farming While Black",
+          image: require("../images/MediaExampleImages/food-icon.svg"),
+          link: "https://www.farmingwhileblack.org/",
+          resourceLink:
+            "https://changecreator.com/the-beginners-guide-to-starting-a-social-business/"
         }
       ],
       "A Fashion Project": [
@@ -265,7 +272,7 @@ class GameData {
       "Guerilla Art": [
         {
           exampleName: "",
-          image: require("../images/MediaExampleImages/-icon.svg"),
+          image: require("../images/MediaExampleImages/immigration-icon.svg"),
           link: "",
           resourceLink: ""
         }
