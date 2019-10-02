@@ -67,7 +67,7 @@ class GameData {
         },
         {
           exampleName: "Casual Games for Protesters",
-          image: require("../images/MediaExampleImages/board-game-icon.svg"),
+          image: require("../images/MediaExampleImages/game-icon.svg"),
           link: "http://www.protestgames.org/",
           resourceLink: "https://www.digitaltrends.com/gaming/how-to-make-a-video-game/"
         }
@@ -87,13 +87,13 @@ class GameData {
         },
         {
           exampleName: "Dreamer Kites",
-          image: require("../images/MediaExampleImages/toy-icon.svg"),
+          image: require("../images/MediaExampleImages/kite-icon.svg"),
           link: "https://artsinachangingamerica.org/miguel-lucianos-dreamer-kites/",
           resourceLink: "https://www.instructables.com/id/A-Garbage-Bag-Kite/"
         },
         {
           exampleName: "Defend Dignity Poster",
-          image: require("../images/MediaExampleImages/toy-icon.svg"),
+          image: require("../images/MediaExampleImages/poster-icon.svg"),
           link: "https://obeyclothing.com/blogs/zine/behind-8220-defend-dignity-8221-q-a",
           resourceLink: "https://kathleentieriton.wixsite.com/studio/advanced-design-illustration"
         }
@@ -109,13 +109,13 @@ class GameData {
         },
         {
           exampleName: "Inflatable Refugee",
-          image: require("../images/MediaExampleImages/playground-icon.svg"),
+          image: require("../images/MediaExampleImages/balloon-icon.svg"),
           link: "https://www.dirkschellekens.com/inflatable-refugee/",
           resourceLink: "http://inflatabill.com/portfolio/custom-inflatables-and-props/"
         },
         {
           exampleName: "Red Can Graffiti Jam",
-          image: require("../images/MediaExampleImages/playground-icon.svg"),
+          image: require("../images/MediaExampleImages/spray-paint-icon.svg"),
           link: "https://lakotayouth.org/programs/waniyetu-wowapi-lai/redcan-graffiti-jam/",
           resourceLink: "https://graffitiknowhow.com/how-to-draw-graffiti-letters-for-beginners/"
         }
@@ -138,7 +138,7 @@ class GameData {
         },
         {
           exampleName: "Citizen's Police Data Project",
-          image: require("../images/MediaExampleImages/writing-icon.svg"),
+          image: require("../images/MediaExampleImages/cloud-data-icon.svg"),
           link: "https://invisible.institute/police-data",
           resourceLink: "https://vis.occrp.org/"
         }
@@ -146,7 +146,7 @@ class GameData {
       "A Remix or Mashup": [
         {
           exampleName: "Gender Lego Remixes",
-          image: require("../images/MediaExampleImages/code-xray-icon.svg"),
+          image: require("../images/MediaExampleImages/gender-icon.svg"),
           link: "https://www.youtube.com/user/RemixingGender",
           resourceLink: "http://www.genderremixer.com/html5/"
         }
@@ -154,20 +154,20 @@ class GameData {
       "Shareable Social Media Content": [
         {
           exampleName: "It Gets Better Project",
-          image: require("../images/MediaExampleImages/dab-icon.svg"),
+          image: require("../images/MediaExampleImages/lgbt-icon.svg"),
           link: "https://itgetsbetter.org/",
           resourceLink:
             "https://www.openideo.com/content/4-ideo-designers-tips-for-better-visual-storytelling"
         },
         {
           exampleName: "Hashtag Activism",
-          image: require("../images/MediaExampleImages/dab-icon.svg"),
+          image: require("../images/MediaExampleImages/hashtag-icon.svg"),
           link: "https://knowyourmeme.com/memes/events/title-ix-sex-definition-controversy/photos",
           resourceLink: "https://ourdataourselves.tacticaltech.org/posts/23_guide_social_media"
         },
         {
           exampleName: "Sustainable Fashion Blog",
-          image: require("../images/MediaExampleImages/dab-icon.svg"),
+          image: require("../images/MediaExampleImages/blog-icon.svg"),
           link: "https://www.instagram.com/tollydollyposh/",
           resourceLink: "https://edu.gcfglobal.org/en/instagram/"
         }
@@ -181,13 +181,13 @@ class GameData {
         },
         {
           exampleName: "Friends Forever",
-          image: require("../images/MediaExampleImages/gif-icon.svg"),
+          image: require("../images/MediaExampleImages/film-icon.svg"),
           link: "https://www.youtube.com/watch?v=ck04Rqkp_lA",
           resourceLink: "http://giveme5ri.org/film-making-labs/make-your-own/"
         },
         {
           exampleName: "Rights Lab Web Video Series",
-          image: require("../images/MediaExampleImages/gif-icon.svg"),
+          image: require("../images/MediaExampleImages/video-icon.svg"),
           link: "http://www.scrappersfg.com/rightslab/",
           resourceLink: "https://www.wordstream.com/blog/ws/2014/03/13/explainer-videos"
         }
@@ -202,7 +202,7 @@ class GameData {
         },
         {
           exampleName: "The Beyonce Experience",
-          image: require("../images/MediaExampleImages/map-icon.svg"),
+          image: require("../images/MediaExampleImages/world-map-icon.svg"),
           link:
             "https://public.tableau.com/profile/jaquina.m#!/vizhome/TheBeyonceExperience/TheBeyonceExperience2",
           resourceLink: "https://www.tableau.com/learn/training"
@@ -226,13 +226,13 @@ class GameData {
       Crafts: [
         {
           exampleName: "Social Justice Sewing Circle",
-          image: require("../images/MediaExampleImages/mask-icon.svg"),
+          image: require("../images/MediaExampleImages/sewing-icon.svg"),
           link: "http://www.sjsacademy.com/say-their-names.html",
           resourceLink: "https://www.sewmamasew.com/2010/01/sewing-circles/"
         },
         {
           exampleName: "Femail Upcycling Textile Art",
-          image: require("../images/MediaExampleImages/mask-icon.svg"),
+          image: require("../images/MediaExampleImages/textile-icon.svg"),
           link: "https://femailforever.squarespace.com/",
           resourceLink:
             "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB"
@@ -247,7 +247,7 @@ class GameData {
         },
         {
           exampleName: "Farming While Black",
-          image: require("../images/MediaExampleImages/food-icon.svg"),
+          image: require("../images/MediaExampleImages/farming-icon.svg"),
           link: "https://www.farmingwhileblack.org/",
           resourceLink:
             "https://changecreator.com/the-beginners-guide-to-starting-a-social-business/"
@@ -256,7 +256,7 @@ class GameData {
       "Guerilla Art": [
         {
           exampleName: "Extinction Rebellion",
-          image: require("../images/MediaExampleImages/immigration-icon.svg"),
+          image: require("../images/MediaExampleImages/fashion-icon.svg"),
           link:
             "https://www.teenvogue.com/story/extinction-rebellion-collective-yearlong-boycott-buying-new-clothes",
           resourceLink:
@@ -264,7 +264,7 @@ class GameData {
         },
         {
           exampleName: "Under the Radar",
-          image: require("../images/MediaExampleImages/immigration-icon.svg"),
+          image: require("../images/MediaExampleImages/radar-icon.svg"),
           link: "http://content.time.com/time/photogallery/0,29307,1911799_1912687,00.html",
           resourceLink: "http://www.kerismith.com/popular-posts/how-to-be-a-guerilla-artist-2/"
         }
