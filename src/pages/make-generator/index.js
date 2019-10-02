@@ -36,10 +36,8 @@ class Generator extends React.Component {
         </div>
 
         <div className="description">
-          Congratulations you have transformed your passion and purpose into a "How Might We"
-          question. Designers use "How Might We" questions as a away to define a project idea by
-          brainstorming new opportunities for creativity and design. This process is called
-          ideation.
+          Congratulations you have transformed your passion and purpose into a “How Might We”
+          question. This process is called ideation.
         </div>
 
         <form />

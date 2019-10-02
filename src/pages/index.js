@@ -4,6 +4,7 @@ import Purpose from "./purpose";
 import Generator from "./generator/";
 import MediumContext from "./medium-context";
 import Medium from "./medium";
+import MediaDisclaimer from "./media-disclaimer";
 import MediaCards from "./media-cards";
 import ImpactContext from "./impact-context";
 import Impact from "./impact";
@@ -29,6 +30,7 @@ const routes = [
   { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
+  { key: "media-disclaimer", path: "/media-disclaimer", Component: MediaDisclaimer },
   { key: "media-cards", path: "/media-cards", Component: MediaCards },
   { key: "impact-context", path: "/impact-context", Component: ImpactContext },
   { key: "impact", path: "/impact", Component: Impact },
@@ -48,6 +50,7 @@ export {
   MediumContext,
   Medium,
   MediaCards,
+  MediaDisclaimer,
   ImpactContext,
   Impact,
   ImpactCards,
