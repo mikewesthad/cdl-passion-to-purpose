@@ -8,6 +8,8 @@ import GenerateAttribution from "../../components/generator-attribution";
 class MediaCards extends React.Component {
   render() {
     const { gameData, nextRoute } = this.props;
+    const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
+    const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
     const medium = gameData.medium;
     return (
       <Container>
@@ -19,6 +21,11 @@ class MediaCards extends React.Component {
           link to learn more about it. If a project like this interests you, continue. If not, go
           back a page and try looking at examples from other media categories!
         </div>
+
+        <span>How might we use </span>
+        <span>{passion} </span>
+        <span>to </span>
+        <span>{purpose}?</span>
 
         <div className={style.cardsContainer}>
           <a
