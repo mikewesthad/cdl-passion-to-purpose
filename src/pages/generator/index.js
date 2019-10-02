@@ -96,7 +96,7 @@ class Generator extends React.Component {
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           {this.state.isHidden ? null : (
             <Link className="button" to={nextRoute}>
-              Continue with this ➞
+              Continue with this ⭢
             </Link>
           )}
         </div>

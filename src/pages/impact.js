@@ -21,7 +21,7 @@ class Impact extends React.Component {
         nextButton={
           <div className="text-center">
             <Link className="button" to={this.props.nextRoute}>
-              Continue ➞
+              Continue ⭢
             </Link>
           </div>
         }

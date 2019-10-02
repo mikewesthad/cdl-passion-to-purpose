@@ -34,7 +34,7 @@ class LetsMake extends React.Component {
 
         <div className="text-center">
           <Link className="button" to={this.props.nextRoute}>
-            Continue ➞
+            Continue ⭢
           </Link>
         </div>
       </Container>

@@ -13,7 +13,7 @@ export default function LMContext(props) {
       </div>
       <div className="text-center">
         <Link className="button" to={props.nextRoute}>
-          Continue ➞
+          Continue ⭢
         </Link>
       </div>
     </Container>

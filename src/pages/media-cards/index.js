@@ -68,7 +68,7 @@ class MediaCards extends React.Component {
           </div>
 
           <Link className="button" to={nextRoute}>
-            Continue ➞
+            Continue ⭢
           </Link>
         </div>
       </Container>
