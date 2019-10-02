@@ -26,7 +26,7 @@ class Generator extends React.Component {
   toggleHiddenPurpose() {
     if (this.state.isHidden) {
       this.setState({ isHidden: !this.state.isHidden });
-      this.props.gameData.incrementPassionIndex();
+      this.props.gameData.incrementPurposeIndex();
     } else {
       this.props.gameData.incrementPurposeIndex();
     }
