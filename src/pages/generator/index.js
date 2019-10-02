@@ -79,13 +79,7 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPassion.bind(this)}
             />
-
-            {!this.state.isHidden && <PassionChild />}
-            {this.state.isHidden && <PassionParent />}
-
-            <div className={style.hidden}>
-              <span className={style.generatedPassion}>{passion}</span>
-            </div>
+            <span className={style.generatedPassion}>{passion}</span>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
@@ -93,11 +87,8 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPurpose.bind(this)}
             />
-            {!this.state.isHidden && <PurposeChild />}
-            {this.state.isHidden && <PurposeParent />}
-            <div className={style.hidden}>
-              <span className={style.generatedPurpose}>{purpose}?</span>
-            </div>
+
+            <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
