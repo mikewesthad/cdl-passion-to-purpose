@@ -16,17 +16,17 @@ class MediaCards extends React.Component {
         <h1 className="title">
           Let's make <div className={style.lowercase}>{medium}!</div>
         </h1>
-        <div className="description">
+        <div className={style.description}>
           Here's an example of <div className={style.lowercase}>{medium}</div> project! Click the
           link to learn more about it. If a project like this interests you, continue. If not, go
           back a page and try looking at examples from other media categories!
         </div>
-
-        <span>How might we use </span>
-        <span>{passion} </span>
-        <span>to </span>
-        <span>{purpose}?</span>
-
+        <div className={style.generatedQuestion}>
+          <span>How might we use </span>
+          <span className={style.passion}>{passion} </span>
+          <span>to </span>
+          <span className={style.purpose}>{purpose}?</span>
+        </div>
         <div className={style.cardsContainer}>
           <a
             href={gameData.mediaExampleData[medium][0].link}
