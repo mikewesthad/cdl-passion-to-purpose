@@ -51,6 +51,7 @@ class MediumPromptTemplate extends React.Component {
             );
           })}
         </div>
+        <div className={style.description}>More media examples coming soon</div>
       </Container>
     );
   }
