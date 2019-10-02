@@ -31,10 +31,10 @@ class ImpactCards extends React.Component {
             <div className={style.cardText}>{medium}</div>
           </div>
           <div className={style.exampleCard}>
-            <div className={style.cardText}>to {impact}</div>
-          </div>
-          <div className={style.exampleCard}>
-            <div className={style.cardText}>{gameData.impactData[impact][0].definition}</div>
+            <div className={style.cardText}>
+              {impact}
+              <div className={style.miniCardText}>{gameData.impactData[impact][0].definition}</div>
+            </div>
           </div>
         </div>
 

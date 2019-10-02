@@ -33,7 +33,7 @@ $font-color: #16171f;
 }
 
 .childCard {
-  background-color: $font-color;
+  background-color: black;
   color: white;
   width: 70%;
   height: 250px;
@@ -55,11 +55,22 @@ $font-color: #16171f;
   }
 }
 
+.childCard:hover {
+  background-color: $primary-color;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.miniCardText {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
 .cardText {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0.5rem;
+  padding: 1rem;
 
   @media (min-width: 880px) {
     font-size: 1.5rem;
