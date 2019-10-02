@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
-import GenerateAttribution from "../../components/generator-attribution";
+//import GenerateAttribution from "../../components/generator-attribution";
 
 class MediaCards extends React.Component {
   render() {
@@ -61,6 +61,12 @@ class MediaCards extends React.Component {
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
+          <div className={style.button}>
+            <Link className="button" to={nextRoute}>
+              ⭠ Go Back
+            </Link>
+          </div>
+
           <Link className="button" to={nextRoute}>
             Continue ➞
           </Link>
