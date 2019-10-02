@@ -15,16 +15,18 @@ class ImpactCards extends React.Component {
     return (
       <Container>
         <h1 className="title">Explore Impact</h1>
-        <div className="description">
+        <div className={style.description}>
           Let's make <div className={style.lowercase}>{medium}</div> to{" "}
           <div className={style.lowercase}>{impact}</div>! Do you think this medium pairs well with
           this impact?
         </div>
 
-        <span>How might we use </span>
-        <span>{passion} </span>
-        <span>to </span>
-        <span>{purpose}?</span>
+        <div className={style.generatedQuestion}>
+          <span>How might we use </span>
+          <span className={style.passion}>{passion} </span>
+          <span>to </span>
+          <span className={style.purpose}>{purpose}?</span>
+        </div>
 
         <div className={style.cardsContainer}>
           <div className={style.childCard}>
