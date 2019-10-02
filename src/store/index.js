@@ -506,7 +506,7 @@ class ResponsesStore {
 }
 
 const store = new GameData();
-
+/*
 //Testing;
 
 store.passionStore.setResponses(["food", "Lego", "video games", "beyonce"]);
@@ -516,5 +516,5 @@ store.purposeStore.setResponses([
   "poverty in America",
   "testing"
 ]);
-
+*/
 export default store;
