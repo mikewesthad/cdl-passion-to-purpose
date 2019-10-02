@@ -21,12 +21,6 @@ class MediaCards extends React.Component {
         </div>
 
         <div className={style.cardsContainer}>
-          <div className={style.childCard}>
-            <div className={style.cardText}>{gameData.mediaExampleData[medium][0].exampleName}</div>
-          </div>
-          <div className={style.exampleCard}>
-            <img src={gameData.mediaExampleData[medium][0].image} />
-          </div>
           <a
             href={gameData.mediaExampleData[medium][0].link}
             className={style.logoLink}
@@ -35,10 +29,16 @@ class MediaCards extends React.Component {
               window.open(gameData.mediaExampleData[medium][0].link);
             }}
           >
-            <div className={style.descriptionCard}>
-              <div className={style.descriptionText}>Link to project</div>
+            <div className={style.childCard}>
+              <div className={style.cardText}>
+                {gameData.mediaExampleData[medium][0].exampleName}
+                <div className={style.miniCardText}>Click here to view the project</div>
+              </div>
             </div>
           </a>
+          <div className={style.exampleCard}>
+            <img src={gameData.mediaExampleData[medium][0].image} />
+          </div>
           <a
             href={gameData.mediaExampleData[medium][0].resourceLink}
             className={style.logoLink}
@@ -48,7 +48,7 @@ class MediaCards extends React.Component {
             }}
           >
             <div className={style.descriptionCard}>
-              <div className={style.descriptionText}>Link to resources</div>
+              <div className={style.descriptionText}>Click here to view resources</div>
             </div>
           </a>
         </div>
