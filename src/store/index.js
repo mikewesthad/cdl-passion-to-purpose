@@ -43,19 +43,17 @@ class GameData {
 
     this.mediumOptions = [
       "A Game",
-      "A Design",
-      "Public or Street Art",
-      "Sticker Art",
+      "A Design Project",
+      "A Public Performance",
       "A Virtual or Augmented Reality Experience",
       "A Citizen Journalism Project",
       "A Remix or Mashup",
-      "Shareable social media content",
+      "Shareable Social Media Content",
       "A Video or Animation",
       "A Business",
-      "A Toy",
-      "Fashion",
-      "A Map",
-      "A Community Gathering",
+      "A Data Visualization or Map",
+      "A Podcast",
+      "Guerilla Art",
       "A Podcast"
     ];
 
@@ -64,108 +62,212 @@ class GameData {
         {
           exampleName: "A Gerrymandering Board Game",
           image: require("../images/MediaExampleImages/board-game-icon.svg"),
-          link: "http://gerrymanderinggame.com/"
-        }
-      ],
-      "A Design": [
+          link: "http://gerrymanderinggame.com/",
+          resourceLink: "https://www.instructables.com/id/Build-your-Own-Board-Game/"
+        },
         {
-          exampleName: "A Calendar",
-          image: require("../images/MediaExampleImages/calendar-icon.svg"),
-          link: "https://buyolympia.com/Item/liartownusa-social-justice-kittens-2020"
+          exampleName: "Casual Games for Protesters",
+          image: require("../images/MediaExampleImages/board-game-icon.svg"),
+          link: "http://www.protestgames.org/",
+          resourceLink: "https://www.digitaltrends.com/gaming/how-to-make-a-video-game/"
         }
       ],
-      "Public or Street Art": [
-        {
-          exampleName: "A Playground",
-          image: require("../images/MediaExampleImages/playground-icon.svg"),
-          link:
-            "https://www.designboom.com/architecture/ronald-rael-san-fratello-installs-seesaws-on-us-mexico-border-wall-07-31-2019/"
-        }
-      ],
-      "Sticker Art": [
+      "A Design Project": [
         {
           exampleName: "Protest Sticker Art",
           image: require("../images/MediaExampleImages/sticker-icon.svg"),
-          link: "https://www.redbubble.com/shop/protest+art+stickers"
+          link: "https://www.redbubble.com/shop/protest+art+stickers",
+          resourceLink: "https://www.instructables.com/id/Homemade-Stickers/"
+        },
+        {
+          exampleName: "Yoga Joes",
+          image: require("../images/MediaExampleImages/toy-icon.svg"),
+          link: "https://www.yogajoes.com/",
+          resourceLink: "https://www.instructables.com/howto/3d+print/"
+        },
+        {
+          exampleName: "Dreamer Kites",
+          image: require("../images/MediaExampleImages/toy-icon.svg"),
+          link: "https://artsinachangingamerica.org/miguel-lucianos-dreamer-kites/",
+          resourceLink: "https://www.instructables.com/id/A-Garbage-Bag-Kite/"
+        },
+        {
+          exampleName: "Defend Dignity Poster",
+          image: require("../images/MediaExampleImages/toy-icon.svg"),
+          link: "https://obeyclothing.com/blogs/zine/behind-8220-defend-dignity-8221-q-a",
+          resourceLink: "https://kathleentieriton.wixsite.com/studio/advanced-design-illustration"
+        }
+      ],
+      "A Public Performance": [
+        {
+          exampleName: "Border Wall See Saws",
+          image: require("../images/MediaExampleImages/playground-icon.svg"),
+          link:
+            "https://www.designboom.com/architecture/ronald-rael-san-fratello-installs-seesaws-on-us-mexico-border-wall-07-31-2019/",
+          resourceLink:
+            "https://www.ana-white.com/woodworking-projects/wood-seesaw-or-teeter-totter"
+        },
+        {
+          exampleName: "Inflatable Refugee",
+          image: require("../images/MediaExampleImages/playground-icon.svg"),
+          link: "https://www.dirkschellekens.com/inflatable-refugee/",
+          resourceLink: "http://inflatabill.com/portfolio/custom-inflatables-and-props/"
+        },
+        {
+          exampleName: "Red Can Graffiti Jam",
+          image: require("../images/MediaExampleImages/playground-icon.svg"),
+          link: "https://lakotayouth.org/programs/waniyetu-wowapi-lai/redcan-graffiti-jam/",
+          resourceLink: "https://graffitiknowhow.com/how-to-draw-graffiti-letters-for-beginners/"
         }
       ],
       "A Virtual or Augmented Reality Experience": [
         {
-          exampleName: "The Wall",
+          exampleName: "Border Wall Virtual Tour",
           image: require("../images/MediaExampleImages/vr-icon.svg"),
           link:
-            "https://www.usatoday.com/border-wall/usa-today-network-border-project-about-vr-podcasts-map/vr"
+            "https://www.usatoday.com/border-wall/usa-today-network-border-project-about-vr-podcasts-map/vr",
+          resourceLink: "https://vr.google.com/tourcreator/"
         }
       ],
       "A Citizen Journalism Project": [
         {
-          exampleName: "Wikipedia Edit-a-thon",
+          exampleName: "Art+Feminisim Wikipedia Edit-a-thon",
           image: require("../images/MediaExampleImages/writing-icon.svg"),
-          link: "https://www.moma.org/calendar/events/5229?locale=en"
+          link: "https://www.moma.org/calendar/events/5229?locale=en",
+          resourceLink: "https://outreachdashboard.wmflabs.org/training/editathons"
+        },
+        {
+          exampleName: "Citizen's Police Data Project",
+          image: require("../images/MediaExampleImages/writing-icon.svg"),
+          link: "https://invisible.institute/police-data",
+          resourceLink: "https://vis.occrp.org/"
         }
       ],
       "A Remix or Mashup": [
         {
-          exampleName: "Hacking My Media with X-Ray Goggles",
+          exampleName: "Gender Lego Remixes",
           image: require("../images/MediaExampleImages/code-xray-icon.svg"),
-          link: "https://thimbleprojects.org/stephguthrie/48361/"
+          link: "https://www.youtube.com/user/RemixingGender",
+          resourceLink: "http://www.genderremixer.com/html5/"
         }
       ],
-      "Shareable social media content": [
+      "Shareable Social Media Content": [
         {
-          exampleName: "Meme Generator",
+          exampleName: "It Gets Better Project",
           image: require("../images/MediaExampleImages/dab-icon.svg"),
-          link: "https://imgflip.com/memegenerator"
+          link: "https://itgetsbetter.org/",
+          resourceLink:
+            "https://www.openideo.com/content/4-ideo-designers-tips-for-better-visual-storytelling"
+        },
+        {
+          exampleName: "Hashtag Activism",
+          image: require("../images/MediaExampleImages/dab-icon.svg"),
+          link: "https://knowyourmeme.com/memes/events/title-ix-sex-definition-controversy/photos",
+          resourceLink: "https://ourdataourselves.tacticaltech.org/posts/23_guide_social_media"
+        },
+        {
+          exampleName: "Sustainable Fashion Blog",
+          image: require("../images/MediaExampleImages/dab-icon.svg"),
+          link: "https://www.instagram.com/tollydollyposh/",
+          resourceLink: "https://edu.gcfglobal.org/en/instagram/"
         }
       ],
       "A Video or Animation": [
         {
           exampleName: "An Animated GIF Collection",
           image: require("../images/MediaExampleImages/gif-icon.svg"),
-          link: "https://raf-i-a.tumblr.com/tagged/GIF"
-        }
-      ],
-      "A Business": [
+          link: "https://raf-i-a.tumblr.com/tagged/GIF",
+          resourceLink: "https://giphy.com/create/gifmaker"
+        },
         {
-          exampleName: "Conflict Kitchen",
-          image: require("../images/MediaExampleImages/food-icon.svg"),
-          link: "https://www.conflictkitchen.org/"
-        }
-      ],
-      "A Toy": [
+          exampleName: "Friends Forever",
+          image: require("../images/MediaExampleImages/gif-icon.svg"),
+          link: "https://www.youtube.com/watch?v=ck04Rqkp_lA",
+          resourceLink: "http://giveme5ri.org/film-making-labs/make-your-own/"
+        },
         {
-          exampleName: "Yoga Joes",
-          image: require("../images/MediaExampleImages/toy-icon.svg"),
-          link: "https://www.yogajoes.com/"
+          exampleName: "Rights Lab Web Video Series",
+          image: require("../images/MediaExampleImages/gif-icon.svg"),
+          link: "http://www.scrappersfg.com/rightslab/",
+          resourceLink: "https://www.wordstream.com/blog/ws/2014/03/13/explainer-videos"
         }
       ],
-      "A Fashion Project": [
-        {
-          exampleName: "Face Camouflage",
-          image: require("../images/MediaExampleImages/mask-icon.svg"),
-          link: "https://cvdazzle.com/"
-        }
-      ],
-      "A Map": [
+      "A Data Visualization or Map": [
         {
           exampleName: "Reparations Map",
           image: require("../images/MediaExampleImages/map-icon.svg"),
           link:
-            "https://www.google.com/maps/d/u/0/viewer?ll=36.04297229383506%2C-77.67547230820321&z=11&mid=1YvB3PuH8jeR_yoFCLvrKOTQQ3p_5NmkK"
-        }
-      ],
-      "A Community Gathering": [
+            "https://www.google.com/maps/d/u/0/viewer?ll=36.04297229383506%2C-77.67547230820321&z=11&mid=1YvB3PuH8jeR_yoFCLvrKOTQQ3p_5NmkK",
+          resourceLink: ""
+        },
         {
-          exampleName: "Campaign for Immigration Reform",
-          image: require("../images/MediaExampleImages/immigration-icon.svg"),
-          link: "https://www.buycott.com/campaign/1145/promote-immigration-reform"
+          exampleName: "The Beyonce Experience",
+          image: require("../images/MediaExampleImages/map-icon.svg"),
+          link:
+            "https://public.tableau.com/profile/jaquina.m#!/vizhome/TheBeyonceExperience/TheBeyonceExperience2",
+          resourceLink: "https://www.tableau.com/learn/training"
         }
       ],
       "A Podcast": [
         {
           exampleName: "Adult-ish Podcast",
           image: require("../images/MediaExampleImages/podcast-icon.svg"),
-          link: "https://yr.media/adult-ish/"
+          link: "https://yr.media/adult-ish/",
+          resourceLink: ""
+        },
+        {
+          exampleName: "SheCast Podcast",
+          image: require("../images/MediaExampleImages/podcast-icon.svg"),
+          link: "https://www.shecrew.org/she-cast",
+          resourceLink:
+            "https://www.smartpassiveincome.com/tutorials/start-podcast-pats-complete-step-step-podcasting-tutorial/"
+        }
+      ],
+      Crafts: [
+        {
+          exampleName: "Social Justice Sewing Circle",
+          image: require("../images/MediaExampleImages/mask-icon.svg"),
+          link: "http://www.sjsacademy.com/say-their-names.html",
+          resourceLink: "https://www.sewmamasew.com/2010/01/sewing-circles/"
+        },
+        {
+          exampleName: "Femail Upcycling Textile Art",
+          image: require("../images/MediaExampleImages/mask-icon.svg"),
+          link: "https://femailforever.squarespace.com/",
+          resourceLink:
+            "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB"
+        }
+      ],
+      "A Business": [
+        {
+          exampleName: "Conflict Kitchen",
+          image: require("../images/MediaExampleImages/food-icon.svg"),
+          link: "https://www.conflictkitchen.org/",
+          resourceLink: "https://appetiteforchangemn.org/"
+        }
+      ],
+      "A Fashion Project": [
+        {
+          exampleName: "Face Camouflage",
+          image: require("../images/MediaExampleImages/mask-icon.svg"),
+          link: "https://cvdazzle.com/",
+          resourceLink: ""
+        }
+      ],
+      "A Community Gathering": [
+        {
+          exampleName: "Campaign for Immigration Reform",
+          image: require("../images/MediaExampleImages/immigration-icon.svg"),
+          link: "https://www.buycott.com/campaign/1145/promote-immigration-reform",
+          resourceLink: ""
+        }
+      ],
+      "Guerilla Art": [
+        {
+          exampleName: "",
+          image: require("../images/MediaExampleImages/-icon.svg"),
+          link: "",
+          resourceLink: ""
         }
       ]
     };
@@ -176,17 +278,17 @@ class GameData {
       "Raise Awareness",
       "Build Empathy",
       "Cultivate Community",
-      "Celebrate",
-      "Foster dialogue",
-      "Protect people's rights",
-      "Start a movement",
+      "Champion a Cause",
+      "Foster Dialogue",
+      "Protect People's Rights",
+      "Start a Movement",
       "Send a message",
-      "Change minds",
-      "Change habits",
-      "Connect people",
-      "Create a paradigm shift",
-      "Raise up others' voices",
-      "Take an action"
+      "Change Minds",
+      "Change Habits",
+      "Connect People",
+      "Create a Paradigm Shift",
+      "Raise up Others' Voices",
+      "Take an Action"
     ];
 
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
