@@ -253,28 +253,20 @@ class GameData {
             "https://changecreator.com/the-beginners-guide-to-starting-a-social-business/"
         }
       ],
-      "A Fashion Project": [
-        {
-          exampleName: "Face Camouflage",
-          image: require("../images/MediaExampleImages/mask-icon.svg"),
-          link: "https://cvdazzle.com/",
-          resourceLink: ""
-        }
-      ],
-      "A Community Gathering": [
-        {
-          exampleName: "Campaign for Immigration Reform",
-          image: require("../images/MediaExampleImages/immigration-icon.svg"),
-          link: "https://www.buycott.com/campaign/1145/promote-immigration-reform",
-          resourceLink: ""
-        }
-      ],
       "Guerilla Art": [
         {
-          exampleName: "",
+          exampleName: "Extinction Rebellion",
           image: require("../images/MediaExampleImages/immigration-icon.svg"),
-          link: "",
-          resourceLink: ""
+          link:
+            "https://www.teenvogue.com/story/extinction-rebellion-collective-yearlong-boycott-buying-new-clothes",
+          resourceLink:
+            "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB"
+        },
+        {
+          exampleName: "Under the Radar",
+          image: require("../images/MediaExampleImages/immigration-icon.svg"),
+          link: "http://content.time.com/time/photogallery/0,29307,1911799_1912687,00.html",
+          resourceLink: "http://www.kerismith.com/popular-posts/how-to-be-a-guerilla-artist-2/"
         }
       ]
     };
