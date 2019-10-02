@@ -7,7 +7,7 @@ import style from "./index.module.scss";
 
 class ImpactCards extends React.Component {
   render() {
-    const { gameData, nextRoute } = this.props;
+    const { gameData, nextRoute, prevRouteImpact } = this.props;
     const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
     const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
     const medium = gameData.medium;
@@ -42,7 +42,7 @@ class ImpactCards extends React.Component {
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
           <div className={style.button}>
-            <Link className="button" to={nextRoute}>
+            <Link className="button" to={prevRouteImpact}>
               ⭠ Go Back
             </Link>
           </div>

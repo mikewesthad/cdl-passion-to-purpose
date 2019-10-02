@@ -41,8 +41,11 @@ const App = withRouter(
 
             <PageTransition pageKey={location.pathname}>
               <Switch location={location}>
-                {routes.map((route, i) => {
+                {routes.map((route, i, j) => {
                   const nextRoute = i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
+
+                  const prevRouteMedia = routes[9].path;
+                  const prevRouteImpact = routes[13].path;
 
                   // All pages have the same general API - they need the game store & next route
                   const { key, path, Component, ...otherProps } = route;
@@ -51,7 +54,14 @@ const App = withRouter(
                       key={key}
                       path={path}
                       {...otherProps}
-                      render={props => <Component nextRoute={nextRoute} {...props} />}
+                      render={props => (
+                        <Component
+                          nextRoute={nextRoute}
+                          prevRouteMedia={prevRouteMedia}
+                          prevRouteImpact={prevRouteImpact}
+                          {...props}
+                        />
+                      )}
                     />
                   );
                 })}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../../components/nav/button/";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
@@ -7,7 +8,7 @@ import style from "./index.module.scss";
 
 class MediaCards extends React.Component {
   render() {
-    const { gameData, nextRoute } = this.props;
+    const { gameData, nextRoute, prevRouteMedia } = this.props;
     const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
     const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
     const medium = gameData.medium;
@@ -62,7 +63,7 @@ class MediaCards extends React.Component {
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
           <div className={style.button}>
-            <Link className="button" to={nextRoute}>
+            <Link className="button" to={prevRouteMedia}>
               ⭠ Go Back
             </Link>
           </div>
