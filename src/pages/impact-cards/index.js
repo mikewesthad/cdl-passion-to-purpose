@@ -8,6 +8,8 @@ import style from "./index.module.scss";
 class ImpactCards extends React.Component {
   render() {
     const { gameData, nextRoute } = this.props;
+    const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
+    const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
     const medium = gameData.medium;
     const impact = gameData.impact;
     return (
@@ -18,6 +20,11 @@ class ImpactCards extends React.Component {
           <div className={style.lowercase}>{impact}</div>! Do you think this medium pairs well with
           this impact?
         </div>
+
+        <span>How might we use </span>
+        <span>{passion} </span>
+        <span>to </span>
+        <span>{purpose}?</span>
 
         <div className={style.cardsContainer}>
           <div className={style.childCard}>
