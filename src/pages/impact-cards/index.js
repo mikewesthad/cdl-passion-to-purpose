@@ -41,6 +41,11 @@ class ImpactCards extends React.Component {
         </div>
 
         <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "2rem" }}>
+          <div className={style.button}>
+            <Link className="button" to={nextRoute}>
+              ⭠ Go Back
+            </Link>
+          </div>
           <Link className="button" to={nextRoute}>
             Continue ⭢
           </Link>
