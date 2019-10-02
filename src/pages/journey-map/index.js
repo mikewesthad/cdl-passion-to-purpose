@@ -86,13 +86,13 @@ class JourneyMap extends React.Component {
           <span className={style.bolded}>We started off by dissecting your passions.</span>
           <div className="description">
             <div className={style.centerRight}>
-              1. {gameData.purposeStore.questions[0].replace("...", " ")}{" "}
+              1. {gameData.passionStore.questions[0].replace("...", " ")}{" "}
               {gameData.passionStore.responses[0]}.<br />
-              2. {gameData.purposeStore.questions[1].replace("...", " ")}{" "}
+              2. {gameData.passionStore.questions[1].replace("...", " ")}{" "}
               {gameData.passionStore.responses[1]}.<br />
-              3. {gameData.purposeStore.questions[2].replace("...", " ")}{" "}
+              3. {gameData.passionStore.questions[2].replace("...", " ")}{" "}
               {gameData.passionStore.responses[2]}.<br />
-              4. {gameData.purposeStore.questions[3].replace("...", " ")}
+              4. {gameData.passionStore.questions[3].replace("...", " ")}
               {gameData.passionStore.responses[3]}.
             </div>
           </div>
