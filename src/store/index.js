@@ -290,6 +290,70 @@ class GameData {
       "Take an Action"
     ];
 
+    this.impactData = {
+      "Raise Awareness": [
+        {
+          definition:
+            "To increase public consciousness about pressing or under-represented concerns"
+        }
+      ],
+      "Build Empathy": [
+        {
+          definition:
+            "To help people develop the ability to sense other people's emotions and imagine what someone else might be thinking or feeling."
+        }
+      ],
+      "Cultivate Community": [
+        {
+          definition:
+            "To create solidarity and social belonging among individuals around a common cause or interest."
+        }
+      ],
+      "Champion a Cause": [
+        { definition: "To stand up for, uphold, support, back, defend, advocate." }
+      ],
+      "Foster Dialogue": [
+        { definition: "To cultivate a space for exchange of ideas and perspectives." }
+      ],
+      "Protect People's Rights": [
+        { definition: "To defend the civil liberties and human rights of those most vulnerable." }
+      ],
+      "Start a Movement": [
+        {
+          definition:
+            "To spark or ignite a force for change around a positive and inspiring purpose."
+        }
+      ],
+      "Send a message": [
+        { definition: "To use strategic communication to share a persuasive idea or story." }
+      ],
+      "Change Minds": [
+        { definition: "To disrupt confirmation bias or pre-determined beliefs and opinions." }
+      ],
+      "Change Habits": [
+        {
+          definition:
+            "To support people to contemplate negative behavioral effects and plan new actions for positive improvement."
+        }
+      ],
+      "Connect People": [
+        { definition: "To link people together in a community, network or affinity group." }
+      ],
+      "Create a Paradigm Shift": [
+        {
+          definition:
+            "To radically shift perceptions of how things should be done, made, or thought about."
+        }
+      ],
+      "Raise up Others' Voices": [
+        {
+          definition:
+            "To work to ensure that voices that are often erased and suppressed are amplified, elevated and heard."
+        }
+      ],
+      "Take an Action": [{ definition: "To act positively and decisively to resolve a problem." }]
+    };
+
     this.passionStore = new ResponsesStore(this, this.passionPrompts);
 
     // All must start with "I want to "
