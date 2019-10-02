@@ -85,10 +85,16 @@ class JourneyMap extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>We started off by dissecting your passions.</span>
           <div className="description">
-            1. {gameData.passionPrompts[0]} {gameData.passionStore.responses[0]}.<br />
-            2. {gameData.passionPrompts[1]} {gameData.passionStore.responses[1]}.<br />
-            3. {gameData.passionPrompts[2]} {gameData.passionStore.responses[2]}.<br />
-            4. {gameData.passionPrompts[3]} {gameData.passionStore.responses[3]}.
+            <div className={style.centerRight}>
+              1. {gameData.purposeStore.questions[0].replace("...", " ")}{" "}
+              {gameData.passionStore.responses[0]}.<br />
+              2. {gameData.purposeStore.questions[1].replace("...", " ")}{" "}
+              {gameData.passionStore.responses[1]}.<br />
+              3. {gameData.purposeStore.questions[2].replace("...", " ")}{" "}
+              {gameData.passionStore.responses[2]}.<br />
+              4. {gameData.purposeStore.questions[3].replace("...", " ")}
+              {gameData.passionStore.responses[3]}.
+            </div>
           </div>
         </div>
 
@@ -97,10 +103,12 @@ class JourneyMap extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>Then we took a look at your purpose.</span>
           <div className="description">
-            1. {gameData.purposePrompts[0]} {gameData.purposeStore.responses[0]}.<br />
-            2. {gameData.purposePrompts[1]} {gameData.purposeStore.responses[1]}.<br />
-            3. {gameData.purposePrompts[2]} {gameData.purposeStore.responses[2]}.<br />
-            4. {gameData.purposePrompts[3]} {gameData.purposeStore.responses[3]}.
+            <div className={style.centerRight}>
+              1. I want to {gameData.getPurposesWithVerb()[0]}.<br />
+              2. I want to {gameData.getPurposesWithVerb()[1]}.<br />
+              3. I want to {gameData.getPurposesWithVerb()[2]}.<br />
+              4. I want to {gameData.getPurposesWithVerb()[3]}.
+            </div>
           </div>
         </div>
 
@@ -145,10 +153,6 @@ class JourneyMap extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>Then you selected your impact</span>
           <div className="description">You decided that your project should {gameData.impact}.</div>
-          <div className="description">
-            To understand how other projects in the world {gameData.impact}, we took a look at the
-            (projectname).
-          </div>
         </div>
         <hr />
         <div className={style.generatedQuestion}>
