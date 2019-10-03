@@ -8,7 +8,11 @@ export default function MediaDisclaimer(props) {
       <div className="context-container" to={props.nextRoute}>
         <h2 className="title">Media Example</h2>
         <div className="description">
-          <p>Artists and designers draw inspiration from example projects.</p>
+          <p>
+            Artists and designers often draw inspiration from existing projects that inspire them.
+            On the next page, we’ll show you an example that may help spark some new ideas for your
+            project.
+          </p>
         </div>
       </div>
       <div className="text-center">
