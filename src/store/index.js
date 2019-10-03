@@ -394,7 +394,7 @@ class GameData {
   });
 
   shufflePassions = action(() => {
-    shuffle(this.passionStore.responses);
+    doubleShuffle(this.passionStore.responses, this.passionPrompts);
   });
 
   shufflePurposes = action(() => {
