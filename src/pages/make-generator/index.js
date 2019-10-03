@@ -36,8 +36,9 @@ class Generator extends React.Component {
         </div>
 
         <div className="description">
-          Congratulations you have transformed your passion and purpose into a “How Might We”
-          question. This process is called ideation.
+          Congratulations, you have transformed your passion and purpose into a “How Might We”
+          question. The next step in the process is to generate possible project ideas based on that
+          question.
         </div>
 
         <form />

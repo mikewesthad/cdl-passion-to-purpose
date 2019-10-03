@@ -9,9 +9,12 @@ export default function HMWContext(props) {
         <h2 className="title">Generating a "How Might We" question</h2>
         <div className="description">
           <p>
-            Let’s combine your responses and turn them into a “How Might We” question. Designers use
-            “How Might We” questions as a way to define a project idea by brainstorming new
-            opportunities for creativity and design. Click to see the different combinations and
+            Let’s combine your responses and turn them into a “How Might We” question.Designers
+            often frame ideas as “How Might We” questions as a way to spark a series of new ideas
+            and jumpstart brainstorming.
+          </p>
+          <p>
+            On the next page, click the shuffle buttons to generate new “How Might We” questions and
             choose your favorite.
           </p>
         </div>

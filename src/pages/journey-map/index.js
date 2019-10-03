@@ -83,7 +83,7 @@ class JourneyMap extends React.Component {
         <hr />
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>We started off by dissecting your passions.</span>
+          <span className={style.bolded}>You started off by pondering your passions.</span>
           <div className="description">
             <div className={style.centerRight}>
               1. {gameData.passionStore.questions[0].replace("...", " ")}{" "}
@@ -101,7 +101,7 @@ class JourneyMap extends React.Component {
         <hr />
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Then we took a look at your purpose.</span>
+          <span className={style.bolded}>Then you took a look at your purpose.</span>
           <div className="description">
             <div className={style.centerRight}>
               1. I want to {gameData.getPurposesWithVerb()[0]}.<br />
@@ -115,7 +115,7 @@ class JourneyMap extends React.Component {
         <hr />
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Next, we juxtaposed your passions and purposes</span>
+          <span className={style.bolded}>Next, you juxtaposed your passions and purposes</span>
           <div className="description">Combining them into a "How Might We" design question.</div>
           <div className="description">Your selected HMW question shown below:</div>
           <div className={style.generatedQuestion}>
@@ -132,26 +132,25 @@ class JourneyMap extends React.Component {
         <hr />
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>So, we went through and unpacked your selection.</span>
+          <span className={style.bolded}>
+            Next you began exploring ways to answer your “How Might We” question by choosing a
+            medium and an impact goal.
+          </span>
           <div className="description">
             How Might We use {passion} to {purpose}?
-          </div>
-          <div className="description">We wanted to discover the solution to this question.</div>
-          <div className="description">
-            In order to do so, you had to explore your medium and impact!
           </div>
         </div>
 
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>You started by browsing through your medium options</span>
           <div className="description">
-            You selected the {gameData.medium} category &amp; then took a peek at our project
-            database.
+            You selected the {gameData.medium} category &amp; then took a peek at then took a peek
+            at a sample project.
           </div>
         </div>
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Then you selected your impact</span>
+          <span className={style.bolded}>Then you selected your impact goal.</span>
           <div className="description">You decided that your project should {gameData.impact}.</div>
         </div>
         <hr />
@@ -167,6 +166,7 @@ class JourneyMap extends React.Component {
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>{gameData.impact}!</span>
         </div>
+        <span className={style.bolded}>Congratulations on your great work!</span>
         <hr />
         <form />
 
