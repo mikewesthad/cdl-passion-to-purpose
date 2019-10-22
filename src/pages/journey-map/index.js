@@ -177,9 +177,8 @@ class JourneyMap extends React.Component {
         <Survey style={{ marginTop: "2rem", textAlign: "center" }} />
         <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
       </Container>
-      //  </div>
     );
   }
 }
-const rootElement = document.getElementById("root");
+
 export default inject("gameData")(observer(JourneyMap));
