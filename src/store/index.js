@@ -63,13 +63,15 @@ class GameData {
           exampleName: "A Gerrymandering Board Game",
           image: require("../images/MediaExampleImages/board-game-icon.svg"),
           link: "http://gerrymanderinggame.com/",
-          resourceLink: "https://www.instructables.com/id/Build-your-Own-Board-Game/"
+          resourceLink: "https://www.instructables.com/id/Build-your-Own-Board-Game/",
+          description: "game project description"
         },
         {
           exampleName: "Casual Games for Protesters",
           image: require("../images/MediaExampleImages/game-icon.svg"),
           link: "http://www.protestgames.org/",
-          resourceLink: "https://www.digitaltrends.com/gaming/how-to-make-a-video-game/"
+          resourceLink: "https://www.digitaltrends.com/gaming/how-to-make-a-video-game/",
+          description: "game project description 2"
         }
       ],
       "A Design Project": [
@@ -77,25 +79,29 @@ class GameData {
           exampleName: "Protest Sticker Art",
           image: require("../images/MediaExampleImages/sticker-icon.svg"),
           link: "https://www.redbubble.com/shop/protest+art+stickers",
-          resourceLink: "https://www.instructables.com/id/Homemade-Stickers/"
+          resourceLink: "https://www.instructables.com/id/Homemade-Stickers/",
+          description: "design project description"
         },
         {
           exampleName: "Yoga Joes",
           image: require("../images/MediaExampleImages/toy-icon.svg"),
           link: "https://www.yogajoes.com/",
-          resourceLink: "https://www.instructables.com/howto/3d+print/"
+          resourceLink: "https://www.instructables.com/howto/3d+print/",
+          description: "design project description"
         },
         {
           exampleName: "Dreamer Kites",
           image: require("../images/MediaExampleImages/kite-icon.svg"),
           link: "https://artsinachangingamerica.org/miguel-lucianos-dreamer-kites/",
-          resourceLink: "https://www.instructables.com/id/A-Garbage-Bag-Kite/"
+          resourceLink: "https://www.instructables.com/id/A-Garbage-Bag-Kite/",
+          description: "design project description"
         },
         {
           exampleName: "Defend Dignity Poster",
           image: require("../images/MediaExampleImages/poster-icon.svg"),
           link: "https://obeyclothing.com/blogs/zine/behind-8220-defend-dignity-8221-q-a",
-          resourceLink: "https://kathleentieriton.wixsite.com/studio/advanced-design-illustration"
+          resourceLink: "https://kathleentieriton.wixsite.com/studio/advanced-design-illustration",
+          description: "design project description"
         }
       ],
       "A Public Performance": [
@@ -105,19 +111,22 @@ class GameData {
           link:
             "https://www.designboom.com/architecture/ronald-rael-san-fratello-installs-seesaws-on-us-mexico-border-wall-07-31-2019/",
           resourceLink:
-            "https://www.ana-white.com/woodworking-projects/wood-seesaw-or-teeter-totter"
+            "https://www.ana-white.com/woodworking-projects/wood-seesaw-or-teeter-totter",
+          description: "design project description"
         },
         {
           exampleName: "Inflatable Refugee",
           image: require("../images/MediaExampleImages/balloon-icon.svg"),
           link: "https://www.dirkschellekens.com/inflatable-refugee/",
-          resourceLink: "http://inflatabill.com/portfolio/custom-inflatables-and-props/"
+          resourceLink: "http://inflatabill.com/portfolio/custom-inflatables-and-props/",
+          description: "design project description"
         },
         {
           exampleName: "Red Can Graffiti Jam",
           image: require("../images/MediaExampleImages/spray-paint-icon.svg"),
           link: "https://lakotayouth.org/programs/waniyetu-wowapi-lai/redcan-graffiti-jam/",
-          resourceLink: "https://graffitiknowhow.com/how-to-draw-graffiti-letters-for-beginners/"
+          resourceLink: "https://graffitiknowhow.com/how-to-draw-graffiti-letters-for-beginners/",
+          description: "design project description"
         }
       ],
       "A Virtual or Augmented Reality Experience": [
@@ -126,7 +135,8 @@ class GameData {
           image: require("../images/MediaExampleImages/vr-icon.svg"),
           link:
             "https://www.usatoday.com/border-wall/usa-today-network-border-project-about-vr-podcasts-map/vr",
-          resourceLink: "https://vr.google.com/tourcreator/"
+          resourceLink: "https://vr.google.com/tourcreator/",
+          description: "design project description"
         }
       ],
       "A Citizen Journalism Project": [
@@ -134,13 +144,15 @@ class GameData {
           exampleName: "Art+Feminisim Wikipedia Edit-a-thon",
           image: require("../images/MediaExampleImages/writing-icon.svg"),
           link: "https://www.moma.org/calendar/events/5229?locale=en",
-          resourceLink: "https://outreachdashboard.wmflabs.org/training/editathons"
+          resourceLink: "https://outreachdashboard.wmflabs.org/training/editathons",
+          description: "design project description"
         },
         {
           exampleName: "Citizen's Police Data Project",
           image: require("../images/MediaExampleImages/cloud-data-icon.svg"),
           link: "https://invisible.institute/police-data",
-          resourceLink: "https://vis.occrp.org/"
+          resourceLink: "https://vis.occrp.org/",
+          description: "design project description"
         }
       ],
       "A Remix or Mashup": [
@@ -148,7 +160,8 @@ class GameData {
           exampleName: "Gender Lego Remixes",
           image: require("../images/MediaExampleImages/gender-icon.svg"),
           link: "https://www.youtube.com/user/RemixingGender",
-          resourceLink: "http://www.genderremixer.com/html5/"
+          resourceLink: "http://www.genderremixer.com/html5/",
+          description: "design project description"
         }
       ],
       "Shareable Social Media Content": [
@@ -157,19 +170,22 @@ class GameData {
           image: require("../images/MediaExampleImages/lgbt-icon.svg"),
           link: "https://itgetsbetter.org/",
           resourceLink:
-            "https://www.openideo.com/content/4-ideo-designers-tips-for-better-visual-storytelling"
+            "https://www.openideo.com/content/4-ideo-designers-tips-for-better-visual-storytelling",
+          description: "design project description"
         },
         {
           exampleName: "Hashtag Activism",
           image: require("../images/MediaExampleImages/hashtag-icon.svg"),
           link: "https://knowyourmeme.com/memes/events/title-ix-sex-definition-controversy/photos",
-          resourceLink: "https://ourdataourselves.tacticaltech.org/posts/23_guide_social_media"
+          resourceLink: "https://ourdataourselves.tacticaltech.org/posts/23_guide_social_media",
+          description: "design project description"
         },
         {
           exampleName: "Sustainable Fashion Blog",
           image: require("../images/MediaExampleImages/blog-icon.svg"),
           link: "https://www.instagram.com/tollydollyposh/",
-          resourceLink: "https://edu.gcfglobal.org/en/instagram/"
+          resourceLink: "https://edu.gcfglobal.org/en/instagram/",
+          description: "design project description"
         }
       ],
       "A Video or Animation": [
@@ -177,19 +193,22 @@ class GameData {
           exampleName: "An Animated GIF Collection",
           image: require("../images/MediaExampleImages/gif-icon.svg"),
           link: "https://raf-i-a.tumblr.com/tagged/GIF",
-          resourceLink: "https://giphy.com/create/gifmaker"
+          resourceLink: "https://giphy.com/create/gifmaker",
+          description: "design project description"
         },
         {
           exampleName: "Friends Forever",
           image: require("../images/MediaExampleImages/film-icon.svg"),
           link: "https://www.youtube.com/watch?v=ck04Rqkp_lA",
-          resourceLink: "http://giveme5ri.org/film-making-labs/make-your-own/"
+          resourceLink: "http://giveme5ri.org/film-making-labs/make-your-own/",
+          description: "design project description"
         },
         {
           exampleName: "Rights Lab Web Video Series",
           image: require("../images/MediaExampleImages/video-icon.svg"),
           link: "http://www.scrappersfg.com/rightslab/",
-          resourceLink: "https://www.wordstream.com/blog/ws/2014/03/13/explainer-videos"
+          resourceLink: "https://www.wordstream.com/blog/ws/2014/03/13/explainer-videos",
+          description: "design project description"
         }
       ],
       "A Data Visualization or Map": [
@@ -198,14 +217,16 @@ class GameData {
           image: require("../images/MediaExampleImages/map-icon.svg"),
           link:
             "https://www.google.com/maps/d/u/0/viewer?ll=36.04297229383506%2C-77.67547230820321&z=11&mid=1YvB3PuH8jeR_yoFCLvrKOTQQ3p_5NmkK",
-          resourceLink: ""
+          resourceLink: "",
+          description: "design project description"
         },
         {
           exampleName: "The Beyonce Experience",
           image: require("../images/MediaExampleImages/world-map-icon.svg"),
           link:
             "https://public.tableau.com/profile/jaquina.m#!/vizhome/TheBeyonceExperience/TheBeyonceExperience2",
-          resourceLink: "https://www.tableau.com/learn/training"
+          resourceLink: "https://www.tableau.com/learn/training",
+          description: "design project description"
         }
       ],
       "A Podcast": [
@@ -213,14 +234,16 @@ class GameData {
           exampleName: "Adult-ish Podcast",
           image: require("../images/MediaExampleImages/podcast-icon.svg"),
           link: "https://yr.media/adult-ish/",
-          resourceLink: ""
+          resourceLink: "",
+          description: "design project description"
         },
         {
           exampleName: "SheCast Podcast",
           image: require("../images/MediaExampleImages/podcast-icon.svg"),
           link: "https://www.shecrew.org/she-cast",
           resourceLink:
-            "https://www.smartpassiveincome.com/tutorials/start-podcast-pats-complete-step-step-podcasting-tutorial/"
+            "https://www.smartpassiveincome.com/tutorials/start-podcast-pats-complete-step-step-podcasting-tutorial/",
+          description: "design project description"
         }
       ],
       Crafts: [
@@ -228,14 +251,16 @@ class GameData {
           exampleName: "Social Justice Sewing Circle",
           image: require("../images/MediaExampleImages/sewing-icon.svg"),
           link: "http://www.sjsacademy.com/say-their-names.html",
-          resourceLink: "https://www.sewmamasew.com/2010/01/sewing-circles/"
+          resourceLink: "https://www.sewmamasew.com/2010/01/sewing-circles/",
+          description: "design project description"
         },
         {
           exampleName: "Femail Upcycling Textile Art",
           image: require("../images/MediaExampleImages/textile-icon.svg"),
           link: "https://femailforever.squarespace.com/",
           resourceLink:
-            "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB"
+            "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB",
+          description: "design project description"
         }
       ],
       "A Business": [
@@ -243,14 +268,16 @@ class GameData {
           exampleName: "Conflict Kitchen",
           image: require("../images/MediaExampleImages/food-icon.svg"),
           link: "https://www.conflictkitchen.org/",
-          resourceLink: "https://appetiteforchangemn.org/"
+          resourceLink: "https://appetiteforchangemn.org/",
+          description: "design project description"
         },
         {
           exampleName: "Farming While Black",
           image: require("../images/MediaExampleImages/farming-icon.svg"),
           link: "https://www.farmingwhileblack.org/",
           resourceLink:
-            "https://changecreator.com/the-beginners-guide-to-starting-a-social-business/"
+            "https://changecreator.com/the-beginners-guide-to-starting-a-social-business/",
+          description: "design project description"
         }
       ],
       "Guerilla Art": [
@@ -260,13 +287,15 @@ class GameData {
           link:
             "https://www.teenvogue.com/story/extinction-rebellion-collective-yearlong-boycott-buying-new-clothes",
           resourceLink:
-            "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB"
+            "https://blog.armoire.style/sustainable-fashion-movement/?utm_source=google&utm_medium=cpc&utm_campaign=armoire+-+brand+l_ME1+7184&utm_term=73120364529-dsa-742279129893&utm_content=348088360311&gclid=Cj0KCQjw8svsBRDqARIsAHKVyqE8Tz2_DgrAqN0-WhjQj6rvtLJioUD84paZYOVAzZDy7ttDuJc9vbcaAuukEALw_wcB",
+          description: "design project description"
         },
         {
           exampleName: "Under the Radar",
           image: require("../images/MediaExampleImages/radar-icon.svg"),
           link: "http://content.time.com/time/photogallery/0,29307,1911799_1912687,00.html",
-          resourceLink: "http://www.kerismith.com/popular-posts/how-to-be-a-guerilla-artist-2/"
+          resourceLink: "http://www.kerismith.com/popular-posts/how-to-be-a-guerilla-artist-2/",
+          description: "design project description"
         }
       ]
     };

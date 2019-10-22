@@ -56,7 +56,9 @@ class MediaCards extends React.Component {
             }}
           >
             <div className={style.descriptionCard}>
-              <div className={style.descriptionText}>Click here to view resources</div>
+              <div className={style.descriptionText}>
+                {gameData.mediaExampleData[medium][0].description}
+              </div>
             </div>
           </a>
         </div>
