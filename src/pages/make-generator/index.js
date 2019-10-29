@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
+import SocialShare from "../../components/social-share";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Generator extends React.Component {
     const { gameData, nextRoute } = this.props;
     return (
       <Container>
-        <h1 className="title">Next Steps</h1>
+        {/*/<h1 className="title">Next Steps</h1>*/}
 
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
@@ -35,6 +36,10 @@ class Generator extends React.Component {
           </span>
         </div>
 
+        <div className="text-center">
+          <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
+        </div>
+
         <div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
           question. The next step in the process is to generate possible project ideas based on that
@@ -45,7 +50,7 @@ class Generator extends React.Component {
 
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link className="button" to={nextRoute}>
-            Let's try it out &#8594;
+            Let's start brainstorming &#8594;
           </Link>
         </div>
       </Container>
