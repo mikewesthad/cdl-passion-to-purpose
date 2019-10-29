@@ -5,6 +5,7 @@ export default class Timeline extends PureComponent {
   render() {
     return (
       <div className={style.timeline}>
+        <div className={style.mainContainer} />
         <hr />
       </div>
     );
