@@ -24,7 +24,9 @@ class LetsMakeSocialShare extends Component {
 
     const passion = this.props.gameData.passionStore.responses[gameData.chosenPassionIndex];
     const purpose = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex];
-    const text = `“How might we use ${passion} to ${purpose}?” What do you think of my project idea? Check out @ConvergenceDLab's Passion to Purpose tool:`;
+    const medium = gameData.medium;
+    const impact = gameData.impact;
+    const text = `“How might we use ${passion} to ${purpose}?” Let's make a ${medium} to ${impact}! What do you think of my project idea? Check out @ConvergenceDLab's Passion to Purpose tool:`;
 
     return (
       <div>

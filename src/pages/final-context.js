@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
-import SocialShare from "../components/social-share";
+import LetsMakeSocialShare from "../components/social-share/socialshare-letsmake";
 import Container from "../components/container";
 
 class FinalContext extends React.Component {
@@ -21,7 +21,9 @@ class FinalContext extends React.Component {
           </div>
         </div>
         <div className="text-center">
-          <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
+          <LetsMakeSocialShare
+            passion={gameData.passionStore.responses[gameData.chosenPassionIndex]}
+          />
           <p />
           <Link className="button" to={nextRoute}>
             Continue &#8594;
