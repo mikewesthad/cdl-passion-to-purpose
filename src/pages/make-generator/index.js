@@ -19,6 +19,10 @@ class Generator extends React.Component {
     });
   };
 
+  handleChange(event) {
+    this.setState({ title: event.target.value });
+  }
+
   render() {
     const { gameData, nextRoute } = this.props;
     return (
@@ -34,6 +38,13 @@ class Generator extends React.Component {
           <span className={style.generatedPurpose}>
             {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
           </span>
+          <input
+            className={style.passionInput}
+            type="text"
+            name="title"
+            value={this.state.title}
+            onChange={this.handleChange.bind(this)}
+          />
         </div>
 
         <div className="text-center">
