@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
-import SocialShare from "../../components/social-share";
+import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class Generator extends React.Component {
         </div>
 
         <div className="text-center">
-          <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
+          <HMWSocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
         </div>
 
         <div className="description">
