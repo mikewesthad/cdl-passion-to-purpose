@@ -6,7 +6,6 @@ export default class Timeline extends PureComponent {
     return (
       <div className={style.timeline}>
         <div className={style.mainContainer} />
-        <hr />
       </div>
     );
   }
