@@ -8,6 +8,7 @@ import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 class Generator extends React.Component {
   constructor(props) {
     super(props);
+    const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
 
@@ -22,6 +23,16 @@ class Generator extends React.Component {
   handleChange(event) {
     this.setState({ title: event.target.value });
   }
+
+  onPassionChange = event => {
+    this.props.gameData.editPassion(event.target.value);
+    console.log(event.target.value);
+  };
+
+  onPurposeChange = event => {
+    this.props.gameData.editPurpose(event.target.value);
+    console.log(event.target.value);
+  };
 
   render() {
     const { gameData, nextRoute } = this.props;
@@ -42,13 +53,20 @@ class Generator extends React.Component {
             className={style.passionInput}
             type="text"
             name="title"
-            value={this.state.title}
-            onChange={this.handleChange.bind(this)}
+            value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
+            onChange={this.onPassionChange}
+          />
+          <input
+            className={style.purposeInput}
+            type="text"
+            name="title"
+            value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
+            onChange={this.onPurposeChange}
           />
         </div>
 
         <div className="text-center">
-          <HMWSocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
+          <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
 
         <div className="description">

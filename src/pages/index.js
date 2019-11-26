@@ -9,7 +9,7 @@ import MediaCards from "./media-cards";
 import ImpactContext from "./impact-context";
 import Impact from "./impact";
 import ImpactCards from "./impact-cards";
-import MakeGenerator from "./make-generator";
+import HMWFinal from "./hmw-final";
 import PassionContext from "./passion-context";
 import PurposeContext from "./purpose-context";
 import HMWContext from "./hmw-context";
@@ -27,7 +27,7 @@ const routes = [
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
-  { key: "makegenerator", path: "/make-generator", Component: MakeGenerator },
+  { key: "hmw-final", path: "/hmw-final", Component: HMWFinal },
   { key: "medium-context", path: "/medium-context", Component: MediumContext },
   { key: "medium", path: "/medium", Component: Medium },
   { key: "media-disclaimer", path: "/media-disclaimer", Component: MediaDisclaimer },
@@ -61,7 +61,7 @@ export {
   Purpose,
   HMWContext,
   Generator,
-  MakeGenerator,
+  HMWFinal,
   LMContext,
   LetsMake,
   FinalContext,
