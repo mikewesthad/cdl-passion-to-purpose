@@ -4,6 +4,7 @@ import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
+import { TimelineLite } from "gsap/all";
 //
 class Generator extends React.Component {
   constructor(props) {
@@ -12,6 +13,9 @@ class Generator extends React.Component {
     const gameData = this.props.gameData;
     gameData.shufflePassions();
     gameData.shufflePurposes();
+
+    this.shuffleTl = new TimelineLite({ paused: true });
+    this.testRef = null;
   }
 
   toggleHiddenPassion() {
@@ -37,6 +41,10 @@ class Generator extends React.Component {
     console.log(this.render.purpose);
   };
 
+  componentDidMount() {
+    this.shuffleTl.to(this.passion1, 1, { left: 100, autoAlpha: 0 });
+  }
+
   render() {
     const { gameData, nextRoute } = this.props;
     const passion = gameData.passionStore.responses[gameData.chosenPassionIndex];
@@ -44,7 +52,7 @@ class Generator extends React.Component {
     const PassionChild = () => <span className={style.generatedPassion}>{passion}</span>;
     const PassionParent = () => (
       <div className={style.overflowContainer}>
-        <div className={style.animation}>
+        <div className={style.animation} ref={div => (this.passion1 = div)}>
           <span className={style.generatedPassion}>
             <ul>
               <li>{gameData.passionStore.responses[0]}</li>
@@ -76,6 +84,8 @@ class Generator extends React.Component {
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use </span>
+          <h1 ref={h1 => (this.testRef = h1)}>Example Text</h1>
+
           <div className={style.passionContainer}>
             <GenerateAttribution
               className={style.generatedButton}
