@@ -56,7 +56,6 @@ class Generator extends React.Component {
           <span className={style.generatedPurpose}>
             {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
             <AutosizeInput
-              className={style.purposeInput}
               className={style.purposeInputWrapper}
               inputClassName={style.purposeInput}
               type="text"
