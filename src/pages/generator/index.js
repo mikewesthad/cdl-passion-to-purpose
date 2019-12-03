@@ -14,8 +14,8 @@ class Generator extends React.Component {
     gameData.shufflePassions();
     gameData.shufflePurposes();
 
-    this.shuffleTl = new TimelineLite({ paused: true });
-    this.testRef = null;
+    this.shuffleTl = new TimelineLite();
+    this.testRef = React.createRef();
   }
 
   toggleHiddenPassion() {
@@ -42,7 +42,7 @@ class Generator extends React.Component {
   };
 
   componentDidMount() {
-    this.shuffleTl.to(this.passion1, 1, { left: 100, autoAlpha: 0 });
+    this.shuffleTl.to(this.testRef.current, 1, { left: 100 });
   }
 
   render() {
@@ -84,8 +84,6 @@ class Generator extends React.Component {
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use </span>
-          <h1 ref={h1 => (this.testRef = h1)}>Example Text</h1>
-
           <div className={style.passionContainer}>
             <GenerateAttribution
               className={style.generatedButton}
@@ -103,6 +101,8 @@ class Generator extends React.Component {
             <span className={style.generatedPurpose}>{purpose}?</span>
           </div>
         </div>
+        <div ref={this.testRef}>EXAMPLE TEXT</div>
+
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           {this.state.isHidden ? null : (
             <Link className="button" to={nextRoute}>

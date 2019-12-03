@@ -17,10 +17,13 @@ import LMContext from "./lets-make-context";
 import LetsMake from "./lets-make";
 import JourneyMap from "./journey-map";
 import FinalContext from "./final-context";
+import testPage from "./testPage";
+
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
 const routes = [
-  { key: "home", path: "/", exact: true, Component: Home },
+  { key: "home", path: "/", exact: true, Component: testPage },
+  // { key: "home", path: "/", exact: true, Component: Home },
   { key: "passion-context", path: "/passion-context", Component: PassionContext },
   { key: "passion", path: "/passion", Component: Passion },
   { key: "purpose-context", path: "/purpose-context", Component: PurposeContext },
@@ -47,6 +50,7 @@ const routeMap = routes.reduce((map, route) => {
 }, {});
 
 export {
+  testPage,
   Home,
   MediumContext,
   Medium,
