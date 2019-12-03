@@ -57,6 +57,8 @@ class Generator extends React.Component {
             {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
             <AutosizeInput
               className={style.purposeInput}
+              className={style.purposeInputWrapper}
+              inputClassName={style.purposeInput}
               type="text"
               name="title"
               value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
