@@ -486,6 +486,13 @@ class GameData {
     );
   }
 
+  //takes just the verb
+  getPurposeVerb() {
+    return this.purposeStore.responses.map((purpose, i) =>
+      this.purposeStore.questions[i].replace("I want to ", "").replace("...", "")
+    );
+  }
+
   reset() {
     this.passionStore.reset();
     this.purposeStore.reset();
