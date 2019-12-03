@@ -31,7 +31,9 @@
 
 .overflowContainer {
   overflow-y: hidden;
-  display: flex;
+  overflow-x: hidden;
+  display: block;
+  //display: flex;
   margin-left: 1rem;
 }
 
