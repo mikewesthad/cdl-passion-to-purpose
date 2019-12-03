@@ -4,6 +4,7 @@ import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
+import AutosizeInput from "react-input-autosize";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
           <span className={style.generatedPassion}>
-            <input
+            <AutosizeInput
               className={style.passionInput}
               type="text"
               name="title"
@@ -54,7 +55,7 @@ class Generator extends React.Component {
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>
             {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
-            <input
+            <AutosizeInput
               className={style.purposeInput}
               type="text"
               name="title"
