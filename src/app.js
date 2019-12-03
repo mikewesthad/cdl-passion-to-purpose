@@ -10,6 +10,7 @@ import { Provider } from "mobx-react";
 import PageTransition from "./components/page-transition";
 import PageWrapper from "./components/page-wrapper";
 import Analytics from "./components/analytics";
+import Timeline from "./components/timeline";
 import { routes, routeMap } from "./pages";
 import Nav from "./components/nav";
 import gameData from "./store";
@@ -31,6 +32,8 @@ const App = withRouter(
               onBack={this.goBack}
               onRestart={this.restart}
             />
+
+            <Timeline />
 
             <Analytics
               dummyLog={isDev}
