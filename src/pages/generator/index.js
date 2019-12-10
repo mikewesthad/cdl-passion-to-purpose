@@ -48,7 +48,7 @@ class Generator extends React.Component {
 
   componentDidMount() {
     var speed = 0.65;
-    var linesize = 37;
+    var linesize = 70;
 
     this.shuffleTl
       .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
