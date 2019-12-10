@@ -52,7 +52,7 @@ class Generator extends React.Component {
   };
 
   componentDidMount() {
-    var speed = 0.65;
+    var speed = 0.75;
     var linesize = 150;
 
     this.shuffleTl
@@ -97,48 +97,48 @@ class Generator extends React.Component {
       .to(this.passion3.current, 0, { y: -linesize * 2 }, 4.75)
       .to(this.passion4.current, 0, { y: -linesize * 2 }, 4.75)
 
-      ///////////////////////////
+      /////////////////////////// PURPOSE ////////////////////////////
 
-      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
-      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
-      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 0)
-      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 0)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
+      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
+      .to(this.purpose4.current, 0, { y: -linesize * 3 }, 0)
 
       //First 'Spin' down
-      .to(this.purpose1.current, speed, { y: linesize * 2 }, 0.5)
-      .to(this.purpose2.current, speed, { y: linesize * 2 }, 0.75)
-      .to(this.purpose3.current, speed, { y: linesize * 2 }, 1)
-      .to(this.purpose4.current, speed, { y: linesize * 2 }, 1.25)
+      .to(this.purpose1.current, speed, { y: linesize * 3 }, 0.5)
+      .to(this.purpose2.current, speed, { y: linesize * 3 }, 0.75)
+      .to(this.purpose3.current, speed, { y: linesize * 3 }, 1)
+      .to(this.purpose4.current, speed, { y: linesize * 3 }, 1.25)
 
       //Back to top
-      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 1.75)
-      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 1.75)
-      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 1.75)
-      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 1.75)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 1.75)
+      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 1.75)
+      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 1.75)
+      .to(this.purpose4.current, 0, { y: -linesize * 3 }, 1.75)
 
       //Second 'Spin' down
-      .to(this.purpose1.current, speed, { y: linesize * 2 }, 2)
-      .to(this.purpose2.current, speed, { y: linesize * 2 }, 2.25)
-      .to(this.purpose3.current, speed, { y: linesize * 2 }, 2.5)
-      .to(this.purpose4.current, speed, { y: linesize * 2 }, 2.75)
+      .to(this.purpose1.current, speed, { y: linesize * 3 }, 2)
+      .to(this.purpose2.current, speed, { y: linesize * 3 }, 2.25)
+      .to(this.purpose3.current, speed, { y: linesize * 3 }, 2.5)
+      .to(this.purpose4.current, speed, { y: linesize * 3 }, 2.75)
 
       //Back to top
-      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 3.25)
-      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 3.25)
-      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 3.25)
-      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 3.25)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 3.25)
+      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 3.25)
+      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 3.25)
+      .to(this.purpose4.current, 0, { y: -linesize * 3 }, 3.25)
 
       //Third 'Spin' down
-      .to(this.purpose1.current, speed, { y: linesize * 2 }, 3.5)
-      .to(this.purpose2.current, speed, { y: linesize * 2 }, 3.75)
-      .to(this.purpose3.current, speed, { y: linesize * 2 }, 4)
-      .to(this.purpose4.current, speed, { y: linesize * 2 }, 4.25)
+      .to(this.purpose1.current, speed, { y: linesize * 3 }, 3.5)
+      .to(this.purpose2.current, speed, { y: linesize * 3 }, 3.75)
+      .to(this.purpose3.current, speed, { y: linesize * 3 }, 4)
+      .to(this.purpose4.current, speed, { y: linesize * 3 }, 4.25)
 
       //Back to top
-      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 4.75)
-      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 4.75)
-      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 4.75)
-      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 4.75)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 4.75)
+      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 4.75)
+      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 4.75)
+      .to(this.purpose4.current, 0, { y: -linesize * 3 }, 4.75)
 
       .to(this.passion1.current, speed, { y: 0 }, 5)
       .to(this.purpose1.current, speed, { y: 0 }, 5);
