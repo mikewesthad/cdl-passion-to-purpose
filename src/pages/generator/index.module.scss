@@ -26,7 +26,8 @@
 
 .passionContainer,
 .purposeContainer {
-  display: flex;
+  height: 5rem;
+  overflow-y: hidden;
 }
 
 .overflowContainer {
@@ -145,6 +146,9 @@ ul {
   font-size: 2.5rem;
   margin-left: 1rem;
   overflow-wrap: break-word;
+  display: block;
+
+  //addition
 
   @media (min-width: 400px) {
     font-size: 2.5rem;
