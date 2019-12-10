@@ -37,6 +37,14 @@
   outline: dashed 2px blue;
 }
 
+.overflowContainerPurpose {
+  overflow-y: hidden;
+  display: inline-grid;
+  width: 90%;
+  height: 10rem;
+  outline: dashed 2px blue;
+}
+
 .generatedButton {
   margin-top: 0;
   user-select: none;
