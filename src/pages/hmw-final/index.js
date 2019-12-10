@@ -45,7 +45,8 @@ class Generator extends React.Component {
           <span className={style.bolded}>How might we use </span>
           <span className={style.generatedPassion}>
             <AutosizeInput
-              className={style.passionInput}
+              className={style.passionInputWrapper}
+              inputClassName={style.passionInput}
               type="text"
               name="title"
               value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
