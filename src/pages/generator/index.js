@@ -125,37 +125,6 @@ class Generator extends React.Component {
     const purpose3 = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex + 2];
     const purpose4 = gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex + 3];
 
-    const PassionChild = () => <span className={style.generatedPassion}>{passion1}</span>;
-    const PassionParent = () => (
-      <div className={style.overflowContainer}>
-        <div className={style.animation}>
-          <span className={style.generatedPassion}>
-            <ul>
-              <li>{gameData.passionStore.responses[0]}</li>
-              <li>{gameData.passionStore.responses[1]}</li>
-              <li>{gameData.passionStore.responses[2]}</li>
-              <li>{gameData.passionStore.responses[3]}</li>
-            </ul>
-          </span>
-        </div>
-      </div>
-    );
-    const PurposeChild = () => <span className={style.generatedPurpose}>{purpose1}</span>;
-    const PurposeParent = () => (
-      <div className={style.overflowContainer}>
-        <div className={style.animation}>
-          <span className={style.generatedPurpose}>
-            <ul>
-              <li>{gameData.getPurposesWithVerb()[0]}</li>
-              <li>{gameData.getPurposesWithVerb()[1]}</li>
-              <li>{gameData.getPurposesWithVerb()[2]}</li>
-              <li>{gameData.getPurposesWithVerb()[3]}</li>
-            </ul>
-          </span>
-        </div>
-      </div>
-    );
-
     return (
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
