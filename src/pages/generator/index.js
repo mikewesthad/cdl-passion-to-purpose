@@ -187,7 +187,7 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPurpose.bind(this)}
             />
-            <div className={style.overflowContainer}>
+            <div className={style.overflowContainerPurpose}>
               <span className={style.generatedPurpose} ref={this.purpose1}>
                 {purpose1}?
               </span>
