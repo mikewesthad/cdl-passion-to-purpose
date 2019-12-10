@@ -48,7 +48,7 @@ class Generator extends React.Component {
 
   componentDidMount() {
     var speed = 0.65;
-    var linesize = 70;
+    var linesize = 150;
 
     this.shuffleTl
       .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
@@ -136,18 +136,20 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPassion.bind(this)}
             />
-            <span className={style.generatedPassion} ref={this.passion1}>
-              {passion1}
-            </span>
-            <span className={style.generatedPassion} ref={this.passion2}>
-              {passion2}
-            </span>
-            <span className={style.generatedPassion} ref={this.passion3}>
-              {passion3}
-            </span>
-            <span className={style.generatedPassion} ref={this.passion4}>
-              {passion4}
-            </span>
+            <div className={style.overflowContainer}>
+              <span className={style.generatedPassion} ref={this.passion1}>
+                {passion1}
+              </span>
+              <span className={style.generatedPassion} ref={this.passion2}>
+                {passion2}
+              </span>
+              <span className={style.generatedPassion} ref={this.passion3}>
+                {passion3}
+              </span>
+              <span className={style.generatedPassion} ref={this.passion4}>
+                {passion4}
+              </span>
+            </div>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
@@ -155,19 +157,20 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPurpose.bind(this)}
             />
-
-            <span className={style.generatedPurpose} ref={this.purpose1}>
-              {purpose1}?
-            </span>
-            <span className={style.generatedPurpose} ref={this.purpose2}>
-              {purpose2}?
-            </span>
-            <span className={style.generatedPurpose} ref={this.purpose3}>
-              {purpose3}?
-            </span>
-            <span className={style.generatedPurpose} ref={this.purpose4}>
-              {purpose4}?
-            </span>
+            <div className={style.overflowContainer}>
+              <span className={style.generatedPurpose} ref={this.purpose1}>
+                {purpose1}?
+              </span>
+              <span className={style.generatedPurpose} ref={this.purpose2}>
+                {purpose2}?
+              </span>
+              <span className={style.generatedPurpose} ref={this.purpose3}>
+                {purpose3}?
+              </span>
+              <span className={style.generatedPurpose} ref={this.purpose4}>
+                {purpose4}?
+              </span>
+            </div>
           </div>
         </div>
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>

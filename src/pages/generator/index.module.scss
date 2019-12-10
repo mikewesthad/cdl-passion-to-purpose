@@ -27,20 +27,20 @@
 .passionContainer,
 .purposeContainer {
   height: 5rem;
-  overflow-y: hidden;
 }
 
 .overflowContainer {
   overflow-y: hidden;
-  overflow-x: hidden;
-  display: block;
-  //display: flex;
-  margin-left: 1rem;
+  display: inline-grid;
+  width: 90%;
+  height: 5rem;
+  outline: dashed 2px blue;
 }
 
 .generatedButton {
   margin-top: 0;
   user-select: none;
+  display: inline;
 
   @media (min-width: 400px) {
     margin-top: 1rem;
@@ -144,7 +144,7 @@ ul {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 2.5rem;
-  margin-left: 4rem;
+  margin-left: 1rem;
   overflow-wrap: break-word;
   display: block;
 
