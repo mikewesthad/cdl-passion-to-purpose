@@ -4,10 +4,12 @@ import { observer, inject } from "mobx-react";
 import Container from "../../components/container";
 import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
+import AutosizeInput from "react-input-autosize";
 
 class Generator extends React.Component {
   constructor(props) {
     super(props);
+    const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
 
@@ -23,6 +25,16 @@ class Generator extends React.Component {
     this.setState({ title: event.target.value });
   }
 
+  onPassionChange = event => {
+    this.props.gameData.editPassion(event.target.value);
+    console.log(event.target.value);
+  };
+
+  onPurposeChange = event => {
+    this.props.gameData.editPurpose(event.target.value);
+    console.log(event.target.value);
+  };
+
   render() {
     const { gameData, nextRoute } = this.props;
     return (
@@ -32,23 +44,32 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
           <span className={style.generatedPassion}>
-            {gameData.passionStore.responses[gameData.chosenPassionIndex]}
+            <AutosizeInput
+              className={style.passionInputWrapper}
+              inputClassName={style.passionInput}
+              type="text"
+              name="title"
+              value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
+              onChange={this.onPassionChange}
+            />
           </span>
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>
-            {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
+            {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
+            <AutosizeInput
+              className={style.purposeInputWrapper}
+              inputClassName={style.purposeInput}
+              type="text"
+              name="title"
+              value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
+              onChange={this.onPurposeChange}
+            />
+            ?
           </span>
-          <input
-            className={style.passionInput}
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={this.handleChange.bind(this)}
-          />
         </div>
 
         <div className="text-center">
-          <HMWSocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
+          <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
 
         <div className="description">

@@ -2,7 +2,7 @@ import React from "react";
 import { observer, inject } from "mobx-react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
-import style from "./make-generator/index.module.scss";
+import style from "./hmw-final/index.module.scss";
 
 class LetsMake extends React.Component {
   componentDidMount() {

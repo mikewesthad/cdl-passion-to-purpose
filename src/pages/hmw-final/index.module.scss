@@ -56,14 +56,35 @@
 }
 
 .passionInput {
-  text-align: center;
   border: 0;
   color: #fd940d;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 2.5rem;
-  overflow-wrap: break-word;
+}
 
+.purposeInput {
+  border: 0;
+  color: #2eb4ff;
+}
+
+.passionInputWrapper,
+.passionInput {
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  @media (min-width: 400px) {
+    font-size: 4rem;
+  }
+}
+
+//  Do this for passion as well:
+.purposeInputWrapper,
+.purposeInput {
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
   @media (min-width: 400px) {
     font-size: 4rem;
   }

@@ -397,6 +397,22 @@ class GameData {
     this.passion = passionString;
   });
 
+  editPassion = action(newPassionString => {
+    if (newPassionString == "") {
+      this.passionStore.responses[this.chosenPassionIndex] = "_____";
+    } else {
+      this.passionStore.responses[this.chosenPassionIndex] = newPassionString;
+    }
+  });
+
+  editPurpose = action(newPurposeString => {
+    if (newPurposeString == "") {
+      this.purposeStore.responses[this.chosenPurposeIndex] = "_____";
+    } else {
+      this.purposeStore.responses[this.chosenPurposeIndex] = newPurposeString;
+    }
+  });
+
   setMedium = action(mediumString => {
     this.medium = mediumString;
   });
@@ -467,6 +483,13 @@ class GameData {
     return this.purposeStore.responses.map(
       (purpose, i) =>
         this.purposeStore.questions[i].replace("I want to ", "").replace("...", "") + " " + purpose
+    );
+  }
+
+  //takes just the verb
+  getPurposeVerb() {
+    return this.purposeStore.responses.map((purpose, i) =>
+      this.purposeStore.questions[i].replace("I want to ", "").replace("...", "")
     );
   }
 
