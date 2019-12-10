@@ -21,6 +21,11 @@ class Generator extends React.Component {
     this.passion2 = React.createRef();
     this.passion3 = React.createRef();
     this.passion4 = React.createRef();
+
+    this.purpose1 = React.createRef();
+    this.purpose2 = React.createRef();
+    this.purpose3 = React.createRef();
+    this.purpose4 = React.createRef();
   }
 
   toggleHiddenPassion() {
@@ -92,26 +97,51 @@ class Generator extends React.Component {
       .to(this.passion3.current, 0, { y: -linesize * 2 }, 4.75)
       .to(this.passion4.current, 0, { y: -linesize * 2 }, 4.75)
 
-      .to(this.passion1.current, speed, { y: 0 }, 5);
-    /*
-    //Land on First Slot
-    .to(".box1", speed, { y: 0 }, 5)
-    .to(".box1", speed, { y: linesize }, 6) //box 1 down out of view
-    .to(".box1", 0, { y: -linesize * 2 }) //send box1 back to top
-    //Move second box down
-    .to(".box2", speed, { y: -linesize }, 6.5)
-    .to(".box2", speed, { y: 0 }, 7.5)
-    .to(".box2", 0, { y: -linesize * 3 }) //send box 2 back to top
-    //Move third box down
-    .to(".box3", speed, { y: -linesize * 2 }, 8)
-    .to(".box3", speed, { y: -linesize }, 9)
-    .to(".box3", 0, { y: -linesize * 4 }) //send box 3 back to top
-    //Move fourth box down
-    .to(".box4", speed, { y: -linesize * 3 }, 9.5)
-    .to(".box4", speed, { y: -linesize * 2 }, 10.5)
-    .to(".box4", 0, { y: -linesize * 5 })
-      
-*/
+      ///////////////////////////
+
+      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
+      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 0)
+      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 0)
+
+      //First 'Spin' down
+      .to(this.purpose1.current, speed, { y: linesize * 2 }, 0.5)
+      .to(this.purpose2.current, speed, { y: linesize * 2 }, 0.75)
+      .to(this.purpose3.current, speed, { y: linesize * 2 }, 1)
+      .to(this.purpose4.current, speed, { y: linesize * 2 }, 1.25)
+
+      //Back to top
+      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 1.75)
+      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 1.75)
+      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 1.75)
+      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 1.75)
+
+      //Second 'Spin' down
+      .to(this.purpose1.current, speed, { y: linesize * 2 }, 2)
+      .to(this.purpose2.current, speed, { y: linesize * 2 }, 2.25)
+      .to(this.purpose3.current, speed, { y: linesize * 2 }, 2.5)
+      .to(this.purpose4.current, speed, { y: linesize * 2 }, 2.75)
+
+      //Back to top
+      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 3.25)
+      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 3.25)
+      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 3.25)
+      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 3.25)
+
+      //Third 'Spin' down
+      .to(this.purpose1.current, speed, { y: linesize * 2 }, 3.5)
+      .to(this.purpose2.current, speed, { y: linesize * 2 }, 3.75)
+      .to(this.purpose3.current, speed, { y: linesize * 2 }, 4)
+      .to(this.purpose4.current, speed, { y: linesize * 2 }, 4.25)
+
+      //Back to top
+      .to(this.purpose1.current, 0, { y: -linesize * 2 }, 4.75)
+      .to(this.purpose2.current, 0, { y: -linesize * 2 }, 4.75)
+      .to(this.purpose3.current, 0, { y: -linesize * 2 }, 4.75)
+      .to(this.purpose4.current, 0, { y: -linesize * 2 }, 4.75)
+
+      .to(this.passion1.current, speed, { y: 0 }, 5)
+      .to(this.purpose1.current, speed, { y: 0 }, 5);
   }
 
   render() {
