@@ -10,7 +10,6 @@ export default class Timeline extends PureComponent {
     return (
       <div className={style.timelineContainer}>
         <OuterTimeline>
-          {/*{Chicken}*/}
           <TimelineFill />
         </OuterTimeline>
       </div>
