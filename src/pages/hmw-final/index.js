@@ -11,9 +11,9 @@ class Generator extends React.Component {
     super(props);
     const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
-  }
 
-  //gameData.saveToFirebase();
+    gameData.saveToFirebase();
+  }
 
   getNextCombination = () => {
     this.setState(prev => {
