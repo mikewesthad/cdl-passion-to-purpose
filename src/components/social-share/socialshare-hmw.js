@@ -28,7 +28,7 @@ class HMWSocialShare extends Component {
 
     return (
       <div>
-        <div className={style.callToAction}>Share your ideas!</div>
+        <div className={style.callToAction}>Share your "How might we" question!</div>
         <div className={style.shareButtons}>
           <TwitterShareButton
             className={style.shareButton}
