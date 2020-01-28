@@ -78,11 +78,8 @@ class Generator extends React.Component {
           question.
         </div>
 
-
-        <div className="generateButtonContainer" style={{ textAlign: "center" }}>
-          <Link className="button" to={nextRoute}>
-            Let's start brainstorming &#8594;
-          </Link>
+        <div className="text-center">
+          <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
       </Container>
     );
