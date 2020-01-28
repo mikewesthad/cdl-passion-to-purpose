@@ -33,8 +33,6 @@ const App = withRouter(
               onRestart={this.restart}
             />
 
-            <Timeline />
-
             <Analytics
               dummyLog={isDev}
               trackingId="UA-114340105-6"
