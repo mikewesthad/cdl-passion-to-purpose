@@ -44,27 +44,12 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
           <span className={style.generatedPassion}>
-            <AutosizeInput
-              className={style.passionInputWrapper}
-              inputClassName={style.passionInput}
-              type="text"
-              name="title"
-              value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
-              onChange={this.onPassionChange}
-            />
+            {gameData.passionStore.responses[gameData.chosenPassionIndex]}
           </span>
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>
-            {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
-            <AutosizeInput
-              className={style.purposeInputWrapper}
-              inputClassName={style.purposeInput}
-              type="text"
-              name="title"
-              value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
-              onChange={this.onPurposeChange}
-            />
-            ?
+            {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}{" "}
+            {gameData.purposeStore.responses[gameData.chosenPurposeIndex]}?
           </span>
         </div>
 
