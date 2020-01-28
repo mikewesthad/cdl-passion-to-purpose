@@ -68,14 +68,9 @@ class Generator extends React.Component {
           </span>
         </div>
 
-        <div className="text-center">
-          <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
-        </div>
-
         <div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
-          question. The next step in the process is to generate possible project ideas based on that
-          question.
+          question. The next step in the process is to share it out and get feedback!
         </div>
 
         <div className="text-center">
