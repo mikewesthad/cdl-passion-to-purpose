@@ -8,6 +8,8 @@ const percentage = {
 
 export default class Timeline extends PureComponent {
   render() {
+    console.log(this.props);
+    //const test = this.props; /* is this what i want to do ... idk */
     return (
       <div className={style.timelineContainer}>
         {/*{this.props.testing}*/}
