@@ -24,6 +24,7 @@ const App = withRouter(
 
     render() {
       const { location } = this.props;
+
       return (
         <Provider gameData={gameData}>
           <PageWrapper>
@@ -33,7 +34,7 @@ const App = withRouter(
               onRestart={this.restart}
             />
 
-            <Timeline />
+            <Timeline testing={{ width: "10%" }} />
 
             <Analytics
               dummyLog={isDev}
