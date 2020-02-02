@@ -7,7 +7,7 @@ export default class Timeline extends PureComponent {
     return (
       <div className={style.timelineContainer}>
         <div className={style.timeline}>
-          {this.props.children} <TimelineFill percentage={10} />
+          {this.props.children} <TimelineFill />
         </div>
       </div>
     );
