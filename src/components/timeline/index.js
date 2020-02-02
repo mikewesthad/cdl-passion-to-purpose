@@ -3,11 +3,12 @@ import style from "./index.module.scss";
 //import TimelineFill from "../timeline/inner-timeline";
 
 const percentage = {
-  width: "20%"
+  width: "10%"
 };
 
 export default class Timeline extends PureComponent {
   render() {
+    const test = this.props; /* is this what i want to do ... idk */
     return (
       <div className={style.timelineContainer}>
         <div className={style.timeline}>
