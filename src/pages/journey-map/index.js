@@ -171,8 +171,9 @@ class JourneyMap extends React.Component {
         </div>
 
         */}
-
-        <span className={style.bolded}>Congratulations on your great work!</span>
+        <div className={style.generatedQuestion}>
+          <span className={style.bolded}>Congratulations on your great work!</span>
+        </div>
         <hr />
         <form />
 
