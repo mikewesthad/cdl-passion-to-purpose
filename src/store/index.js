@@ -419,7 +419,6 @@ class GameData {
 
   setImpact = action(impactString => {
     this.impact = impactString;
-    console.log(impactString);
   });
 
   incrementPassionIndex = action(() => {

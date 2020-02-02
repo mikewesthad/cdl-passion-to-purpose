@@ -48,7 +48,6 @@ class Generator extends React.Component {
 
   storeP2P = () => {
     this.props.store.setPurpose(this.render.purpose);
-    console.log(this.render.purpose);
   };
 
   componentDidMount() {

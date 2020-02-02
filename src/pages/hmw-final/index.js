@@ -27,12 +27,10 @@ class Generator extends React.Component {
 
   onPassionChange = event => {
     this.props.gameData.editPassion(event.target.value);
-    console.log(event.target.value);
   };
 
   onPurposeChange = event => {
     this.props.gameData.editPurpose(event.target.value);
-    console.log(event.target.value);
   };
 
   render() {

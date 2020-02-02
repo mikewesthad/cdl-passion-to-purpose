@@ -21,7 +21,6 @@ class MediumPromptTemplate extends React.Component {
 
   onChange = event => {
     this.props.store.setMedium(event.target.value);
-    console.log(event.target.value);
   };
 
   render() {

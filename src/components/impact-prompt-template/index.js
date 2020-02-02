@@ -21,7 +21,6 @@ class ImpactPromptTemplate extends React.Component {
 
   onChange = event => {
     this.props.store.setAction(event.target.value);
-    console.log(event.target.value);
   };
 
   render() {
