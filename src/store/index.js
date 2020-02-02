@@ -398,19 +398,11 @@ class GameData {
   });
 
   editPassion = action(newPassionString => {
-    if (newPassionString == "") {
-      this.passionStore.responses[this.chosenPassionIndex] = "_____";
-    } else {
-      this.passionStore.responses[this.chosenPassionIndex] = newPassionString;
-    }
+    this.passionStore.responses[this.chosenPassionIndex] = newPassionString;
   });
 
   editPurpose = action(newPurposeString => {
-    if (newPurposeString == "") {
-      this.purposeStore.responses[this.chosenPurposeIndex] = "_____";
-    } else {
-      this.purposeStore.responses[this.chosenPurposeIndex] = newPurposeString;
-    }
+    this.purposeStore.responses[this.chosenPurposeIndex] = newPurposeString;
   });
 
   setMedium = action(mediumString => {
