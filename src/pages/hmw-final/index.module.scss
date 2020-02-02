@@ -72,6 +72,8 @@
   text-align: center;
   text-transform: uppercase;
   overflow-wrap: break-word;
+  border-bottom: 0.3rem solid;
+  min-width: 200px;
   @media (min-width: 400px) {
     font-size: 4rem;
   }
@@ -85,6 +87,8 @@
   text-align: center;
   text-transform: uppercase;
   overflow-wrap: break-word;
+  border-bottom: 0.3rem solid;
+  min-width: 200px;
   @media (min-width: 400px) {
     font-size: 4rem;
   }
