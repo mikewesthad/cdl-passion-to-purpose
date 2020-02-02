@@ -72,15 +72,14 @@ class Generator extends React.Component {
 
         <div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
-          question. The next step in the process is to generate possible project ideas based on that
-          question.
+          question! On the next page you'll see an overview of everything you've done so far.
         </div>
 
         <form />
 
         <div className="generateButtonContainer" style={{ textAlign: "center" }}>
           <Link className="button" to={nextRoute}>
-            Let's start brainstorming &#8594;
+            Continue &#8594;
           </Link>
         </div>
       </Container>
