@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
+import Filler from "../components/timeline/inner-timeline";
 
 export default function HMWContext(props) {
   return (
@@ -24,6 +25,7 @@ export default function HMWContext(props) {
           Continue &#8594;
         </Link>
       </div>
+      <Filler testing={{ width: "62.5%" }} />
     </Container>
   );
 }

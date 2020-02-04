@@ -1,6 +1,7 @@
 import React from "react";
 import { observer, inject } from "mobx-react";
 import PromptTemplate from "../components/prompt-template";
+import Filler from "../components/timeline/inner-timeline";
 
 class Passion extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class Passion extends React.Component {
         description={
           <React.Fragment>
             <p>Be as specific as you can and only provide one answer for each prompt.</p>
+            <Filler testing={{ width: "25%" }} />
           </React.Fragment>
         }
       />

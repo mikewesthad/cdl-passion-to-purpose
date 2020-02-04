@@ -5,6 +5,7 @@ import Container from "../../components/container";
 import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
+import Filler from "../../components/timeline/inner-timeline";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -82,6 +83,7 @@ class Generator extends React.Component {
             Continue &#8594;
           </Link>
         </div>
+        <Filler testing={{ width: "87.5%" }} />
       </Container>
     );
   }
