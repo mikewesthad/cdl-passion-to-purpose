@@ -5,7 +5,7 @@ import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
 import { TimelineLite } from "gsap/all";
-import Filler from "../../components/timeline/inner-timeline";
+import Timeline from "../../components/timeline";
 
 //
 class Generator extends React.Component {
@@ -210,7 +210,7 @@ class Generator extends React.Component {
             </Link>
           )}
         </div>
-        <Filler testing={{ width: "75%" }} />
+        <Timeline testing={{ width: "75%" }} />
       </GeneratorTemplate>
     );
   }

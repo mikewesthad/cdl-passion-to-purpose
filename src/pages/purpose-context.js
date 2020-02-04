@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
-import Filler from "../components/timeline/inner-timeline";
+import Timeline from "../components/timeline";
 
 export default function PurposeContext(props) {
   return (
@@ -18,7 +18,7 @@ export default function PurposeContext(props) {
           Continue &#8594;
         </Link>
       </div>
-      <Filler testing={{ width: "37.5%" }} />
+      <Timeline testing={{ width: "37.5%" }} />
     </Container>
   );
 }

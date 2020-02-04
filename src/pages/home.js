@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
 import Attribution from "../components/attribution";
-import Filler from "../components/timeline/inner-timeline";
+import Timeline from "../components/timeline";
 
 export default function Home(props) {
   return (
@@ -18,7 +18,7 @@ export default function Home(props) {
         </Link>
       </div>
       <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
-      <Filler testing={{ width: "0%" }} />
+      <Timeline testing={{ width: "0%" }} />
     </Container>
   );
 }

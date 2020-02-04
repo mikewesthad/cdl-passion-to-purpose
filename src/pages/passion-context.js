@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
-import Filler from "../components/timeline/inner-timeline";
+import Timeline from "../components/timeline";
 
 export default function PassionContext(props) {
   return (
@@ -17,7 +17,7 @@ export default function PassionContext(props) {
           Continue &#8594;
         </Link>
       </div>
-      <Filler testing={{ width: "12.5%" }} />
+      <Timeline testing={{ width: "12.5%" }} />
     </Container>
   );
 }

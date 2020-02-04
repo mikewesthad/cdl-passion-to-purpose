@@ -2,7 +2,7 @@ import React from "react";
 import { observer, inject } from "mobx-react";
 import PromptTemplate from "../components/prompt-template";
 import Checkbox from "../components/checkbox";
-import Filler from "../components/timeline/inner-timeline";
+import Timeline from "../components/timeline";
 
 class Purpose extends React.Component {
   togglePremissions = () => {
@@ -26,7 +26,7 @@ class Purpose extends React.Component {
         description={
           <React.Fragment>
             <p>Think about how you want to make an impact in the world.</p>
-            <Filler testing={{ width: "50%" }} />
+            <Timeline testing={{ width: "50%" }} />
           </React.Fragment>
         }
         afterPromptComponent={
