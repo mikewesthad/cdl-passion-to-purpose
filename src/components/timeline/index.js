@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import style from "./index.module.scss";
-//import TimelineFill from "../timeline/inner-timeline";
 
 export default class Timeline extends PureComponent {
   render() {
