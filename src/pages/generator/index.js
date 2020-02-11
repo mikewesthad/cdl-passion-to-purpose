@@ -55,7 +55,7 @@ class Generator extends React.Component {
   }
 
   nextPassion() {
-    var speed = 2;
+    var speed = 1;
     var linesize = 75;
 
     if (this.currentPassion === 0) {
@@ -68,7 +68,7 @@ class Generator extends React.Component {
         .to(this.passion0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
         .to(this.passion0.current, speed, { y: linesize * 2 }, 0) //move first passion down out of view
-        .to(this.passion1.current, speed, { y: -linesize }, 0.25) //bring second passion into view
+        .to(this.passion1.current, speed, { y: -linesize }, 0.1) //bring second passion into view
         .to(this.passion0.current, 0, { y: -linesize * 2 }); //teleport first passion up out of view
     }
 
@@ -82,7 +82,7 @@ class Generator extends React.Component {
         .to(this.passion1.current, 0, { y: -linesize }, 0)
 
         .to(this.passion1.current, speed, { y: linesize }, 0)
-        .to(this.passion2.current, speed, { y: -linesize * 2 }, 0.25)
+        .to(this.passion2.current, speed, { y: -linesize * 2 }, 0.1)
         .to(this.passion1.current, 0, { y: -linesize * 3 });
     }
     if (this.currentPassion === 2) {
@@ -95,7 +95,7 @@ class Generator extends React.Component {
         .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
 
         .to(this.passion2.current, speed, { y: 0 }, 0)
-        .to(this.passion3.current, speed, { y: -linesize * 3 }, 0.25)
+        .to(this.passion3.current, speed, { y: -linesize * 3 }, 0.1)
         .to(this.passion2.current, 0, { y: -linesize * 4 });
     }
     if (this.currentPassion === 3) {
@@ -108,7 +108,7 @@ class Generator extends React.Component {
         .to(this.passion3.current, 0, { y: -linesize * 3 }, 0)
 
         .to(this.passion3.current, speed, { y: -linesize }, 0)
-        .to(this.passion0.current, speed, { y: 0 }, 0.25)
+        .to(this.passion0.current, speed, { y: 0 }, 0.1)
         .to(this.passion3.current, 0, { y: -linesize * 5 });
     }
 
@@ -121,7 +121,7 @@ class Generator extends React.Component {
     console.log("Current passion: " + this.currentPassion);
   }
   nextPurpose() {
-    var speed = 2;
+    var speed = 0.5;
     var linesize = 75;
 
     if (this.currentPurpose === 0) {
@@ -211,7 +211,7 @@ class Generator extends React.Component {
   componentDidMount() {
     this.copyPassionsAndPurposes();
 
-    var speed = 2;
+    var speed = 1;
     var linesize = 250;
 
     this.shuffleTl
