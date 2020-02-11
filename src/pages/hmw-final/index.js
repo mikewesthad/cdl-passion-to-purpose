@@ -41,7 +41,7 @@ class Generator extends React.Component {
         {/*/<h1 className="title">Next Steps</h1>*/}
         <Confetti
           width={1920}
-          height={1080}
+          height={800}
           numberOfPieces={40}
           colors={["#2eb4ff", "#ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
           recycle={true}
