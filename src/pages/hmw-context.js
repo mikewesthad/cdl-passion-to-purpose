@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
-import Timeline from "../components/timeline";
 
 export default function HMWContext(props) {
   return (
@@ -25,7 +24,6 @@ export default function HMWContext(props) {
           Continue &#8594;
         </Link>
       </div>
-      <Timeline testing={{ width: "62.5%" }} />
     </Container>
   );
 }

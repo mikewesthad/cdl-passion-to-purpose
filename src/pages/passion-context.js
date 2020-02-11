@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/container";
-import Timeline from "../components/timeline";
 
 export default function PassionContext(props) {
   return (
@@ -17,7 +16,6 @@ export default function PassionContext(props) {
           Continue &#8594;
         </Link>
       </div>
-      <Timeline testing={{ width: "12.5%" }} />
     </Container>
   );
 }
