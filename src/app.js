@@ -21,9 +21,17 @@ const App = withRouter(
   class App extends Component {
     goBack = () => this.props.history.goBack();
     restart = () => this.props.history.push(routeMap.home.path);
+    findCurrentRoute() {
+      for (var i = 0; i < routes.length; i++) {
+        if (this.props.location.pathname === routes[i].path) {
+          return i;
+        }
+      }
+    }
 
     render() {
       const { location } = this.props;
+      console.log(this.findCurrentRoute());
 
       return (
         <Provider gameData={gameData}>
@@ -34,7 +42,7 @@ const App = withRouter(
               onRestart={this.restart}
             />
 
-            <Timeline testing={{ width: "0%" }} fill={Math.random()} />
+            <Timeline random={Math.random()} fill={this.findCurrentRoute() / routes.length} />
 
             <Analytics
               dummyLog={isDev}
