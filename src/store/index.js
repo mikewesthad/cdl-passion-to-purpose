@@ -555,11 +555,6 @@ const store = new GameData();
 //Testing;
 
 store.passionStore.setResponses(["food", "Lego", "video games", "beyonce"]);
-store.purposeStore.setResponses([
-  "immigration policies",
-  "police brutality",
-  "poverty in America",
-  "testing"
-]);
+store.purposeStore.setResponses(["equality", "rats", "poverty in America", "testing"]);
 
 export default store;
