@@ -58,9 +58,11 @@ class JourneyMap extends React.Component {
       //<div className="pdfContainer" ref={this.elementRef}>
       <Container>
         <h1 className="title">Journey Map</h1>
-        <button className={style.pdfButton} onClick={() => window.print()}>
-          Save as PDF
-        </button>
+        <div className={style.pdfButton}>
+          <button className={style.pdfButton} onClick={() => window.print()}>
+            Save as PDF
+          </button>
+        </div>
         <hr />
         {/* 
           <div className="title" ref={this.elementRef}>
