@@ -31,8 +31,6 @@ const App = withRouter(
 
     render() {
       const { location } = this.props;
-      console.log(this.findCurrentRoute());
-
       return (
         <Provider gameData={gameData}>
           <PageWrapper>
