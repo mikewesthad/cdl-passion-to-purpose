@@ -5,6 +5,7 @@ import Container from "../../components/container";
 import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
+import Confetti from "react-confetti";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -38,7 +39,13 @@ class Generator extends React.Component {
     return (
       <Container>
         {/*/<h1 className="title">Next Steps</h1>*/}
-
+        <Confetti
+          width={1920}
+          height={1080}
+          numberOfPieces={40}
+          colors={["#2eb4ff", "#ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
+          recycle={true}
+        />
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
           <span className={style.generatedPassion}>
