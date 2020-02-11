@@ -5,7 +5,6 @@ import Container from "../../components/container";
 import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
-import Timeline from "../../components/timeline";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -83,7 +82,6 @@ class Generator extends React.Component {
             Continue &#8594;
           </Link>
         </div>
-        <Timeline testing={{ width: "87.5%" }} />
       </Container>
     );
   }

@@ -5,7 +5,6 @@ import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
 import { TimelineLite } from "gsap/all";
-import Timeline from "../../components/timeline";
 
 //
 class Generator extends React.Component {
@@ -343,7 +342,6 @@ class Generator extends React.Component {
             </Link>
           )}
         </div>
-        <Timeline testing={{ width: "75%" }} />
       </GeneratorTemplate>
     );
   }
