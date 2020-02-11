@@ -27,18 +27,7 @@ const routes = [
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
-  { key: "hmw-final", path: "/hmw-final", Component: HMWFinal },
-  { key: "journey-map", path: "/journey-map", Component: JourneyMap },
-  { key: "medium-context", path: "/medium-context", Component: MediumContext },
-  { key: "medium", path: "/medium", Component: Medium },
-  { key: "media-disclaimer", path: "/media-disclaimer", Component: MediaDisclaimer },
-  { key: "media-cards", path: "/media-cards", Component: MediaCards },
-  { key: "impact-context", path: "/impact-context", Component: ImpactContext },
-  { key: "impact", path: "/impact", Component: Impact },
-  { key: "impact-cards", path: "/impact-cards", Component: ImpactCards },
-  { key: "lets-make-context", path: "/lets-make-context", Component: LMContext },
-  { key: "lets-make", path: "/lets-make", Component: LetsMake },
-  { key: "final-context", path: "/final-context", Component: FinalContext }
+  { key: "hmw-final", path: "/hmw-final", Component: HMWFinal }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
