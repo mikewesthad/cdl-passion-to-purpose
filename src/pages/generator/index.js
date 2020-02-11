@@ -31,42 +31,12 @@ class Generator extends React.Component {
 
     this.currentPassion = 0;
     this.currentPurpose = 0;
-    this.onClickPassionTL0 = new TimelineLite({
+    this.onClickPassionTL = new TimelineLite({
       onComplete: function() {
         this.clear();
       }
     });
-    this.onClickPassionTL1 = new TimelineLite({
-      onComplete: function() {
-        this.clear();
-      }
-    });
-    this.onClickPassionTL2 = new TimelineLite({
-      onComplete: function() {
-        this.clear();
-      }
-    });
-    this.onClickPassionTL3 = new TimelineLite({
-      onComplete: function() {
-        this.clear();
-      }
-    });
-    this.onClickPurposeTL0 = new TimelineLite({
-      onComplete: function() {
-        this.clear();
-      }
-    });
-    this.onClickPurposeTL1 = new TimelineLite({
-      onComplete: function() {
-        this.clear();
-      }
-    });
-    this.onClickPurposeTL2 = new TimelineLite({
-      onComplete: function() {
-        this.clear();
-      }
-    });
-    this.onClickPurposeTL3 = new TimelineLite({
+    this.onClickPurposeTL = new TimelineLite({
       onComplete: function() {
         this.clear();
       }
@@ -89,29 +59,57 @@ class Generator extends React.Component {
     var linesize = 75;
 
     if (this.currentPassion === 0) {
-      this.onClickPassionTL0
+      this.onClickPassionTL //teleport all not in view passions up out of view
+        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.passion0.current, 0, { y: 0 }, 0) //teleport in view passion into view
+
         .to(this.passion0.current, speed, { y: linesize * 2 }, 0) //move first passion down out of view
-        .to(this.passion1.current, speed, { y: -linesize }, 0.25)
+        .to(this.passion1.current, speed, { y: -linesize }, 0.25) //bring second passion into view
         .to(this.passion0.current, 0, { y: -linesize * 2 }); //teleport first passion up out of view
     }
 
     if (this.currentPassion === 1) {
-      this.onClickPassionTL1
-        .to(this.passion1.current, speed, { y: linesize * 3 }, 0) //move first passion down out of view
+      this.onClickPassionTL
+        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.passion1.current, 0, { y: -linesize }, 0)
+
+        .to(this.passion1.current, speed, { y: linesize }, 0)
         .to(this.passion2.current, speed, { y: -linesize * 2 }, 0.25)
-        .to(this.passion1.current, 0, { y: -linesize * 3 }); //teleport first passion up out of view
+        .to(this.passion1.current, 0, { y: -linesize * 3 });
     }
     if (this.currentPassion === 2) {
-      this.onClickPassionTL2
-        .to(this.passion2.current, speed, { y: linesize * 4 }, 0) //move first passion down out of view
+      this.onClickPassionTL
+        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
+
+        .to(this.passion2.current, speed, { y: 0 }, 0)
         .to(this.passion3.current, speed, { y: -linesize * 3 }, 0.25)
-        .to(this.passion2.current, 0, { y: -linesize * 4 }); //teleport first passion up out of view
+        .to(this.passion2.current, 0, { y: -linesize * 4 });
     }
     if (this.currentPassion === 3) {
-      this.onClickPassionTL3
-        .to(this.passion3.current, speed, { y: linesize * 5 }, 0) //move first passion down out of view
+      this.onClickPassionTL
+        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.passion3.current, 0, { y: -linesize * 3 }, 0)
+
+        .to(this.passion3.current, speed, { y: -linesize }, 0)
         .to(this.passion0.current, speed, { y: 0 }, 0.25)
-        .to(this.passion3.current, 0, { y: -linesize * 5 }); //teleport first passion up out of view
+        .to(this.passion3.current, 0, { y: -linesize * 5 });
     }
 
     if (this.currentPassion < this.props.gameData.passionStore.numQuestions - 1) {
@@ -119,6 +117,7 @@ class Generator extends React.Component {
     } else {
       this.currentPassion = 0;
     }
+
     console.log("Current passion: " + this.currentPassion);
   }
   nextPurpose() {
@@ -126,29 +125,57 @@ class Generator extends React.Component {
     var linesize = 75;
 
     if (this.currentPurpose === 0) {
-      this.onClickPurposeTL0
-        .to(this.purpose0.current, speed, { y: linesize * 2 }, 0) //move first passion down out of view
+      this.onClickPurposeTL //teleport all not in view passions up out of view
+        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.purpose0.current, 0, { y: 0 }, 0) //teleport in view passion into view
+
+        .to(this.purpose0.current, speed, { y: linesize * 2 }, 0)
         .to(this.purpose1.current, speed, { y: -linesize }, 0.25)
-        .to(this.purpose0.current, 0, { y: -linesize * 2 }); //teleport first passion up out of view
+        .to(this.purpose0.current, 0, { y: -linesize * 2 });
     }
 
     if (this.currentPurpose === 1) {
-      this.onClickPurposeTL1
-        .to(this.purpose1.current, speed, { y: linesize * 3 }, 0) //move first passion down out of view
+      this.onClickPurposeTL
+        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.purpose1.current, 0, { y: -linesize }, 0)
+
+        .to(this.purpose1.current, speed, { y: linesize }, 0)
         .to(this.purpose2.current, speed, { y: -linesize * 2 }, 0.25)
-        .to(this.purpose1.current, 0, { y: -linesize * 3 }); //teleport first passion up out of view
+        .to(this.purpose1.current, 0, { y: -linesize * 3 });
     }
     if (this.currentPurpose === 2) {
-      this.onClickPurposeTL2
-        .to(this.purpose2.current, speed, { y: linesize * 4 }, 0) //move first passion down out of view
+      this.onClickPurposeTL
+        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
+
+        .to(this.purpose2.current, speed, { y: 0 }, 0)
         .to(this.purpose3.current, speed, { y: -linesize * 3 }, 0.25)
-        .to(this.purpose2.current, 0, { y: -linesize * 4 }); //teleport first passion up out of view
+        .to(this.purpose2.current, 0, { y: -linesize * 4 });
     }
     if (this.currentPurpose === 3) {
-      this.onClickPurposeTL3
-        .to(this.purpose3.current, speed, { y: linesize * 5 }, 0) //move first passion down out of view
+      this.onClickPurposeTL
+        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+
+        .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
+
+        .to(this.purpose3.current, speed, { y: -linesize }, 0)
         .to(this.purpose0.current, speed, { y: 0 }, 0.25)
-        .to(this.purpose3.current, 0, { y: -linesize * 5 }); //teleport first passion up out of view
+        .to(this.purpose3.current, 0, { y: -linesize * 5 });
     }
 
     if (this.currentPurpose < this.props.gameData.purposeStore.numQuestions - 1) {
