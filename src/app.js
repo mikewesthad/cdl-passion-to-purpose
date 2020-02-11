@@ -34,7 +34,7 @@ const App = withRouter(
               onRestart={this.restart}
             />
 
-            <Timeline testing={{ width: "0%" }} />
+            <Timeline testing={{ width: "0%" }} fill={Math.random()} />
 
             <Analytics
               dummyLog={isDev}
