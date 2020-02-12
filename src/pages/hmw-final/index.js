@@ -83,12 +83,6 @@ class Generator extends React.Component {
         </div>
 
         <form />
-
-        <div className="generateButtonContainer" style={{ textAlign: "center" }}>
-          <Link className="button" to={nextRoute}>
-            Continue &#8594;
-          </Link>
-        </div>
       </Container>
     );
   }
