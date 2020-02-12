@@ -38,8 +38,13 @@ class Generator extends React.Component {
     const { gameData, nextRoute } = this.props;
     return (
       <Container>
-        {/*/<h1 className="title">Next Steps</h1>*/}
-        <Confetti />
+        <Confetti
+          width={20}
+          height={780}
+          numberOfPieces={40}
+          colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
+          recycle={true}
+        />
 
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>How might we use </span>
