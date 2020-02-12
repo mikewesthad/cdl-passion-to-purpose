@@ -1,18 +1,18 @@
 .timeline {
   width: 100%;
-  height: 2vh;
+  height: 0.4vh;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   background-color: darken(#2eb4ff, 20%);
 }
 
 .timelineFill {
   width: 100%;
-  height: 2vh;
+  height: 0.4vh;
   background-color: #2eb4ff;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   transform-origin: left center;
   transition: transform 2s ease;
