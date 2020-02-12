@@ -39,7 +39,7 @@ class Generator extends React.Component {
     return (
       <Container>
         <Confetti
-          width={20}
+          width={1000}
           height={780}
           numberOfPieces={40}
           colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
