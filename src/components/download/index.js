@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import Button from "../nav/button";
 import { ReactComponent as DownloadSvg } from "../../images/download.svg"; //previously restart.svg
 import style from "./index.module.scss";
-import JourneyMap from "../journey-map";
 
 export default class Nav extends PureComponent {
   printOrder = () => {
