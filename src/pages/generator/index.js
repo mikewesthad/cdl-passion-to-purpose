@@ -5,8 +5,8 @@ import GeneratorTemplate from "../../components/generator-template";
 import GenerateAttribution from "../../components/generator-attribution";
 import style from "./index.module.scss";
 import { TimelineLite } from "gsap/all";
+import { Textfit } from "react-textfit";
 
-//
 class Generator extends React.Component {
   constructor(props) {
     super(props);
@@ -313,18 +313,27 @@ class Generator extends React.Component {
               onClick={this.toggleHiddenPurpose.bind(this)}
             />
             <div className={style.overflowContainerPurpose}>
-              <span className={style.generatedPurpose} ref={this.purpose0}>
-                {purpose0}?
-              </span>
-              <span className={style.generatedPurpose} ref={this.purpose1}>
-                {purpose1}?
-              </span>
-              <span className={style.generatedPurpose} ref={this.purpose2}>
-                {purpose2}?
-              </span>
-              <span className={style.generatedPurpose} ref={this.purpose3}>
-                {purpose3}?
-              </span>
+              <Textfit mode="multi" className={style.purposeTesting}>
+                <span className={style.generatedPurpose} ref={this.purpose0}>
+                  {purpose0}?
+                </span>
+              </Textfit>
+              <Textfit mode="multi" className={style.purposeTesting}>
+                <span className={style.generatedPurpose} ref={this.purpose1}>
+                  {purpose1}?
+                </span>
+              </Textfit>
+              <Textfit mode="multi" className={style.purposeTesting}>
+                <span className={style.generatedPurpose} ref={this.purpose2}>
+                  {purpose2}?
+                </span>
+              </Textfit>
+
+              <Textfit mode="multi" className={style.purposeTesting}>
+                <span className={style.generatedPurpose} ref={this.purpose3}>
+                  {purpose3}?
+                </span>
+              </Textfit>
             </div>
           </div>
         </div>
