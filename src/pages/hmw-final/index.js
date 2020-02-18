@@ -6,6 +6,7 @@ import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
 import Confetti from "react-confetti";
+import DownloadButton from "../../components/download";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -76,13 +77,14 @@ class Generator extends React.Component {
         </div>
 
         <div className="text-center">
+          <DownloadButton />
           <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
 
-        <div className="description">
+        {/*<div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
           question! On the next page you'll see an overview of everything you've done so far.
-        </div>
+    </div>*/}
 
         <form />
       </Container>
