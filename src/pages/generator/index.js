@@ -55,7 +55,7 @@ class Generator extends React.Component {
   }
 
   nextPassion() {
-    var speed = 1;
+    var speed = 0.5;
     var linesize = 75;
 
     if (this.currentPassion === 0) {
@@ -211,96 +211,93 @@ class Generator extends React.Component {
   componentDidMount() {
     this.copyPassionsAndPurposes();
 
-    var speed = 1;
-    var linesize = 250;
+    var speed = 0.5;
+    var linesize = 75;
+    var startTime = 0.5;
+    var spacingTime = 0.15;
 
     this.shuffleTl
       .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
-      .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
-      .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
-      .to(this.passion3.current, 0, { y: -linesize * 2 }, 0)
+      .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
+      .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
+      .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
 
       //First 'Spin' down
-      .to(this.passion0.current, speed, { y: linesize * 2 }, 0.5)
-      .to(this.passion1.current, speed, { y: linesize * 2 }, 0.75)
-      .to(this.passion2.current, speed, { y: linesize * 2 }, 1)
-      .to(this.passion3.current, speed, { y: linesize * 2 }, 1.25)
+      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime)
+      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime)
+      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 2)
+      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 3)
 
       //Back to top
-      .to(this.passion0.current, 0, { y: -linesize * 2 }, 1.75)
-      .to(this.passion1.current, 0, { y: -linesize * 2 }, 1.75)
-      .to(this.passion2.current, 0, { y: -linesize * 2 }, 1.75)
-      .to(this.passion3.current, 0, { y: -linesize * 2 }, 1.75)
+      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 4)
+      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 5)
+      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 6)
+      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 7)
 
       //Second 'Spin' down
-      .to(this.passion0.current, speed, { y: linesize * 2 }, 2)
-      .to(this.passion1.current, speed, { y: linesize * 2 }, 2.25)
-      .to(this.passion2.current, speed, { y: linesize * 2 }, 2.5)
-      .to(this.passion3.current, speed, { y: linesize * 2 }, 2.75)
+      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 5)
+      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime * 6)
+      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 7)
+      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 8)
 
       //Back to top
-      .to(this.passion0.current, 0, { y: -linesize * 2 }, 3.25)
-      .to(this.passion1.current, 0, { y: -linesize * 2 }, 3.25)
-      .to(this.passion2.current, 0, { y: -linesize * 2 }, 3.25)
-      .to(this.passion3.current, 0, { y: -linesize * 2 }, 3.25)
+      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 9)
+      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 10)
+      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 11)
+      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 12)
 
-      //Third 'Spin' down
-      .to(this.passion0.current, speed, { y: linesize * 2 }, 3.5)
-      .to(this.passion1.current, speed, { y: linesize * 2 }, 3.75)
-      .to(this.passion2.current, speed, { y: linesize * 2 }, 4)
-      .to(this.passion3.current, speed, { y: linesize * 2 }, 4.25)
+      //Second 'Spin' down
+      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 10)
+      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime * 11)
+      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 12)
+      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 13)
 
       //Back to top
-      .to(this.passion0.current, 0, { y: -linesize * 2 }, 4.75)
-      .to(this.passion1.current, 0, { y: -linesize * 2 }, 4.75)
-      .to(this.passion2.current, 0, { y: -linesize * 2 }, 4.75)
-      .to(this.passion3.current, 0, { y: -linesize * 2 }, 4.75)
+      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 14)
+      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 15)
+      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 16)
+      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 17)
+
+      .to(this.passion0.current, speed, { y: 0 }, startTime + spacingTime * 15)
 
       /////////////////////////// PURPOSE ////////////////////////////
 
-      .to(this.purpose0.current, 0, { y: -linesize * 3 }, 0)
+      .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
       .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
-      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
-      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
+      .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
+      .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+      //First 'purposeown
+      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime)
+      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime)
+      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 2)
+      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 3)
+      //Back topurpose
+      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 4)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 5)
+      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 6)
+      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 7)
+      //Second purposedown
+      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 5)
+      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime * 6)
+      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 7)
+      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 8)
+      //Back topurpose
+      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 9)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 10)
+      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 11)
+      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 12)
+      //Second purposedown
+      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 10)
+      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime * 11)
+      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 12)
+      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 13)
+      //Back topurpose
+      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 14)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 15)
+      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 16)
+      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 17)
 
-      //First 'Spin' down
-      .to(this.purpose0.current, speed, { y: linesize * 3 }, 0.5)
-      .to(this.purpose1.current, speed, { y: linesize * 3 }, 0.75)
-      .to(this.purpose2.current, speed, { y: linesize * 3 }, 1)
-      .to(this.purpose3.current, speed, { y: linesize * 3 }, 1.25)
-
-      //Back to top
-      .to(this.purpose0.current, 0, { y: -linesize * 3 }, 1.75)
-      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 1.75)
-      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 1.75)
-      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 1.75)
-
-      //Second 'Spin' down
-      .to(this.purpose0.current, speed, { y: linesize * 3 }, 2)
-      .to(this.purpose1.current, speed, { y: linesize * 3 }, 2.25)
-      .to(this.purpose2.current, speed, { y: linesize * 3 }, 2.5)
-      .to(this.purpose3.current, speed, { y: linesize * 3 }, 2.75)
-
-      //Back to top
-      .to(this.purpose0.current, 0, { y: -linesize * 3 }, 3.25)
-      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 3.25)
-      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 3.25)
-      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 3.25)
-
-      //Third 'Spin' down
-      .to(this.purpose0.current, speed, { y: linesize * 3 }, 3.5)
-      .to(this.purpose1.current, speed, { y: linesize * 3 }, 3.75)
-      .to(this.purpose2.current, speed, { y: linesize * 3 }, 4)
-      .to(this.purpose3.current, speed, { y: linesize * 3 }, 4.25)
-
-      //Back to top
-      .to(this.purpose0.current, 0, { y: -linesize * 3 }, 4.75)
-      .to(this.purpose1.current, 0, { y: -linesize * 3 }, 4.75)
-      .to(this.purpose2.current, 0, { y: -linesize * 3 }, 4.75)
-      .to(this.purpose3.current, 0, { y: -linesize * 3 }, 4.75)
-
-      .to(this.passion0.current, speed, { y: 0 }, 5)
-      .to(this.purpose0.current, speed, { y: 0 }, 5);
+      .to(this.purpose0.current, speed, { y: 0 }, startTime + spacingTime * 15);
 
     console.log("Current passion: " + this.currentPassion);
   }
