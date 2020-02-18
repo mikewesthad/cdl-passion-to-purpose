@@ -56,6 +56,7 @@ class Generator extends React.Component {
               name="title"
               value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
               onChange={this.onPassionChange}
+              autoComplete="off"
             />
           </span>
           <span className={style.bolded}> to </span>
@@ -68,6 +69,7 @@ class Generator extends React.Component {
               name="title"
               value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
               onChange={this.onPurposeChange}
+              autoComplete="off"
             />
             ?
           </span>
