@@ -46,11 +46,9 @@ class Generator extends React.Component {
   copyPassionsAndPurposes() {
     for (var i = 0; i < this.props.gameData.passionStore.responses.length; i++) {
       this.passions[i] = this.props.gameData.passionStore.responses[i];
-      console.log("passion " + [i] + ": " + this.passions[i]);
     }
     for (var i = 0; i < this.props.gameData.getPurposesWithVerb().length; i++) {
       this.purposes[i] = this.props.gameData.getPurposesWithVerb()[i];
-      console.log("purpose " + [i] + ": " + this.purposes[i]);
     }
   }
 
@@ -105,8 +103,6 @@ class Generator extends React.Component {
     } else {
       this.currentPassion = 0;
     }
-
-    console.log("Current passion: " + this.currentPassion);
   }
   nextPurpose() {
     var speed = 0.5;
@@ -159,7 +155,6 @@ class Generator extends React.Component {
     } else {
       this.currentPurpose = 0;
     }
-    console.log("Current purpose: " + this.currentPurpose);
   }
 
   toggleHiddenPassion() {
@@ -274,8 +269,6 @@ class Generator extends React.Component {
       .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 17)
 
       .to(this.purpose0.current, speed, { y: 0 }, startTime + spacingTime * 15);
-
-    console.log("Current passion: " + this.currentPassion);
   }
 
   render() {
