@@ -59,11 +59,8 @@ class Generator extends React.Component {
     var linesize = 75;
 
     if (this.currentPassion === 0) {
-      this.onClickPassionTL //teleport all not in view passions up out of view
-        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+      this.onClickPassionTL
+        .seek(2)
 
         .to(this.passion0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
@@ -74,10 +71,7 @@ class Generator extends React.Component {
 
     if (this.currentPassion === 1) {
       this.onClickPassionTL
-        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+        .seek(2)
 
         .to(this.passion1.current, 0, { y: -linesize }, 0)
 
@@ -87,10 +81,7 @@ class Generator extends React.Component {
     }
     if (this.currentPassion === 2) {
       this.onClickPassionTL
-        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+        .seek(2)
 
         .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
 
@@ -100,10 +91,7 @@ class Generator extends React.Component {
     }
     if (this.currentPassion === 3) {
       this.onClickPassionTL
-        .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 5 }, 0)
+        .seek(2)
 
         .to(this.passion3.current, 0, { y: -linesize * 3 }, 0)
 
@@ -125,11 +113,8 @@ class Generator extends React.Component {
     var linesize = 75;
 
     if (this.currentPurpose === 0) {
-      this.onClickPurposeTL //teleport all not in view passions up out of view
-        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+      this.onClickPurposeTL
+        .seek(2)
 
         .to(this.purpose0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
@@ -140,10 +125,7 @@ class Generator extends React.Component {
 
     if (this.currentPurpose === 1) {
       this.onClickPurposeTL
-        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+        .seek(2)
 
         .to(this.purpose1.current, 0, { y: -linesize }, 0)
 
@@ -153,10 +135,7 @@ class Generator extends React.Component {
     }
     if (this.currentPurpose === 2) {
       this.onClickPurposeTL
-        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+        .seek(2)
 
         .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
 
@@ -166,10 +145,7 @@ class Generator extends React.Component {
     }
     if (this.currentPurpose === 3) {
       this.onClickPurposeTL
-        .to(this.purpose0.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 4 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 5 }, 0)
+        .seek(2)
 
         .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
 
