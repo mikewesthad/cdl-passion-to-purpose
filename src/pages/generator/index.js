@@ -312,28 +312,21 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPurpose.bind(this)}
             />
-            <div className={style.overflowContainerPurpose}>
-              <Textfit mode="multi" className={style.purposeTesting}>
-                <span className={style.generatedPurpose} ref={this.purpose0}>
-                  {purpose0}?
-                </span>
-              </Textfit>
-              <Textfit mode="multi" className={style.purposeTesting}>
-                <span className={style.generatedPurpose} ref={this.purpose1}>
-                  {purpose1}?
-                </span>
-              </Textfit>
-              <Textfit mode="multi" className={style.purposeTesting}>
-                <span className={style.generatedPurpose} ref={this.purpose2}>
-                  {purpose2}?
-                </span>
-              </Textfit>
-
-              <Textfit mode="multi" className={style.purposeTesting}>
-                <span className={style.generatedPurpose} ref={this.purpose3}>
-                  {purpose3}?
-                </span>
-              </Textfit>
+            <div className={style.giantTesting}>
+              <div className={style.overflowContainerPurpose}>
+                <Textfit mode="multi" className={style.purposeTesting}>
+                  <span ref={this.purpose0}>{purpose0}</span>
+                </Textfit>
+                <Textfit mode="multi" className={style.purposeTesting}>
+                  <span ref={this.purpose1}>{purpose1}</span>
+                </Textfit>
+                <Textfit mode="multi" className={style.purposeTesting}>
+                  <span ref={this.purpose2}>{purpose2}?</span>
+                </Textfit>
+                <Textfit mode="multi" className={style.purposeTesting}>
+                  <span ref={this.purpose3}>{purpose3}?</span>
+                </Textfit>
+              </div>
             </div>
           </div>
         </div>
