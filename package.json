@@ -5,6 +5,7 @@
   "dependencies": {
     "all": "0.0.0",
     "classnames": "^2.2.6",
+    "docx": "^5.0.2",
     "dotenv": "^6.2.0",
     "firebase": "^6.6.0",
     "gh-pages": "^2.0.1",

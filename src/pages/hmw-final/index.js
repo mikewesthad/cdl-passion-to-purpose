@@ -35,6 +35,8 @@ class Generator extends React.Component {
     this.props.gameData.editPurpose(event.target.value);
   };
 
+  // PDF download
+
   render() {
     const { gameData, nextRoute } = this.props;
     return (
