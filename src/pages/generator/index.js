@@ -54,48 +54,71 @@ class Generator extends React.Component {
 
   nextPassion() {
     var speed = 0.5;
-    var linesize = 75;
+    var linesize = 80;
+    if (window.innerWidth <= 800) {
+      linesize = 70;
+    }
 
     if (this.currentPassion === 0) {
       this.onClickPassionTL
         .seek(2)
 
+        .to(this.passion0.current, 0, { y: -linesize }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.passion0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
-        .to(this.passion0.current, speed, { y: linesize * 2 }, 0) //move first passion down out of view
-        .to(this.passion1.current, speed, { y: -linesize }, 0.1) //bring second passion into view
-        .to(this.passion0.current, 0, { y: -linesize * 2 }); //teleport first passion up out of view
+        .to(this.passion1.current, speed, { y: -linesize }, 0) //bring second passion into view
+        .to(this.passion0.current, speed / 1.5, { y: linesize }, 0.25) //move first passion down out of view
+        .to(this.passion0.current, 0, { y: -linesize }, 0.5); //teleport first passion up out of view
     }
 
     if (this.currentPassion === 1) {
       this.onClickPassionTL
         .seek(2)
 
+        .to(this.passion0.current, 0, { y: -linesize }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.passion1.current, 0, { y: -linesize }, 0)
 
-        .to(this.passion1.current, speed, { y: linesize }, 0)
-        .to(this.passion2.current, speed, { y: -linesize * 2 }, 0.1)
-        .to(this.passion1.current, 0, { y: -linesize * 3 });
+        .to(this.passion2.current, speed, { y: -linesize * 2 }, 0)
+        .to(this.passion1.current, speed / 1.5, { y: 0 }, 0.25)
+        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0.5);
     }
     if (this.currentPassion === 2) {
       this.onClickPassionTL
         .seek(2)
 
+        .to(this.passion0.current, 0, { y: -linesize }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
 
-        .to(this.passion2.current, speed, { y: 0 }, 0)
-        .to(this.passion3.current, speed, { y: -linesize * 3 }, 0.1)
-        .to(this.passion2.current, 0, { y: -linesize * 4 });
+        .to(this.passion3.current, speed, { y: -linesize * 3 }, 0)
+        .to(this.passion2.current, speed / 1.5, { y: -linesize }, 0.25)
+        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0.5);
     }
     if (this.currentPassion === 3) {
       this.onClickPassionTL
         .seek(2)
 
+        .to(this.passion0.current, 0, { y: -linesize }, 0)
+        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.passion3.current, 0, { y: -linesize * 3 }, 0)
 
-        .to(this.passion3.current, speed, { y: -linesize }, 0)
-        .to(this.passion0.current, speed, { y: 0 }, 0.1)
-        .to(this.passion3.current, 0, { y: -linesize * 5 });
+        .to(this.passion0.current, speed, { y: 0 }, 0)
+        .to(this.passion3.current, speed / 1.5, { y: -linesize * 2 }, 0.25)
+        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0.5);
     }
 
     if (this.currentPassion < this.props.gameData.passionStore.numQuestions - 1) {
@@ -106,48 +129,71 @@ class Generator extends React.Component {
   }
   nextPurpose() {
     var speed = 0.5;
-    var linesize = 75;
+    var linesize = 80;
+    if (window.innerWidth <= 800) {
+      linesize = 70;
+    }
 
     if (this.currentPurpose === 0) {
       this.onClickPurposeTL
         .seek(2)
 
+        .to(this.purpose0.current, 0, { y: -linesize }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.purpose0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
-        .to(this.purpose0.current, speed, { y: linesize * 2 }, 0)
-        .to(this.purpose1.current, speed, { y: -linesize }, 0.25)
-        .to(this.purpose0.current, 0, { y: -linesize * 2 });
+        .to(this.purpose1.current, speed, { y: -linesize }, 0) //bring second passion into view
+        .to(this.purpose0.current, speed / 1.5, { y: linesize }, 0.25) //move first passion down out of view
+        .to(this.purpose0.current, 0, { y: -linesize }, 0.5); //teleport first passion up out of view
     }
 
     if (this.currentPurpose === 1) {
       this.onClickPurposeTL
         .seek(2)
 
+        .to(this.purpose0.current, 0, { y: -linesize }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.purpose1.current, 0, { y: -linesize }, 0)
 
-        .to(this.purpose1.current, speed, { y: linesize }, 0)
-        .to(this.purpose2.current, speed, { y: -linesize * 2 }, 0.25)
-        .to(this.purpose1.current, 0, { y: -linesize * 3 });
+        .to(this.purpose2.current, speed, { y: -linesize * 2 }, 0)
+        .to(this.purpose1.current, speed / 1.5, { y: 0 }, 0.25)
+        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0.5);
     }
     if (this.currentPurpose === 2) {
       this.onClickPurposeTL
         .seek(2)
 
+        .to(this.purpose0.current, 0, { y: -linesize }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
 
-        .to(this.purpose2.current, speed, { y: 0 }, 0)
-        .to(this.purpose3.current, speed, { y: -linesize * 3 }, 0.25)
-        .to(this.purpose2.current, 0, { y: -linesize * 4 });
+        .to(this.purpose3.current, speed, { y: -linesize * 3 }, 0)
+        .to(this.purpose2.current, speed / 1.5, { y: -linesize }, 0.25)
+        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0.5);
     }
     if (this.currentPurpose === 3) {
       this.onClickPurposeTL
         .seek(2)
 
+        .to(this.purpose0.current, 0, { y: -linesize }, 0)
+        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+
         .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
 
-        .to(this.purpose3.current, speed, { y: -linesize }, 0)
-        .to(this.purpose0.current, speed, { y: 0 }, 0.25)
-        .to(this.purpose3.current, 0, { y: -linesize * 5 });
+        .to(this.purpose0.current, speed, { y: 0 }, 0)
+        .to(this.purpose3.current, speed / 1.5, { y: -linesize * 2 }, 0.25)
+        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0.5);
     }
 
     if (this.currentPurpose < this.props.gameData.purposeStore.numQuestions - 1) {
@@ -161,8 +207,10 @@ class Generator extends React.Component {
     if (this.state.isHidden) {
       this.setState({ isHidden: !this.state.isHidden });
       this.nextPassion();
+      this.props.gameData.incrementPassionIndex();
     } else {
       this.nextPassion();
+      this.props.gameData.incrementPassionIndex();
     }
   }
 
@@ -170,8 +218,10 @@ class Generator extends React.Component {
     if (this.state.isHidden) {
       this.setState({ isHidden: !this.state.isHidden });
       this.nextPurpose();
+      this.props.gameData.incrementPurposeIndex();
     } else {
       this.nextPurpose();
+      this.props.gameData.incrementPurposeIndex();
     }
   }
 
@@ -183,9 +233,13 @@ class Generator extends React.Component {
     this.copyPassionsAndPurposes();
 
     var speed = 0.5;
-    var linesize = 75;
+    var linesize = 80;
     var startTime = 0.5;
     var spacingTime = 0.15;
+
+    if (window.innerWidth <= 800) {
+      linesize = 70;
+    }
 
     this.shuffleTl
       .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
@@ -282,6 +336,9 @@ class Generator extends React.Component {
     const purpose2 = this.purposes[2];
     const purpose3 = this.purposes[3];
 
+    console.log("window inner width: " + window.innerWidth);
+    console.log("is mobile device: " + this.isMobileDevice);
+
     return (
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
@@ -291,19 +348,21 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPassion.bind(this)}
             />
-            <div className={style.overflowContainer}>
-              <span className={style.generatedPassion} ref={this.passion0}>
-                {passion0}
-              </span>
-              <span className={style.generatedPassion} ref={this.passion1}>
-                {passion1}
-              </span>
-              <span className={style.generatedPassion} ref={this.passion2}>
-                {passion2}
-              </span>
-              <span className={style.generatedPassion} ref={this.passion3}>
-                {passion3}
-              </span>
+            <div className={style.giantTestingPassion}>
+              <div className={style.overflowContainer}>
+                <span className={style.passionTesting} ref={this.passion0}>
+                  {passion0}
+                </span>
+                <span className={style.passionTesting} ref={this.passion1}>
+                  {passion1}
+                </span>
+                <span className={style.passionTesting} ref={this.passion2}>
+                  {passion2}
+                </span>
+                <span className={style.passionTesting} ref={this.passion3}>
+                  {passion3}
+                </span>
+              </div>
             </div>
           </div>
           <span className={style.hmwPreset}>to</span>
@@ -312,20 +371,28 @@ class Generator extends React.Component {
               className={style.generatedButton}
               onClick={this.toggleHiddenPurpose.bind(this)}
             />
-            <div className={style.giantTesting}>
+            <div className={style.giantTestingPurpose}>
               <div className={style.overflowContainerPurpose}>
-                <Textfit mode="multi" className={style.purposeTesting}>
-                  <span ref={this.purpose0}>{purpose0}</span>
-                </Textfit>
-                <Textfit mode="multi" className={style.purposeTesting}>
-                  <span ref={this.purpose1}>{purpose1}</span>
-                </Textfit>
-                <Textfit mode="multi" className={style.purposeTesting}>
-                  <span ref={this.purpose2}>{purpose2}?</span>
-                </Textfit>
-                <Textfit mode="multi" className={style.purposeTesting}>
-                  <span ref={this.purpose3}>{purpose3}?</span>
-                </Textfit>
+                <div ref={this.purpose0}>
+                  <Textfit mode="multi" className={style.purposeTesting}>
+                    <span>{purpose0}</span>
+                  </Textfit>
+                </div>
+                <div ref={this.purpose1}>
+                  <Textfit mode="multi" className={style.purposeTesting}>
+                    <span>{purpose1}</span>
+                  </Textfit>
+                </div>
+                <div ref={this.purpose2}>
+                  <Textfit mode="multi" className={style.purposeTesting}>
+                    <span>{purpose2}</span>
+                  </Textfit>
+                </div>
+                <div ref={this.purpose3}>
+                  <Textfit mode="multi" className={style.purposeTesting}>
+                    <span>{purpose3}</span>
+                  </Textfit>
+                </div>
               </div>
             </div>
           </div>

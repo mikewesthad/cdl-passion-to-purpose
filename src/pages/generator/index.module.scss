@@ -31,19 +31,33 @@
 .overflowContainer {
   overflow-y: hidden;
   display: inline-grid;
-  width: 90%;
+  //border: 1px solid blue;
+  margin-left: 1rem;
+
+  width: 80%;
   height: 5rem;
 }
 
-.giantTesting {
+.giantTestingPurpose {
   display: inline-flex;
   width: 80%;
 }
-
+.giantTestingPassion {
+  display: inline-flex;
+  width: 80%;
+}
 .purposeTesting {
   color: #2eb4ff;
   height: 5rem;
-  border: 1px solid red;
+  //border: 1px solid red;
+  text-decoration: underline;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.passionTesting {
+  color: #fd940d;
+  height: 5rem;
+  // border: 1px solid green;
   text-decoration: underline;
   font-weight: 900;
   text-transform: uppercase;
@@ -51,6 +65,8 @@
 
 .overflowContainerPurpose {
   overflow-y: hidden;
+  //border: 1px solid blue;
+
   width: 80%;
   margin-left: 1rem;
   height: 5rem;
