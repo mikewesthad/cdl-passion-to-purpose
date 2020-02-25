@@ -42,8 +42,17 @@ class Generator extends React.Component {
     return (
       <Container>
         <Confetti
-          numberOfPieces={1000}
+          confettiSource={{ x: 0, y: 0, w: 5, h: 0 }}
+          numberOfPieces={300}
           initialVelocityX={100}
+          initialVelocityY={-100}
+          colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
+          recycle={false}
+        />
+        <Confetti
+          confettiSource={{ x: window.innerWidth, y: 0, w: 5, h: 0 }}
+          numberOfPieces={300}
+          initialVelocityX={-100}
           initialVelocityY={-100}
           colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
           recycle={false}
