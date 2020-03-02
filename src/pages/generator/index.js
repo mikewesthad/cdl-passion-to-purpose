@@ -354,13 +354,13 @@ class Generator extends React.Component {
                   <div className={style.passionIndividual}>{passion0}</div>
                 </span>
                 <span className={style.passionAnimation} ref={this.passion1}>
-                  <div className={style.passionIndividual}>{passion1}</div>
+                  <div className={style.passionIndividual}>{passion0}</div>
                 </span>
                 <span className={style.passionAnimation} ref={this.passion2}>
-                  <div className={style.passionIndividual}>{passion2}</div>
+                  <div className={style.passionIndividual}>{passion0}</div>
                 </span>
                 <span className={style.passionAnimation} ref={this.passion3}>
-                  <div className={style.passionIndividual}>{passion3}</div>
+                  <div className={style.passionIndividual}>{passion0}</div>
                 </span>
               </div>
             </div>
@@ -375,22 +375,30 @@ class Generator extends React.Component {
               <div className={style.overflowContainerPurpose}>
                 <div ref={this.purpose0}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <span>{purpose0}</span>
+                    <div className={style.fuck}>
+                      <span className={style.purposeIndividual}>{purpose2}</span>
+                    </div>
                   </Textfit>
                 </div>
                 <div ref={this.purpose1}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <span>{purpose1}</span>
+                    <div className={style.fuck}>
+                      <span className={style.purposeIndividual}>{purpose2}</span>
+                    </div>
                   </Textfit>
                 </div>
                 <div ref={this.purpose2}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <span>{purpose2}</span>
+                    <div className={style.fuck}>
+                      <span className={style.purposeIndividual}>{purpose2}</span>
+                    </div>
                   </Textfit>
                 </div>
                 <div ref={this.purpose3}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <span>{purpose3}</span>
+                    <div className={style.fuck}>
+                      <span className={style.purposeIndividual}>{purpose2}</span>
+                    </div>
                   </Textfit>
                 </div>
               </div>

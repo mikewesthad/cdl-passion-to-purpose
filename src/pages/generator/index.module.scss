@@ -29,24 +29,28 @@
   display: flex;
 }
 
-.overflowContainer {
-  overflow-y: hidden;
-  display: inline-grid;
-  //border: 1px solid blue;
-  margin-left: 1rem;
-
-  //width: 80%;
+.purposeContainer {
   height: 5rem;
+  display: flex;
 }
 
 .giantTestingPurpose {
-  display: inline-flex;
-  width: 80%;
+  //display: inline-flex;
+  //width: 100%;
+  flex-basis: auto;
+  flex: grow;
 }
 .giantTestingPassion {
   flex-basis: auto;
   flex: grow;
 }
+
+.passionTextfit {
+  border: 1px solid red;
+  height: 5rem;
+  //position: absolute;
+}
+
 .purposeTesting {
   color: #2eb4ff;
   height: 5rem;
@@ -54,7 +58,11 @@
   text-decoration: underline;
   font-weight: 900;
   text-transform: uppercase;
+  display: flex;
+  flex-basis: auto;
+  flex: grow;
 }
+
 .passionAnimation {
   color: #fd940d;
   height: 5rem;
@@ -63,21 +71,42 @@
   flex-basis: auto;
   flex: grow;
   position: relative;
+
+  display: flex;
+  border: 1px solid red;
 }
 
 .passionIndividual {
   height: fit-content;
+  border: 1px green solid;
   top: 50%;
-  position: inherit;
   transform: translateY(-50%);
-  text-decoration: underline;
+  position: relative;
+  //text-decoration: underline;
+}
+
+.purposeIndividual {
+  height: fit-content;
+  border: 1px green solid;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.overflowContainer {
+  overflow-y: hidden;
+  //display: inline-grid;
+  //border: 1px solid blue;
+  margin-left: 1rem;
+
+  //width: 80%;
+  height: 5rem;
 }
 
 .overflowContainerPurpose {
   overflow-y: hidden;
-  //border: 1px solid blue;
-
-  width: 80%;
+  border: 1px solid blue;
+  width: 100%;
   margin-left: 1rem;
   height: 5rem;
 }
