@@ -26,6 +26,7 @@
 
 .passionContainer {
   height: 5rem;
+  display: flex;
 }
 
 .overflowContainer {
@@ -34,7 +35,7 @@
   //border: 1px solid blue;
   margin-left: 1rem;
 
-  width: 80%;
+  //width: 80%;
   height: 5rem;
 }
 
@@ -43,8 +44,8 @@
   width: 80%;
 }
 .giantTestingPassion {
-  display: inline-flex;
-  width: 80%;
+  flex-basis: auto;
+  flex: grow;
 }
 .purposeTesting {
   color: #2eb4ff;
@@ -54,13 +55,22 @@
   font-weight: 900;
   text-transform: uppercase;
 }
-.passionTesting {
+.passionAnimation {
   color: #fd940d;
   height: 5rem;
-  // border: 1px solid green;
-  text-decoration: underline;
   font-weight: 900;
   text-transform: uppercase;
+  flex-basis: auto;
+  flex: grow;
+  position: relative;
+}
+
+.passionIndividual {
+  height: fit-content;
+  top: 50%;
+  position: inherit;
+  transform: translateY(-50%);
+  text-decoration: underline;
 }
 
 .overflowContainerPurpose {

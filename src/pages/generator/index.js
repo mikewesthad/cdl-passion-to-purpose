@@ -350,17 +350,17 @@ class Generator extends React.Component {
             />
             <div className={style.giantTestingPassion}>
               <div className={style.overflowContainer}>
-                <span className={style.passionTesting} ref={this.passion0}>
-                  {passion0}
+                <span className={style.passionAnimation} ref={this.passion0}>
+                  <div className={style.passionIndividual}>{passion0}</div>
                 </span>
-                <span className={style.passionTesting} ref={this.passion1}>
-                  {passion1}
+                <span className={style.passionAnimation} ref={this.passion1}>
+                  <div className={style.passionIndividual}>{passion1}</div>
                 </span>
-                <span className={style.passionTesting} ref={this.passion2}>
-                  {passion2}
+                <span className={style.passionAnimation} ref={this.passion2}>
+                  <div className={style.passionIndividual}>{passion2}</div>
                 </span>
-                <span className={style.passionTesting} ref={this.passion3}>
-                  {passion3}
+                <span className={style.passionAnimation} ref={this.passion3}>
+                  <div className={style.passionIndividual}>{passion3}</div>
                 </span>
               </div>
             </div>
