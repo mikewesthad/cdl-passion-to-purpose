@@ -83,13 +83,13 @@
 }
 
 .generatedButton {
+  width: 3rem;
+  height: 5rem;
   margin-top: 0;
   user-select: none;
   display: inline;
-
-  @media (min-width: 400px) {
-    margin-top: 1rem;
-  }
+  border: 1px solid red;
+  position: relative;
 }
 
 ul {
