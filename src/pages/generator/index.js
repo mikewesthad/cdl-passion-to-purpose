@@ -10,7 +10,7 @@ import { Textfit } from "react-textfit";
 class Generator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isHidden: true };
+    this.state = { isHidden: true, isAnimating: true };
     const gameData = this.props.gameData;
     gameData.shufflePassions();
     gameData.shufflePurposes();
@@ -329,7 +329,17 @@ class Generator extends React.Component {
       .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 15)
 
       .to(this.shuffleButtonPassion.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
-      .to(this.shuffleButtonPurpose.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
+      .to(
+        this.shuffleButtonPurpose.current,
+        speed,
+        {
+          opacity: 1,
+          onComplete: () => {
+            this.setState({ isAnimating: false });
+          }
+        },
+        startTime + spacingTime * 14
+      )
       .to(this.purpose0.current, speed / 2, { y: 0 }, startTime + spacingTime * 12);
   }
 
@@ -344,6 +354,7 @@ class Generator extends React.Component {
     const purpose2 = this.purposes[2];
     const purpose3 = this.purposes[3];
 
+    console.log(this.state.isAnimating);
     console.log("window inner width: " + window.innerWidth);
     console.log("is mobile device: " + this.isMobileDevice);
 
@@ -354,10 +365,11 @@ class Generator extends React.Component {
           <div className={style.passionContainer}>
             <div ref={this.shuffleButtonPassion}>
               <ShuffleButton
+                disabled={this.state.isAnimating}
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPassion.bind(this)}
               />
-            </div>{" "}
+            </div>
             <div className={style.giantTestingPassion}>
               <div className={style.overflowContainer}>
                 <span className={style.passionAnimation} ref={this.passion0}>
@@ -379,9 +391,10 @@ class Generator extends React.Component {
           <div className={style.purposeContainer}>
             <div ref={this.shuffleButtonPurpose}>
               <ShuffleButton
+                disabled={this.state.isAnimating}
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPurpose.bind(this)}
-              />{" "}
+              />
             </div>
             <div className={style.giantTestingPurpose}>
               <div className={style.overflowContainerPurpose}>
