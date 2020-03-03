@@ -7,10 +7,13 @@ import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
 import Confetti from "react-confetti";
 import DownloadButton from "../../components/download";
+import EditButton from "../../components/edit-button";
 
 class Generator extends React.Component {
   constructor(props) {
     super(props);
+    this.textField = React.createRef();
+    this.textFieldTwo = React.createRef();
     const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
@@ -33,6 +36,10 @@ class Generator extends React.Component {
 
   onPurposeChange = event => {
     this.props.gameData.editPurpose(event.target.value);
+  };
+
+  savePDF = () => {
+    this.textField.current.focus();
   };
 
   // PDF download
@@ -72,6 +79,7 @@ class Generator extends React.Component {
                 value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
                 onChange={this.onPassionChange}
                 autoComplete="off"
+                ref={this.textField}
               />
             </span>
           </div>
@@ -89,6 +97,7 @@ class Generator extends React.Component {
                 value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
                 onChange={this.onPurposeChange}
                 autoComplete="off"
+                ref={this.textFieldTwo}
               />
               ?
             </span>
@@ -96,6 +105,7 @@ class Generator extends React.Component {
         </div>
 
         <div className="text-center">
+          <EditButton onClick={() => this.savePDF()} />
           <DownloadButton />
           <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
