@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
-import GenerateAttribution from "../../components/generator-attribution";
+import ShuffleButton from "../../components/shuffle-button";
 import style from "./index.module.scss";
 import { TimelineLite } from "gsap/all";
 import { Textfit } from "react-textfit";
@@ -353,7 +353,7 @@ class Generator extends React.Component {
           <span className={style.hmwPreset}>How might we use </span>
           <div className={style.passionContainer}>
             <div ref={this.shuffleButtonPassion}>
-              <GenerateAttribution
+              <ShuffleButton
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPassion.bind(this)}
               />
@@ -378,7 +378,7 @@ class Generator extends React.Component {
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
             <div ref={this.shuffleButtonPurpose}>
-              <GenerateAttribution
+              <ShuffleButton
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPurpose.bind(this)}
               />{" "}
