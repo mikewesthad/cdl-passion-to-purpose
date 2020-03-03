@@ -83,7 +83,7 @@ class Generator extends React.Component {
                 inputClassName={style.passionInput}
                 type="text"
                 name="title"
-                value={" " + gameData.passionStore.responses[gameData.chosenPassionIndex]}
+                value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
                 onChange={this.onPassionChange}
                 autoComplete="off"
                 ref={this.textField}
@@ -95,7 +95,7 @@ class Generator extends React.Component {
           </div>
           <div className={style.fadeGroupFour}>
             <span className={style.generatedPurpose}>
-              {" " + gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
+              {gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
               <AutosizeInput
                 className={style.purposeInputWrapper}
                 inputClassName={style.purposeInput}
