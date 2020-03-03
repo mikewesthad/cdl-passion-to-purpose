@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../nav/button";
 import style from "./index.module.scss";
-import { ReactComponent as DownloadSvg } from "../../images/download.svg"; //previously restart.svg
+import { ReactComponent as EditSvg } from "../../images/edit.svg"; //previously restart.svg
 
 class EditButton extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class EditButton extends React.Component {
     return (
       <div className={style.editContainer}>
         <Button className={style.editButton} disabled={disabled} onClick={onClick}>
-          <DownloadSvg />
+          <EditSvg />
         </Button>
       </div>
     );
