@@ -235,10 +235,10 @@ class Generator extends React.Component {
   componentDidMount() {
     this.copyPassionsAndPurposes();
 
-    var speed = 0.5;
+    var speed = 0.55;
     var linesize = 80;
     var startTime = 0.5;
-    var spacingTime = 0.1;
+    var spacingTime = 0.075;
 
     if (window.innerWidth <= 800) {
       linesize = 70;
