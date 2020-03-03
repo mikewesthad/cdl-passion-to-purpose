@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
-import GenerateAttribution from "../../components/generator-attribution";
+import ShuffleButton from "../../components/shuffle-button";
 import style from "./index.module.scss";
 import { TimelineLite } from "gsap/all";
 import { Textfit } from "react-textfit";
@@ -25,6 +25,9 @@ class Generator extends React.Component {
     this.purpose1 = React.createRef();
     this.purpose2 = React.createRef();
     this.purpose3 = React.createRef();
+
+    this.shuffleButtonPassion = React.createRef();
+    this.shuffleButtonPurpose = React.createRef();
 
     this.passions = [];
     this.purposes = [];
@@ -232,16 +235,19 @@ class Generator extends React.Component {
   componentDidMount() {
     this.copyPassionsAndPurposes();
 
-    var speed = 0.5;
+    var speed = 0.55;
     var linesize = 80;
     var startTime = 0.5;
-    var spacingTime = 0.15;
+    var spacingTime = 0.075;
 
     if (window.innerWidth <= 800) {
       linesize = 70;
     }
 
     this.shuffleTl
+
+      .to(this.shuffleButtonPassion.current, 0, { opacity: 0 })
+      .to(this.shuffleButtonPurpose.current, 0, { opacity: 0 })
       .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
       .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
       .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
@@ -260,30 +266,30 @@ class Generator extends React.Component {
       .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 7)
 
       //Second 'Spin' down
-      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 5)
-      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime * 6)
-      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 7)
-      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 8)
+      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 4)
+      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime * 5)
+      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 6)
+      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 7)
 
       //Back to top
-      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 9)
-      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 10)
-      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 11)
-      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 12)
+      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 8)
+      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 9)
+      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 10)
+      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 11)
 
       //Second 'Spin' down
-      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 10)
-      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime * 11)
-      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 12)
-      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 13)
+      .to(this.passion0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 8)
+      .to(this.passion1.current, speed, { y: linesize }, startTime + spacingTime * 9)
+      .to(this.passion2.current, speed, { y: 0 }, startTime + spacingTime * 10)
+      .to(this.passion3.current, speed, { y: -linesize }, startTime + spacingTime * 11)
 
       //Back to top
-      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 14)
-      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 15)
-      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 16)
-      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 17)
+      .to(this.passion0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 12)
+      .to(this.passion1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 13)
+      .to(this.passion2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 14)
+      .to(this.passion3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 15)
 
-      .to(this.passion0.current, speed, { y: 0 }, startTime + spacingTime * 15)
+      .to(this.passion0.current, speed / 2, { y: 0 }, startTime + spacingTime * 12)
 
       /////////////////////////// PURPOSE ////////////////////////////
 
@@ -302,27 +308,29 @@ class Generator extends React.Component {
       .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 6)
       .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 7)
       //Second purposedown
-      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 5)
-      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime * 6)
-      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 7)
-      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 8)
+      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 4)
+      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime * 5)
+      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 6)
+      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 7)
       //Back topurpose
-      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 9)
-      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 10)
-      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 11)
-      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 12)
+      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 8)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 9)
+      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 10)
+      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 11)
       //Second purposedown
-      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 10)
-      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime * 11)
-      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 12)
-      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 13)
+      .to(this.purpose0.current, speed, { y: linesize * 2 }, startTime + spacingTime * 8)
+      .to(this.purpose1.current, speed, { y: linesize }, startTime + spacingTime * 9)
+      .to(this.purpose2.current, speed, { y: 0 }, startTime + spacingTime * 10)
+      .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 11)
       //Back topurpose
-      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 14)
-      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 15)
-      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 16)
-      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 17)
+      .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 12)
+      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 13)
+      .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 14)
+      .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 15)
 
-      .to(this.purpose0.current, speed, { y: 0 }, startTime + spacingTime * 15);
+      .to(this.shuffleButtonPassion.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
+      .to(this.shuffleButtonPurpose.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
+      .to(this.purpose0.current, speed / 2, { y: 0 }, startTime + spacingTime * 12);
   }
 
   render() {
@@ -344,61 +352,57 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use </span>
           <div className={style.passionContainer}>
-            <GenerateAttribution
-              className={style.generatedButton}
-              onClick={this.toggleHiddenPassion.bind(this)}
-            />
+            <div ref={this.shuffleButtonPassion}>
+              <ShuffleButton
+                className={style.generatedButton}
+                onClick={this.toggleHiddenPassion.bind(this)}
+              />
+            </div>{" "}
             <div className={style.giantTestingPassion}>
               <div className={style.overflowContainer}>
                 <span className={style.passionAnimation} ref={this.passion0}>
                   <div className={style.passionIndividual}>{passion0}</div>
                 </span>
                 <span className={style.passionAnimation} ref={this.passion1}>
-                  <div className={style.passionIndividual}>{passion0}</div>
+                  <div className={style.passionIndividual}>{passion1}</div>
                 </span>
                 <span className={style.passionAnimation} ref={this.passion2}>
-                  <div className={style.passionIndividual}>{passion0}</div>
+                  <div className={style.passionIndividual}>{passion2}</div>
                 </span>
                 <span className={style.passionAnimation} ref={this.passion3}>
-                  <div className={style.passionIndividual}>{passion0}</div>
+                  <div className={style.passionIndividual}>{passion3}</div>
                 </span>
               </div>
             </div>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
-            <GenerateAttribution
-              className={style.generatedButton}
-              onClick={this.toggleHiddenPurpose.bind(this)}
-            />
+            <div ref={this.shuffleButtonPurpose}>
+              <ShuffleButton
+                className={style.generatedButton}
+                onClick={this.toggleHiddenPurpose.bind(this)}
+              />{" "}
+            </div>
             <div className={style.giantTestingPurpose}>
               <div className={style.overflowContainerPurpose}>
                 <div ref={this.purpose0}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <div className={style.fuck}>
-                      <span className={style.purposeIndividual}>{purpose2}</span>
-                    </div>
+                    <span className={style.purposeIndividual}>{purpose0}</span>
                   </Textfit>
                 </div>
                 <div ref={this.purpose1}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <div className={style.fuck}>
-                      <span className={style.purposeIndividual}>{purpose2}</span>
-                    </div>
+                    <span className={style.purposeIndividual}>{purpose1}</span>
                   </Textfit>
                 </div>
                 <div ref={this.purpose2}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <div className={style.fuck}>
-                      <span className={style.purposeIndividual}>{purpose2}</span>
-                    </div>
+                    <span className={style.purposeIndividual}>{purpose2}</span>
                   </Textfit>
                 </div>
                 <div ref={this.purpose3}>
                   <Textfit mode="multi" className={style.purposeTesting}>
-                    <div className={style.fuck}>
-                      <span className={style.purposeIndividual}>{purpose2}</span>
-                    </div>
+                    <span className={style.purposeIndividual}>{purpose3}</span>
                   </Textfit>
                 </div>
               </div>

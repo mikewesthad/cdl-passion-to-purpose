@@ -19,6 +19,44 @@
   }
 }
 
+.fadeGroupOne {
+  animation: fadeIn 4s;
+  display: inline-block;
+}
+
+@keyframes blank {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeGroupTwo {
+  animation: blank 2s 4, fadeIn 0.5s 2s forwards;
+  display: inline-block;
+}
+
+.fadeGroupThree {
+  display: inline-block;
+  animation: blank 2s 4, fadeIn 0.5s 3s forwards;
+}
+
+.fadeGroupFour {
+  display: inline-block;
+  animation: blank 2s 4, fadeIn 0.5s 4s forwards;
+}
+
 .passionContainer,
 .purposeContainer {
   width: inherit;

@@ -7,15 +7,17 @@ import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
 import Confetti from "react-confetti";
 import DownloadButton from "../../components/download";
+import EditButton from "../../components/edit-button";
 
 class Generator extends React.Component {
   constructor(props) {
     super(props);
+    this.textField = React.createRef();
+    this.textFieldTwo = React.createRef();
+    var currentTextField = 1;
     const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
-
-  //gameData.saveToFirebase();
 
   getNextCombination = () => {
     this.setState(prev => {
@@ -33,6 +35,18 @@ class Generator extends React.Component {
 
   onPurposeChange = event => {
     this.props.gameData.editPurpose(event.target.value);
+  };
+
+  savePDF = () => {
+    if (this.currentTextField == 2) {
+      this.textFieldTwo.current.focus();
+      this.textFieldTwo.current.select();
+      this.currentTextField = 1;
+    } else {
+      this.textField.current.focus();
+      this.textField.current.select();
+      this.currentTextField = 2;
+    }
   };
 
   // PDF download
@@ -59,35 +73,46 @@ class Generator extends React.Component {
         />
 
         <div className={style.generatedQuestion}>
-          <span className={style.bolded}>How might we use </span>
-          <span className={style.generatedPassion}>
-            <AutosizeInput
-              className={style.passionInputWrapper}
-              inputClassName={style.passionInput}
-              type="text"
-              name="title"
-              value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
-              onChange={this.onPassionChange}
-              autoComplete="off"
-            />
-          </span>
-          <span className={style.bolded}> to </span>
-          <span className={style.generatedPurpose}>
-            {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
-            <AutosizeInput
-              className={style.purposeInputWrapper}
-              inputClassName={style.purposeInput}
-              type="text"
-              name="title"
-              value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
-              onChange={this.onPurposeChange}
-              autoComplete="off"
-            />
-            ?
-          </span>
+          <div className={style.fadeGroupOne}>
+            <span className={style.bolded}>How might we use </span>
+          </div>
+          <div className={style.fadeGroupTwo}>
+            <span className={style.generatedPassion}>
+              <AutosizeInput
+                className={style.passionInputWrapper}
+                inputClassName={style.passionInput}
+                type="text"
+                name="title"
+                value={" " + gameData.passionStore.responses[gameData.chosenPassionIndex]}
+                onChange={this.onPassionChange}
+                autoComplete="off"
+                ref={this.textField}
+              />
+            </span>
+          </div>
+          <div className={style.fadeGroupThree}>
+            <span className={style.bolded}> to </span>
+          </div>
+          <div className={style.fadeGroupFour}>
+            <span className={style.generatedPurpose}>
+              {" " + gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
+              <AutosizeInput
+                className={style.purposeInputWrapper}
+                inputClassName={style.purposeInput}
+                type="text"
+                name="title"
+                value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
+                onChange={this.onPurposeChange}
+                autoComplete="off"
+                ref={this.textFieldTwo}
+              />
+              ?
+            </span>
+          </div>
         </div>
 
         <div className="text-center">
+          <EditButton onClick={() => this.savePDF()} />
           <DownloadButton />
           <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>

@@ -1,0 +1,21 @@
+.editContainer {
+  width: fit-content;
+  height: 100%;
+  display: inline-block;
+}
+
+.editButton {
+  display: inline;
+  background-color: #fd940d;
+  &:hover {
+    background-color: darken(#fd940d, 10%);
+  }
+
+  &:active {
+    background-color: darken(#fd940d, 20%);
+  }
+
+  svg {
+    width: 100%;
+  }
+}
