@@ -37,7 +37,7 @@ class Generator extends React.Component {
     this.props.gameData.editPurpose(event.target.value);
   };
 
-  savePDF = () => {
+  editFlow = () => {
     if (this.currentTextField == 2) {
       this.textFieldTwo.current.focus();
       this.textFieldTwo.current.select();
@@ -112,7 +112,7 @@ class Generator extends React.Component {
         </div>
 
         <div className="text-center">
-          <EditButton onClick={() => this.savePDF()} />
+          <EditButton onClick={() => this.editFlow()} />
           <DownloadButton />
           <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
