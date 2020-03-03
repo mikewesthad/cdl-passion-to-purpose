@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import Button from "../nav/button";
 import { observer, inject } from "mobx-react";
 import { ReactComponent as DownloadSvg } from "../../images/download.svg"; //previously restart.svg
