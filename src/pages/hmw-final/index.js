@@ -73,7 +73,7 @@ class Generator extends React.Component {
           </span>
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>
-            {gameData.getPurposeVerb()[gameData.chosenPurposeIndex]}
+            {gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
             <AutosizeInput
               className={style.purposeInputWrapper}
               inputClassName={style.purposeInput}

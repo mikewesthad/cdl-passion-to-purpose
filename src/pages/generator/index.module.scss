@@ -46,7 +46,7 @@
 }
 
 .passionTextfit {
-  border: 1px solid red;
+  //  border: 1px solid red;
   height: 5rem;
   //position: absolute;
 }
@@ -73,12 +73,12 @@
   position: relative;
 
   display: flex;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .passionIndividual {
   height: fit-content;
-  border: 1px green solid;
+  //border: 1px green solid;
   top: 50%;
   transform: translateY(-50%);
   position: relative;
@@ -87,7 +87,7 @@
 
 .purposeIndividual {
   height: fit-content;
-  border: 1px green solid;
+  // border: 1px green solid;
   top: 50%;
   transform: translateY(-50%);
   position: relative;
@@ -105,7 +105,7 @@
 
 .overflowContainerPurpose {
   overflow-y: hidden;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 100%;
   margin-left: 1rem;
   height: 5rem;
@@ -117,7 +117,7 @@
   margin-top: 0;
   user-select: none;
   //  display: inline;
-  border: 1px solid red;
+  //border: 1px solid red;
   position: relative;
   // visibility: hidden;
 }
