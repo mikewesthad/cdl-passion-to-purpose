@@ -26,6 +26,9 @@ class Generator extends React.Component {
     this.purpose2 = React.createRef();
     this.purpose3 = React.createRef();
 
+    this.shuffleButtonPassion = React.createRef();
+    this.shuffleButtonPurpose = React.createRef();
+
     this.passions = [];
     this.purposes = [];
 
@@ -242,6 +245,9 @@ class Generator extends React.Component {
     }
 
     this.shuffleTl
+
+      .to(this.shuffleButtonPassion.current, 0, { opacity: 0 })
+      .to(this.shuffleButtonPurpose.current, 0, { opacity: 0 })
       .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
       .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
       .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
@@ -322,7 +328,10 @@ class Generator extends React.Component {
       .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 16)
       .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 17)
 
-      .to(this.purpose0.current, speed, { y: 0 }, startTime + spacingTime * 15);
+      .to(this.purpose0.current, speed, { y: 0 }, startTime + spacingTime * 15)
+      .to(this.purpose0.current, 0, { opacity: 0 })
+      .to(this.shuffleButtonPassion.current, 0, { opacity: 1 })
+      .to(this.shuffleButtonPurpose.current, 0, { opacity: 1 });
   }
 
   render() {
@@ -344,10 +353,12 @@ class Generator extends React.Component {
         <div className={style.generatedQuestion}>
           <span className={style.hmwPreset}>How might we use </span>
           <div className={style.passionContainer}>
-            <GenerateAttribution
-              className={style.generatedButton}
-              onClick={this.toggleHiddenPassion.bind(this)}
-            />
+            <div ref={this.shuffleButtonPassion}>
+              <GenerateAttribution
+                className={style.generatedButton}
+                onClick={this.toggleHiddenPassion.bind(this)}
+              />
+            </div>{" "}
             <div className={style.giantTestingPassion}>
               <div className={style.overflowContainer}>
                 <span className={style.passionAnimation} ref={this.passion0}>
@@ -367,10 +378,12 @@ class Generator extends React.Component {
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
-            <GenerateAttribution
-              className={style.generatedButton}
-              onClick={this.toggleHiddenPurpose.bind(this)}
-            />
+            <div ref={this.shuffleButtonPurpose}>
+              <GenerateAttribution
+                className={style.generatedButton}
+                onClick={this.toggleHiddenPurpose.bind(this)}
+              />{" "}
+            </div>
             <div className={style.giantTestingPurpose}>
               <div className={style.overflowContainerPurpose}>
                 <div ref={this.purpose0}>
