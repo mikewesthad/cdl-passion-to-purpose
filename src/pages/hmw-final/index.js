@@ -14,11 +14,10 @@ class Generator extends React.Component {
     super(props);
     this.textField = React.createRef();
     this.textFieldTwo = React.createRef();
+    var currentTextField = 1;
     const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
   }
-
-  //gameData.saveToFirebase();
 
   getNextCombination = () => {
     this.setState(prev => {
@@ -39,7 +38,15 @@ class Generator extends React.Component {
   };
 
   savePDF = () => {
-    this.textField.current.focus();
+    if (this.currentTextField == 2) {
+      this.textFieldTwo.current.focus();
+      this.textFieldTwo.current.select();
+      this.currentTextField = 1;
+    } else {
+      this.textField.current.focus();
+      this.textField.current.select();
+      this.currentTextField = 2;
+    }
   };
 
   // PDF download
@@ -76,7 +83,7 @@ class Generator extends React.Component {
                 inputClassName={style.passionInput}
                 type="text"
                 name="title"
-                value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
+                value={" " + gameData.passionStore.responses[gameData.chosenPassionIndex]}
                 onChange={this.onPassionChange}
                 autoComplete="off"
                 ref={this.textField}
@@ -88,7 +95,7 @@ class Generator extends React.Component {
           </div>
           <div className={style.fadeGroupFour}>
             <span className={style.generatedPurpose}>
-              {gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
+              {" " + gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
               <AutosizeInput
                 className={style.purposeInputWrapper}
                 inputClassName={style.purposeInput}
