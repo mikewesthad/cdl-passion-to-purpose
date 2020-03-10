@@ -117,6 +117,11 @@ class Generator extends React.Component {
           <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
         </div>
 
+        <div className="description">
+          Congratulations, you have transformed your passion and purpose into a “How Might We”
+          question! Check out Convergence Design Lab for some reason!
+        </div>
+
         {/*<div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
           question! On the next page you'll see an overview of everything you've done so far.
