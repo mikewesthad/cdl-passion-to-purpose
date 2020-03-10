@@ -28,6 +28,7 @@ class Generator extends React.Component {
 
     this.shuffleButtonPassion = React.createRef();
     this.shuffleButtonPurpose = React.createRef();
+    this.continueButton = React.createRef();
 
     this.passions = [];
     this.purposes = [];
@@ -61,73 +62,74 @@ class Generator extends React.Component {
     if (window.innerWidth <= 800) {
       linesize = 70;
     }
+    if (!this.state.isAnimating) {
+      if (this.currentPassion === 0) {
+        this.onClickPassionTL
+          .seek(2)
 
-    if (this.currentPassion === 0) {
-      this.onClickPassionTL
-        .seek(2)
+          .to(this.passion0.current, 0, { y: -linesize }, 0)
+          .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.passion0.current, 0, { y: -linesize }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.passion0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
-        .to(this.passion0.current, 0, { y: 0 }, 0) //teleport in view passion into view
+          .to(this.passion1.current, speed, { y: -linesize }, 0) //bring second passion into view
+          .to(this.passion0.current, speed / 1.5, { y: linesize }, 0.25) //move first passion down out of view
+          .to(this.passion0.current, 0, { y: -linesize }, 0.5); //teleport first passion up out of view
+      }
 
-        .to(this.passion1.current, speed, { y: -linesize }, 0) //bring second passion into view
-        .to(this.passion0.current, speed / 1.5, { y: linesize }, 0.25) //move first passion down out of view
-        .to(this.passion0.current, 0, { y: -linesize }, 0.5); //teleport first passion up out of view
-    }
+      if (this.currentPassion === 1) {
+        this.onClickPassionTL
+          .seek(2)
 
-    if (this.currentPassion === 1) {
-      this.onClickPassionTL
-        .seek(2)
+          .to(this.passion0.current, 0, { y: -linesize }, 0)
+          .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.passion0.current, 0, { y: -linesize }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.passion1.current, 0, { y: -linesize }, 0)
 
-        .to(this.passion1.current, 0, { y: -linesize }, 0)
+          .to(this.passion2.current, speed, { y: -linesize * 2 }, 0)
+          .to(this.passion1.current, speed / 1.5, { y: 0 }, 0.25)
+          .to(this.passion1.current, 0, { y: -linesize * 2 }, 0.5);
+      }
+      if (this.currentPassion === 2) {
+        this.onClickPassionTL
+          .seek(2)
 
-        .to(this.passion2.current, speed, { y: -linesize * 2 }, 0)
-        .to(this.passion1.current, speed / 1.5, { y: 0 }, 0.25)
-        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0.5);
-    }
-    if (this.currentPassion === 2) {
-      this.onClickPassionTL
-        .seek(2)
+          .to(this.passion0.current, 0, { y: -linesize }, 0)
+          .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.passion0.current, 0, { y: -linesize }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
 
-        .to(this.passion2.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.passion3.current, speed, { y: -linesize * 3 }, 0)
+          .to(this.passion2.current, speed / 1.5, { y: -linesize }, 0.25)
+          .to(this.passion2.current, 0, { y: -linesize * 3 }, 0.5);
+      }
+      if (this.currentPassion === 3) {
+        this.onClickPassionTL
+          .seek(2)
 
-        .to(this.passion3.current, speed, { y: -linesize * 3 }, 0)
-        .to(this.passion2.current, speed / 1.5, { y: -linesize }, 0.25)
-        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0.5);
-    }
-    if (this.currentPassion === 3) {
-      this.onClickPassionTL
-        .seek(2)
+          .to(this.passion0.current, 0, { y: -linesize }, 0)
+          .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.passion0.current, 0, { y: -linesize }, 0)
-        .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.passion3.current, 0, { y: -linesize * 3 }, 0)
 
-        .to(this.passion3.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.passion0.current, speed, { y: 0 }, 0)
+          .to(this.passion3.current, speed / 1.5, { y: -linesize * 2 }, 0.25)
+          .to(this.passion3.current, 0, { y: -linesize * 4 }, 0.5);
+      }
 
-        .to(this.passion0.current, speed, { y: 0 }, 0)
-        .to(this.passion3.current, speed / 1.5, { y: -linesize * 2 }, 0.25)
-        .to(this.passion3.current, 0, { y: -linesize * 4 }, 0.5);
-    }
-
-    if (this.currentPassion < this.props.gameData.passionStore.numQuestions - 1) {
-      this.currentPassion++;
-    } else {
-      this.currentPassion = 0;
+      if (this.currentPassion < this.props.gameData.passionStore.numQuestions - 1) {
+        this.currentPassion++;
+      } else {
+        this.currentPassion = 0;
+      }
     }
   }
   nextPurpose() {
@@ -136,73 +138,74 @@ class Generator extends React.Component {
     if (window.innerWidth <= 800) {
       linesize = 70;
     }
+    if (!this.state.isAnimating) {
+      if (this.currentPurpose === 0) {
+        this.onClickPurposeTL
+          .seek(2)
 
-    if (this.currentPurpose === 0) {
-      this.onClickPurposeTL
-        .seek(2)
+          .to(this.purpose0.current, 0, { y: -linesize }, 0)
+          .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.purpose0.current, 0, { y: -linesize }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.purpose0.current, 0, { y: 0 }, 0) //teleport in view passion into view
 
-        .to(this.purpose0.current, 0, { y: 0 }, 0) //teleport in view passion into view
+          .to(this.purpose1.current, speed, { y: -linesize }, 0) //bring second passion into view
+          .to(this.purpose0.current, speed / 1.5, { y: linesize }, 0.25) //move first passion down out of view
+          .to(this.purpose0.current, 0, { y: -linesize }, 0.5); //teleport first passion up out of view
+      }
 
-        .to(this.purpose1.current, speed, { y: -linesize }, 0) //bring second passion into view
-        .to(this.purpose0.current, speed / 1.5, { y: linesize }, 0.25) //move first passion down out of view
-        .to(this.purpose0.current, 0, { y: -linesize }, 0.5); //teleport first passion up out of view
-    }
+      if (this.currentPurpose === 1) {
+        this.onClickPurposeTL
+          .seek(2)
 
-    if (this.currentPurpose === 1) {
-      this.onClickPurposeTL
-        .seek(2)
+          .to(this.purpose0.current, 0, { y: -linesize }, 0)
+          .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.purpose0.current, 0, { y: -linesize }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.purpose1.current, 0, { y: -linesize }, 0)
 
-        .to(this.purpose1.current, 0, { y: -linesize }, 0)
+          .to(this.purpose2.current, speed, { y: -linesize * 2 }, 0)
+          .to(this.purpose1.current, speed / 1.5, { y: 0 }, 0.25)
+          .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0.5);
+      }
+      if (this.currentPurpose === 2) {
+        this.onClickPurposeTL
+          .seek(2)
 
-        .to(this.purpose2.current, speed, { y: -linesize * 2 }, 0)
-        .to(this.purpose1.current, speed / 1.5, { y: 0 }, 0.25)
-        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0.5);
-    }
-    if (this.currentPurpose === 2) {
-      this.onClickPurposeTL
-        .seek(2)
+          .to(this.purpose0.current, 0, { y: -linesize }, 0)
+          .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.purpose0.current, 0, { y: -linesize }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
 
-        .to(this.purpose2.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.purpose3.current, speed, { y: -linesize * 3 }, 0)
+          .to(this.purpose2.current, speed / 1.5, { y: -linesize }, 0.25)
+          .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0.5);
+      }
+      if (this.currentPurpose === 3) {
+        this.onClickPurposeTL
+          .seek(2)
 
-        .to(this.purpose3.current, speed, { y: -linesize * 3 }, 0)
-        .to(this.purpose2.current, speed / 1.5, { y: -linesize }, 0.25)
-        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0.5);
-    }
-    if (this.currentPurpose === 3) {
-      this.onClickPurposeTL
-        .seek(2)
+          .to(this.purpose0.current, 0, { y: -linesize }, 0)
+          .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
+          .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
 
-        .to(this.purpose0.current, 0, { y: -linesize }, 0)
-        .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
-        .to(this.purpose2.current, 0, { y: -linesize * 3 }, 0)
-        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0)
+          .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
 
-        .to(this.purpose3.current, 0, { y: -linesize * 3 }, 0)
+          .to(this.purpose0.current, speed, { y: 0 }, 0)
+          .to(this.purpose3.current, speed / 1.5, { y: -linesize * 2 }, 0.25)
+          .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0.5);
+      }
 
-        .to(this.purpose0.current, speed, { y: 0 }, 0)
-        .to(this.purpose3.current, speed / 1.5, { y: -linesize * 2 }, 0.25)
-        .to(this.purpose3.current, 0, { y: -linesize * 4 }, 0.5);
-    }
-
-    if (this.currentPurpose < this.props.gameData.purposeStore.numQuestions - 1) {
-      this.currentPurpose++;
-    } else {
-      this.currentPurpose = 0;
+      if (this.currentPurpose < this.props.gameData.purposeStore.numQuestions - 1) {
+        this.currentPurpose++;
+      } else {
+        this.currentPurpose = 0;
+      }
     }
   }
 
@@ -248,6 +251,7 @@ class Generator extends React.Component {
 
       .to(this.shuffleButtonPassion.current, 0, { opacity: 0 })
       .to(this.shuffleButtonPurpose.current, 0, { opacity: 0 })
+      .to(this.continueButton.current, 0, { opacity: 0 })
       .to(this.passion0.current, 0, { y: -linesize * 2 }, 0)
       .to(this.passion1.current, 0, { y: -linesize * 3 }, 0)
       .to(this.passion2.current, 0, { y: -linesize * 4 }, 0)
@@ -329,6 +333,7 @@ class Generator extends React.Component {
       .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 15)
 
       .to(this.shuffleButtonPassion.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
+      .to(this.continueButton.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
       .to(
         this.shuffleButtonPurpose.current,
         speed,
@@ -354,9 +359,8 @@ class Generator extends React.Component {
     const purpose2 = this.purposes[2];
     const purpose3 = this.purposes[3];
 
-    console.log(this.state.isAnimating);
+    console.log("Animating State: " + this.state.isAnimating);
     console.log("window inner width: " + window.innerWidth);
-    console.log("is mobile device: " + this.isMobileDevice);
 
     return (
       <GeneratorTemplate>
@@ -365,69 +369,59 @@ class Generator extends React.Component {
           <div className={style.passionContainer}>
             <div ref={this.shuffleButtonPassion}>
               <ShuffleButton
-                disabled={this.state.isAnimating}
+                // disabled={true}
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPassion.bind(this)}
               />
             </div>
-            <div className={style.giantTestingPassion}>
-              <div className={style.overflowContainer}>
-                <span className={style.passionAnimation} ref={this.passion0}>
-                  <div className={style.passionIndividual}>{passion0}</div>
-                </span>
-                <span className={style.passionAnimation} ref={this.passion1}>
-                  <div className={style.passionIndividual}>{passion1}</div>
-                </span>
-                <span className={style.passionAnimation} ref={this.passion2}>
-                  <div className={style.passionIndividual}>{passion2}</div>
-                </span>
-                <span className={style.passionAnimation} ref={this.passion3}>
-                  <div className={style.passionIndividual}>{passion3}</div>
-                </span>
-              </div>
+            <div className={style.overflowContainer}>
+              <span className={style.passionAnimation} ref={this.passion0}>
+                <div className={style.passionIndividual}>{passion0}</div>
+              </span>
+              <span className={style.passionAnimation} ref={this.passion1}>
+                <div className={style.passionIndividual}>{passion1}</div>
+              </span>
+              <span className={style.passionAnimation} ref={this.passion2}>
+                <div className={style.passionIndividual}>{passion2}</div>
+              </span>
+              <span className={style.passionAnimation} ref={this.passion3}>
+                <div className={style.passionIndividual}>{passion3}</div>
+              </span>
             </div>
           </div>
           <span className={style.hmwPreset}>to</span>
           <div className={style.purposeContainer}>
             <div ref={this.shuffleButtonPurpose}>
               <ShuffleButton
-                disabled={this.state.isAnimating}
+                //disabled={!this.state.isAnimating}
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPurpose.bind(this)}
               />
             </div>
-            <div className={style.giantTestingPurpose}>
-              <div className={style.overflowContainerPurpose}>
-                <div ref={this.purpose0}>
-                  <Textfit mode="multi" className={style.purposeTesting}>
-                    <span className={style.purposeIndividual}>{purpose0}</span>
-                  </Textfit>
-                </div>
-                <div ref={this.purpose1}>
-                  <Textfit mode="multi" className={style.purposeTesting}>
-                    <span className={style.purposeIndividual}>{purpose1}</span>
-                  </Textfit>
-                </div>
-                <div ref={this.purpose2}>
-                  <Textfit mode="multi" className={style.purposeTesting}>
-                    <span className={style.purposeIndividual}>{purpose2}</span>
-                  </Textfit>
-                </div>
-                <div ref={this.purpose3}>
-                  <Textfit mode="multi" className={style.purposeTesting}>
-                    <span className={style.purposeIndividual}>{purpose3}</span>
-                  </Textfit>
-                </div>
-              </div>
+            <div className={style.overflowContainerPurpose}>
+              <span className={style.purposeAnimation} ref={this.purpose0}>
+                <div className={style.purposeIndividual}>{purpose0}</div>
+              </span>
+              <span className={style.purposeAnimation} ref={this.purpose1}>
+                <div className={style.purposeIndividual}>{purpose1}</div>
+              </span>
+              <span className={style.purposeAnimation} ref={this.purpose2}>
+                <div className={style.purposeIndividual}>{purpose2}</div>
+              </span>
+              <span className={style.purposeAnimation} ref={this.purpose3}>
+                <div className={style.purposeIndividual}>{purpose3}</div>
+              </span>
             </div>
           </div>
         </div>
-        <div className="generateButtonContainer" style={{ textAlign: "center", marginTop: "5rem" }}>
-          {this.state.isHidden ? null : (
-            <Link className="button" to={nextRoute}>
-              Continue with this &#8594;
-            </Link>
-          )}
+        <div
+          className="generateButtonContainer"
+          ref={this.continueButton}
+          style={{ textAlign: "center", marginTop: "5rem" }}
+        >
+          <Link className="button" to={nextRoute}>
+            Continue with this &#8594;
+          </Link>
         </div>
       </GeneratorTemplate>
     );
