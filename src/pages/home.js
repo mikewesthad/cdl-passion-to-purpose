@@ -17,6 +17,11 @@ export default function Home(props) {
         </Link>
       </div>
       <Attribution style={{ marginTop: "2rem", textAlign: "center" }} />
+      <div className="text-center">
+        <Link className="teacher-button" to={"/teacher-context"}>
+          Interested Teacher?
+        </Link>
+      </div>
     </Container>
   );
 }
