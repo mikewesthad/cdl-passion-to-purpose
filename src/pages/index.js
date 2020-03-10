@@ -17,6 +17,7 @@ import LMContext from "./lets-make-context";
 import LetsMake from "./lets-make";
 import JourneyMap from "./journey-map";
 import FinalContext from "./final-context";
+import TeacherContext from "./teacher-context";
 // The app is based on a linear sequence of routes - from the current route you can go to previous
 // route (i - 1) or the next route (i + 1)
 const routes = [
@@ -27,7 +28,8 @@ const routes = [
   { key: "purpose", path: "/purpose", Component: Purpose },
   { key: "hmw-context", path: "/hmw-context", Component: HMWContext },
   { key: "generator", path: "/generator", Component: Generator },
-  { key: "hmw-final", path: "/hmw-final", Component: HMWFinal }
+  { key: "hmw-final", path: "/hmw-final", Component: HMWFinal },
+  { key: "teacher-context", path: "/teacher-context", Component: TeacherContext }
 ];
 // Create a mapping from route key -> route object above
 const routeMap = routes.reduce((map, route) => {
@@ -55,6 +57,7 @@ export {
   LetsMake,
   FinalContext,
   JourneyMap,
+  TeacherContext,
   routes,
   routeMap
 };
