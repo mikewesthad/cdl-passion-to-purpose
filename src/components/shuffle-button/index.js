@@ -6,9 +6,9 @@ export default class ShuffleButton extends Component {
   render() {
     return (
       <div {...this.props}>
-        <div className={style.button}>
+        <button className={style.button}>
           <ShuffleSvg />
-        </div>
+        </button>
       </div>
     );
   }
