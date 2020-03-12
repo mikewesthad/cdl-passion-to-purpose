@@ -399,18 +399,26 @@ class Generator extends React.Component {
               />
             </div>
             <div className={style.overflowContainerPurpose}>
-              <span className={style.purposeAnimation} ref={this.purpose0}>
-                <div className={style.purposeIndividual}>{purpose0}</div>
-              </span>
-              <span className={style.purposeAnimation} ref={this.purpose1}>
-                <div className={style.purposeIndividual}>{purpose1}</div>
-              </span>
-              <span className={style.purposeAnimation} ref={this.purpose2}>
-                <div className={style.purposeIndividual}>{purpose2}</div>
-              </span>
-              <span className={style.purposeAnimation} ref={this.purpose3}>
-                <div className={style.purposeIndividual}>{purpose3}</div>
-              </span>
+              <div ref={this.purpose0}>
+                <Textfit mode="multi" className={style.purposeAnimation}>
+                  <span className={style.purposeIndividual}>{purpose0}</span>
+                </Textfit>
+              </div>
+              <div ref={this.purpose1}>
+                <Textfit mode="multi" className={style.purposeAnimation}>
+                  <span className={style.purposeIndividual}>{purpose1}</span>
+                </Textfit>
+              </div>
+              <div ref={this.purpose2}>
+                <Textfit mode="multi" className={style.purposeAnimation}>
+                  <span className={style.purposeIndividual}>{purpose2}</span>
+                </Textfit>
+              </div>
+              <div ref={this.purpose3}>
+                <Textfit mode="multi" className={style.purposeAnimation}>
+                  <span className={style.purposeIndividual}>{purpose3}</span>
+                </Textfit>
+              </div>
             </div>
           </div>
         </div>
