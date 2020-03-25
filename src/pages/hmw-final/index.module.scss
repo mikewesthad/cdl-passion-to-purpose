@@ -58,6 +58,11 @@
   animation: blank 2s 4, fadeIn 0.5s 4s forwards;
 }
 
+.fadeGroupFive {
+  display: inline-block;
+  animation: blank 2s 4, fadeIn 0.5s 5s forwards;
+}
+
 .passionContainer,
 .purposeContainer {
   width: inherit;

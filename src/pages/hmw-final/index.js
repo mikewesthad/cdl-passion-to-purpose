@@ -57,19 +57,21 @@ class Generator extends React.Component {
       <Container>
         <Confetti
           confettiSource={{ x: 0, y: 0, w: 5, h: 0 }}
-          numberOfPieces={300}
+          numberOfPieces={5000}
           initialVelocityX={100}
           initialVelocityY={-100}
           colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
           recycle={false}
+          tweenDuration={50000}
         />
         <Confetti
           confettiSource={{ x: window.innerWidth, y: 0, w: 5, h: 0 }}
-          numberOfPieces={300}
+          numberOfPieces={5000}
           initialVelocityX={-100}
           initialVelocityY={-100}
           colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
           recycle={false}
+          tweenDuration={50000}
         />
 
         <div className={style.generatedQuestion}>
@@ -111,23 +113,27 @@ class Generator extends React.Component {
           </div>
         </div>
 
-        <div className="text-center">
-          <EditButton onClick={() => this.editFlow()} />
-          <DownloadButton />
-          <HMWSocialShare passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]} />
-        </div>
+        <div className={style.fadeGroupFive}>
+          <div className="text-center">
+            <EditButton onClick={() => this.editFlow()} />
+            <DownloadButton />
+            <HMWSocialShare
+              passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
+            />
+          </div>
 
-        <div className="description">
-          Congratulations, you have transformed your passion and purpose into a “How Might We”
-          question! Check out Convergence Design Lab for some reason!
-        </div>
+          <div className="description">
+            Congratulations, you have transformed your passion and purpose into a “How Might We”
+            question! Check out Convergence Design Lab for some reason!
+          </div>
 
-        {/*<div className="description">
+          {/*<div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
           question! On the next page you'll see an overview of everything you've done so far.
     </div>*/}
 
-        <form />
+          <form />
+        </div>
       </Container>
     );
   }

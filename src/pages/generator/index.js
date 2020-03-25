@@ -47,6 +47,13 @@ class Generator extends React.Component {
     });
   }
 
+  OnClickNextLink = event => {
+    if (this.state.isHidden) {
+      event.preventDefault();
+    }
+    //   alert("Animating: " + this.state.isAnimating);
+  };
+
   copyPassionsAndPurposes() {
     for (var i = 0; i < this.props.gameData.passionStore.responses.length; i++) {
       this.passions[i] = this.props.gameData.passionStore.responses[i];
@@ -66,7 +73,7 @@ class Generator extends React.Component {
       if (this.currentPassion === 0) {
         this.onClickPassionTL
           .seek(2)
-
+          .to(this.continueButton.current, speed, { opacity: 1 }, 0)
           .to(this.passion0.current, 0, { y: -linesize }, 0)
           .to(this.passion1.current, 0, { y: -linesize * 2 }, 0)
           .to(this.passion2.current, 0, { y: -linesize * 3 }, 0)
@@ -142,6 +149,7 @@ class Generator extends React.Component {
       if (this.currentPurpose === 0) {
         this.onClickPurposeTL
           .seek(2)
+          .to(this.continueButton.current, speed, { opacity: 1 }, 0)
 
           .to(this.purpose0.current, 0, { y: -linesize }, 0)
           .to(this.purpose1.current, 0, { y: -linesize * 2 }, 0)
@@ -221,6 +229,7 @@ class Generator extends React.Component {
   }
 
   toggleHiddenPurpose() {
+    console.log("Clicked");
     if (this.state.isHidden) {
       this.setState({ isHidden: !this.state.isHidden });
       this.nextPurpose();
@@ -328,20 +337,28 @@ class Generator extends React.Component {
       .to(this.purpose3.current, speed, { y: -linesize }, startTime + spacingTime * 11)
       //Back topurpose
       .to(this.purpose0.current, 0, { y: -linesize * 2 }, startTime + spacingTime * 12)
-      .to(this.purpose1.current, 0, { y: -linesize * 3 }, startTime + spacingTime * 13)
+      .to(
+        this.purpose1.current,
+        0,
+        {
+          y: -linesize * 3,
+          onComplete: () => {
+            this.setState({ isAnimating: false });
+          }
+        },
+        startTime + spacingTime * 13
+      )
       .to(this.purpose2.current, 0, { y: -linesize * 4 }, startTime + spacingTime * 14)
       .to(this.purpose3.current, 0, { y: -linesize * 5 }, startTime + spacingTime * 15)
 
       .to(this.shuffleButtonPassion.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
-      .to(this.continueButton.current, speed, { opacity: 1 }, startTime + spacingTime * 14)
+
+      //
       .to(
         this.shuffleButtonPurpose.current,
         speed,
         {
-          opacity: 1,
-          onComplete: () => {
-            this.setState({ isAnimating: false });
-          }
+          opacity: 1
         },
         startTime + spacingTime * 14
       )
@@ -361,7 +378,7 @@ class Generator extends React.Component {
 
     console.log("Animating State: " + this.state.isAnimating);
     console.log("window inner width: " + window.innerWidth);
-
+    console.log("Is Hidden: " + this.state.isHidden);
     return (
       <GeneratorTemplate>
         <div className={style.generatedQuestion}>
@@ -369,7 +386,7 @@ class Generator extends React.Component {
           <div className={style.passionContainer}>
             <div ref={this.shuffleButtonPassion}>
               <ShuffleButton
-                // disabled={true}
+                // disabled={this.state.isAnimating}
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPassion.bind(this)}
               />
@@ -393,7 +410,7 @@ class Generator extends React.Component {
           <div className={style.purposeContainer}>
             <div ref={this.shuffleButtonPurpose}>
               <ShuffleButton
-                //disabled={!this.state.isAnimating}
+                // disabled={this.state.isAnimating}
                 className={style.generatedButton}
                 onClick={this.toggleHiddenPurpose.bind(this)}
               />
@@ -427,7 +444,12 @@ class Generator extends React.Component {
           ref={this.continueButton}
           style={{ textAlign: "center", marginTop: "5rem" }}
         >
-          <Link className="button" to={nextRoute}>
+          <Link
+            className="button"
+            to={nextRoute}
+            disabled={this.state.isHidden}
+            onClick={this.OnClickNextLink}
+          >
             Continue with this &#8594;
           </Link>
         </div>

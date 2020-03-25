@@ -19,7 +19,7 @@ class Nav extends React.Component {
     });
     const journeyMap = this.userResponses.current;
     doc.fromHTML(journeyMap);
-    doc.addPage();
+    // doc.addPage();
     doc.save("hmw.pdf");
   };
 
