@@ -58,11 +58,9 @@ class JourneyMap extends React.Component {
       //<div className="pdfContainer" ref={this.elementRef}>
       <Container>
         <h1 className="title">Journey Map</h1>
-        <div className={style.pdfButton}>
-          <button className={style.pdfButton} onClick={() => window.print()}>
-            Save as PDF
-          </button>
-        </div>
+        <button classname={style.pdfButton} onClick={() => window.print()}>
+          Save as PDF
+        </button>
         <hr />
         {/* 
           <div className="title" ref={this.elementRef}>
@@ -75,7 +73,7 @@ class JourneyMap extends React.Component {
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>{purpose}?</span>
         </div>
-        {/*
+
         <hr />
 
         <div className={style.generatedQuestion}>
@@ -86,7 +84,7 @@ class JourneyMap extends React.Component {
         </div>
 
         <hr />
-*/}
+
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>You started off by pondering your passions.</span>
           <div className="description">
@@ -135,7 +133,7 @@ class JourneyMap extends React.Component {
           </div>
         </div>
         <hr />
-        {/*
+
         <div className={style.generatedQuestion}>
           <span className={style.bolded}>
             Next you began exploring ways to answer your “How Might We” question by choosing a
@@ -171,16 +169,12 @@ class JourneyMap extends React.Component {
           <span className={style.bolded}> to </span>
           <span className={style.generatedPurpose}>{gameData.impact}!</span>
         </div>
-
-        */}
-        <div className={style.generatedQuestion}>
-          <span className={style.bolded}>Congratulations on your great work!</span>
-        </div>
+        <span className={style.bolded}>Congratulations on your great work!</span>
         <hr />
         <form />
 
         <div className="text-center">
-          {/*    <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />*/}
+          <SocialShare passion={gameData.passionStore.responses[gameData.chosenPassionIndex]} />
         </div>
         <FacilitatorAttribution style={{ marginTop: "2rem", textAlign: "center" }} />
         <Survey style={{ marginTop: "2rem", textAlign: "center" }} />

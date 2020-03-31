@@ -21,13 +21,6 @@ const App = withRouter(
   class App extends Component {
     goBack = () => this.props.history.goBack();
     restart = () => this.props.history.push(routeMap.home.path);
-    findCurrentRoute() {
-      for (var i = 0; i < routes.length; i++) {
-        if (this.props.location.pathname === routes[i].path) {
-          return i;
-        }
-      }
-    }
 
     render() {
       const { location } = this.props;
@@ -40,7 +33,7 @@ const App = withRouter(
               onRestart={this.restart}
             />
 
-            <Timeline random={Math.random()} fill={this.findCurrentRoute() / (routes.length - 1)} />
+            <Timeline />
 
             <Analytics
               dummyLog={isDev}
@@ -54,6 +47,9 @@ const App = withRouter(
                 {routes.map((route, i, j) => {
                   const nextRoute = i < routes.length - 1 ? routes[i + 1].path : routes[0].path;
 
+                  const prevRouteMedia = routes[9].path;
+                  const prevRouteImpact = routes[13].path;
+
                   // All pages have the same general API - they need the game store & next route
                   const { key, path, Component, ...otherProps } = route;
                   return (
@@ -61,7 +57,14 @@ const App = withRouter(
                       key={key}
                       path={path}
                       {...otherProps}
-                      render={props => <Component nextRoute={nextRoute} {...props} />}
+                      render={props => (
+                        <Component
+                          nextRoute={nextRoute}
+                          prevRouteMedia={prevRouteMedia}
+                          prevRouteImpact={prevRouteImpact}
+                          {...props}
+                        />
+                      )}
                     />
                   );
                 })}

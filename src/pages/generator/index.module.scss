@@ -24,68 +24,33 @@
   display: none;
 }
 
-.passionContainer {
-  height: 5rem;
-  display: flex;
-}
-
+.passionContainer,
 .purposeContainer {
   height: 5rem;
-  display: flex;
-}
-
-.purposeAnimation {
-  color: #2eb4ff;
-  height: 5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.passionAnimation {
-  color: #fd940d;
-  height: 5rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.passionIndividual {
-  text-decoration: underline;
-}
-
-.purposeIndividual {
-  text-decoration: underline;
 }
 
 .overflowContainer {
   overflow-y: hidden;
-  margin-left: 1rem;
+  display: inline-grid;
+  width: 90%;
   height: 5rem;
 }
 
 .overflowContainerPurpose {
   overflow-y: hidden;
-  width: 100%;
-  margin-left: 1rem;
-  height: 5rem;
+  display: inline-grid;
+  width: 90%;
+  height: 10rem;
 }
 
 .generatedButton {
-  width: 3rem;
-  height: 3rem;
   margin-top: 0;
   user-select: none;
-  //  display: inline;
-  //border: 1px solid red;
-  position: relative;
-  // visibility: hidden;
+  display: inline;
+
+  @media (min-width: 400px) {
+    margin-top: 1rem;
+  }
 }
 
 ul {

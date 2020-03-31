@@ -19,50 +19,6 @@
   }
 }
 
-.fadeGroupOne {
-  animation: fadeIn 4s;
-  display: inline-block;
-}
-
-@keyframes blank {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.fadeGroupTwo {
-  animation: blank 2s 4, fadeIn 0.5s 2s forwards;
-  display: inline-block;
-  margin: 0 1rem;
-}
-
-.fadeGroupThree {
-  display: inline-block;
-  animation: blank 2s 4, fadeIn 0.5s 3s forwards;
-}
-
-.fadeGroupFour {
-  display: inline-block;
-  animation: blank 2s 4, fadeIn 0.5s 4s forwards;
-}
-
-.fadeGroupFive {
-  display: inline-block;
-  animation: blank 2s 4, fadeIn 0.5s 5s forwards;
-}
-
 .passionContainer,
 .purposeContainer {
   width: inherit;
@@ -116,12 +72,11 @@
   text-align: center;
   text-transform: uppercase;
   overflow-wrap: break-word;
-  // border-bottom: 0.3rem solid;
+  border-bottom: 0.3rem solid;
   min-width: 200px;
   @media (min-width: 400px) {
     font-size: 4rem;
   }
-  text-decoration: underline;
 }
 
 //  Do this for passion as well:
@@ -132,10 +87,9 @@
   text-align: center;
   text-transform: uppercase;
   overflow-wrap: break-word;
-  //border-bottom: 0.3rem solid;
+  border-bottom: 0.3rem solid;
   min-width: 200px;
   @media (min-width: 400px) {
     font-size: 4rem;
   }
-  text-decoration: underline;
 }

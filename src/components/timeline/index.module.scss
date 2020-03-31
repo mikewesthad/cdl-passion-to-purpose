@@ -1,21 +1,23 @@
+.timelineContainer {
+}
+
 .timeline {
   width: 100%;
-  height: 1vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
+  height: 2vh;
+  border-radius: 2vh;
+  position: absolute;
+  bottom: 0;
+  background-color: darken(#2eb4ff, 20%);
 }
 
 .timelineFill {
-  width: 100%;
-  height: 1vh;
+  //width: percentage($currentstep/$totalsteps);
+  width: 10%;
+  height: 2vh;
   background-color: #2eb4ff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform-origin: left center;
-  transition: transform 2s ease;
+  border-radius: 2vh;
+  position: absolute;
+  bottom: 0;
   transition: width 0.2 ease-in;
 }
 

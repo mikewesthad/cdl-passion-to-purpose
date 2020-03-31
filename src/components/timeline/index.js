@@ -1,15 +1,17 @@
 import React, { PureComponent } from "react";
 import style from "./index.module.scss";
+import OuterTimeline from "../timeline/outer-timeline";
+import TimelineFill from "../timeline/inner-timeline";
+
+const Chicken = <div>Chicken</div>;
 
 export default class Timeline extends PureComponent {
   render() {
     return (
       <div className={style.timelineContainer}>
-        <div className={style.timeline}>{this.props.children}</div>
-        <div
-          className={style.timelineFill}
-          style={{ transform: "scaleX(" + this.props.fill + ")" }}
-        />
+        <OuterTimeline>
+          <TimelineFill />
+        </OuterTimeline>
       </div>
     );
   }
