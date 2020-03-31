@@ -19,7 +19,6 @@ class Nav extends React.Component {
     });
     const journeyMap = this.userResponses.current;
     doc.fromHTML(journeyMap);
-    // doc.addPage();
     doc.save("hmw.pdf");
   };
 
@@ -37,12 +36,13 @@ class Nav extends React.Component {
             <span className={style.generatedPassion}>
               {gameData.passionStore.responses[gameData.chosenPassionIndex]}
             </span>
-            <span className={style.bolded}> to </span>
+            <br />
+            <span className={style.bolded}>to </span>
             <span className={style.generatedPurpose}>
               {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
             </span>
           </div>
-          <div className={style.generatedQuestion}>
+          <div className={style.summary}>
             <h1>You started off by pondering your passions.</h1>
             <div className="description">
               <div className={style.centerRight}>
@@ -57,7 +57,7 @@ class Nav extends React.Component {
               </div>
             </div>
           </div>
-          <div className={style.generatedQuestion}>
+          <div className={style.summary}>
             <h1>Then you took a look at your purpose.</h1>
             <div className="description">
               <div className={style.centerRight}>
@@ -68,7 +68,7 @@ class Nav extends React.Component {
               </div>
             </div>
           </div>
-          <div className={style.generatedQuestion}>
+          <div className={style.summary}>
             Next, you juxtaposed your passions and purposes <br />
             Combining them into a "How Might We" design question. <br />
             Your selected HMW question shown below: <br />
@@ -77,7 +77,8 @@ class Nav extends React.Component {
               <span className={style.generatedPassion}>
                 {gameData.passionStore.responses[gameData.chosenPassionIndex]}
               </span>
-              <span className={style.bolded}> to </span>
+              <br />
+              <span className={style.bolded}>to </span>
               <span className={style.generatedPurpose}>
                 {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
               </span>

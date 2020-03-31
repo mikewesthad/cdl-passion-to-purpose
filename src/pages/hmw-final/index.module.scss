@@ -111,11 +111,13 @@
 
 .passionInputWrapper,
 .passionInput {
+  color: #fd940d;
   font-weight: 900;
   font-size: 2.5rem;
   text-align: center;
   text-transform: uppercase;
   overflow-wrap: break-word;
+  border: none;
   // border-bottom: 0.3rem solid;
   min-width: 200px;
   @media (min-width: 400px) {
@@ -127,11 +129,13 @@
 //  Do this for passion as well:
 .purposeInputWrapper,
 .purposeInput {
+  color: #2eb4ff;
   font-weight: 900;
   font-size: 2.5rem;
   text-align: center;
   text-transform: uppercase;
   overflow-wrap: break-word;
+  border: none;
   //border-bottom: 0.3rem solid;
   min-width: 200px;
   @media (min-width: 400px) {

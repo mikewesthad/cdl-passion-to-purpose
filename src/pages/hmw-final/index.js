@@ -8,6 +8,7 @@ import AutosizeInput from "react-input-autosize";
 import Confetti from "react-confetti";
 import DownloadButton from "../../components/download";
 import EditButton from "../../components/edit-button";
+import TextareaAutosize from "react-autosize-textarea";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -57,21 +58,21 @@ class Generator extends React.Component {
       <Container>
         <Confetti
           confettiSource={{ x: 0, y: 0, w: 5, h: 0 }}
-          numberOfPieces={5000}
+          numberOfPieces={3500}
           initialVelocityX={100}
           initialVelocityY={-100}
           colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
           recycle={false}
-          tweenDuration={50000}
+          tweenDuration={20000}
         />
         <Confetti
           confettiSource={{ x: window.innerWidth, y: 0, w: 5, h: 0 }}
-          numberOfPieces={5000}
+          numberOfPieces={3500}
           initialVelocityX={-100}
           initialVelocityY={-100}
           colors={["#2eb4ff", "ff9a21", "#97cf3e", "#d43ccd", "#f5f5f5"]}
           recycle={false}
-          tweenDuration={50000}
+          tweenDuration={20000}
         />
 
         <div className={style.generatedQuestion}>
@@ -80,9 +81,10 @@ class Generator extends React.Component {
           </div>
           <div className={style.fadeGroupTwo}>
             <span className={style.generatedPassion}>
-              <AutosizeInput
+              <TextareaAutosize
                 className={style.passionInputWrapper}
                 inputClassName={style.passionInput}
+                spellCheck="false"
                 type="text"
                 name="title"
                 value={gameData.passionStore.responses[gameData.chosenPassionIndex]}
@@ -98,10 +100,12 @@ class Generator extends React.Component {
           <div className={style.fadeGroupFour}>
             <span className={style.generatedPurpose}>
               {gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
-              <AutosizeInput
+              <TextareaAutosize
+                rows={1}
                 className={style.purposeInputWrapper}
                 inputClassName={style.purposeInput}
                 type="text"
+                spellCheck="false"
                 name="title"
                 value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
                 onChange={this.onPurposeChange}
