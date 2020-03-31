@@ -12,8 +12,6 @@ export default function Home(props) {
       top: "50%",
       left: "50%",
       right: "auto",
-      width: "80%",
-      height: "48%",
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
@@ -53,11 +51,10 @@ export default function Home(props) {
               classroom.
             </p>
             <p>
-              It takes just a few minutes to “play” Passion to Purpose. We also invite you to have
-              your students playtest the tool as well and share their feedback with you. Afterwards,
-              we ask that you complete a short survey sharing your feedback with us and letting us
-              know if there is anything we could do to make it even more useful or applicable to
-              your needs.
+              It takes just a few minutes to “play.” We also invite you to have your students
+              playtest the tool as well and share their feedback with you. Afterwards, we ask that
+              you complete a short survey sharing your feedback with us and letting us know if there
+              is anything we could do to make it even more useful or applicable to your needs.
             </p>
             <p>
               We created Passion to Purpose as a way to help students navigate the challenging
@@ -66,12 +63,7 @@ export default function Home(props) {
               interests to projects of civic or social purpose. We hope that the playfulness of the
               experience brings more fun and engagement to your learners!
             </p>
-            <p>
-              Thank you again for participating, The Convergence Design Lab Team Columbia College
-              Chicago
-            </p>
-            <p>The Convergence Design Lab Team</p>
-            <p>Columbia College Chicago</p>
+            <p>Thank you again for participating!</p>
             <button style={{}} onClick={closeModal}>
               close
             </button>
