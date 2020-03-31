@@ -15,7 +15,12 @@ export default function Home(props) {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      textAlign: "center"
+      textAlign: "center",
+      maxWidth: "600px",
+      maxHeight: "600px",
+      background: "rgb(0, 0, 0, 0.8)",
+      color: "white",
+      borderRadius: "2rem"
     }
   };
   var searchParams = new URLSearchParams(window.location.search);
@@ -64,8 +69,8 @@ export default function Home(props) {
               experience brings more fun and engagement to your learners!
             </p>
             <p>Thank you again for participating!</p>
-            <button style={{}} onClick={closeModal}>
-              close
+            <button className="modalButton" onClick={closeModal}>
+              Play
             </button>
           </Modal>
         </div>

@@ -84,6 +84,7 @@ class Generator extends React.Component {
               <TextareaAutosize
                 className={style.passionInputWrapper}
                 inputClassName={style.passionInput}
+                style={{ resize: "none", width: "100%" }}
                 spellCheck="false"
                 type="text"
                 name="title"
@@ -104,15 +105,15 @@ class Generator extends React.Component {
                 rows={1}
                 className={style.purposeInputWrapper}
                 inputClassName={style.purposeInput}
+                style={{ resize: "none", width: "100%" }}
                 type="text"
                 spellCheck="false"
                 name="title"
-                value={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
+                value={gameData.purposeStore.responses[gameData.chosenPurposeIndex] + "?"}
                 onChange={this.onPurposeChange}
                 autoComplete="off"
                 ref={this.textFieldTwo}
               />
-              ?
             </span>
           </div>
         </div>

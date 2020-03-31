@@ -18,7 +18,7 @@ class Nav extends React.Component {
       format: "letter"
     });
     const journeyMap = this.userResponses.current;
-    doc.fromHTML(journeyMap);
+    doc.fromHTML(journeyMap, 40, 40);
     doc.save("hmw.pdf");
   };
 
@@ -32,15 +32,7 @@ class Nav extends React.Component {
         </Button>
         <div className={style.hidden} ref={this.userResponses}>
           <div className={style.generatedQuestion}>
-            <span className={style.bolded}>How might we use </span>
-            <span className={style.generatedPassion}>
-              {gameData.passionStore.responses[gameData.chosenPassionIndex]}
-            </span>
-            <br />
-            <span className={style.bolded}>to </span>
-            <span className={style.generatedPurpose}>
-              {gameData.getPurposesWithVerb()[gameData.chosenPurposeIndex]}?
-            </span>
+            <span>Your Journey Map</span>
           </div>
           <div className={style.summary}>
             <h1>You started off by pondering your passions.</h1>
@@ -68,7 +60,7 @@ class Nav extends React.Component {
               </div>
             </div>
           </div>
-          <div className={style.summary}>
+          <div className={style.summary2}>
             Next, you juxtaposed your passions and purposes <br />
             Combining them into a "How Might We" design question. <br />
             Your selected HMW question shown below: <br />
