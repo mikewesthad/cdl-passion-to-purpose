@@ -5,7 +5,7 @@ import Container from "../../components/container";
 import style from "./index.module.scss";
 import HMWSocialShare from "../../components/social-share/socialshare-hmw";
 import AutosizeInput from "react-input-autosize";
-import Confetti from "react-confetti";
+import Confetti from "react-confetti/dist/react-confetti";
 import DownloadButton from "../../components/download";
 import EditButton from "../../components/edit-button";
 import TextareaAutosize from "react-autosize-textarea";
