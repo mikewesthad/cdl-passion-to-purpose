@@ -79,7 +79,7 @@ class Generator extends React.Component {
 
   render() {
     const { gameData, nextRoute } = this.props;
-    this.purposeText = gameData.passionStore.responses[gameData.chosenPassionIndex];
+    this.purposeText = gameData.purposeStore.responses[this.props.gameData.chosenPurposeIndex];
     return (
       <Container>
         <Confetti
