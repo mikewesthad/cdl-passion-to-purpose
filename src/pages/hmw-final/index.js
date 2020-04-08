@@ -9,6 +9,7 @@ import Confetti from "react-confetti/dist/react-confetti";
 import DownloadButton from "../../components/download";
 import EditButton from "../../components/edit-button";
 import TextareaAutosize from "react-autosize-textarea";
+import { toJS } from "mobx";
 
 class Generator extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ class Generator extends React.Component {
     var currentTextField = 1;
     const gameData = this.props.gameData;
     this.state = { combinationNumber: 0 };
+    var purposeText;
   }
 
   getNextCombination = () => {
@@ -35,7 +37,11 @@ class Generator extends React.Component {
   };
 
   onPurposeChange = event => {
+    //  this.textFieldTwo.current.value = this.purposeText + "?";
+
     this.props.gameData.editPurpose(event.target.value);
+    // this.textFieldTwo.current.value =
+    //   this.props.gameData.purposeStore.responses[this.props.gameData.chosenPurposeIndex] + "?";
   };
 
   editFlow = () => {
@@ -50,10 +56,30 @@ class Generator extends React.Component {
     }
   };
 
+  addQuestionMark = () => {
+    //this.purposeText = this.purposeText + "?";
+    console.log(this.textFieldTwo.current.value);
+    console.log(this.textFieldTwo.current.value.includes("?"));
+    if (!this.textFieldTwo.current.value.includes("?")) {
+      this.textFieldTwo.current.value = this.purposeText + "?";
+    }
+  };
+
   // PDF download
+  componentDidMount() {
+    console.log("Component did mount");
+    console.log("purpose text " + this.props.purposeText);
+    //this.addQuestionMark();
+
+    if (!this.textFieldTwo.current.value.includes("?")) {
+      this.textFieldTwo.current.value = this.purposeText + "?";
+      console.log("Trying to add ?");
+    }
+  }
 
   render() {
     const { gameData, nextRoute } = this.props;
+    this.purposeText = gameData.passionStore.responses[gameData.chosenPassionIndex];
     return (
       <Container>
         <Confetti
@@ -109,9 +135,9 @@ class Generator extends React.Component {
                 type="text"
                 spellCheck="false"
                 name="title"
-                value={gameData.purposeStore.responses[gameData.chosenPurposeIndex] + "?"}
+                value={this.purposeText}
                 onChange={this.onPurposeChange}
-                autoComplete="off"
+                onBlur={this.addQuestionMark}
                 ref={this.textFieldTwo}
               />
             </span>
@@ -129,7 +155,7 @@ class Generator extends React.Component {
 
           <div className="description">
             Congratulations, you have transformed your passion and purpose into a “How Might We”
-            question! Check out Convergence Design Lab for some reason!
+            question! Check out Convergence Design Lab for other civic minded projects!
           </div>
 
           {/*<div className="description">

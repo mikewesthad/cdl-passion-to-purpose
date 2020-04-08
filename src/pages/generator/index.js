@@ -4,7 +4,7 @@ import { observer, inject } from "mobx-react";
 import GeneratorTemplate from "../../components/generator-template";
 import ShuffleButton from "../../components/shuffle-button";
 import style from "./index.module.scss";
-import { TimelineLite } from "gsap/all";
+import { TimelineLite } from "gsap";
 import { Textfit } from "react-textfit";
 
 class Generator extends React.Component {
