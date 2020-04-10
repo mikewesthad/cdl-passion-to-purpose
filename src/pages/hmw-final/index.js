@@ -18,8 +18,13 @@ class Generator extends React.Component {
     this.textFieldTwo = React.createRef();
     var currentTextField = 1;
     const gameData = this.props.gameData;
-    this.state = { combinationNumber: 0 };
     var purposeText;
+    var isTeacher;
+    this.state = {
+      combinationNumber: 0,
+      purposeText: gameData.purposeStore.responses[this.props.gameData.chosenPurposeIndex] + "?",
+      isTeacher: false
+    };
   }
 
   getNextCombination = () => {
@@ -37,11 +42,11 @@ class Generator extends React.Component {
   };
 
   onPurposeChange = event => {
-    //  this.textFieldTwo.current.value = this.purposeText + "?";
+    const value = event.target.value;
+    const valueNoQuest = value.endsWith("?") ? value.slice(0, value.length - 1) : value;
+    this.setState({ purposeText: value });
 
-    this.props.gameData.editPurpose(event.target.value);
-    // this.textFieldTwo.current.value =
-    //   this.props.gameData.purposeStore.responses[this.props.gameData.chosenPurposeIndex] + "?";
+    this.props.gameData.editPurpose(valueNoQuest);
   };
 
   editFlow = () => {
@@ -56,30 +61,24 @@ class Generator extends React.Component {
     }
   };
 
-  addQuestionMark = () => {
-    //this.purposeText = this.purposeText + "?";
-    console.log(this.textFieldTwo.current.value);
-    console.log(this.textFieldTwo.current.value.includes("?"));
-    if (!this.textFieldTwo.current.value.includes("?")) {
-      this.textFieldTwo.current.value = this.purposeText + "?";
-    }
+  addQuestionMark = event => {
+    const value = event.target.value;
+    const valueWithQuest = value.endsWith("?") || value == "" ? value : value + "?";
+    this.setState({ purposeText: valueWithQuest });
+    console.log("Value with Quest: " + valueWithQuest);
   };
 
-  // PDF download
   componentDidMount() {
-    console.log("Component did mount");
-    console.log("purpose text " + this.props.purposeText);
-    //this.addQuestionMark();
-
-    if (!this.textFieldTwo.current.value.includes("?")) {
-      this.textFieldTwo.current.value = this.purposeText + "?";
-      console.log("Trying to add ?");
-    }
+    var searchParams = new URLSearchParams(window.location.search);
+    console.log(searchParams.get("role") === "teacher");
+    console.log("url?: " + window.location.search);
+    this.setState({ isTeacher: searchParams.get("role") === "teacher" });
   }
 
   render() {
     const { gameData, nextRoute } = this.props;
     this.purposeText = gameData.purposeStore.responses[this.props.gameData.chosenPurposeIndex];
+
     return (
       <Container>
         <Confetti
@@ -108,8 +107,8 @@ class Generator extends React.Component {
           <div className={style.fadeGroupTwo}>
             <span className={style.generatedPassion}>
               <TextareaAutosize
+                placeholder="Insert Passion Here"
                 className={style.passionInputWrapper}
-                inputClassName={style.passionInput}
                 style={{ resize: "none", width: "100%" }}
                 spellCheck="false"
                 type="text"
@@ -128,14 +127,14 @@ class Generator extends React.Component {
             <span className={style.generatedPurpose}>
               {gameData.getPurposeVerb()[gameData.chosenPurposeIndex] + " "}
               <TextareaAutosize
+                placeholder="Insert Purpose Here"
                 rows={1}
                 className={style.purposeInputWrapper}
-                inputClassName={style.purposeInput}
                 style={{ resize: "none", width: "100%" }}
                 type="text"
                 spellCheck="false"
                 name="title"
-                value={this.purposeText}
+                value={this.state.purposeText}
                 onChange={this.onPurposeChange}
                 onBlur={this.addQuestionMark}
                 ref={this.textFieldTwo}
@@ -152,10 +151,33 @@ class Generator extends React.Component {
               passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
             />
           </div>
-
+          <div display={this.state.isTeacher} className="description">
+            <a
+              href="https://www.surveymonkey.com/r/cdl-p2p-survey"
+              className={style.logoLink}
+              onClick={event => {
+                event.preventDefault();
+                window.open("https://www.surveymonkey.com/r/cdl-p2p-survey");
+              }}
+            >
+              Teachers, please fill out this short feedback survey
+            </a>
+          </div>
           <div className="description">
             Congratulations, you have transformed your passion and purpose into a “How Might We”
-            question! Check out Convergence Design Lab for other civic minded projects!
+            question! <br />
+            Check out{" "}
+            <a
+              href="https://convergencedesignlab.org"
+              className={style.logoLink}
+              onClick={event => {
+                event.preventDefault();
+                window.open("https://convergencedesignlab.org");
+              }}
+            >
+              Convergence Design Lab{" "}
+            </a>{" "}
+            for other civic minded projects!
           </div>
 
           {/*<div className="description">

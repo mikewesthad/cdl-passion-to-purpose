@@ -33,6 +33,7 @@ export default function Home(props) {
   function closeModal() {
     setIsOpen(false);
   }
+  console.log(searchParams.get("role") === "teacher");
 
   //console.log(searchParams.get("role") === "teacher");
 
