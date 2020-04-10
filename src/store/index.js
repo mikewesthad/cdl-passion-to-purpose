@@ -551,8 +551,8 @@ class ResponsesStore {
 }
 
 const store = new GameData();
-
+/*
 store.passionStore.setResponses(["food", "Lego", "video games", "beyonce"]);
 store.purposeStore.setResponses(["equality", "rats", "poverty in America", "testing"]);
-
+*/
 export default store;
