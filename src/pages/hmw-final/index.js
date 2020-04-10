@@ -151,18 +151,7 @@ class Generator extends React.Component {
               passion={gameData.purposeStore.responses[gameData.chosenPurposeIndex]}
             />
           </div>
-          <div display={this.state.isTeacher} className="description">
-            <a
-              href="https://www.surveymonkey.com/r/cdl-p2p-survey"
-              className={style.logoLink}
-              onClick={event => {
-                event.preventDefault();
-                window.open("https://www.surveymonkey.com/r/cdl-p2p-survey");
-              }}
-            >
-              Teachers, please fill out this short feedback survey
-            </a>
-          </div>
+
           <div className="description">
             Congratulations, you have transformed your passion and purpose into a “How Might We”
             question! <br />
@@ -179,7 +168,20 @@ class Generator extends React.Component {
             </a>{" "}
             for other civic minded projects!
           </div>
-
+          <div display={this.state.isTeacher} className="description">
+            Teachers, please fill out
+            <a
+              href="https://www.surveymonkey.com/r/cdl-p2p-survey"
+              className={style.logoLink}
+              onClick={event => {
+                event.preventDefault();
+                window.open("https://www.surveymonkey.com/r/cdl-p2p-survey");
+              }}
+            >
+              {" "}
+              this short feedback survey.
+            </a>
+          </div>
           {/*<div className="description">
           Congratulations, you have transformed your passion and purpose into a “How Might We”
           question! On the next page you'll see an overview of everything you've done so far.
