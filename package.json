@@ -1,6 +1,6 @@
 {
   "name": "p2p",
-  "version": "2.1.1",
+  "version": "4.0.0",
   "private": true,
   "dependencies": {
     "all": "0.0.0",
