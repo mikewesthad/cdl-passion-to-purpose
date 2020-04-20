@@ -25,6 +25,7 @@ class Generator extends React.Component {
       purposeText: gameData.purposeStore.responses[this.props.gameData.chosenPurposeIndex] + "?",
       isTeacher: false
     };
+    gameData.saveToFirebase();
   }
 
   getNextCombination = () => {
@@ -164,12 +165,12 @@ class Generator extends React.Component {
                 window.open("https://convergencedesignlab.org");
               }}
             >
-              Convergence Design Lab{" "}
+              Convergence Design Lab
             </a>{" "}
             for other civic minded projects!
           </div>
           <div display={this.state.isTeacher} className="description">
-            Teachers, please fill out
+            Teachers, please fill out{" "}
             <a
               href="https://www.surveymonkey.com/r/cdl-p2p-survey"
               className={style.logoLink}
@@ -178,7 +179,6 @@ class Generator extends React.Component {
                 window.open("https://www.surveymonkey.com/r/cdl-p2p-survey");
               }}
             >
-              {" "}
               this short feedback survey.
             </a>
           </div>

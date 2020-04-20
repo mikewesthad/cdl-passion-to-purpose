@@ -32,9 +32,7 @@ class FirebaseDatabase {
     passionResponses,
     purposeResponses,
     chosenPassionIndex,
-    chosenPurposeIndex,
-    medium,
-    impact
+    chosenPurposeIndex
   ) {
     // add medium, aduience, action from store
     const p1 = responseRef.set({
@@ -44,8 +42,6 @@ class FirebaseDatabase {
       purposePrompts,
       chosenPassionIndex,
       chosenPurposeIndex,
-      medium,
-      impact,
       timestamp: now
     });
     const p2 = this.db.ref(`roomDirectory/${roomName}/${versionString}/updatedAt`).set(now);

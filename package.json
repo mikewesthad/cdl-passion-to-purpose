@@ -3,7 +3,6 @@
   "version": "4.0.0",
   "private": true,
   "dependencies": {
-    "all": "0.0.0",
     "classnames": "^2.2.6",
     "docx": "^5.0.2",
     "dotenv": "^6.2.0",
