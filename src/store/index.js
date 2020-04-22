@@ -21,10 +21,7 @@ class GameData {
       passion: "",
       purpose: "",
       chosenPassionIndex: 0,
-      chosenPurposeIndex: 0,
-      medium: "",
-      impact: "",
-      chosenMediumIndex: 0
+      chosenPurposeIndex: 0
     });
 
     this.passionPrompts = [
@@ -460,8 +457,6 @@ class GameData {
           dataToSave.purposeResponses,
           chosenPassionIndex,
           chosenPurposeIndex,
-          this.medium,
-          this.impact,
           stringCombos
         ).catch(console.log);
         this.lastSaved = dataToSave;
