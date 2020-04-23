@@ -65,13 +65,7 @@ export default function Home(props) {
               connect their interests to projects of civic or social purpose. We hope that the
               playfulness of the experience brings more fun and engagement to your learners! If you
               want your learners to play, feel free to share this link:{" "}
-              <a
-                href="passiontopurpose.io"
-                onClick={event => {
-                  event.preventDefault();
-                  window.open("passiontopurpose.io");
-                }}
-              >
+              <a href="passiontopurpose.io" target="_blank">
                 passiontopurpose.io
               </a>
             </p>
