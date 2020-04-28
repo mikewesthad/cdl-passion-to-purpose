@@ -148,6 +148,32 @@ a.link {
   }
 }
 
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 600px;
+  max-height: 100%;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 100%;
+  & > *:first-child {
+    margin-top: 0%;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .modalButton {
   // Resets
   text-decoration: none;

@@ -7,22 +7,6 @@ import Modal from "react-modal";
 export default function Home(props) {
   Modal.setAppElement("#root");
 
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      textAlign: "center",
-      maxWidth: "600px",
-      maxHeight: "600px",
-      background: "rgb(0, 0, 0, 0.8)",
-      color: "white",
-      borderRadius: "2rem"
-    }
-  };
   var searchParams = new URLSearchParams(window.location.search);
 
   const [modalIsOpen, setIsOpen] = React.useState(searchParams.get("role") === "teacher");
@@ -47,8 +31,9 @@ export default function Home(props) {
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
-            style={customStyles}
             contentLabel="Example Modal"
+            className="modal"
+            overlayClassName="modalOverlay"
           >
             <h2 style={{}}>Hello Teachers!</h2>
             <p>
